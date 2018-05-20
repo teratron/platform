@@ -1,0 +1,408 @@
+/***************************************
+  Commons
+ ***************************************/
+body,
+input,
+output,
+select,
+textarea {
+  font-family: GothamProRegular, Roboto, Helvetica, Arial, sans-serif;
+}
+cite,
+q {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+pre,
+code,
+kbd,
+samp,
+var,
+cite {
+  font-family: 'Lucida Console', Consolas, Monaco, 'Courier New', Courier, monospace;
+}
+mark {
+  background-color: #fe8325;
+  color: #999;
+}
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-moz-placeholder,
+:-ms-input-placeholder {
+  color: #152f00;
+}
+.lucid {
+  color: #000;
+}
+/***************************************
+  Layout
+ ***************************************/
+body {
+  background-color: #fff;
+}
+header {
+  background-color: #27a4c4;
+}
+header > .inner {
+  background-color: #27a4c4;
+  color: #fff;
+}
+main {
+  background-color: #fff;
+}
+main > .inner {
+  background-color: #f7f7f7;
+  color: #333;
+}
+footer {
+  background-color: #cbffac;
+}
+footer > .inner {
+  background-color: #ddd;
+  color: #999;
+}
+/***************************************
+  Drawer
+ ***************************************/
+.drawer {
+  background-color: #485a68;
+  color: #fff;
+}
+/***************************************
+  Dialog
+ ***************************************/
+.dialog {
+  background-color: #fff;
+  color: #333;
+  overflow: hidden;
+  border-radius: .3rem;
+  box-shadow: 0 0.8rem 2.4rem -0.4rem rgba(0, 0, 0, 0.33);
+}
+/***************************************
+  Card
+ ***************************************/
+.card {
+  background-color: #fff;
+  color: #333;
+  overflow: hidden;
+  border-radius: .2rem;
+  box-shadow: 0 0.2rem 0.4rem -0.1rem rgba(0, 0, 0, 0.33);
+}
+/***************************************
+  Panel
+ ***************************************/
+.panel {
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.08);
+}
+/***************************************
+  Button
+ ***************************************/
+.btn {
+  background-color: #27a4c4;
+  color: #fff;
+}
+.btn:hover {
+  background-color: #2bbfe0;
+  border-color: #2bbfe0;
+  box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2);
+}
+.btn:active {
+  background-color: #246d8d;
+  border-color: #246d8d;
+  box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2) inset;
+}
+.btn.flat,
+.btn.border {
+  background-color: transparent;
+  color: #27a4c4;
+  box-shadow: none;
+}
+.btn,
+.border {
+  border-color: #27a4c4;
+}
+/***************************************
+  Badge
+ ***************************************/
+.badge {
+  background-color: #fe8325;
+  color: #fff;
+  box-shadow: 0 0.1rem 0.2rem 0 rgba(0, 0, 0, 0.2);
+}
+/***************************************
+  Label
+ ***************************************/
+.label {
+  background-color: green;
+  color: #fff;
+  box-shadow: 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.08);
+}
+/***************************************
+  Tooltip
+ ***************************************/
+.tooltip {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
+/***************************************
+  Snackbar
+ ***************************************/
+.snackbar {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 1rem;
+}
+/***************************************
+  Divider / Separate
+ ***************************************/
+hr {
+  color: rgba(0, 0, 0, 0.12);
+}
+hr,
+.separator,
+.divider > *,
+.divider.table:not(.row) > * > * {
+  border-color: rgba(0, 0, 0, 0.12);
+}
+/***************************************
+  Form
+ ***************************************/
+.radio:after,
+.check:after,
+.toggle:after {
+  background-color: #27a4c4;
+}
+.radio:before,
+.check:before,
+.toggle:before,
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="number"],
+input[type="time"],
+input[type="month"],
+input[type="week"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"] {
+  background-color: #fff;
+  border-color: #27a4c4;
+}
+/***************************************
+  Backgrounds (bg or bg-... important)
+ ***************************************/
+.bg {
+  background-color: inherit;
+}
+/*** Brand ***/
+.bg-brand {
+  background-color: #27a4c4 !important;
+  color: #fff;
+}
+.bg-brand-light {
+  background-color: #2bbfe0 !important;
+  color: #fff;
+}
+.bg-brand-dark {
+  background-color: #246d8d !important;
+  color: #fff;
+}
+/*** Accent ***/
+.bg-accent {
+  background-color: #fe8325 !important;
+  color: #fff;
+}
+.bg-accent-light {
+  background-color: #fe9f61 !important;
+  color: #fff;
+}
+.bg-accent-dark {
+  background-color: #fe4a00 !important;
+  color: #fff;
+}
+/*** Dark ***/
+.bg-dark {
+  background-color: #485a68 !important;
+  color: #fff;
+}
+/*** Light ***/
+.bg-light {
+  background-color: #acc0bf !important;
+  color: #fff;
+}
+/*** Bright ***/
+.bg-secondary {
+  background-color: orange !important;
+  color: #fff;
+}
+/*** Secondary ***/
+.bg-secondary {
+  background-color: #9cb0af !important;
+  color: #fff;
+}
+/*** Gray ***/
+.bg-gray {
+  background-color: #999999 !important;
+  color: #fff;
+}
+.bg-gray a:not(.btn) {
+  color: #8b9298;
+}
+.bg-gray a:not(.btn):hover {
+  color: #2a3644;
+}
+.bg-gray .divider {
+  background-color: #ddd !important;
+  border-color: #ddd !important;
+}
+.bg-gray-light {
+  background-color: #cccccc !important;
+  color: #213140;
+}
+.bg-gray-light a:not(.btn) {
+  color: #37455b;
+}
+.bg-gray-light a:not(.btn):hover {
+  color: #582b5b;
+}
+.bg-gray-light .divider {
+  background-color: #d4d9dd !important;
+  border-color: #d4d9dd !important;
+}
+.bg-gray-dark {
+  background-color: #333333 !important;
+  color: #fff;
+}
+.bg-gray-dark a:not(.btn) {
+  color: #fff;
+}
+.bg-gray-dark a:not(.btn):hover {
+  color: #fff;
+}
+.bg-gray-dark .divider {
+  background-color: #d4d9dd !important;
+  border-color: #d4d9dd !important;
+}
+/*** Error/Red ***/
+.bg-error {
+  background-color: red !important;
+  color: #fff;
+}
+/*** Success/Green ***/
+.bg-success {
+  background-color: green !important;
+  color: #fff;
+}
+/*** Notice/Blue ***/
+.bg-warning {
+  background-color: blue !important;
+  color: #fff;
+}
+/*** Tips/Black ***/
+.bg-tips {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  color: #fff;
+}
+/***************************************
+  Fonts
+ ***************************************/
+@font-face {
+  font-family: 'Roboto';
+  src: url(../fonts/Roboto/Roboto-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RobotoLight';
+  src: url(../fonts/Roboto/Roboto-Light.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RobotoThin';
+  src: url(../fonts/Roboto/Roboto-Thin.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RobotoMedium';
+  src: url(../fonts/Roboto/Roboto-Medium.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GothamProRegular';
+  src: url(../fonts/GothamProRegular/GothamProRegular.eot);
+  src: url(../fonts/GothamProRegular/GothamProRegular.eot?#iefix) format("embedded-opentype"), url(../fonts/GothamProRegular/GothamProRegular.woff) format("woff"), url(../fonts/GothamProRegular/GothamProRegular.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'GothamProBold';
+  src: url(../fonts/GothamProBold/GothamProBold.eot);
+  src: url(../fonts/GothamProBold/GothamProBold.eot?#iefix) format("embedded-opentype"), url(../fonts/GothamProBold/GothamProBold.woff) format("woff"), url(../fonts/GothamProBold/GothamProBold.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'GothamProBlack';
+  src: url(../fonts/GothamProBlack/GothamProBlack.eot);
+  src: url(../fonts/GothamProBlack/GothamProBlack.eot?#iefix) format("embedded-opentype"), url(../fonts/GothamProBlack/GothamProBlack.woff) format("woff"), url(../fonts/GothamProBlack/GothamProBlack.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'GothamProItalic';
+  src: url(../fonts/GothamProItalic/GothamProItalic.eot);
+  src: url(../fonts/GothamProItalic/GothamProItalic.eot?#iefix) format("embedded-opentype"), url(../fonts/GothamProItalic/GothamProItalic.woff) format("woff"), url(../fonts/GothamProItalic/GothamProItalic.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'GothamProMedium';
+  src: url(../fonts/GothamProMedium/GothamProMedium.eot);
+  src: url(../fonts/GothamProMedium/GothamProMedium.eot?#iefix) format("embedded-opentype"), url(../fonts/GothamProMedium/GothamProMedium.woff) format("woff"), url(../fonts/GothamProMedium/GothamProMedium.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'GothamProLight';
+  src: url(../fonts/GothamProLight/GothamProLight.eot);
+  src: url(../fonts/GothamProLight/GothamProLight.eot?#iefix) format("embedded-opentype"), url(../fonts/GothamProLight/GothamProLight.woff) format("woff"), url(../fonts/GothamProLight/GothamProLight.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'GothamProMediumItalic';
+  src: url(../fonts/GothamProMediumItalic/GothamProMediumItalic.eot);
+  src: url(../fonts/GothamProMediumItalic/GothamProMediumItalic.eot?#iefix) format("embedded-opentype"), url(../fonts/GothamProMediumItalic/GothamProMediumItalic.woff) format("woff"), url(../fonts/GothamProMediumItalic/GothamProMediumItalic.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'GothamProLightItalic';
+  src: url(../fonts/GothamProLightItalic/GothamProLightItalic.eot);
+  src: url(../fonts/GothamProLightItalic/GothamProLightItalic.eot?#iefix) format("embedded-opentype"), url(../fonts/GothamProLightItalic/GothamProLightItalic.woff) format("woff"), url(../fonts/GothamProLightItalic/GothamProLightItalic.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'GothamProBoldItalic';
+  src: url(../fonts/GothamProBoldItalic/GothamProBoldItalic.eot);
+  src: url(../fonts/GothamProBoldItalic/GothamProBoldItalic.eot?#iefix) format("embedded-opentype"), url(../fonts/GothamProBoldItalic/GothamProBoldItalic.woff) format("woff"), url(../fonts/GothamProBoldItalic/GothamProBoldItalic.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'GothamProBlackItalic';
+  src: url(../fonts/GothamProBlackItalic/GothamProBlackItalic.eot);
+  src: url(../fonts/GothamProBlackItalic/GothamProBlackItalic.eot?#iefix) format("embedded-opentype"), url(../fonts/GothamProBlackItalic/GothamProBlackItalic.woff) format("woff"), url(../fonts/GothamProBlackItalic/GothamProBlackItalic.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}

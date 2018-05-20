@@ -1,0 +1,671 @@
+/******************************************************************************
+  Layout
+  -----------------------------------------------------------------------------
+  col row cel
+  block table inline
+  group
+  climb
+  bar
+  list
+  grow  / grow-[1...8] - элемент развигает и заполняет пустое пространство
+  grows / grows-[1...8]
+  reverse
+  inverse
+  stretch / stretches
+  inner
+  head body foot
+  fix abs pin
+ ******************************************************************************/
+header > .inner {
+    height: @header_height;
+}
+main > .inner {
+}
+footer > .inner {
+    min-height: @footer_height;
+}
+.inner {
+    max-width: @layout_width;
+    min-width: @layout_width_min;
+    margin-left:  auto;
+    margin-right: auto;
+}
+header.fix + :not(footer) {
+    padding-top: @header_height;
+}
+@media only screen and (max-width: (@layout_width)) {
+    main, header, footer {
+        -webkit-justify-content: flex-start;
+           -moz-justify-content: flex-start;
+            -ms-justify-content: flex-start;
+                justify-content: flex-start;
+    }
+}
+
+/*** Flexible Layout ***/
+main, header, footer,
+.on, .col, .row, [class*="grid"],
+.fix.middles, .fix.centers,
+.abs.middles, .abs.centers,
+.bar  > *,
+.list > *,
+.list > * > * {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.inline, .ico, .btn, .badge, .label, .toggle, .check, .radio, .avatar,
+.cel:not(.col):not(.table):not([class*="grid"]) > :not(.row):not(.table) {
+    display: inline-block;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+}
+.row, [class*="grid"], .list.col > *  {
+    -webkit-flex-direction: row;
+       -moz-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    &.reverse {
+        -webkit-flex-direction: row-reverse;
+           -moz-flex-direction: row-reverse;
+            -ms-flex-direction: row-reverse;
+                flex-direction: row-reverse;
+    }
+}
+.col, .list.row > * {
+    -webkit-flex-direction: column;
+       -moz-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    &.reverse {
+        -webkit-flex-direction: column-reverse;
+           -moz-flex-direction: column-reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
+    }
+}
+.wrap, .row, [class*="grid"] {
+    -webkit-flex-wrap: wrap;
+       -moz-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+}
+.wrap {
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+    word-wrap:   break-word;
+    text-wrap:   avoid;
+}
+.inverse {
+    -webkit-flex-wrap: wrap-reverse;
+       -moz-flex-wrap: wrap-reverse;
+            flex-wrap: wrap-reverse;
+}
+.nowrap, .col:not(.cel):not([class*="grid"]), .bar, .list > * {
+    -webkit-flex-wrap: nowrap;
+       -moz-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+}
+.nowrap {
+  white-space: nowrap;
+  overflow:    hidden;
+}
+.nowrap, p {
+    -moz-text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+         text-overflow: ellipsis;
+}
+.grow, .grows > *, .body, .screen {
+    -webkit-box-flex:  1;
+    -moz-box-flex:     1;
+    -ms-flex:          1;
+    -webkit-flex-grow: 1;
+    -moz-flex-grow:    1;
+    flex-grow:         1;
+}
+.generate-grow(8);
+.generate-grow(@n, @i: 1) when (@i =< @n) {
+    .grow-@{i}, .grows-@{i} > * {
+        -webkit-box-flex:  @i;
+        -moz-box-flex:     @i;
+        -ms-flex:          @i;
+        -webkit-flex-grow: @i;
+        -moz-flex-grow:    @i;
+        flex-grow:         @i;
+    }
+    .generate-grow(@n, (@i + 1));
+}
+
+/*** Align content ***/
+.stretches,
+.row:not(.cel),
+.col:not(.cel),
+[class*="grid"]:not(.cel),
+.list > *,
+.fix.col.middles, .abs.col.middles,
+.fix.row.top,     .abs.row.top,
+.fix.row.bottom,  .abs.row.bottom {
+    -webkit-align-content: stretch;
+       -moz-align-content: stretch;
+        -ms-align-content: stretch;
+            align-content: stretch;
+}
+.screen,
+[class*="grid"].cel,
+.col.cel.lefts, .col.cel:not(.centers),
+.row.cel.tops,  .row.cel:not(.middles) {
+    -webkit-align-content: flex-start;
+       -moz-align-content: flex-start;
+        -ms-align-content: flex-start;
+            align-content: flex-start;
+}
+.col.cel.centers,
+.row.cel.middles,
+.fix.middles, .fix.col.centers.middles,
+.abs.middles, .abs.col.centers.middles,
+.list.col > * > *,
+.bar > *,
+.col > .head,
+.col > .foot,
+.btn, .badge, .label,
+button, input, output, select, option {
+    -webkit-align-content: center;
+       -moz-align-content: center;
+        -ms-align-content: center;
+            align-content: center;
+}
+.col.cel.rights,
+.row.cel.bottoms {
+    -webkit-align-content: flex-end;
+       -moz-align-content: flex-end;
+        -ms-align-content: flex-end;
+            align-content: flex-end;
+}
+
+/*** Align items ***/
+.stretches,
+.row:not(.cel),
+.col:not(.cel),
+[class*="grid"]:not(.cel),
+.list > *,
+.fix.col.middles, .abs.col.middles,
+.fix.row.top,     .abs.row.top,
+.fix.row.bottom,  .abs.row.bottom {
+    -webkit-align-items: stretch;
+       -moz-align-items: stretch;
+        -ms-align-items: stretch;
+            align-items: stretch;
+}
+.screen,
+[class*="grid"].cel,
+.col.cel.lefts, .col.cel:not(.centers),
+.row.cel.tops,  .row.cel:not(.middles) {
+    -webkit-align-items: flex-start;
+       -moz-align-items: flex-start;
+        -ms-align-items: flex-start;
+            align-items: flex-start;
+}
+.col.cel.centers,
+.row.cel.middles,
+.fix.middles, .fix.col.centers.middles,
+.abs.middles, .abs.col.centers.middles,
+.list.col > * > *,
+.bar > *,
+.col > .head,
+.col > .foot,
+.btn, .badge, .label,
+button, input, output, select, option {
+    -webkit-align-items: center;
+       -moz-align-items: center;
+        -ms-align-items: center;
+            align-items: center;
+}
+.col.cel.rights,
+.row.cel.bottoms {
+    -webkit-align-items: flex-end;
+       -moz-align-items: flex-end;
+        -ms-align-items: flex-end;
+            align-items: flex-end;
+}
+
+/*** Align self ***/
+.stretch {
+    -webkit-align-self: stretch;
+       -moz-align-self: stretch;
+        -ms-align-self: stretch;
+            align-self: stretch;
+}
+.col > .left,
+.row > .top {
+    -webkit-align-self: flex-start;
+       -moz-align-self: flex-start;
+        -ms-align-self: flex-start;
+            align-self: flex-start;
+}
+.col > .center,
+.row > .middle {
+    -webkit-align-self: center;
+       -moz-align-self: center;
+        -ms-align-self: center;
+            align-self: center;
+}
+.col > .right,
+.row > .bottom {
+    -webkit-align-self: flex-end;
+       -moz-align-self: flex-end;
+        -ms-align-self: flex-end;
+            align-self: flex-end;
+}
+
+/*** Justify content ***/
+.col.tops,
+.row.lefts,
+.row > .head,
+.bar > .head,
+.fix.left, .fix.col.top,
+.abs.left, .abs.col.top {
+    -webkit-justify-content: flex-start;
+       -moz-justify-content: flex-start;
+        -ms-justify-content: flex-start;
+            justify-content: flex-start;
+}
+main, header, footer,
+.btn, .badge,
+.col.middles,
+.row.centers,
+.bar > :not(.head):not(.body):not(.foot),
+.fix.centers, .fix.col.middles,
+.abs.centers, .abs.col.middles {
+    -webkit-justify-content: center;
+       -moz-justify-content: center;
+        -ms-justify-content: center;
+            justify-content: center;
+}
+.col.bottoms,
+.row.rights,
+.row > .foot,
+.bar > .foot,
+.fix.right, .fix.col.bottom,
+.abs.right, .abs.col.bottom {
+    -webkit-justify-content: flex-end;
+       -moz-justify-content: flex-end;
+        -ms-justify-content: flex-end;
+            justify-content: flex-end;
+}
+.around {
+    -webkit-justify-content: space-around;
+       -moz-justify-content: space-around;
+        -ms-justify-content: space-around;
+            justify-content: space-around;
+}
+.between {
+    -webkit-justify-content: space-between;
+       -moz-justify-content: space-between;
+        -ms-justify-content: space-between;
+            justify-content: space-between;
+    > :first-child {
+        margin-left: 0;
+    }
+    > :last-child {
+        margin-right: 0;
+    }
+}
+
+/*** Block Layout ***/
+.block,
+.block.on,
+.block.col > * {
+    display: block;
+}
+.block.list > * > *,
+.block.row:not(.cel) > *,
+.block.row.rights:not(.cel) > .left,
+.block.row.reverse:not(.cel) > .right,
+.block.row.rights.reverse:not(.cel) > *,
+.block[class*="grid"] > *,
+.block[class*="grid"].rights.reverse > * {
+    float: left;
+}
+.block.list > * > .right,
+.block.row:not(.cel) > .right,
+.block.row.rights:not(.cel) > *,
+.block.row.reverse:not(.cel) > *,
+.block.row.rights.reverse:not(.cel) > .left,
+.block[class*="grid"].rights > *,
+.block[class*="grid"].reverse > * {
+    float: right;
+}
+
+/*** Table Layout ***/
+.table,
+.table.on {
+    display: table;
+}
+.table:not(.row) > :not([hidden]):not(script):not(style) {
+    display: table-row-group;
+}
+.table.row > *,
+.table:not(.row) > * > :not([hidden]):not(script):not(style) {
+    display: table-cell;
+}
+
+/*** Clearfix ***/
+.clear:after,
+.block.row:after,
+.block[class*="grid"]:after,
+.table.row > :after,
+.table:not(.row) > * > :not([hidden]):not(script):not(style):after {
+    clear:    both;
+    font-size:   0;
+    height:      0;
+    line-height: 0;
+    visibility: hidden;
+}
+.clear:after,
+.block.row:after,
+.block[class*="grid"]:after {
+    display: block;
+    content: "";
+}
+.table.row > *,
+.table.bar > *,
+.table:not(.row) > * > :not([hidden]):not(script):not(style) {
+    &:after,
+    &:before {
+        display: table;
+        content: " ";
+    }
+}
+
+/*** Placement ***/
+.top,
+.tops:not(.col):not(.row) > *,
+.table.cel,
+.table.row > * {
+    vertical-align: top;
+}
+.bottom,
+.bottoms:not(.col):not(.row) > *,
+.table.row > .bottom {
+    vertical-align: bottom;
+}
+.middle,
+.middles:not(.col):not(.row) > *,
+.table.bar > *,
+.table.list > *,
+.table.row > .middle,
+.table:not(.row) > * > :not([hidden]):not(script):not(style) {
+    vertical-align: middle;
+}
+.lefts:not(.col):not(.row):not(.bar),
+.table:not(.row) > * > .head {
+    text-align: left;
+    > * {
+        text-align: inherit;
+    }
+}
+.rights:not(.col):not(.row):not(.bar),
+.table:not(.row) > * > .foot {
+    text-align: right;
+    > * {
+        text-align: inherit;
+    }
+}
+.centers:not(.col),
+.block.bar.cel,
+.block.bar > * {
+    text-align: center;
+}
+.centers:not(.col):not(.bar),
+.block.bar > * {
+    > * {
+        text-align: inherit;
+    }
+}
+.center:only-child {
+    margin-left:  auto;
+    margin-right: auto;
+}
+
+/***************************************
+  Position: Fixed / Absolute / Static
+ ***************************************/
+.fix, .drawer {
+    position: fixed;
+}
+.abs, .fix .screen, .climb {
+    position: absolute;
+}
+.pin {
+    position: static;
+}
+.fix .screen,
+.fix:not(.top):not(.bottom):not(.right):not(.left),
+.abs:not(.top):not(.bottom):not(.right):not(.left),
+.fix.top,      .abs.top,
+.fix.right,    .abs.right,
+.fix.left,     .abs.left,
+.fix.top.right,.abs.top.right,
+.fix.top.left, .abs.top.left {
+    top: 0;
+}
+body.fix,
+.fix .screen,
+.fix:not(.top):not(.bottom):not(.right):not(.left),
+.abs:not(.top):not(.bottom):not(.right):not(.left),
+.fix.bottom,      .abs.bottom,
+.fix.right,       .abs.right,
+.fix.left,        .abs.left,
+.fix.bottom.right,.abs.bottom.right,
+.fix.bottom.left, .abs.bottom.left {
+    bottom: 0;
+}
+.fix .screen,
+.fix:not(.top):not(.bottom):not(.right):not(.left),
+.abs:not(.top):not(.bottom):not(.right):not(.left),
+.fix.left,         .abs.left,
+.fix.top,          .abs.top,
+.fix.bottom,       .abs.bottom,
+.fix.top.left,     .abs.top.left,
+.fix.bottom.left,  .abs.bottom.left {
+    left: 0;
+}
+.fix .screen,
+.fix:not(.top):not(.bottom):not(.right):not(.left),
+.abs:not(.top):not(.bottom):not(.right):not(.left),
+.fix.right,        .abs.right,
+.fix.top,          .abs.top,
+.fix.bottom,       .abs.bottom,
+.fix.top.right,    .abs.top.right,
+.fix.bottom.right, .abs.bottom.right {
+    right: 0;
+}
+.fix.bottom.right, .abs.bottom.right,
+.fix.bottom.left,  .abs.bottom.left {
+    top: auto;
+}
+.fix.top.right,    .abs.top.right,
+.fix.top.left,     .abs.top.left {
+    bottom: auto;
+}
+.fix.right.top,    .abs.right.top,
+.fix.right.bottom, .abs.right.bottom {
+    left: auto;
+}
+.fix.left.top,     .abs.left.top,
+.fix.left.bottom,  .abs.left.bottom {
+    right: auto;
+}
+
+/***************************************
+  Group
+ ***************************************/
+.group:not(.col)   > :not(:only-child):not(:first-child),
+.divider:not(.col) > :not(:only-child):not(:first-child) {
+    margin-left: -1px !important;
+}
+.group > :not(:last-child) {
+    margin-right: 0;
+}
+.group > :not(:only-child):not(:first-child):not(:last-child) {
+    border-radius: 0;
+}
+.group:not(.col) > :first-child:not(:only-child) {
+    border-top-right-radius:    0;
+    border-bottom-right-radius: 0;
+}
+.group:not(.col) > :last-child:not(:only-child) {
+    border-top-left-radius:    0;
+    border-bottom-left-radius: 0;
+}
+.group.col   > :not(:only-child):not(:first-child),
+.divider.col > :not(:only-child):not(:first-child) {
+    margin-top: -1px !important;
+}
+.group.col > :not(:last-child) {
+    margin-bottom: 0;
+}
+.group.col > :first-child:not(:only-child) {
+    border-bottom-left-radius:  0;
+    border-bottom-right-radius: 0;
+}
+.group.col > :last-child:not(:only-child) {
+    border-top-left-radius:  0;
+    border-top-right-radius: 0;
+}
+
+/***************************************
+  Head / Body / Foot
+ ***************************************/
+.row > .head,
+.row > .body,
+.row > .foot {
+}
+
+/***************************************
+  Climb
+ ***************************************/
+.climb > * {
+    margin-left: -100% !important;
+}
+
+/******************************************************************************
+  Triggers and Switches
+  -----------------------------------------------------------------------------
+  on      off
+  in      out
+  unhide  hide
+  fade    fadein  fadeout
+  empty
+ ******************************************************************************/
+.off, [class*="on-"], .empty:empty {
+    display: none !important;
+}
+.out, [class*="in-"] {
+    top:  -100% !important;
+    left: -100% !important;
+    z-index: -1 !important;
+}
+.out, [class*="in-"], .in.fix {
+    position: fixed !important;
+}
+.in.abs {
+    position: absolute !important;
+}
+.in:not(.fix):not(.abs) {
+    position: relative !important;
+}
+.in {
+    top:        auto !important;
+    left:       auto !important;
+    z-index: inherit !important;
+}
+.hide, [class*="unhide-"], .fadein, .fadeout:hover, .fade:hover .fadeout {
+    visibility: hidden !important;
+    opacity:         0 !important;
+}
+.unhide, .fadeout, .fadein:hover, .fade:hover .fadein {
+    visibility: visible !important;
+    opacity:          1 !important;
+}
+[class*="hide"],
+[class*="fade"] {
+    -webkit-transition: all ease-out .18s;
+       -moz-transition: all ease-out .18s;
+            transition: all ease-out .18s;
+}
+
+/***************************************
+  Z-index
+ ***************************************/
+.z1, .drawer {
+    z-index: 1000;
+}
+.z2, .screen {
+    z-index: 2000;
+}
+.z3, .dropdown, option, optgroup {
+    z-index: 3000;
+}
+.z4, .popup {
+    z-index: 4000;
+}
+.z5, .tooltip {
+    z-index: 5000;
+}
+.z6 {
+    z-index: 6000;
+}
+.z7, header.fix, footer.fix {
+    z-index: 7000;
+}
+.z8, .snackbar {
+    z-index: 8000;
+}
+.z9, .modal {
+    z-index: 9000;
+}
+
+/***************************************
+  Opacity
+ ***************************************/
+.o1{opacity:.1}.o2{opacity:.2}.o3{opacity:.3}
+.o4{opacity:.4}.o5{opacity:.5}.o6{opacity:.6}
+.o7{opacity:.7}.o8{opacity:.8}.o9{opacity:.9}
+
+/*
+  Relative lengths
+  ---------------------------------------
+  unit  relative to
+  ---------------------------------------
+  ‘em’   - font size of the element
+  ‘ex’   - x-height of the element's font
+  ‘ch’   - width of the "0" (ZERO, U+0030) glyph in the element's font
+  ‘rem’  - font size of the root element
+  ‘vw’   - 1% of viewport's width
+  ‘vh’   - 1% viewport's height
+  ‘vmin’ - 1% of viewport's smaller dimension
+  ‘vmax’ - 1% of viewport's larger dimension
+
+  Absolute lengths
+  ---------------------------------------
+  unit  definition
+  ---------------------------------------
+  ‘cm’ - centimeters; 1cm = 96px/2.54
+  ‘mm’ - millimeters; 1mm = 1/10th of 1cm
+  ‘q‘  - quarter-millimeters; 1q = 1/40th of 1cm
+  ‘in’ - inches; 1in is equal to 2.54cm = 96px
+  ‘px’ - pixels; 1px is equal to 1/96th of 1in
+  ‘pt’ - points; 1pt is equal to 1/72nd of 1in
+  ‘pc’ - picas; 1pc is equal to 12pt, = 1/6th of 1in
+
+  Resolutions
+  ---------------------------------------
+  dpi  - dots per inch
+  dpcm - dots per centimeter
+  dppx - dots per ‘px’ unit
+*/

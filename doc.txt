@@ -1,0 +1,356 @@
+﻿/*
+  @media mediatype and|not|only (media feature) {CSS-Code;}
+
+  Mediatype
+  ---------------------------------------
+  all        - Used for all media type devices
+  aural      - Deprecated. Used for speech and sound synthesizers
+  braille    - Deprecated. Used for braille tactile feedback devices
+  embossed   - Deprecated. Used for paged braille printers
+  handheld   - Deprecated. Used for small or handheld devices
+  print      - Used for printers
+  projection - Deprecated. Used for projected presentations, like slides
+  screen     - Used for computer screens, tablets, smart-phones etc.
+  speech     - Used for screenreaders that "reads" the page out loud
+  tty        - Deprecated. Used for media using a fixed-pitch character grid, like teletypes and terminals
+  tv         - Deprecated. Used for television-type devices
+
+  Media feature
+  ---------------------------------------
+  aspect-ratio            - Specifies the ratio between the width and the height of the display area
+  color                   - Specifies the number of bits per color for the device
+  color-index             - Specifies the number of colors the device can display
+  device-aspect-ratio     - Specifies the ratio between the width and the height of the device
+  device-height           - Specifies the height of the device, such as a computer screen
+  device-width            - Specifies the width of the device, such as a computer screen
+  grid                    - Specifies whether the device is a grid device or not
+  height                  - Specifies the height of the display area, such as a browser window
+  max-aspect-ratio        - Specifies the minimum ratio between the width and the height of the display area
+  max-color               - Specifies the maximum number of bits per color for the device
+  max-color-index         - Specifies the maximum number of colors the device can display
+  max-device-aspect-ratio - Specifies the minimum ratio between the width and the height of the device
+  max-device-height       - Specifies the maximum height of the device, such as a computer screen
+  max-device-width        - Specifies the maximum width of the device, such as a computer screen
+  max-height              - Specifies the maximum height of the display area, such as a browser window
+  max-monochrome          - Specifies the maximum number of bits per "color" on a greyscale the device
+  max-resolution          - Specifies the maximum resolution of the device, using dpi or dpcm
+  max-width               - Specifies the maximum width of the display area, such as a browser window
+  min-aspect-ratio        - Specifies the minimum ratio between the width and the height of the display area
+  min-color               - Specifies the minimum number of bits per color for the device
+  min-color-index         - Specifies the minimum number of colors the device can display
+  min-device-aspect-ratio - Specifies the minimum ratio between the width and the height of the device
+  min-device-width        - Specifies the minimum width of the device, such as a computer screen
+  min-device-height       - Specifies the minimum height of the device, such as a computer screen
+  min-height              - Specifies the minimum height of the display area, such as a browser window
+  min-monochrome          - Specifies the minimum number of bits per "color" on a greyscale the device
+  min-resolution          - Specifies the minimum resolution of the device, using dpi or dpcm
+  min-width               - Specifies the minimum width of the display area, such as a browser window
+  monochrome              - Specifies the number of bits per "color" on a greyscale the device
+  orientation             - Specifies the whether the display is in landscape mode or portrait mode
+  resolution              - Specifies the resolution of the device, using dpi or dpcm
+  scan                    - Specifies progressive or interlaca scanning of a television
+  width                   - Specifies the width of the display area, such as a browser window
+*/
+/*
+  Возможные значения role
+  ---------------------------------------
+  banner           - содержит главный заголовок или внутренний заголовок страницы. Например логотип и название сайта. Рекомендуется использовать не больше одного раза на странице.
+  complementary    - информационный блок, отделенный от основного содержания ресурса.
+  contentinfo      - обобщающая информация о содержании страницы ( к примеру футер сайта ). Рекомендуется использовать не больше одного раза на странице.
+  definition       - указывает определение термина или понятия.
+  main             - выступает в качестве основного содержания документа. Рекомендуется использовать не больше одного раза на странице.
+  navigation       - набор элементов предназначенных для навигации по документу или связанным документам. Рекомендуется использовать не больше одного раза на странице.
+  note             - заметка ( вспомогательная информация) к основному содержанию ресурса.
+  search           - указывает область для поиска по содержимому.
+
+  alert            - Сообщение с важной и, как правило срочной, информация. Также см. alertdialog и status.
+  alertdialog      - Сообщение, которое содержит важную информацию, и первоначальный акцент переходит элементу в диалоговом окне. Также см. alert и dialog.
+  application      - Область объявленная как веб-приложение, в отличие от веб-документа.
+  article          - Раздел состоящий из композиции, которая в свою очередь образует самостоятельную часть документа, страницы или сайта.
+
+  button           - Кнопка, позволяющая пользователю вызвать какие-либо действия. Также см. link.
+
+  checkbox         - Чекбокс, который имеет три возможных значения: истина, ложь, или смешанное.
+  columnheader     - Ячейка таблицы, содержащая заголовок для столбца.
+  combobox         - Вариация селекта; аналогично textbox, позволяющая пользователям печатать для выбора опции, или при печате добавить новую опцию к списку. Также см. listbox.
+
+  dialog           - Сообщение, предназначенное для прерывания обработки текующего приложения, для ввода пользователем какой-либо информации или требующее от него какое-либо действие. Также см. alertdialog.
+  directory        - Список ссылок на части группы, например содержание.
+  document         - Область, содержащая информацию, которая объявлена ??как содержимое документа, в отличие от веб-приложений.
+
+  form             - Ориентир области, которая содержит коллекцию элементов и объектов, которые, в целом, объединяются, чтобы создать форму. См. также search.
+
+  grid             - Сетка интерактивного управления, которая содержит элементы сведенные в таблицу данных, в виде строк и столбцов, как таблица.
+  gridcell         - Ячейки в сетке или древовидная сетка.
+  group            - Набор объектов пользовательского интерфейса, которые не предназначены для включения в итоговую страницу или содержимое, вспомогательных технологий.
+
+  heading          - Заголовок для раздела страницы.
+
+  img              - Контейнер для набора элементов, которые формируют изображение.
+
+  link             - Интерактивная ссылка на внутренний или внешний ресурс, который при активации приводит к переходу браузера пользователя к этому ресурсу. См. также button.
+  list             - Группа неинтерактивных элементов списка. Также см. listbox.
+  listbox          - Виджет, который позволяет пользователю выбрать один или несколько элементов из списка вариантов. См. также combobox и list.
+  listitem         - Один элемент в списоке или содержании.
+  log              - Тип интерактивной области, где новая информация добавляется в осмысленном порядке, а старая может исчезнуть. См. также marquee.
+
+  marquee          - Тип интерактивной области, где не существенная информация часто меняется. См. также log.
+  math             - Контент, который представляет собой математическое выражение.
+  menu             - Тип виджета, который предоставляет выбор списка вариантов для пользователя.
+  menubar          - Представление menu, которое обычно остается видимым и, как правило, представлено горизонтально.
+  menuitem         - Опции в группе выбора содержащиеся в menu или menubar.
+  menuitemcheckbox - Чекбокс пункта menu, который имеет три возможных значения: истина, ложь, или смешанное.
+  menuitemradio    - Отмечаемый пункт меню в группе menuitemradio, из которых только один может быть выбран одновременно.
+
+  option           - Выбираемый элемент в списке выбора.
+
+  presentation     - Элемент чья семантически неявная роль не будет отображаться на доступности API.
+  progressbar      - Элемент, который отображает ход статуса задач, занимающих много времени.
+
+  radio            - Отмечаемый пункт в группе таких же пунктов, из которых только один может быть выбран одновременно.
+  radiogroup       - Группа переключателей.
+  region           - Большая область веб-страницы или документа, которую автор счел достаточно важной, чтобы включить в основную информацию страницы или оглавление, например, область страницы содержающая спортивную статистику событий онлайн.
+  row              - Ряд ячеек в grid.
+  rowgroup         - Группы, содержащие один или несколько элементов row в grid.
+  rowheader        - Ячейка содержащая заголовок для row в grid.
+
+  scrollbar        - Графический объект, который управляет прокруткой содержимого области просмотра, независимо от того, полностью ли содержание отображается в области просмотра.
+  separator        - Разделитель, который разделяет и отличает разделы содержимого или группы пунктов menuitems.
+  slider           - Интерфейс ввода для пользователя, когда пользователь выбирает значение из заданного диапазона.
+  spinbutton       - Форма диапазона, где пользователь может выбрать из числа дискретных решений.
+  status           - Контейнер, содержание которого носит рекомендательный характер для информирования пользователя, но не является достаточно важным. Также см. alert.
+
+  tab              - Вкладка, представляющая из себя механизм для выбора вкладки необходимой пользователю.
+  tablist          - Список элементов tab, которые являются ссылками на tabpanel элементы.
+  tabpanel         - Контейнер для ресурсов связанных с tab, где каждый tab содержиться в tablist.
+  textbox          - Поле ввода, которое предоставляет ввод в свободной форме текста.
+  timer            - Тип интерактивной области, содержащую числовой счетчик, который указывает на количество затраченного времени от начальной точки, или время, оставшееся до конечной точки.
+  toolbar          - Набор часто используемых функциональных кнопок, представленых в компактной визуальной форме.
+  tooltip          - Контекстное всплывающее окно, которое отображает описание элемента.
+  tree             - Тип списка, который может содержать подуровни вложенных групп, которые могут быть свернуты и расширены.
+  treegrid         - Сетка, чьи строки могут быть свернуты и расширины так же как и в tree.
+  treeitem         - Опция элемента tree. Этот элемент внутри tree, может быть свернут или расширен, если имеет вложенный подуровень.
+*/
+/*
+  Fibonacci Sequence
+
+  1, 2, 3, 4, 5, 6,  7,  8,  9, 10, 11,  12,  13,  14,  15,  16,   17,   18,   19,   20,    21,    22,    23,    24,    25,     26,     27,     28 ...
+  -------------------------------------------------------------------------------------------------------------------------------------------------------
+  1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811 ...
+
+     4 8 12 20 32 52 84 136 220 356 576 932 1508 2440 3948
+   2 4 6 10 16 26 42 68 110 178 288 466 754 1220 1974 3194
+
+  0.05573
+  0.09017
+  0.1459
+  0.23607
+  0.38196
+  0.61803
+  -------
+  1
+  -------
+  1.61803
+  2.61803
+  4.23607
+  6.85410
+  11.09017
+  17.94427
+  29.03444
+  46.97871
+  76.01315
+  122.99186
+
+ 685.4102
+ 423.6068
+ 261.8034
+ 161.8034
+ -------
+ 100
+ -------
+  61.8034
+  38.1966
+  23.6068
+  14.5898
+   9.0170
+   5.5728
+   3.4442
+   2.1286
+   1.3156
+   0.8130
+   0.5026
+   0.3104
+
+// Fibonacci Sequence
+@fi1:  2px;
+@fi2:  @fi1  + @fi1;
+@fi3:  @fi1  + @fi2;
+@fi4:  @fi2  + @fi3;
+@fi5:  @fi3  + @fi4;
+@fi6:  @fi4  + @fi5;
+@fi7:  @fi5  + @fi6;
+@fi8:  @fi6  + @fi7;
+@fi9:  @fi7  + @fi8;
+@fi10: @fi8  + @fi9;
+@fi11: @fi9  + @fi10;
+@fi12: @fi10 + @fi11;
+@fi13: @fi11 + @fi12;
+@fi14: @fi12 + @fi13;
+@fi15: @fi13 + @fi14;
+@fi16: @fi14 + @fi15;
+*/
+
+gap         gaps
+gap-side    gaps-side
+gap-rail    gaps-rail
+gap-top     gaps-top
+gap-bottom  gaps-bottom
+gap-right   gaps-right
+gap-left    gaps-left
+
+
+    ii - item/cell of item
+    a  - first cell
+    b  - inner cell
+    c  - last cell
+    s  - stretch cell
+
+
+
+
+где? - расположение
+как? - выглядит
+что? - наполнение
+когда? - интерактив, анимация
+
+сколько? - группы
+зачем? - целесообразность
+
+где?
+------
+col
+row
+cel
+top_  top
+bot_  bot
+
+.micro
+.mini  - min
+.tiny  - tin
+.small - sml
+.medium - mid def
+.large - lrg
+.big
+.huge  - hug
+.massive - mas
+
+x2
+x3
+x4
+x5
+
+
+
+
+aln__top
+aln__bot
+
+
+
+stp
+
+stp-
+stp--
+stp_
+stp__
+
+-stp
+--stp
+_stp
+__stp
+
+
+-stp-
+--stp--
+_stp_
+__stp__
+
+
+
+
+
+btn
+lst
+grd
+itm
+
+row
+col
+cell
+
+t
+l
+g
+ i
+  a b c
+  x y z
+
+
+.l > .i > .a
+.g > .i > .b
+
+.l.i > .a
+.g.i > .b
+
+
+
+t
+ i r
+  ii g a b c
+
+
+
+2x
+3x
+4x
+
+/*
+  i  - item
+  cell - d
+  row  - r
+  col  - c
+
+    ii - item/cell of item
+    a  - first cell
+    b  - inner cell
+    c  - last cell
+    s  - stretch cell
+*/
+/*
+.i1
+.i2
+.i3
+
+.str
+.mid
+.end
+
+.flu
+.grp
+.grw
+.pus
+.ext
+
+.fst
+.snd
+.trd
+
+.1st
+.2nd
+.3rd
+*/
+/*
+.st1
+.2nd
+.3rd
+*/

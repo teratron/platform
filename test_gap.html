@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Gap</title>
+        <link rel="shortcut icon" href="images/favicon.ico" />
+        <!--<link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/theme.css" />-->
+        <link rel="stylesheet/less" href="less/platform.less" />
+        <link rel="stylesheet/less" href="less/theme.less" />
+        <script src="js/less.min.js"></script>
+        <style type="text/css">
+            body {
+                margin: 20px auto;
+                width: 960px;
+                line-height: 1;
+            }
+            .row[class*="gaps"],
+            .col[class*="gaps"] {
+                background-color: beige;
+            }
+            .row[class*="gaps"] > *,
+            .col[class*="gaps"] > * {
+                background-color: #dbe0c8;
+            }
+            hr,
+            .separator,
+            .divider:not(.list) > *,
+            .divider.list.col > * > *,
+            .divider.table:not(.row) > * > * {
+                border-color: #869D05;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="col cel">
+            <div class="row bg gaps gut-bottom-1">
+                <div class="head" style="background-color: #1b1c1d !important; color: #b5cc18;">Head</div>
+                <div class="head" style="background-color: #1b1c1d !important; color: #b5cc18;">Head</div>
+                <div class="body" style="background-color: #b5cc18 !important;">Donec sed odio dui.</div>
+                <div class="body" style="background-color: #b5cc18 !important;">Cras justo odio.</div>
+                <div class="foot" style="background-color: #869d05 !important; color: #fff;">Foot</div>
+                <div class="foot" style="background-color: #869d05 !important; color: #fff;">Foot</div>
+            </div>
+            <div class="row col-6 divider gaps gut-bottom-1">
+                <div class="head">Head</div>
+                <div class="head">Head</div>
+                <div class="body">Donec sed odio dui.</div>
+                <div class="body">Cras justo odio.</div>
+                <div class="foot">Foot</div>
+                <div class="foot">Foot</div>
+            </div>
+            <div class="row col-7 out-5 gaps gut-bottom-1">
+                <div class="head bg">Head</div>
+                <div class="head bg-gray-dark">Head</div>
+                <div class="body">Donec sed odio dui.</div>
+                <div class="body">Cras justo odio.</div>
+                <div class="foot">Foot</div>
+                <div class="foot">Foot</div>
+            </div>
+            <div class="row hide-6 gaps gut-bottom-1">
+                <div class="head">Head</div>
+                <div class="head">Head</div>
+                <div class="body">Donec sed odio dui.</div>
+                <div class="body">Cras justo odio.</div>
+                <div class="foot bg-gray-dark">Foot</div>
+                <div class="foot">Foot</div>
+            </div>
+        </div>
+        <div class="row cel">
+            <div class="row gaps gap-2 gut-1">
+                <div>1</div>
+            </div>
+            <div class="row gaps gap-2 gut-1">
+                <div>2</div>
+                <div>2</div>
+            </div>
+            <div class="row col-5 gaps gap-2 gut-1">
+                <div>3</div>
+                <div>3</div>
+                <div>3</div>
+            </div>
+        </div>
+        <div class="row cel">
+            <div class="row divider gaps gap-2 gut-1">
+                <div>1</div>
+            </div>
+            <div class="row divider gaps gap-2 gut-1">
+                <div>2</div>
+                <div>2</div>
+            </div>
+            <div class="row divider gaps gap-2 gut-1">
+                <div>3</div>
+                <div>3</div>
+                <div>3</div>
+            </div>
+        </div>
+        <div class="row cel">
+            <div class="row bg gaps gut-1">
+                <div>1</div>
+            </div>
+            <div class="row bg gaps gut-1">
+                <div>2</div>
+                <div>2</div>
+            </div>
+            <div class="row bg gaps gut-1">
+                <div>3</div>
+                <div>3</div>
+                <div>3</div>
+            </div>
+            <div class="row bg on-6 gaps gut-1">
+                <div>4</div>
+                <div>4</div>
+                <div>4</div>
+                <div>4</div>
+            </div>
+        </div>
+        <div class="row cel">
+            <div class="row bg divider gaps gut-1">
+                <div>1</div>
+            </div>
+            <div class="row bg divider gaps gut-1">
+                <div>2</div>
+                <div>2</div>
+            </div>
+            <div class="row bg divider gaps gut-1">
+                <div>3</div>
+                <div>3</div>
+                <div class="row gaps">
+                    <div>3</div>
+                    <div>3</div>
+                    <div>3</div>
+                </div>
+            </div>
+            <div class="row bg divider gaps gut-1">
+                <div>4</div>
+                <div>4</div>
+                <div>4</div>
+                <div>4</div>
+            </div>
+        </div>
+
+        <div class="row cel">
+            <div class="col list row-7 bg divider gaps gut-1" style="width: 300px;">
+                <div>
+                    <div>1</div>
+                    <div class="grow">2</div>
+                    <div>3</div>
+                </div>
+                <div>
+                    <div class="head">1</div>
+                    <div class="body">2</div>
+                    <div class="foot">3</div>
+                </div>
+                <div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                </div>
+            </div>
+            <div class="table gaps divider gut-1" style="width: 300px;">
+                <div>
+                    <div>1</div>
+                    <div class="grow">2</div>
+                    <div>3</div>
+                </div>
+                <div>
+                    <div class="head">1</div>
+                    <div class="body">2</div>
+                    <div class="foot">3</div>
+                </div>
+                <div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row cel bg guts-1">
+            <div class="card col bg fluid-3 gaps">
+                <div class="head" style="background-color: #1b1c1d !important; color: #b5cc18;">Head</div>
+                <div class="head" style="background-color: #1b1c1d !important; color: #b5cc18;">Head</div>
+                <div class="body" style="background-color: #b5cc18 !important;">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.</div>
+                <div class="body" style="background-color: #b5cc18 !important;">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.</div>
+                <div class="foot" style="background-color: #869d05 !important; color: #fff;">Foot</div>
+                <div class="foot" style="background-color: #869d05 !important; color: #fff;">Foot</div>
+            </div>
+            <div class="dialog col divider gaps" style="width: 320px">
+                <div class="head">Head</div>
+                <div class="head">Head</div>
+                <div class="body">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.</div>
+                <div class="body">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.</div>
+                <div class="foot">Foot</div>
+                <div class="foot">Foot</div>
+            </div>
+            <div class="card col gaps" style="width: 320px">
+                <div class="head gap-bottom">Head</div>
+                <div class="head bg-gray-dark">Head</div>
+                <div class="body">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.</div>
+                <div class="body">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.</div>
+                <div class="foot bg-gray-dark">Foot</div>
+                <div class="foot">Foot</div>
+            </div>
+            <div class="card col gaps" style="width: 320px">
+                <div class="head">Head</div>
+                <div class="head">Head</div>
+                <div class="body">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.</div>
+                <div class="body">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.</div>
+                <div class="foot">Foot</div>
+                <div class="foot">Foot</div>
+            </div>
+            <div class="card col row-7 gaps">
+                <div class="head">Head</div>
+                <div class="body">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</div>
+                <div class="foot">Foot</div>
+            </div>
+        </div>
+
+        <div class="separator gut-rail-1"></div>
+
+        <div class="row cel">
+            <div class="col gaps gap gut-1">
+                <div>1 item</div>
+            </div>
+            <div class="col gaps gap gut-1">
+                <div>2 item</div>
+                <div>2 item</div>
+            </div>
+            <div class="col gaps gap gut-1">
+                <div>3 item</div>
+                <div>3 item</div>
+                <div>3 item</div>
+            </div>
+        </div>
+        <div class="row cel">
+            <div class="col divider gaps gap gut-1">
+                <div>1 item</div>
+            </div>
+            <div class="col divider gaps gap gut-1">
+                <div>2 item</div>
+                <div>2 item</div>
+            </div>
+            <div class="col divider gaps gap gut-1">
+                <div>3 item</div>
+                <div>3 item</div>
+                <div>3 item</div>
+            </div>
+        </div>
+        <div class="row cel">
+            <div class="col bg gaps gut-1">
+                <div>1 item</div>
+            </div>
+            <div class="col bg gaps gut-1">
+                <div>2 item</div>
+                <div>2 item</div>
+            </div>
+            <div class="col bg gaps gut-1">
+                <div>3 item</div>
+                <div>3 item</div>
+                <div>3 item</div>
+            </div>
+            <div class="col bg gaps gut-1">
+                <div>4 item</div>
+                <div>4 item</div>
+                <div>4 item</div>
+                <div>4 item</div>
+            </div>
+        </div>
+        <div class="row cel">
+            <div class="col bg divider gaps gut-1">
+                <div>1 item</div>
+            </div>
+            <div class="col bg divider gaps gut-1">
+                <div>2 item</div>
+                <div>2 item</div>
+            </div>
+            <div class="col bg divider gaps gut-1">
+                <div>3 item</div>
+                <div>3 item</div>
+                <div class="row gaps">
+                    <div>3</div>
+                    <div>3</div>
+                    <div>3</div>
+                </div>
+            </div>
+            <div class="col bg divider gaps gut-1">
+                <div>4 item</div>
+                <div>4 item</div>
+                <div>4 item</div>
+                <div>4 item</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row list col-7 bg divider gaps gut-1" style="">
+                <div>
+                    <div>1</div>
+                    <div class="grow">2</div>
+                    <div>3</div>
+                </div>
+                <div>
+                    <div class="head">1</div>
+                    <div class="body">2</div>
+                    <div class="foot">3</div>
+                </div>
+                <div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

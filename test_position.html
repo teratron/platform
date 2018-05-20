@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Position</title>
+        <link rel="shortcut icon" href="images/favicon.ico" />
+        <!--<link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/theme.css" />-->
+        <link rel="stylesheet/less" href="less/platform.less" />
+        <link rel="stylesheet/less" href="less/theme.less" />
+        <script src="js/less.min.js"></script>
+        <style type="text/css">
+            .fix:not(body), .abs {
+                font-size: 12px;
+                color: #fff;
+            }
+            /*.fix.cen > *,
+            .fix.mid > *,
+            .abs.cen > *,
+            .abs.mid > *,
+            .fix:not(.cen):not(.mid):not(body),
+            .abs:not(.cen):not(.mid) {
+                padding: 2px 8px;
+                box-shadow: 0 1px 8px 0 rgba(0,0,0,.25);
+            }*/
+            .fix.centers > *,
+            .fix.middles > *,
+            .fix:not(.centers):not(.middles):not(body) {
+                background: orange;
+            }
+        </style>
+    </head>
+    <body class="fix">
+
+        <div class="fix top" style="background: rgba(0,0,0,.05); height: 50px;">fix top</div>
+        <div class="fix bottom" style="background: rgba(0,0,0,.05); height: 50px;">fix bottom</div>
+        <div class="fix left" style="background: rgba(0,0,0,.05); width: 50px;">fix left</div>
+        <div class="fix right" style="background: rgba(0,0,0,.05); width: 50px;">fix right</div>
+
+        <div class="fix centers middles">
+            <div style="background: blue;">fix cen mid</div>
+        </div>
+        <div class="fix top centers">
+            <div>fix top cen</div>
+        </div>
+        <div class="fix right middles">
+            <div>fix right mid</div>
+        </div>
+        <div class="fix bottom centers">
+            <div>fix bottom cen</div>
+        </div>
+        <div class="fix left middles">
+            <div>fix left mid</div>
+        </div>
+
+        <div class="fix top left">fix top left</div>
+        <div class="fix top right">fix top right</div>
+        <div class="fix bottom right">fix bottom right</div>
+        <div class="fix bottom left">fix bottom left</div>
+
+        <section class="row around" style="margin-top: 80px;">
+            <aside style="background: #f7f7f7; border: 1px solid #ddd; width: 25%; height: 260px;">
+                <div class="abs top" style="background: green;">abs top</div>
+                <div class="abs bottom" style="background: green;">abs bottom</div>
+            </aside>
+            <aside style="background: #f7f7f7; border: 1px solid #ddd; width: 25%; height: 260px;">
+                <div class="abs left" style="background: green;">abs left</div>
+                <div class="abs right" style="background: green;">abs right</div>
+            </aside>
+            <aside style="background: #f7f7f7; border: 1px solid #ddd; width: 25%; height: 260px;">
+                <div class="abs centers middles">
+                    <div style="background: blue;">abs cen mid</div>
+                </div>
+                <div class="abs top centers">
+                    <div style="background: green;">abs top cen</div>
+                </div>
+                <div class="abs right middles">
+                    <div style="background: green;">abs right mid</div>
+                </div>
+                <div class="abs bottom centers">
+                    <div style="background: green;">abs bottom cen</div>
+                </div>
+                <div class="abs left middles">
+                    <div style="background: green;">abs left mid</div>
+                </div>
+                <div class="abs top left" style="background: green;">abs top left</div>
+                <div class="abs top right" style="background: green;">abs top right</div>
+                <div class="abs bottom right" style="background: green;">abs bottom right</div>
+                <div class="abs bottom left" style="background: green;">abs bottom left</div>
+            </aside>
+        </section>
+
+        <section class="row">
+            <div class="col">
+                <input type="radio" name="direction" id="DF1" onchange="Direction('def')" hidden checked /><label class="radio" for="DF1">None</label>
+                <input type="radio" name="direction" id="COL" onchange="Direction('col')" hidden /><label class="radio" for="COL">Column</label>
+                <input type="radio" name="direction" id="ROW" onchange="Direction('row')" hidden /><label class="radio" for="ROW">Row</label>
+            </div>
+            <div class="col">
+                <input type="radio" name="pos_hor" id="DF2" onchange="horPosition('def')" hidden checked /><label class="radio" for="DF2">None</label>
+                <input type="radio" name="pos_hor" id="LEF" onchange="horPosition('left')" hidden /><label class="radio" for="LEF">Left</label>
+                <input type="radio" name="pos_hor" id="CEN" onchange="horPosition('centers')" hidden /><label class="radio" for="CEN">Center</label>
+                <input type="radio" name="pos_hor" id="RIT" onchange="horPosition('right')" hidden /><label class="radio" for="RIT">Right</label>
+            </div>
+            <div class="col">
+                <input type="radio" name="pos_ver" id="DF3" onchange="verPosition('def')" hidden checked /><label class="radio" for="DF3">None</label>
+                <input type="radio" name="pos_ver" id="TOP" onchange="verPosition('top')" hidden /><label class="radio" for="TOP">Top</label>
+                <input type="radio" name="pos_ver" id="MID" onchange="verPosition('middles')" hidden /><label class="radio" for="MID">Middle</label>
+                <input type="radio" name="pos_ver" id="BOT" onchange="verPosition('bottom')" hidden /><label class="radio" for="BOT">Bottom</label>
+            </div>
+        </section>
+
+        <section class="row around" style="padding-top: 80px;">
+            <!--aside class="row bar" style="background: #f7f7f7; border: 1px solid #ddd; width: 25%; height: 260px;">
+                <div class="bot" style="background: green; min-width: 40px; height: 40px;">bot</div>
+                <div class="top" style="background: green; min-width: 40px; height: 40px;">top</div>
+                <div class="mid" style="background: green; min-width: 40px; height: 40px;">mid</div>
+                <div class="str" style="background: green; min-width: 40px;">str</div>
+            </aside>
+            <aside class="col lst" style="background: #f7f7f7; border: 1px solid #ddd; width: 25%; height: 260px;">
+                <div class="rit" style="background: green; min-height: 40px; width: 40px;">rit</div>
+                <div class="left" style="background: green; min-height: 40px; width: 40px;">left</div>
+                <div class="cen" style="background: green; min-height: 40px; width: 40px;">cen</div>
+                <div class="str" style="background: green; min-height: 40px;">str</div>
+            </aside-->
+            <aside style="background: #f7f7f7; border: 1px solid #ddd; width: 25%; height: 260px;">
+                <div class="box abs" style="background: #f0f0f0; min-width: 100px; min-height: 60px;">
+                    <div style="background: green;">abs</div>
+                    <div style="background: green;">abs</div>
+                </div>
+            </aside>
+            <iframe srcdoc="<p>Hello world!</p>"></iframe>
+            <iframe src="test_elements.html"></iframe>
+        </section>
+
+        <script>
+            function Direction(s) {
+                var i, j;
+                var x = document.getElementsByClassName("box");
+                var y = document.getElementsByName("direction");
+
+                for (i = 0; i < x.length; i++) x[i].classList.remove("col", "row");
+                if (s == "def") return;
+                for (i = 0; i < y.length; i++) {
+                    if (y[i].checked) {
+                        for (j = 0; j < x.length; j++) x[j].classList.add(s);
+                    }
+                }
+            }
+            function Structure(s) {
+                var i, j;
+                var x = document.getElementsByClassName("box");
+                var y = document.getElementsByName("structure");
+
+                for (i = 0; i < x.length; i++) x[i].classList.remove("def", "list", "bar");
+                if (s == "def") return;
+                for (i = 0; i < y.length; i++) {
+                    if (y[i].checked) {
+                        for (j = 0; j < x.length; j++) x[j].classList.add(s);
+                    }
+                }
+            }
+            function Position(s) {
+                var i, j;
+                var x = document.getElementsByClassName("box");
+                var y = document.getElementsByName("position");
+
+                for (i = 0; i < x.length; i++) x[i].classList.remove("def", "sta", "nvl", "end", "btw", "ard");
+                if (s == "def") return;
+                for (i = 0; i < y.length; i++) {
+                    if (y[i].checked) {
+                        for (j = 0; j < x.length; j++) x[j].classList.add(s);
+                    }
+                }
+            }
+            function horPosition(s) {
+                var i, j;
+                var x = document.getElementsByClassName("box");
+                var y = document.getElementsByName("pos_hor");
+
+                for (i = 0; i < x.length; i++) x[i].classList.remove("right", "centers", "left");
+                if (s == "def") return;
+                for (i = 0; i < y.length; i++) {
+                    if (y[i].checked) {
+                        for (j = 0; j < x.length; j++) x[j].classList.add(s);
+                    }
+                }
+            }
+            function verPosition(s) {
+                var i, j;
+                var x = document.getElementsByClassName("box");
+                var y = document.getElementsByName("pos_ver");
+
+                for (i = 0; i < x.length; i++) x[i].classList.remove("top", "middles", "bottom");
+                if (s == "def") return;
+                for (i = 0; i < y.length; i++) {
+                    if (y[i].checked) {
+                        for (j = 0; j < x.length; j++) x[j].classList.add(s);
+                    }
+                }
+            }
+            function Advanced(s) {
+                var i;
+                var x = document.getElementsByClassName("box");
+
+                for (i = 0; i < x.length; i++) {
+                    if (x[i].classList.contains(s)) x[i].classList.remove(s); else x[i].classList.add(s);
+                }
+            }
+        </script>
+    </body>
+</html>

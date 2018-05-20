@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Form</title>
+        <link rel="shortcut icon" href="images/favicon.ico" />
+        <!--<link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/theme.css" />-->
+        <link rel="stylesheet/less" href="less/platform.less" />
+        <link rel="stylesheet/less" href="less/theme.less" />
+        <script src="js/less.min.js"></script>
+        <style type="text/css">
+        </style>
+    </head>
+	<body class="fix">
+		<!-- Header -->
+		<header class="fix top">
+			<!-- Header Inner -->
+			<div class="row bar bg gaps inner">
+				<label class="ico-drawer"></label>
+				<a class="logo" href="#" title=""></a>
+				<div>Isabella <span>23</span><small>Istanbul</small></div>
+				<!--<form class="bar" action="">
+					<input id="search_header" type="search" name="search" title="Search" value="" placeholder="Search" autocomplete="on" />
+					<input type="reset" name="[]" value="&times;" />
+					<button type="button" name="[]"><span class="gly-search"></span></button>
+				</form>-->
+				<a class="ico-refresh" onclick="history.go(0)"></a>
+			</div>
+		</header>
+
+		<main class="screen">
+			<div class="inner">
+
+				<section class="activity right">
+					<h1>Forms</h1>
+					<form class="gut-bottom" action="">
+						<div class="row group">
+
+							<input id="search" type="search" name="search" title="Search" value="" list="result" placeholder="Search" autocomplete="on" />
+                            <div class="climb"><input type="reset" name="[]" value="&times;" /></div>
+                            <datalist id="result">
+								<option>Аперитивы</option>
+                                <option>Арбуз</option>
+                                <option>Артешок</option>
+								<option>Горячие</option>
+								<option>Десертные</option>
+								<option>Диджестивы</option>
+								<option>Молочные</option>
+								<option>Слоистые</option>
+							</datalist>
+							<button class="btn square" type="button" name="[]"><span class="ico-search"></span></button>
+						</div>
+					</form>
+	
+					<form class="gut-bottom" action="">
+						<div class="guts-1">
+							<label for="name">Name</label>
+							<input id="name" type="text" name="[]" title="Name" value="" placeholder="Name" required />
+							<label for="pass">Password</label>
+							<input id="pass" type="password" name="password" title="Password" value="" placeholder="Password" pattern="[A-Za-z]{6,16}" size="20" required disabled />
+							<input id="c_01" type="checkbox" name="[]" hidden disabled />
+							<label class="check" for="c_01">Remember me</label>
+							<button class="btn" type="button" name="[]">Sign in</button>
+						</div>
+					</form>
+	
+					<form class="gut-bottom" action="">
+						<div class="row group">
+							<input type="text" name="[]" title="Name" value="" placeholder="Name" required />
+							<input type="password" name="password" title="Password" value="" placeholder="Password" pattern="[A-Za-z]{6,16}" size="20" required />
+							<button class="btn" type="button" name="[]">Sign in</button>
+						</div>
+					</form>
+	
+					<section>
+						<form class="fluid-3 gut-bottom" action="">
+							<div class="col group">
+								<input type="text" name="[]" title="Name" value="" placeholder="Name" required />
+								<input type="password" name="password" title="Password" value="" placeholder="Password" pattern="[A-Za-z]{6,16}" size="20" required />
+								<button class="btn" type="button" name="[]">Sign in</button>
+							</div>
+						</form>
+
+						<form class="col gut-bottom" action="">
+							<div class="col guts-bottom-1">
+								<input type="text" name="[]" title="Name" value="" placeholder="Name" required />
+								<input type="password" name="password" title="Password" value="" placeholder="Password" pattern="[A-Za-z]{6,16}" size="20" required />
+							</div>
+							<div class="center">
+								<button class="btn" type="button" name="[]">Sign in</button>
+							</div>
+						</form>
+
+						<form class="col fluid-2 bg gaps gut-bottom" action="">
+							<div class="row fluids group">
+								<input type="email" name="email" title="E-mail" value="" placeholder="E-mail" pattern="[A-Za-z0-9]@[A-Za-z0-9].[A-Za-z]" autocomplete="on" required multiple />
+								<input type="password" name="password" title="Password" value="" placeholder="Password" pattern="[A-Za-z]{6,16}" size="20" required />
+							</div>
+							<div class="row centers fluids">
+								<button class="btn" type="button" name="[]">Sign in</button>
+							</div>
+						</form>
+
+                        <form class="col fluid-2 gaps-3 gut-bottom bg-light" action="">
+                            <div class="row grows guts-3">
+                                <input class="" type="email" name="email" title="E-mail" value="" placeholder="E-mail" pattern="[A-Za-z0-9]@[A-Za-z0-9].[A-Za-z]" autocomplete="on" required multiple />
+                                <input class="" type="password" name="password" title="Password" value="" placeholder="Password" pattern="[A-Za-z]{6,16}" size="20" required />
+                            </div>
+                            <div>
+                                <button class="btn fluid" type="button" name="[]">Sign in</button>
+                            </div>
+                        </form>
+					</section>
+
+					<form class="clear" action="">
+						<ol class="table gaps bg--error">
+							<li class="error">
+								<label for="text">Name</label>
+                                <div>
+                                    <input id="text" type="text" name="[]" title="Name" value="" placeholder="Name" pattern="[A-Za-z]{6,16}" maxlength="16" autocomplete="on" autofocus required />
+                                    <!--div class="alert-error clap right">This is an Error Alert</div>
+                                    <div class="alert-warning clap right">This is a Warning Alert</div-->
+                                </div>
+							</li>
+							<li>
+								<label for="password">Password</label>
+                                <div>
+                                    <input id="password" type="password" name="password" title="Password" value="" placeholder="Password" pattern="[A-Za-z]{6,16}" maxlength="16" size="16" required />
+                                </div>
+							</li>
+							<li>
+								<label for="email">E-mail</label>
+								<input id="email" type="email" name="email" title="E-mail" value="" placeholder="E-mail" pattern="[A-Za-z0-9]@[A-Za-z0-9].[A-Za-z]" autocomplete="on" required multiple />
+							</li>
+							<li>
+								<label for="tel">Phone</label>
+								<input id="tel" type="tel" name="phone" title="Phone" value="" placeholder="2-xxx-xxx" pattern="2-[0-9]{3}-[0-9]{3}" autocomplete="on" />
+							</li>
+							<li>
+								<label for="url">URL</label>
+								<input id="url" type="url" name="url" title="URL" value="" placeholder="http://" pattern="[A-Za-z0-9].[A-Za-z]" autocomplete="on" />
+							</li>
+							<li>
+								<label for="select">Select</label>
+								<select id="select" title="Select">
+									<option>Option 1</option>
+									<option>Option 2</option>
+									<option>Option 3</option>
+								</select>
+							</li>
+							<li>
+								<label for="select1">Select</label>
+								<div class="between">
+									<select id="select1" title="Select">
+										<option>Option 1</option>
+										<option>Option 2</option>
+									</select>
+									<select id="select2" title="Select">
+										<option>Option 1</option>
+										<option>Option 2</option>
+									</select>
+									<select id="select3" title="Select">
+										<option>Option 1</option>
+										<option>Option 2</option>
+									</select>
+								</div>
+							</li>
+							<li>
+								<label for="range">Range</label>
+								<input id="range" type="range" min="0" max="10" step="1" value="6" />
+							</li>
+							<li>
+								<label for="number">Counter</label>
+								<input id="number" type="number" min="0" max="10" step="2" value="6" size="5" pattern="[0-9]{3}" />
+							</li>
+							<li>
+								<label for="multiple">Select multiple</label>
+								<select id="multiple" title="Select" size="3" multiple>
+									<option>Option 1</option>
+									<option>Option 2</option>
+									<option>Option 3</option>
+								</select>
+							</li>
+							<li class="column">
+								<label for="textarea">Textarea</label>
+								<textarea id="textarea" rows="8" cols="33" title="Message"></textarea>
+							</li>
+							<li>
+								<label for="file">File</label>
+								<input id="file" type="file" accept="image/jpeg,image/png,image/gif" multiple />
+							</li>
+							<li>
+								<label></label>
+								<input id="checkbox" type="checkbox" name="[]" hidden />
+								<label class="check" for="checkbox">Checkbox</label>
+								<input id="checkbox2" type="checkbox" name="[]" hidden checked />
+								<label class="check" for="checkbox2">Checkbox</label>
+							</li>
+							<li>
+								<label>Radio button</label>
+								<input id="radio" type="radio" name="[]" hidden checked />
+								<label class="radio" for="radio">Radio</label>
+								<input id="radio2" type="radio" name="[]" hidden />
+								<label class="radio" for="radio2">Radio</label>
+							</li>
+							<li>
+								<label for="color">Color</label>
+								<input id="color" type="color" name="color" title="Color" />
+							</li>
+						</ol>
+	
+						<section class="table">
+							<div>
+								<label for="date">Date</label>
+								<input id="date" type="date" name="date" title="Date" />
+							</div>
+							<div>
+								<label for="datetime">Datetime</label>
+								<input id="datetime" type="datetime" />
+							</div>
+							<div>
+								<label for="datetimelocal">Datetime local</label>
+								<input id="datetimelocal" type="datetime-local" />
+							</div>
+							<div>
+								<label for="time">Time</label>
+								<input id="time" type="time" />
+							</div>
+							<div>
+								<label for="week">Week</label>
+								<input id="week" type="week" />
+							</div>
+							<div>
+								<label for="month">Month</label>
+								<input id="month" type="month" />
+							</div>
+						</section>
+					</form>
+				</section>
+
+			</div>
+		</main>
+		<footer>
+			<div class="inner">
+			</div>
+		</footer>
+	</body>
+</html>

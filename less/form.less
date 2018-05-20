@@ -1,0 +1,372 @@
+/******************************************************************************
+  Form
+  -----------------------------------------------------------------------------
+
+ ******************************************************************************/
+input, output, select, textarea {
+    font-size: 1.4rem;
+}
+input, output, select {
+}
+input, output, select, button {
+    vertical-align: baseline;
+}
+select {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+button, input {
+    &::-moz-focus-inner {
+        border: 0 none;
+    }
+}
+textarea {
+    overflow: auto;      /* Remove vertical scrollbar in IE6-9 */
+    vertical-align: top; /* Readability and alignment cross-browser */
+    resize: vertical;
+}
+select[multiple],
+input[type="color"] {
+    padding: 0;
+}
+select[multiple] {
+    height:     auto;
+    overflow: hidden;
+}
+optgroup {
+}
+option {
+    font-size:   1.2rem;
+    line-height: 1.2rem;
+    padding:     1.4rem 1.4rem;
+}
+input[type="search"] {
+    -webkit-appearance: textfield; /* Appearance in Safari/Chrome */
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button {
+        -webkit-appearance: none; /* Inner-padding issues in Chrome OSX, Safari 5 */
+    }
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="search"] {
+    + .climb > * {
+        background: transparent none;
+        font-size: 150%;
+        font-weight: normal;
+        width:     4rem;
+        min-width: 4rem;
+        padding: 0;
+        border: 0 none;
+        box-shadow: none;
+    }
+}
+input[type="file"] {
+    &[multiple] {
+    }
+}
+input[type="range"] {
+}
+input[type="color"] {
+}
+select, textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="number"],
+input[type="time"],
+input[type="month"],
+input[type="week"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"] {
+    padding: 1rem - @px*2;
+}
+
+/*select, textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input[type="range"],
+input[type="color"],
+input[type="file"],
+input[type="tel"],
+input[type="url"],
+input[type="time"],
+input[type="week"],
+input[type="month"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"] {
+    margin-right: 2rem;
+}*/
+
+/*.form {
+    display: block;
+    overflow: hidden;
+    &, > * {
+        margin-left: 0;
+        list-style-type: none;
+    }
+    label {
+        display: inline-block;
+        padding-right: 2rem*.5;
+    }
+    > *, &.column > .inline {
+        margin-bottom: 2rem;
+        display: block;
+        .clear;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        button, input, output, select, textarea, label, .fluid {
+            float: left;
+            margin-right: 0;
+        }
+        > label:first-child {
+            width: 35%;
+            min-width: 2rem*6;
+            line-height: 4rem;
+            padding-right: 2rem;
+            padding-left: .4rem;
+            white-space: nowrap;
+            overflow-x: hidden;
+            &:after {
+                padding-right: 2rem*2;
+                display: block;
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: auto;
+            }
+            &:empty {
+                padding-top: 4rem;
+            }
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            + label {
+                margin-top: (4rem - 2rem)*.5;
+            }
+        }
+        select, textarea, output, .fluid,
+        input[type="text"],
+        input[type="email"],
+        input[type="search"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="url"],
+        input[type="range"],
+        input[type="file"] {
+            width: 65%;
+        }
+        .alert {
+            width: 2rem*10;
+            min-height: 4rem;
+            padding: (4rem - 2rem*.65)*.5;
+            position: absolute;
+            top: 0;
+            bottom: auto;
+            left: 102%;
+            .hidden;
+        }
+    }
+    &.column, .column {
+        &, > * {
+            > label:first-child {
+                min-height: 2rem;
+                line-height: 1;
+                padding: 0 .4rem;
+                &:empty {
+                    display: none;
+                }
+            }
+            select, textarea, output,
+            > label:first-child,
+            input[type="text"],
+            input[type="email"],
+            input[type="search"],
+            input[type="password"],
+            input[type="tel"],
+            input[type="url"],
+            input[type="range"] {
+                width: 100%;
+            }
+        }
+    }
+    input[type="radio"],
+    input[type="checkbox"] {
+        display: none;
+        + label {
+            min-height: 2rem;
+            padding-left: 2rem*1.5;
+            padding-right: 0;
+            margin-right: 2rem;
+            &:before, &:after {
+                content: "";
+                display: block;
+                position: absolute;
+            }
+            &:before {
+                top: 0;
+                left: 0;
+                .square(2rem);
+            }
+            &:after {
+                .hidden;
+            }
+        }
+        &:checked + label:after {
+            top: 2rem*.2;
+            left: 2rem*.2;
+            .square(2rem*.6);
+            .visible;
+        }
+    }
+    input[type="checkbox"] {
+        + label:before {
+            .border-radius(.4rem);
+        }
+        &:checked + label:after {
+            .border-radius(.4rem*.5);
+        }
+    }
+    input[type="radio"] + label {
+        &:before,
+        &:after {
+            .border-radius(50%);
+        }
+    }
+}*/
+/*
+.form {
+	display: block;
+  overflow: hidden;
+	&, > * {
+		margin-left: 0;
+	}
+	> * {
+    list-style-type: none;
+    display: flex;
+    > :first-child {
+      flex: 0 1 35%;
+    }
+    > :nth-child(2) {
+      //&:not(type="color") {
+        flex: 1 1 65%;
+      //}
+    }
+	}
+}
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-box;
+display: -webkit-flex;
+display: flex;
+*/
+/*
+@media only screen and (max-width: 500px) {
+    .form {
+        &[class*="fluid-"] {
+            width: 100%;
+        }
+        > *, &.column > .inline {
+            > label:first-child {
+                width: 100%;
+                min-height: 2rem;
+                line-height: 1;
+            }
+            select, textarea, output, .fluid,
+            > label:first-child,
+            input[type="text"],
+            input[type="email"],
+            input[type="search"],
+            input[type="password"],
+            input[type="tel"],
+            input[type="url"],
+            input[type="range"] {
+                width: 100%;
+                min-width: 2rem*6;
+            }
+        }
+    }
+}
+*/
+/*** Disabled ***/
+input:disabled,
+select:disabled,
+textarea:disabled,
+form input[type="radio"]:disabled + label:before,
+form input[type="radio"]:disabled + label:hover:before,
+form input[type="radio"]:disabled + label:focus:before,
+form input[type="radio"]:disabled:checked + label:before,
+form input[type="checkbox"]:disabled + label:before,
+form input[type="checkbox"]:disabled + label:hover:before,
+form input[type="checkbox"]:disabled + label:focus:before,
+form input[type="checkbox"]:disabled:checked + label:before {
+    box-shadow: none;
+}
+
+/*** Optional / Required ***/
+input, select, textarea  {
+    &:required {}
+    &:optional {}
+}
+
+/*** Valid / Invalid ***/
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="number"]  {
+    &:invalid {}
+    &:valid {}
+}
+
+/*** Read-write / Read-only ***/
+input, select, textarea  {
+    &:read-only {}
+    &:read-write {}
+}
+
+/*
+  submit
+  button
+  reset
+  file
+  image
+  checkbox
+  radio
+  hidden
+  password
+  text
+
+  range    - Ползунок для выбора чисел в указанном диапазоне.
+  color    - Виджет для выбора цвета.
+  email    - Для адресов электронной почты.
+  search   - Поле для поиска.
+  url      - Для веб-адресов.
+  tel      - Для телефонных номеров.
+  number   - Ввод чисел.
+  date     - Поле для выбора календарной даты.
+  datetime - Указание даты и времени.
+  datetime - local  - Указание местной даты и времени.
+  time     - Для времени.
+  month    - Выбор месяца.
+  week     - Выбор недели.
+*/

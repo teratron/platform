@@ -1,0 +1,301 @@
+/******************************************************************************
+  Gap
+  -----------------------------------------------------------------------------
+  gap         gap-[1...8]         gaps         gaps-[1...8]
+  gap-side    gap-side-[1...8]    gaps-side    gaps-side-[1...8]
+  gap-rail    gap-rail-[1...8]    gaps-rail    gaps-rail-[1...8]
+  gap-top     gap-top-[1...8]     gaps-top     gaps-top-[1...8]
+  gap-bottom  gap-bottom-[1...8]  gaps-bottom  gaps-bottom-[1...8]
+  gap-right   gap-right-[1...8]   gaps-right   gaps-right-[1...8]
+  gap-left    gap-left-[1...8]    gaps-left    gaps-left-[1...8]
+ ******************************************************************************/
+.gaps:not(.col) > .head,
+.gaps:not(.col) > .body,
+.gaps:not(.col) > .foot,
+.gaps.row.list > * > :not(:first-child),
+.gaps.col:not(.list):not(.divider):not([class*="guts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
+.gaps.col.list[class*="bg"] > * > *,
+.gaps.col.list.divider > * > *,
+.gaps.table[class*="bg"]:not(.row) > * > *,
+.gaps.table.divider:not(.row) > * > *,
+.gaps-1:not(.col) > .head,
+.gaps-1:not(.col) > .body,
+.gaps-1:not(.col) > .foot,
+.gaps-1.row.list > * > :not(:first-child),
+.gaps-1.col:not(.list):not(.divider):not([class*="guts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
+.gaps-1.col.list[class*="bg"] > * > *,
+.gaps-1.col.list.divider > * > *,
+.gaps-1.table[class*="bg"]:not(.row) > * > *,
+.gaps-1.table.divider:not(.row) > * > * {
+    padding-top: .5rem;
+}
+.gaps:not(.col) > .head,
+.gaps:not(.col) > .body,
+.gaps:not(.col) > .foot,
+.gaps.row.list > * > :not(:last-child),
+.gaps.col:not(.list):not(.divider):not([class*="guts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
+.gaps.col.list[class*="bg"]  > * > *,
+.gaps.col.list.divider > * > *,
+.gaps.table[class*="bg"]:not(.row) > * > *,
+.gaps.table.divider:not(.row) > * > *,
+.gaps-1:not(.col) > .head,
+.gaps-1:not(.col) > .body,
+.gaps-1:not(.col) > .foot,
+.gaps-1.row.list > * > :not(:last-child),
+.gaps-1.col:not(.list):not(.divider):not([class*="guts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
+.gaps-1.col.list[class*="bg"]  > * > *,
+.gaps-1.col.list.divider > * > *,
+.gaps-1.table[class*="bg"]:not(.row) > * > *,
+.gaps-1.table.divider:not(.row) > * > * {
+    padding-bottom: .5rem;
+}
+.gaps:not(.col):not(.list):not(.divider):not([class*="guts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
+.gaps.row.list > :not(:first-child) > *,
+.gaps.col.list > * > :not(:first-child),
+.gaps.table:not(.row) > * > :not(:first-child),
+.gaps-1:not(.col):not(.list):not(.divider):not([class*="guts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
+.gaps-1.row.list > :not(:first-child) > *,
+.gaps-1.col.list > * > :not(:first-child),
+.gaps-1.table:not(.row) > * > :not(:first-child) {
+    padding-left: .5rem;
+}
+.gaps:not(.col):not(.list):not(.divider):not([class*="guts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
+.gaps.row.list > :not(:last-child) > *,
+.gaps.col.list > * > :not(:last-child),
+.gaps.table:not(.row) > * > :not(:last-child),
+.gaps-1:not(.col):not(.list):not(.divider):not([class*="guts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
+.gaps-1.row.list > :not(:last-child) > *,
+.gaps-1.col.list > * > :not(:last-child),
+.gaps-1.table:not(.row) > * > :not(:last-child) {
+    padding-right: .5rem;
+}
+.gap,
+.gap-top,  .gaps-top  > *,
+.gap-rail, .gaps-rail > *,
+.gaps.col > .head,
+.gaps.col > .body,
+.gaps.col[class*="bg"] > .foot,
+.gaps.col > .foot[class*="bg"],
+.gaps.col:not(.list) > .foot[class*="bg"] + .foot,
+.gaps.col[class*="guts"] > *,
+.gaps.col[class*="bg"]:not(.list) > :first-child,
+.gaps.col.divider:not(.list) > :not(:first-child),
+.gaps[class*="bg"]:not(.col):not(.list) > :not(.head):not(.body):not(.foot),
+.gaps.row.list[class*="bg"] > * > :first-child,
+.gap-1,
+.gap-top-1,  .gaps-top-1  > *,
+.gap-rail-1, .gaps-rail-1 > *,
+.gaps-1.col > .head,
+.gaps-1.col > .body,
+.gaps-1.col[class*="bg"] > .foot,
+.gaps-1.col > .foot[class*="bg"],
+.gaps-1.col:not(.list) > .foot[class*="bg"] + .foot,
+.gaps-1.col[class*="guts"] > *,
+.gaps-1.col[class*="bg"]:not(.list) > :first-child,
+.gaps-1.col.divider:not(.list) > :not(:first-child),
+.gaps-1[class*="bg"]:not(.col):not(.list) > :not(.head):not(.body):not(.foot),
+.gaps-1.row.list[class*="bg"] > * > :first-child {
+    padding-top: 1rem;
+}
+.gap,
+.gap-rail,   .gaps-rail   > *,
+.gap-bottom, .gaps-bottom > *,
+.gaps.col > .body,
+.gaps.col > .foot,
+.gaps.col[class*="bg"] > .head,
+.gaps.col > .head[class*="bg"],
+.gaps.col[class*="guts"] > *,
+.gaps.col[class*="bg"]:not(.list) > :last-child,
+.gaps.col.divider:not(.list) > :not(:last-child),
+.gaps[class*="bg"]:not(.col):not(.list) > :not(.head):not(.body):not(.foot),
+.gaps.row.list[class*="bg"] > * > :last-child,
+.gap-1,
+.gap-rail-1,   .gaps-rail-1   > *,
+.gap-bottom-1, .gaps-bottom-1 > *,
+.gaps-1.col > .body,
+.gaps-1.col > .foot,
+.gaps-1.col[class*="bg"] > .head,
+.gaps-1.col > .head[class*="bg"],
+.gaps-1.col[class*="guts"] > *,
+.gaps-1.col[class*="bg"]:not(.list) > :last-child,
+.gaps-1.col.divider:not(.list) > :not(:last-child),
+.gaps-1[class*="bg"]:not(.col):not(.list) > :not(.head):not(.body):not(.foot),
+.gaps-1.row.list[class*="bg"] > * > :last-child {
+    padding-bottom: 1rem;
+}
+.gap,
+.gap-side, .gaps-side > *,
+.gap-left, .gaps-left > *,
+.gaps > .body,
+.gaps > .head,
+.gaps.col > .foot,
+.gaps[class*="bg"] > .foot,
+.gaps > .foot[class*="bg"],
+.gaps.col[class*="bg"]:not(.list) > *,
+.gaps.col.list[class*="bg"] > * > :first-child,
+.gaps:not(.col):not(.list) > .foot[class*="bg"] + .foot,
+.gaps[class*="guts"]:not(.col):not(.list) > *,
+.gaps[class*="bg"]:not(.col):not(.list) > :first-child,
+.gaps.divider:not(.col):not(.list) > :not(:first-child),
+.gaps.row.list[class*="bg"] > :first-child > *,
+.gaps.row.list.divider > :not(:first-child) > *,
+.gaps.table[class*="bg"]:not(.row) > * > :first-child,
+.gap-1,
+.gap-side-1, .gaps-side-1 > *,
+.gap-left-1, .gaps-left-1 > *,
+.gaps-1 > .body,
+.gaps-1 > .head,
+.gaps-1.col > .foot,
+.gaps-1[class*="bg"] > .foot,
+.gaps-1 > .foot[class*="bg"],
+.gaps-1.col[class*="bg"]:not(.list) > *,
+.gaps-1.col.list[class*="bg"] > * > :first-child,
+.gaps-1:not(.col):not(.list) > .foot[class*="bg"] + .foot,
+.gaps-1[class*="guts"]:not(.col):not(.list) > *,
+.gaps-1[class*="bg"]:not(.col):not(.list) > :first-child,
+.gaps-1.divider:not(.col):not(.list) > :not(:first-child),
+.gaps-1.row.list[class*="bg"] > :first-child > *,
+.gaps-1.row.list.divider > :not(:first-child) > *,
+.gaps-1.table[class*="bg"]:not(.row) > * > :first-child {
+    padding-left: 1rem;
+}
+.gap,
+.gap-side,  .gaps-side  > *,
+.gap-right, .gaps-right > *,
+.gaps > .body,
+.gaps > .foot,
+.gaps.col > .head,
+.gaps[class*="bg"] > .head,
+.gaps > .head[class*="bg"],
+.gaps.col[class*="bg"]:not(.list) > *,
+.gaps.col.list[class*="bg"] > * > :last-child,
+.gaps[class*="guts"]:not(.col):not(.list) > *,
+.gaps[class*="bg"]:not(.col):not(.list) > :last-child,
+.gaps.divider:not(.col):not(.list) > :not(:last-child),
+.gaps.row.list[class*="bg"] > :last-child > *,
+.gaps.row.list.divider > :not(:last-child) > *,
+.gaps.table[class*="bg"]:not(.row) > * > :last-child,
+.gap-1,
+.gap-side-1,  .gaps-side-1  > *,
+.gap-right-1, .gaps-right-1 > *,
+.gaps-1 > .body,
+.gaps-1 > .foot,
+.gaps-1.col > .head,
+.gaps-1[class*="bg"] > .head,
+.gaps-1 > .head[class*="bg"],
+.gaps-1.col[class*="bg"]:not(.list) > *,
+.gaps-1.col.list[class*="bg"] > * > :last-child,
+.gaps-1[class*="guts"]:not(.col):not(.list) > *,
+.gaps-1[class*="bg"]:not(.col):not(.list) > :last-child,
+.gaps-1.divider:not(.col):not(.list) > :not(:last-child),
+.gaps-1.row.list[class*="bg"] > :last-child > *,
+.gaps-1.row.list.divider > :not(:last-child) > *,
+.gaps-1.table[class*="bg"]:not(.row) > * > :last-child {
+    padding-right: 1rem;
+}
+
+/*** Gap 1-8 ***/
+.generate-gap(8);
+.generate-gap(@n, @i: 2) when (@i =< @n) {
+    .gaps-@{i}:not(.col) > .head,
+    .gaps-@{i}:not(.col) > .body,
+    .gaps-@{i}:not(.col) > .foot,
+    .gaps-@{i}.row.list > * > :not(:first-child),
+    .gaps-@{i}.col:not(.list):not(.divider):not([class*="guts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
+    .gaps-@{i}.col.list[class*="bg"] > * > *,
+    .gaps-@{i}.col.list.divider > * > *,
+    .gaps-@{i}.table[class*="bg"]:not(.row) > * > *,
+    .gaps-@{i}.table.divider:not(.row) > * > * {
+        padding-top: @i*.5rem;
+    }
+    .gaps-@{i}:not(.col) > .head,
+    .gaps-@{i}:not(.col) > .body,
+    .gaps-@{i}:not(.col) > .foot,
+    .gaps-@{i}.row.list > * > :not(:last-child),
+    .gaps-@{i}.col:not(.list):not(.divider):not([class*="guts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
+    .gaps-@{i}.col.list[class*="bg"]  > * > *,
+    .gaps-@{i}.col.list.divider > * > *,
+    .gaps-@{i}.table[class*="bg"]:not(.row) > * > *,
+    .gaps-@{i}.table.divider:not(.row) > * > * {
+        padding-bottom: @i*.5rem;
+    }
+    .gaps-@{i}:not(.col):not(.list):not(.divider):not([class*="guts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
+    .gaps-@{i}.row.list > :not(:first-child) > *,
+    .gaps-@{i}.col.list > * > :not(:first-child),
+    .gaps-@{i}.table:not(.row) > * > :not(:first-child) {
+        padding-left: @i*.5rem;
+    }
+    .gaps-@{i}:not(.col):not(.list):not(.divider):not([class*="guts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
+    .gaps-@{i}.row.list > :not(:last-child) > *,
+    .gaps-@{i}.col.list > * > :not(:last-child),
+    .gaps-@{i}.table:not(.row) > * > :not(:last-child) {
+        padding-right: @i*.5rem;
+    }
+    .gap-@{i},
+    .gap-top-@{i},  .gaps-top-@{i}  > *,
+    .gap-rail-@{i}, .gaps-rail-@{i} > *,
+    .gaps-@{i}.col > .head,
+    .gaps-@{i}.col > .body,
+    .gaps-@{i}.col[class*="bg"] > .foot,
+    .gaps-@{i}.col > .foot[class*="bg"],
+    .gaps-@{i}.col:not(.list) > .foot[class*="bg"] + .foot,
+    .gaps-@{i}.col[class*="guts"] > *,
+    .gaps-@{i}.col[class*="bg"]:not(.list) > :first-child,
+    .gaps-@{i}.col.divider:not(.list) > :not(:first-child),
+    .gaps-@{i}[class*="bg"]:not(.col):not(.list) > :not(.head):not(.body):not(.foot),
+    .gaps-@{i}.row.list[class*="bg"] > * > :first-child {
+        padding-top: @i*1rem;
+    }
+    .gap-@{i},
+    .gap-rail-@{i},   .gaps-rail-@{i}   > *,
+    .gap-bottom-@{i}, .gaps-bottom-@{i} > *,
+    .gaps-@{i}.col > .body,
+    .gaps-@{i}.col > .foot,
+    .gaps-@{i}.col[class*="bg"] > .head,
+    .gaps-@{i}.col > .head[class*="bg"],
+    .gaps-@{i}.col[class*="guts"] > *,
+    .gaps-@{i}.col[class*="bg"]:not(.list) > :last-child,
+    .gaps-@{i}.col.divider:not(.list) > :not(:last-child),
+    .gaps-@{i}[class*="bg"]:not(.col):not(.list) > :not(.head):not(.body):not(.foot),
+    .gaps-@{i}.row.list[class*="bg"] > * > :last-child {
+        padding-bottom: @i*1rem;
+    }
+    .gap-@{i},
+    .gap-side-@{i}, .gaps-side-@{i} > *,
+    .gap-left-@{i}, .gaps-left-@{i} > *,
+    .gaps-@{i} > .body,
+    .gaps-@{i} > .head,
+    .gaps-@{i}.col > .foot,
+    .gaps-@{i}[class*="bg"] > .foot,
+    .gaps-@{i} > .foot[class*="bg"],
+    .gaps-@{i}.col[class*="bg"]:not(.list) > *,
+    .gaps-@{i}.col.list[class*="bg"] > * > :first-child,
+    .gaps-@{i}:not(.col):not(.list) > .foot[class*="bg"] + .foot,
+    .gaps-@{i}[class*="guts"]:not(.col):not(.list) > *,
+    .gaps-@{i}[class*="bg"]:not(.col):not(.list) > :first-child,
+    .gaps-@{i}.divider:not(.col):not(.list) > :not(:first-child),
+    .gaps-@{i}.row.list[class*="bg"] > :first-child > *,
+    .gaps-@{i}.row.list.divider > :not(:first-child) > *,
+    .gaps-@{i}.table[class*="bg"]:not(.row) > * > :first-child {
+        padding-left: @i*1rem;
+    }
+    .gap-@{i},
+    .gap-side-@{i},  .gaps-side-@{i}  > *,
+    .gap-right-@{i}, .gaps-right-@{i} > *,
+    .gaps-@{i} > .body,
+    .gaps-@{i} > .foot,
+    .gaps-@{i}.col > .head,
+    .gaps-@{i}[class*="bg"] > .head,
+    .gaps-@{i} > .head[class*="bg"],
+    .gaps-@{i}.col[class*="bg"]:not(.list) > *,
+    .gaps-@{i}.col.list[class*="bg"] > * > :last-child,
+    .gaps-@{i}[class*="guts"]:not(.col):not(.list) > *,
+    .gaps-@{i}[class*="bg"]:not(.col):not(.list) > :last-child,
+    .gaps-@{i}.divider:not(.col):not(.list) > :not(:last-child),
+    .gaps-@{i}.row.list[class*="bg"] > :last-child > *,
+    .gaps-@{i}.row.list.divider > :not(:last-child) > *,
+    .gaps-@{i}.table[class*="bg"]:not(.row) > * > :last-child {
+        padding-right: @i*1rem;
+    }
+    .generate-gap(@n, (@i + 1));
+}

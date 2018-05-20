@@ -1,0 +1,381 @@
+
+@pre:                   pl-;
+
+@color_brand:           #27a4c4;
+@color_brand_dark:      #246d8d;
+@color_brand_light:     #2bbfe0;
+
+@color_accent:          #fe8325;
+@color_accent_dark:     #fe4a00;
+@color_accent_light:    #fe9f61;
+
+@color_bright:          orange;
+@color_bright_dark:     orange;
+@color_bright_light:    orange;
+
+@color_secondary:       #9cb0af;
+@color_secondary_dark:  #9cb0af;
+@color_secondary_light: #9cb0af;
+
+@color_dark:            #485a68;
+@color_light:           #acc0bf;
+
+@color_gray:            #999;
+@color_gray_dark:       #333;
+@color_gray_light:      #ccc;
+
+@color_error:           red;
+@color_success:         green;
+@color_warning:         #f1c101;
+@color_notice:          blue;
+@color_tips:            rgba(0,0,0,.8);
+
+/***************************************
+  Commons
+ ***************************************/
+body, input, output, select, textarea {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+cite, q {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+pre, code, kbd, samp, var, cite {
+    font-family: 'Lucida Console', Consolas, Monaco, 'Courier New', Courier, monospace;
+}
+mark {
+    background-color: @color_accent;
+    color: #999;
+}
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-moz-placeholder,
+:-ms-input-placeholder {
+    color: #152f00;
+}
+.lucid {
+    color: #000;
+}
+
+/***************************************
+  Layout
+ ***************************************/
+body {
+    background-color: #fff;
+}
+header {
+    background-color: @color_brand;
+    > .inner {
+        background-color: @color_brand;
+        color: #fff;
+    }
+}
+main {
+    background-color: #fff;
+    > .inner {
+        background-color: #f7f7f7;
+    }
+}
+footer {
+    background-color: #cbffac;
+    > .inner {
+        background-color: #ddd;
+        color: #999;
+    }
+}
+
+/***************************************
+  Drawer
+ ***************************************/
+.@{pre}drawer {
+    background-color: @color_dark;
+    color: #fff;
+}
+
+/***************************************
+  Dialog
+ ***************************************/
+.dialog {
+    background-color: #fff;
+    color: #333;
+    overflow: hidden;
+    border-radius: .3rem;
+    box-shadow: 0 .8rem 2.4rem -.4rem rgba(0,0,0,.33);
+}
+
+/***************************************
+  Card
+ ***************************************/
+.card {
+    background-color: #fff;
+    color: #333;
+    overflow: hidden;
+    border-radius: .2rem;
+    box-shadow: 0 .2rem .4rem -.1rem rgba(0,0,0,.33);
+}
+
+/***************************************
+  Panel
+ ***************************************/
+.panel {
+    background-color: #fff;
+    color: #333;
+    box-shadow: .1rem .1rem 0 rgba(0,0,0,.08);
+}
+
+/***************************************
+  Button
+ ***************************************/
+.btn {
+    background-color: @color_brand;
+    color: #fff;
+    &:hover {
+        background-color: @color_brand_light;
+        border-color:     @color_brand_light;
+        box-shadow: 0 .1rem .2rem 0 rgba(0,0,0,.2);
+    }
+    &:active {
+        background-color: @color_brand_dark;
+        border-color:     @color_brand_dark;
+        box-shadow: 0 .1rem .2rem 0 rgba(0,0,0,.2) inset;
+    }
+    &.flat,
+    &.border {
+        background-color: transparent;
+        color: @color_brand;
+        box-shadow: none;
+    }
+}
+.btn, .border {
+    border-color: @color_brand;
+}
+
+/***************************************
+  Badge
+ ***************************************/
+.badge {
+    background-color: @color_accent;
+    color: #fff;
+    box-shadow: 0 .1rem .2rem 0 rgba(0,0,0,.2);
+}
+
+/***************************************
+  Label
+ ***************************************/
+.label {
+    background-color: @color_success;
+    color: #fff;
+    box-shadow: .1rem .1rem 0 rgba(0,0,0,.08);
+}
+
+/***************************************
+  Tooltip
+ ***************************************/
+.tooltip {
+    background-color: @color_tips;
+    color: #fff;
+}
+
+/***************************************
+  Snackbar
+ ***************************************/
+.snackbar {
+    background-color: @color_tips;
+    color: #fff;
+    padding: 1rem;
+}
+
+/***************************************
+  Divider / Separate
+ ***************************************/
+hr {
+    color: rgba(0,0,0,.12);
+}
+hr, .separator,
+.divider > *,
+.divider.table:not(.row) > * > * {
+    border-color: rgba(0,0,0,.12);
+}
+
+/***************************************
+  Form
+ ***************************************/
+.radio, .check, .toggle {
+    &:after {
+        background-color: @color_brand;
+    }
+}
+.radio:before,
+.check:before,
+.toggle:before,
+select, textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="number"],
+input[type="time"],
+input[type="month"],
+input[type="week"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"] {
+    background-color: #fff;
+    border-color: @color_brand;
+}
+
+/***************************************
+  Backgrounds (bg or bg-... important)
+ ***************************************/
+.bg {
+    background-color: inherit;
+}
+
+/*** Brand ***/
+.bg-brand {
+    background-color: @color_brand !important;
+    color: #fff;
+}
+.bg-brand-light {
+    background-color: @color_brand_light !important;
+    color: #fff;
+}
+.bg-brand-dark {
+    background-color: @color_brand_dark !important;
+    color: #fff;
+}
+
+/*** Accent ***/
+.bg-accent {
+    background-color: @color_accent !important;
+    color: #fff;
+}
+.bg-accent-light {
+    background-color: @color_accent_light !important;
+    color: #fff;
+}
+.bg-accent-dark {
+    background-color: @color_accent_dark !important;
+    color: #fff;
+}
+
+/*** Dark ***/
+.bg-dark {
+    background-color: @color_dark !important;
+    color: #fff;
+}
+
+/*** Light ***/
+.bg-light {
+    background-color: @color_light !important;
+    color: #fff;
+}
+
+/*** Bright ***/
+.bg-secondary {
+    background-color: @color_bright !important;
+    color: #fff;
+}
+
+/*** Secondary ***/
+.bg-secondary {
+    background-color: @color_secondary !important;
+    color: #fff;
+}
+
+/*** Gray ***/
+.bg-gray {
+    background-color: @color_gray !important;
+    color: #fff;
+    a:not(.btn) {
+        color: #8b9298;
+        &:hover {
+            color: #2a3644;
+        }
+    }
+    .divider {
+        background-color: #ddd !important;
+        border-color:     #ddd !important;
+    }
+}
+.bg-gray-light {
+    background-color: @color_gray_light !important;
+    color: #213140;
+    a:not(.btn) {
+        color: #37455b;
+        &:hover {
+            color: #582b5b;
+        }
+    }
+    .divider {
+        background-color: #d4d9dd !important;
+        border-color:     #d4d9dd !important;
+    }
+}
+.bg-gray-dark {
+    background-color: @color_gray_dark !important;
+    color: #fff;
+    a:not(.btn) {
+        color: #fff;
+        &:hover {
+            color: #fff;
+        }
+    }
+    .divider {
+        background-color: #d4d9dd !important;
+        border-color:     #d4d9dd !important;
+    }
+}
+
+/*** Error/Red ***/
+.bg-error {
+    background-color: @color_error !important;
+    color: #fff;
+}
+
+/*** Success/Green ***/
+.bg-success {
+    background-color: @color_success !important;
+    color: #fff;
+}
+
+/*** Notice/Blue ***/
+.bg-warning {
+    background-color: @color_notice !important;
+    color: #fff;
+}
+
+/*** Tips/Black ***/
+.bg-tips {
+    background-color: @color_tips !important;
+    color: #fff;
+}
+
+/***************************************
+  Fonts
+ ***************************************/
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto/Roboto-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style:  normal;
+}
+@font-face {
+    font-family: 'RobotoLight';
+    src: url(../fonts/Roboto/Roboto-Light.ttf) format('truetype');
+    font-weight: normal;
+    font-style:  normal;
+}
+@font-face {
+    font-family: 'RobotoThin';
+    src: url(../fonts/Roboto/Roboto-Thin.ttf) format('truetype');
+    font-weight: normal;
+    font-style:  normal;
+}
+@font-face {
+    font-family: 'RobotoMedium';
+    src: url(../fonts/Roboto/Roboto-Medium.ttf) format('truetype');
+    font-weight: normal;
+    font-style:  normal;
+}

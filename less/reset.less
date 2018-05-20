@@ -1,0 +1,224 @@
+/***************************************
+  Root
+ ***************************************/
+*, :before, :after {
+    position: relative;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+            box-sizing: border-box;
+}
+html {
+    font-family: sans-serif;
+    font-size: @cell;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+}
+body {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    min-height:  100%;
+    margin:         0;
+    z-index:        1;
+}
+body:not(.fix) {
+    padding-top: .01px;
+}
+
+/***************************************
+  Commons
+ ***************************************/
+:focus {
+    outline: 0 none;
+}
+img, iframe {
+    border: 0 none;
+}
+script,
+[hidden],
+style[scoped],
+audio:not([controls]) {
+    display: none;
+}
+li {list-style-position: outside;}
+ul, ol {
+    ul {list-style-type: toggle(circle, square, box);}
+    ol {list-style-type: lower-latin;}
+}
+.col, .row, [class*="grid"] {
+    > li {
+        list-style-type: none;
+    }
+}
+
+/*** Cursor ***/
+a, button, select,
+label[for],
+[onclick],
+[type="file"],
+[type="radio"],
+[type="reset"],
+[type="range"],
+[type="image"],
+[type="color"],
+[type="button"],
+[type="submit"],
+[type="checkbox"],
+.btn, .event, .events > * {
+    cursor: pointer;
+}
+:disabled,
+.disabled,
+.disabled > *,
+input:disabled,
+select:disabled,
+textarea:disabled,
+[type="radio"]:disabled + label,
+[type="radio"]:disabled + label:before,
+[type="radio"]:disabled + label:hover:before,
+[type="radio"]:disabled + label:focus:before,
+[type="radio"]:disabled:checked + label:before,
+[type="checkbox"]:disabled + label,
+[type="checkbox"]:disabled + label:before,
+[type="checkbox"]:disabled + label:hover:before,
+[type="checkbox"]:disabled + label:focus:before,
+[type="checkbox"]:disabled:checked + label:before {
+    cursor: not-allowed;
+}
+.help, acronym {
+    cursor: help;
+}
+.title {
+    cursor: default;
+}
+
+/*** Overflow ***/
+body:not(.fix), .scroll {
+    overflow-x:  hidden;
+    overflow-y:  auto;
+}
+.scroll.horizontal {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+body.fix, .mask {
+    overflow: hidden;
+}
+.fix .screen {
+    overflow: auto;
+}
+
+/***************************************
+  Typographic
+ ***************************************/
+h1, h2, h3, h4 {
+    font-weight: normal;
+}
+h1 {
+    font-size:    5.6rem;
+    line-height:    6rem;
+    letter-spacing: -2px;
+    &.title {
+        margin-bottom: 2rem;
+    }
+}
+h2 {
+    font-size:   45px;
+    line-height: 48px;
+    &.title {
+        margin-bottom: 2rem;
+    }
+}
+h3 {
+    font-size:   34px;
+    line-height: 40px;
+    &.title {
+        margin-bottom: 16px;
+    }
+}
+h4 {
+    font-size:   24px;
+    &.title {
+        margin-bottom: 16px;
+    }
+}
+h5 {
+    font-size:  20px;
+    font-weight: 500;
+    &.title {
+        margin-bottom: 16px;
+    }
+}
+h6 {
+    font-size:   15px;
+    font-weight:  500;
+    line-height: 24px;
+    &.title {
+        margin-bottom: 12px;
+    }
+}
+.subhead {
+    font-size:   15px;
+    font-weight:  500;
+    line-height: 24px;
+    &.title {
+        margin-bottom: 12px;
+    }
+}
+.caption, abbr, code, time {
+    font-size: 1.2rem;
+}
+.secondary, small {
+    font-size: 87.5%;
+}
+.hint, sub, sup {
+    font-size: 75%;
+}
+
+/***************************************
+  Text Semantics
+ ***************************************/
+p {
+    margin-bottom: 2rem;
+}
+a, a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+a[target="_blank"]:before {
+    font-size: 90%;
+    content: "\e164\00A0";
+}
+q,
+q:lang(fr),
+q:lang(ru) {quotes: "\00ab" "\00bb";}
+q:lang(en) {quotes: "\201c" "\201d";}
+q q,
+q:lang(de) {quotes: "\201e" "\201c";}
+abbr {
+    font-variant:  small-caps;
+    text-transform: uppercase;
+    letter-spacing:     .05em;
+}
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+code {
+    padding: 0 @cell*.2;
+}
+sub, sup {
+    line-height: 1;
+    vertical-align: baseline;
+}
+sup {
+    top: -.5em;
+}
+sub {
+    bottom: -.25em;
+}
+time {
+    line-height: 1.1;
+    white-space: nowrap;
+}
+time[datetime] {}

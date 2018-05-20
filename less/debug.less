@@ -1,0 +1,127 @@
+/***************************************
+  Debug
+ ***************************************/
+
+/*** Verify ***/
+acronym, applet, basefont, big, bgsound, blink, center, dir, font, frame, frameset, noframes, isindex, listing, marquee, multicol, s, strike, tt, u { /* Old Tag */
+  outline: 5px solid orange;
+}
+
+address nav, a a, a label, label a { /* No Semantic */
+  outline: 5px solid red;
+}
+
+/*** Marker ***/
+.marker {
+  background-color: rgba(0,0,255,.6);
+  color:    white;
+  font-size: 12px;
+  min-width: 80px;
+  height:    40px;
+  position: fixed;
+  top:        50%;
+  bottom:     50%;
+  left:      auto;
+  right:        0;
+  text-align:     center;
+  vertical-align: middle;
+  z-index: 10000;
+}
+
+.marker:after {
+  content: "";
+  display: block;
+  line-height: 40px;
+}
+
+@media only screen and (max-width:  1in) {.marker:after {content: "<= 1'"}}
+@media only screen and (min-width:  1in)   and (max-width:  1.5in) {.marker:after {content: "1 - 1.5'"}}
+@media only screen and (min-width:  1.5in) and (max-width:  2in)   {.marker:after {content: "1.5 - 2'"}}
+
+@media only screen and (min-width:  2in)   and (max-width:  2.5in) {.marker:after {content: "2 - 2.5'"}}
+@media only screen and (min-width:  2.5in) and (max-width:  3in)   {.marker:after {content: "2.5 - 3'"}}
+
+@media only screen and (min-width:  3in)   and (max-width:  3.5in) {.marker:after {content: "3 - 3.5' iPhone 4/5"}}
+@media only screen and (min-width:  3.5in) and (max-width:  4in)   {.marker:after {content: "3.5 - 4' iPhone 6"}}
+
+@media only screen and (min-width:  4in)   and (max-width:  4.5in) {.marker:after {content: "4 - 4.5' iPhone 6+"}}
+@media only screen and (min-width:  4.5in) and (max-width:  5in)   {.marker:after {content: "4.5 - 5'"}}
+
+@media only screen and (min-width:  5in)   and (max-width:  5.5in) {.marker:after {content: "5 - 5.5' iPhone 4 land"}}
+@media only screen and (min-width:  5.5in) and (max-width:  6in)   {.marker:after {content: "5.5 - 6' iPhone 5 land"}}
+
+@media only screen and (min-width:  6in)   and (max-width:  6.5in) {.marker:after {content: "6 - 6.5'"}}
+@media only screen and (min-width:  6.5in) and (max-width:  7in)   {.marker:after {content: "6.5 - 7' iPhone 6 land"}}
+
+@media only screen and (min-width:  7in)   and (max-width:  7.5in) {.marker:after {content: "7 - 7.5' iPhone 6+ land"}}
+@media only screen and (min-width:  7.5in) and (max-width:  8in)   {.marker:after {content: "7.5 - 8'"}}
+
+@media only screen and (min-width:  8in)   and (max-width:  8.5in) {.marker:after {content: "8 - 8.5' iPad port"}}
+@media only screen and (min-width:  8.5in) and (max-width:  9in)   {.marker:after {content: "8.5 - 9'"}}
+
+@media only screen and (min-width:  9in)   and (max-width:  9.5in) {.marker:after {content: "9 - 9.5'"}}
+@media only screen and (min-width:  9.5in) and (max-width:  10in)  {.marker:after {content: "9.5 - 10'"}}
+
+@media only screen and (min-width:  10in)   and (max-width:  10.5in) {.marker:after {content: "10 - 10.5' iPad land"}}
+@media only screen and (min-width:  10.5in) and (max-width:  11in)   {.marker:after {content: "10.5 - 11'"}}
+
+@media only screen and (min-width:  11in)   and (max-width:  11.5in) {.marker:after {content: "11 - 11.5'"}}
+@media only screen and (min-width:  11.5in) and (max-width:  12in)   {.marker:after {content: "11.5 - 12'"}}
+
+@media only screen and (min-width:  12in)   and (max-width:  12.5in) {.marker:after {content: "12 - 12.5'"}}
+@media only screen and (min-width:  12.5in) and (max-width:  13in)   {.marker:after {content: "12.5 - 13'"}}
+
+@media only screen and (min-width:  13in)   and (max-width:  13.5in) {.marker:after {content: "13 - 13.5' Nexus 10 land"}}
+@media only screen and (min-width:  13.5in) and (max-width:  14in)   {.marker:after {content: "13.5 - 14'"}}
+
+@media only screen and (min-width:  14in)   and (max-width:  14.5in) {.marker:after {content: "14 - 14.5'"}}
+@media only screen and (min-width:  14.5in) and (max-width:  15in)   {.marker:after {content: "14.5 - 15'"}}
+
+@media only screen and (min-width:  15in)   and (max-width:  15.5in) {.marker:after {content: "15 - 15.5'"}}
+@media only screen and (min-width:  15.5in) and (max-width:  16in)   {.marker:after {content: "15.5 - 16'"}}
+
+@media only screen and (min-width:  16in)   and (max-width:  16.5in) {.marker:after {content: "16 - 16.5'"}}
+@media only screen and (min-width:  16.5in) and (max-width:  17in)   {.marker:after {content: "16.5 - 17'"}}
+
+@media only screen and (min-width:  17in)   and (max-width:  17.5in) {.marker:after {content: "17 - 17.5'"}}
+@media only screen and (min-width:  17.5in) and (max-width:  18in)   {.marker:after {content: "17.5 - 18'"}}
+
+@media only screen and (min-width:  18in)   and (max-width:  18.5in) {.marker:after {content: "18 - 18.5'"}}
+@media only screen and (min-width:  18.5in) and (max-width:  19in)   {.marker:after {content: "18.5 - 19'"}}
+
+@media only screen and (min-width:  19in)   and (max-width:  19.5in) {.marker:after {content: "19 - 19.5'"}}
+@media only screen and (min-width:  19.5in) and (max-width:  20in)   {.marker:after {content: "19.5 - 20'"}}
+
+@media only screen and (min-width:  20in)   and (max-width:  20.5in) {.marker:after {content: "20 - 20.5'"}}
+@media only screen and (min-width:  20.5in) and (max-width:  21in)   {.marker:after {content: "20.5 - 21'"}}
+
+@media only screen and (min-width:  21in)   and (max-width:  21.5in) {.marker:after {content: "21 - 21.5'"}}
+@media only screen and (min-width:  21.5in) and (max-width:  22in)   {.marker:after {content: "21.5 - 22'"}}
+
+@media only screen and (min-width:  22in)   and (max-width:  22.5in) {.marker:after {content: "22 - 22.5'"}}
+@media only screen and (min-width:  22.5in) and (max-width:  23in)   {.marker:after {content: "22.5 - 23'"}}
+
+/***************************************
+ Desktop
+***************************************/
+@media
+only screen and (min-device-width: 8.2in) and (min-device-height: 5in),
+only screen and (min-width:        8.2in) and (min-height:        5in) { /* 8.2 - 788px, 5 - 480px */
+}
+
+/***************************************
+ Tablet
+***************************************/
+@media
+only screen and (max-device-width: 8.2in),
+only screen and (max-device-height:  5in) {
+}
+
+/***************************************
+ Mobile
+***************************************/
+@media
+only screen and (max-device-width:    5in),
+only screen and (max-device-height: 4.4in) {
+}
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Gutter</title>
+        <link rel="shortcut icon" href="images/favicon.ico" />
+        <!--<link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/theme.css" />-->
+        <link rel="stylesheet/less" href="less/platform.less" />
+        <link rel="stylesheet/less" href="less/theme.less" />
+        <script src="js/less.min.js"></script>
+        <!--script src="js/modernizr.js"></script-->
+        <style type="text/css">
+            body {
+                margin: 20px auto;
+                width: 960px;
+            }
+            /*.row[class*="guts"],
+            .col[class*="guts"] {
+                background-color: beige;
+            }*/
+            .row[class*="guts"] > *,
+            .col[class*="guts"] > * {
+                background-color: #dbe0c8;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="row">
+            <div class="row guts-2 gut-2">
+                <div>1</div>
+            </div>
+            <div class="row guts-2 gut-2">
+                <div>2</div>
+                <div>2</div>
+            </div>
+            <div class="row guts-2 gut-2">
+                <div>3</div>
+                <div>3</div>
+                <div>3</div>
+            </div>
+        </div>
+        <div class="row cel">
+            <div class="row bg guts-2">
+                <div>1</div>
+            </div>
+            <div class="row bg guts-2">
+                <div>2</div>
+                <div>2</div>
+            </div>
+            <div class="row bg guts-2">
+                <div>3</div>
+                <div>3</div>
+                <div>3</div>
+            </div>
+            <div class="row bg col-7 guts-2 gaps">
+                <div>4</div>
+                <div>4</div>
+                <div>4</div>
+                <div>4</div>
+            </div>
+        </div>
+
+        <div class="row cel">
+            <div class="col guts-2 gut-2">
+                <div>1 item</div>
+            </div>
+            <div class="col guts-2 gut-2">
+                <div>2 item</div>
+                <div>2 item</div>
+            </div>
+            <div class="col guts-2 gut-2">
+                <div>3 item</div>
+                <div>3 item</div>
+                <div>3 item</div>
+            </div>
+        </div>
+        <div class="row cel">
+            <div class="col bg guts-2">
+                <div>1 item</div>
+            </div>
+            <div class="col bg guts-2">
+                <div>2 item</div>
+                <div>2 item</div>
+            </div>
+            <div class="col bg guts-2">
+                <div>3 item</div>
+                <div>3 item</div>
+                <div>3 item</div>
+            </div>
+            <div class="col bg guts-2 gaps">
+                <div>4 item</div>
+                <div>4 item</div>
+                <div>4 item</div>
+                <div>4 item</div>
+            </div>
+        </div>
+    </body>
+</html>

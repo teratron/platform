@@ -1,0 +1,240 @@
+/******************************************************************************
+  Size, Scale
+  -----------------------------------------------------------------------------
+  x[1...9]
+ ******************************************************************************/
+
+/*** x4 ***/
+.square, .circle, .avatar, .toggle:before, input[type="color"] {
+    width: 4rem;
+}
+.pill, .square, .circle, .avatar {
+    min-width: 4rem;
+}
+.square, .circle, .avatar, .toggle:before, [type="color"] {
+    max-width: 4rem;
+}
+.pill, .square, .circle, .avatar, input, output, select, option {
+    height: 4rem;
+}
+.btn, .pill, .square, .circle, .avatar, input, output, select, textarea, button {
+    min-height: 4rem;
+}
+.pill, .square, .circle, .avatar {
+    max-height: 4rem;
+}
+
+/*** x2 ***/
+.ico, .radio:before, .check:before {
+    width: 2rem;
+}
+.badge, .ico {
+    min-width: 2rem;
+}
+.ico, .radio:before, .check:before {
+    max-width: 2rem;
+}
+.badge, .ico, .radio:before, .check:before, .toggle:before {
+    height: 2rem;
+}
+.badge, .ico, .label, .radio, .check, .toggle {
+    min-height: 2rem;
+}
+.badge, .ico {
+    max-height: 2rem;
+}
+
+/*** Bordered ***/
+.btn, .border,
+.radio:before,
+.check:before,
+.toggle:before,
+select, textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="number"],
+input[type="time"],
+input[type="month"],
+input[type="week"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"] {
+    border: @px solid;
+}
+
+/*** Rounded ***/
+.check:after {
+    border-radius: .1rem;
+}
+.btn, .check:before,
+output, button,
+select, textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="number"],
+input[type="time"],
+input[type="month"],
+input[type="week"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"] {
+    border-radius: .4rem;
+}
+.badge {
+    border-radius: 1rem;
+}
+.pill, .toggle:before {
+    border-radius: 2rem;
+}
+.circle, .radio:before, .radio:after, .toggle:after {
+    border-radius: 50%;
+}
+
+.generate-size(9);
+.generate-size(@n, @i: 1) when (@i =< @n) {
+    .x@{i}.ico,
+    .x@{i}.square,
+    .x@{i}.circle,
+    .x@{i}.avatar,
+    .x@{i}.radio:before,
+    .x@{i}.check:before {
+        width: @i*1rem;
+    }
+    .x@{i}.ico,
+    .x@{i}.pill,
+    .x@{i}.square,
+    .x@{i}.circle,
+    .x@{i}.avatar {
+        min-width: @i*1rem;
+    }
+    .x@{i}.ico,
+    .x@{i}.square,
+    .x@{i}.circle,
+    .x@{i}.avatar,
+    .x@{i}.radio:before,
+    .x@{i}.check:before,
+    .x@{i}[type="color"] {
+        max-width: @i*1rem;
+    }
+    .x@{i}.ico,
+    .x@{i}.pill,
+    .x@{i}.square,
+    .x@{i}.circle,
+    .x@{i}.avatar,
+    .x@{i}.radio:before,
+    .x@{i}.check:before,
+    .x@{i}.toggle:before {
+        height: @i*1rem;
+    }
+    .x@{i}.ico,
+    .x@{i}.btn,
+    .x@{i}.pill,
+    .x@{i}.square,
+    .x@{i}.circle,
+    .x@{i}.avatar,
+    .x@{i}.radio,
+    .x@{i}.check,
+    .x@{i}.toggle {
+        min-height: @i*1rem;
+    }
+    .x@{i}.ico,
+    .x@{i}.pill,
+    .x@{i}.square,
+    .x@{i}.circle,
+    .x@{i}.avatar {
+        max-height: @i*1rem;
+    }
+
+    /*** Button ***/
+    .x@{i}.btn {
+        font-size:   @i*.3rem;
+        line-height: @i*.3rem;
+        min-width:   @i*1.5rem;
+        padding:     @i*.35rem - @px*2 @i*.5rem;
+    }
+
+    /*** Badge ***/
+    .x@{i}.badge {
+        padding: 0 @i*.25rem;
+    }
+
+    /*** Radio, Checkbox, Toggle ***/
+    .x@{i}.radio,
+    .x@{i}.check {
+        padding-left: @i*1rem + 1rem;
+        &.right {
+            padding-left:  0;
+            padding-right: @i*1rem + 1rem;
+        }
+        &:after {
+            width:  @i*.6rem;
+            height: @i*.6rem;
+            top:    @i*.2rem;
+            left:   @i*.2rem;
+        }
+        &.right:after {
+            left: auto;
+            right: @i*.2rem;
+        }
+    }
+    .x@{i}.toggle {
+        padding-left: @i*2rem + 1rem;
+        &.right {
+            padding-right: @i*2rem + 1rem;
+        }
+        &:before {
+            width:     @i*2rem;
+            max-width: @i*2rem;
+        }
+        &:after {
+            width:  @i*.8rem;
+            height: @i*.8rem;
+            top:    @i*@px;
+            left:   @i*@px;
+        }
+        &.right:after {
+            left:    auto;
+            right: @i*@px;
+        }
+    }
+    [type="radio"],
+    [type="checkbox"] {
+        &:checked {
+            + .x@{i}.toggle {
+                &:after {
+                    left: @i*1.1rem;
+                }
+                &.right:after {
+                    left: auto;
+                    right: @i*1.1rem;
+                }
+            }
+        }
+    }
+
+    /*** Rounded ***/
+    .x@{i}.check:after {
+        border-radius: round(@i*.05rem, 1);
+    }
+    .x@{i}.btn,
+    .x@{i}.check:before {
+        border-radius: round(@i*.1rem, 1);
+    }
+    .x@{i}.badge {
+        border-radius: round(@i*.25rem, 1);
+    }
+    .x@{i}.pill,
+    .x@{i}.toggle:before {
+        border-radius: round(@i*.5rem, 1);
+    }
+
+    .generate-size(@n, (@i + 1));
+}
