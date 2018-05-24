@@ -5,6 +5,14 @@
 @color_brand_dark:      #246d8d;
 @color_brand_light:     #2bbfe0;
 
+@color_primary:         #27a4c4;
+@color_primary_dark:    #246d8d;
+@color_primary_light:   #2bbfe0;
+
+@color_secondary:       #9cb0af;
+@color_secondary_dark:  #9cb0af;
+@color_secondary_light: #9cb0af;
+
 @color_accent:          #fe8325;
 @color_accent_dark:     #fe4a00;
 @color_accent_light:    #fe9f61;
@@ -12,10 +20,6 @@
 @color_bright:          orange;
 @color_bright_dark:     orange;
 @color_bright_light:    orange;
-
-@color_secondary:       #9cb0af;
-@color_secondary_dark:  #9cb0af;
-@color_secondary_light: #9cb0af;
 
 @color_dark:            #485a68;
 @color_light:           #acc0bf;
@@ -29,6 +33,7 @@
 @color_warning:         #f1c101;
 @color_notice:          blue;
 @color_tips:            rgba(0,0,0,.8);
+@color_lucid:           rgba(0,0,0,.3);
 
 /***************************************
   Commons
@@ -53,7 +58,7 @@ mark {
     color: #152f00;
 }
 .lucid {
-    color: #000;
+    color: @color_lucid;
 }
 
 /***************************************
@@ -181,7 +186,6 @@ footer {
 .snackbar {
     background-color: @color_tips;
     color: #fff;
-    padding: 1rem;
 }
 
 /***************************************
@@ -351,6 +355,11 @@ input[type="datetime-local"] {
     background-color: @color_tips !important;
     color: #fff;
 }
+
+/***************************************
+  Shadows
+ ***************************************/
+
 
 /***************************************
   Fonts

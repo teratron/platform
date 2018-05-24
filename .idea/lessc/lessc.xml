@@ -14,6 +14,7 @@
                   </CssDirectory>
                 </list>
               </option>
+              <option name="excludePattern" value="adaptive.less; animation.less; debug.less; elements.less; form.less; gap.less; gutter.less; grid.less; layout.less; reset.less; size.less; table.less; tile.less;" />
               <option name="id" value="0" />
               <option name="lessDirPath" value="E:\Projects\platform\less" />
               <option name="name" value="platform" />
