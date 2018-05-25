@@ -63,7 +63,7 @@ main, header, footer,
     display: -webkit-inline-flex;
     display: inline-flex;
 }
-.row, [class*="grid"], .list.col > *  {
+.row:not([class*="col-"]), [class*="grid"], .list.col > *  {
     -webkit-flex-direction: row;
        -moz-flex-direction: row;
         -ms-flex-direction: row;
@@ -75,7 +75,7 @@ main, header, footer,
                 flex-direction: row-reverse;
     }
 }
-.col, .list.row > * {
+.col:not([class*="row-"]), .list.row > * {
     -webkit-flex-direction: column;
        -moz-flex-direction: column;
         -ms-flex-direction: column;

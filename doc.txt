@@ -1,4 +1,4 @@
-﻿/*
+﻿
   @media mediatype and|not|only (media feature) {CSS-Code;}
 
   Mediatype
@@ -50,8 +50,7 @@
   resolution              - Specifies the resolution of the device, using dpi or dpcm
   scan                    - Specifies progressive or interlaca scanning of a television
   width                   - Specifies the width of the display area, such as a browser window
-*/
-/*
+
   Возможные значения role
   ---------------------------------------
   banner           - содержит главный заголовок или внутренний заголовок страницы. Например логотип и название сайта. Рекомендуется использовать не больше одного раза на странице.
@@ -130,7 +129,7 @@
   tree             - Тип списка, который может содержать подуровни вложенных групп, которые могут быть свернуты и расширены.
   treegrid         - Сетка, чьи строки могут быть свернуты и расширины так же как и в tree.
   treeitem         - Опция элемента tree. Этот элемент внутри tree, может быть свернут или расширен, если имеет вложенный подуровень.
-*/
+
 /*
   Fibonacci Sequence
 
