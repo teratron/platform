@@ -15,8 +15,8 @@
 .media-trigger(1);
 .media-trigger(@n, @i: 8) when (@i >= @n) {
     @media only screen and (max-width: (@i*120px + 240px)) {
-        .solid-@{i},
-        .col-@{i} > * {
+        .solid-@{i}/*,
+        .col-@{i} > **/ {
             width:     100% !important;
             min-width: 100% !important;
             max-width: 100% !important;
@@ -30,8 +30,8 @@
             border-top: 0 none !important;
         }
         .col-@{i} > * {
-            margin-left:  0    !important;
-            margin-right: 0    !important;
+            /*margin-left:  0    !important;*/
+            /*margin-right: 0    !important;*/
             position: relative !important;
             top:    auto       !important;
             bottom: auto       !important;
@@ -76,7 +76,6 @@
             //-ms-flex-flow:     column nowrap !important;
             //flex-flow:         column nowrap !important;
             -webkit-flex-direction: column !important;
-            -moz-flex-direction:    column !important;
             -ms-flex-direction:     column !important;
             flex-direction:         column !important;
         }
@@ -87,7 +86,6 @@
             //-ms-flex-flow:     row wrap !important;
             //flex-flow:         row wrap !important;
             -webkit-flex-direction: row !important;
-            -moz-flex-direction:    row !important;
             -ms-flex-direction:     row !important;
             flex-direction:         row !important;
         }
@@ -146,7 +144,7 @@
         .gaps-1.col-@{i}:not(.list):not(.divider):not([class*="guts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
         .gaps-1.col-@{i}.list[class*="bg"] > * > *,
         .gaps-1.col-@{i}.list.divider > * > * {
-            padding-top: .5rem;
+            padding-top: .5rem !important;
         }
         .gaps.row-@{i} > .head,
         .gaps.row-@{i} > .body,
@@ -162,7 +160,7 @@
         .gaps-1.col-@{i}:not(.list):not(.divider):not([class*="guts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
         .gaps-1.col-@{i}.list[class*="bg"]  > * > *,
         .gaps-1.col-@{i}.list.divider > * > * {
-            padding-bottom: .5rem;
+            padding-bottom: .5rem !important;
         }
         .gaps.row-@{i}:not(.list):not(.divider):not([class*="guts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
         .gaps.row-@{i}.list > :not(:first-child) > *,
@@ -170,7 +168,7 @@
         .gaps-1.row-@{i}:not(.list):not(.divider):not([class*="guts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
         .gaps-1.row-@{i}.list > :not(:first-child) > *,
         .gaps-1.col-@{i}.list > * > :not(:first-child) {
-            padding-left: .5rem;
+            padding-left: .5rem !important;
         }
         .gaps.row-@{i}:not(.list):not(.divider):not([class*="guts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
         .gaps.row-@{i}.list > :not(:last-child) > *,
@@ -178,7 +176,7 @@
         .gaps-1.row-@{i}:not(.list):not(.divider):not([class*="guts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
         .gaps-1.row-@{i}.list > :not(:last-child) > *,
         .gaps-1.col-@{i}.list > * > :not(:last-child) {
-            padding-right: .5rem;
+            padding-right: .5rem !important;
         }
         .gaps.col-@{i} > .head,
         .gaps.col-@{i} > .body,
@@ -200,7 +198,7 @@
         .gaps-1.col-@{i}.divider:not(.list) > :not(:first-child),
         .gaps-1.row-@{i}[class*="bg"]:not(.list) > :not(.head):not(.body):not(.foot),
         .gaps-1.row-@{i}.list[class*="bg"] > * > :first-child {
-            padding-top: 1rem;
+            padding-top: 1rem !important;
         }
         .gaps.col-@{i} > .body,
         .gaps.col-@{i} > .foot,
@@ -220,7 +218,7 @@
         .gaps-1.col-@{i}.divider:not(.list) > :not(:last-child),
         .gaps-1.row-@{i}[class*="bg"]:not(.list) > :not(.head):not(.body):not(.foot),
         .gaps-1.row-@{i}.list[class*="bg"] > * > :last-child {
-            padding-bottom: 1rem;
+            padding-bottom: 1rem !important;
         }
         .gaps.col-@{i} > .foot,
         .gaps.col-@{i}[class*="bg"]:not(.list) > *,
@@ -240,7 +238,7 @@
         .gaps-1.row-@{i}.divider:not(.list) > :not(:first-child),
         .gaps-1.row-@{i}.list[class*="bg"] > :first-child > *,
         .gaps-1.row-@{i}.list.divider > :not(:first-child) > * {
-            padding-left: 1rem;
+            padding-left: 1rem !important;
         }
         .gaps.col-@{i} > .head,
         .gaps.col-@{i}[class*="bg"]:not(.list) > *,
@@ -258,7 +256,7 @@
         .gaps-1.row-@{i}.divider:not(.list) > :not(:last-child),
         .gaps-1.row-@{i}.list[class*="bg"] > :last-child > *,
         .gaps-1.row-@{i}.list.divider > :not(:last-child) > * {
-            padding-right: 1rem;
+            padding-right: 1rem !important;
         }
 
         /*** Gap 1-8 ***/
@@ -271,7 +269,7 @@
             .gaps-@{j}.col-@{i}:not(.list):not(.divider):not([class*="guts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
             .gaps-@{j}.col-@{i}.list[class*="bg"] > * > *,
             .gaps-@{j}.col-@{i}.list.divider > * > * {
-                padding-top: @j*.5rem;
+                padding-top: @j*.5rem !important;
             }
             .gaps-@{j}.row-@{i} > .head,
             .gaps-@{j}.row-@{i} > .body,
@@ -280,17 +278,17 @@
             .gaps-@{j}.col-@{i}:not(.list):not(.divider):not([class*="guts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
             .gaps-@{j}.col-@{i}.list[class*="bg"]  > * > *,
             .gaps-@{j}.col-@{i}.list.divider > * > * {
-                padding-bottom: @j*.5rem;
+                padding-bottom: @j*.5rem !important;
             }
             .gaps-@{j}.row-@{i}:not(.list):not(.divider):not([class*="guts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
             .gaps-@{j}.row-@{i}.list > :not(:first-child) > *,
             .gaps-@{j}.col-@{i}.list > * > :not(:first-child) {
-                padding-left: @j*.5rem;
+                padding-left: @j*.5rem !important;
             }
             .gaps-@{j}.row-@{i}:not(.list):not(.divider):not([class*="guts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
             .gaps-@{j}.row-@{i}.list > :not(:last-child) > *,
             .gaps-@{j}.col-@{i}.list > * > :not(:last-child) {
-                padding-right: @j*.5rem;
+                padding-right: @j*.5rem !important;
             }
             .gaps-@{j}.col-@{i} > .head,
             .gaps-@{j}.col-@{i} > .body,
@@ -302,7 +300,7 @@
             .gaps-@{j}.col-@{i}.divider:not(.list) > :not(:first-child),
             .gaps-@{j}.row-@{i}[class*="bg"]:not(.list) > :not(.head):not(.body):not(.foot),
             .gaps-@{j}.row-@{i}.list[class*="bg"] > * > :first-child {
-                padding-top: @j*1rem;
+                padding-top: @j*1rem !important;
             }
             .gaps-@{j}.col-@{i} > .body,
             .gaps-@{j}.col-@{i} > .foot,
@@ -313,7 +311,7 @@
             .gaps-@{j}.col-@{i}.divider:not(.list) > :not(:last-child),
             .gaps-@{j}.row-@{i}[class*="bg"]:not(.list) > :not(.head):not(.body):not(.foot),
             .gaps-@{j}.row-@{i}.list[class*="bg"] > * > :last-child {
-                padding-bottom: @j*1rem;
+                padding-bottom: @j*1rem !important;
             }
             .gaps-@{j}.col-@{i} > .foot,
             .gaps-@{j}.col-@{i}[class*="bg"]:not(.list) > *,
@@ -324,7 +322,7 @@
             .gaps-@{j}.row-@{i}.divider:not(.list) > :not(:first-child),
             .gaps-@{j}.row-@{i}.list[class*="bg"] > :first-child > *,
             .gaps-@{j}.row-@{i}.list.divider > :not(:first-child) > * {
-                padding-left: @j*1rem;
+                padding-left: @j*1rem !important;
             }
             .gaps-@{j}.col-@{i} > .head,
             .gaps-@{j}.col-@{i}[class*="bg"]:not(.list) > *,
@@ -334,21 +332,21 @@
             .gaps-@{j}.row-@{i}.divider:not(.list) > :not(:last-child),
             .gaps-@{j}.row-@{i}.list[class*="bg"] > :last-child > *,
             .gaps-@{j}.row-@{i}.list.divider > :not(:last-child) > * {
-                padding-right: @j*1rem;
+                padding-right: @j*1rem !important;
             }
             .gap-media-toggle-to(@k, (@j + 1));
         }
         [class*="gaps"].col-@{i} > .foot {
-            padding-top: 0;
+            padding-top: 0 !important;
         }
         [class*="gaps"].col-@{i} > .head {
-            padding-bottom: 0;
+            padding-bottom: 0 !important;
         }
         [class*="gaps"].row-@{i} > .foot {
-            padding-left: 0;
+            padding-left: 0 !important;
         }
         [class*="gaps"].row-@{i} > .head {
-            padding-right: 0;
+            padding-right: 0 !important;
         }
 
         /* Adaptive Gutter
@@ -357,13 +355,13 @@
         .guts.col-@{i} > :not(:only-child):not(:first-child):not(:last-child),
         .guts-1.col-@{i} > :last-child:not(:only-child),
         .guts-1.col-@{i} > :not(:only-child):not(:first-child):not(:last-child) {
-            margin-top: .5rem;
+            margin-top: .5rem !important;
         }
         .guts.col-@{i} > :first-child:not(:only-child),
-        .guts.col-@{i} > :not(:only-child):not(:first-child):not(:last-child)
+        .guts.col-@{i} > :not(:only-child):not(:first-child):not(:last-child),
         .guts-1.col-@{i} > :first-child:not(:only-child),
         .guts-1.col-@{i} > :not(:only-child):not(:first-child):not(:last-child) {
-            margin-bottom: .5rem;
+            margin-bottom: .5rem !important;
         }
         .guts.row-@{i} > :last-child:not(:only-child),
         .guts.row-@{i} > :not(:only-child):not(:first-child):not(:last-child),
@@ -375,7 +373,7 @@
         .guts.row-@{i} > :not(:only-child):not(:first-child):not(:last-child),
         .guts-1.row-@{i} > :first-child:not(:only-child),
         .guts-1.row-@{i} > :not(:only-child):not(:first-child):not(:last-child) {
-            margin-right: .5rem;
+            margin-right: .5rem !important;
         }
         .guts.row-@{i}[class*="bg"] > *,
         .guts.col-@{i}[class*="bg"] > :only-child,
@@ -383,7 +381,7 @@
         .guts-1.row-@{i}[class*="bg"] > *,
         .guts-1.col-@{i}[class*="bg"] > :only-child,
         .guts-1.col-@{i}[class*="bg"] > :first-child:not(:only-child) {
-            margin-top: 1rem;
+            margin-top: 1rem !important;
         }
         .guts.row-@{i}[class*="bg"] > *,
         .guts.col-@{i}[class*="bg"] > :only-child,
@@ -391,7 +389,7 @@
         .guts-1.row-@{i}[class*="bg"] > *,
         .guts-1.col-@{i}[class*="bg"] > :only-child,
         .guts-1.col-@{i}[class*="bg"] > :last-child:not(:only-child) {
-            margin-bottom: 1rem;
+            margin-bottom: 1rem !important;
         }
         .guts.col-@{i}[class*="bg"] > *,
         .guts.row-@{i}[class*="bg"] > :only-child,
@@ -399,7 +397,7 @@
         .guts-1.col-@{i}[class*="bg"] > *,
         .guts-1.row-@{i}[class*="bg"] > :only-child,
         .guts-1.row-@{i}[class*="bg"] > :first-child:not(:only-child) {
-            margin-left: 1rem;
+            margin-left: 1rem !important;
         }
         .guts.col-@{i}[class*="bg"] > *,
         .guts.row-@{i}[class*="bg"] > :only-child,
@@ -407,7 +405,7 @@
         .guts-1.col-@{i}[class*="bg"] > *,
         .guts-1.row-@{i}[class*="bg"] > :only-child,
         .guts-1.row-@{i}[class*="bg"] > :last-child:not(:only-child) {
-            margin-right: 1rem;
+            margin-right: 1rem !important;
         }
 
         /*** Gutter 1-8 ***/
@@ -415,7 +413,7 @@
         .gut-media-toggle-to(@k, @j: 1) when (@j =< @n) {
             .guts-@{j}.col-@{i} > :last-child:not(:only-child),
             .guts-@{j}.col-@{i} > :not(:only-child):not(:first-child):not(:last-child) {
-                margin-top: @j*.5rem;
+                margin-top: @j*.5rem !important;
             }
             .guts-@{j}.col-@{i} > :first-child:not(:only-child),
             .guts-@{j}.col-@{i} > :not(:only-child):not(:first-child):not(:last-child) {
@@ -423,41 +421,41 @@
             }
             .guts-@{j}.row-@{i} > :last-child:not(:only-child),
             .guts-@{j}.row-@{i} > :not(:only-child):not(:first-child):not(:last-child) {
-                margin-left: @j*.5rem;
+                margin-left: @j*.5rem !important;
             }
             .guts-@{j}.row-@{i} > :first-child:not(:only-child),
             .guts-@{j}.row-@{i} > :not(:only-child):not(:first-child):not(:last-child) {
-                margin-right: @j*.5rem;
+                margin-right: @j*.5rem !important;
             }
             .guts-@{j}.row-@{i}[class*="bg"] > *,
             .guts-@{j}.col-@{i}[class*="bg"] > :only-child,
             .guts-@{j}.col-@{i}[class*="bg"] > :first-child:not(:only-child) {
-                margin-top: @j*1rem;
+                margin-top: @j*1rem !important;
             }
             .guts-@{j}.row-@{i}[class*="bg"] > *,
             .guts-@{j}.col-@{i}[class*="bg"] > :only-child,
             .guts-@{j}.col-@{i}[class*="bg"] > :last-child:not(:only-child) {
-                margin-bottom: @j*1rem;
+                margin-bottom: @j*1rem !important;
             }
             .guts-@{j}.col-@{i}[class*="bg"] > *,
             .guts-@{j}.row-@{i}[class*="bg"] > :only-child,
             .guts-@{j}.row-@{i}[class*="bg"] > :first-child:not(:only-child) {
-                margin-left: @j*1rem;
+                margin-left: @j*1rem !important;
             }
             .guts-@{j}.col-@{i}[class*="bg"] > *,
             .guts-@{j}.row-@{i}[class*="bg"] > :only-child,
             .guts-@{j}.row-@{i}[class*="bg"] > :last-child:not(:only-child) {
-                margin-right: @j*1rem;
+                margin-right: @j*1rem !important;
             }
             .gut-media-toggle-to(@k, (@j + 1));
         }
 
         /*** Null ***/
         [class*="guts"].col-@{i}:not([class*="bg"]):not(.divider) > [hidden]:first-child + :not(:only-child):not(:first-child):not(:last-child) {
-            margin-top: 0;
+            margin-top: 0 !important;
         }
         [class*="guts"].row-@{i}:not([class*="bg"]):not(.divider) > [hidden]:first-child + :not(:only-child):not(:first-child):not(:last-child) {
-            margin-left: 0;
+            margin-left: 0 !important;
         }
     }
     .media-trigger(@n, (@i - 1));

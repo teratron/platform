@@ -36,10 +36,13 @@ header.fix + :not(footer) {
 @media only screen and (max-width: (@layout_width)) {
     main, header, footer {
         -webkit-justify-content: flex-start;
-           -moz-justify-content: flex-start;
-            -ms-justify-content: flex-start;
                 justify-content: flex-start;
     }
+}
+
+/*** Grid Layout ***/
+.gr {
+    display: grid;
 }
 
 /*** Flexible Layout ***/
@@ -63,33 +66,28 @@ main, header, footer,
     display: -webkit-inline-flex;
     display: inline-flex;
 }
-.row:not([class*="col-"]), [class*="grid"], .list.col > *  {
+.row, [class*="grid"], .list.col > *  {
     -webkit-flex-direction: row;
-       -moz-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row;
     &.reverse {
         -webkit-flex-direction: row-reverse;
-           -moz-flex-direction: row-reverse;
             -ms-flex-direction: row-reverse;
                 flex-direction: row-reverse;
     }
 }
-.col:not([class*="row-"]), .list.row > * {
+.col, .list.row > * {
     -webkit-flex-direction: column;
-       -moz-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
     &.reverse {
         -webkit-flex-direction: column-reverse;
-           -moz-flex-direction: column-reverse;
             -ms-flex-direction: column-reverse;
                 flex-direction: column-reverse;
     }
 }
 .wrap, .row, [class*="grid"] {
     -webkit-flex-wrap: wrap;
-       -moz-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
 }
@@ -101,12 +99,10 @@ main, header, footer,
 }
 .inverse {
     -webkit-flex-wrap: wrap-reverse;
-       -moz-flex-wrap: wrap-reverse;
             flex-wrap: wrap-reverse;
 }
 .nowrap, .col:not(.cel):not([class*="grid"]), .bar, .list > * {
     -webkit-flex-wrap: nowrap;
-       -moz-flex-wrap: nowrap;
         -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
 }
@@ -115,16 +111,14 @@ main, header, footer,
   overflow:    hidden;
 }
 .nowrap, p {
-    -moz-text-overflow: ellipsis;
-      -o-text-overflow: ellipsis;
-         text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
 }
 .grow, .grows > *, .body, .screen {
     -webkit-box-flex:  1;
     -moz-box-flex:     1;
     -ms-flex:          1;
     -webkit-flex-grow: 1;
-    -moz-flex-grow:    1;
     flex-grow:         1;
 }
 .generate-grow(8);
@@ -134,7 +128,6 @@ main, header, footer,
         -moz-box-flex:     @i;
         -ms-flex:          @i;
         -webkit-flex-grow: @i;
-        -moz-flex-grow:    @i;
         flex-grow:         @i;
     }
     .generate-grow(@n, (@i + 1));
@@ -150,8 +143,6 @@ main, header, footer,
 .fix.row.top,     .abs.row.top,
 .fix.row.bottom,  .abs.row.bottom {
     -webkit-align-content: stretch;
-       -moz-align-content: stretch;
-        -ms-align-content: stretch;
             align-content: stretch;
 }
 .screen,
@@ -159,8 +150,6 @@ main, header, footer,
 .col.cel.lefts, .col.cel:not(.centers),
 .row.cel.tops,  .row.cel:not(.middles) {
     -webkit-align-content: flex-start;
-       -moz-align-content: flex-start;
-        -ms-align-content: flex-start;
             align-content: flex-start;
 }
 .col.cel.centers,
@@ -174,15 +163,11 @@ main, header, footer,
 .btn, .badge, .label,
 button, input, output, select, option {
     -webkit-align-content: center;
-       -moz-align-content: center;
-        -ms-align-content: center;
             align-content: center;
 }
 .col.cel.rights,
 .row.cel.bottoms {
     -webkit-align-content: flex-end;
-       -moz-align-content: flex-end;
-        -ms-align-content: flex-end;
             align-content: flex-end;
 }
 
@@ -196,8 +181,6 @@ button, input, output, select, option {
 .fix.row.top,     .abs.row.top,
 .fix.row.bottom,  .abs.row.bottom {
     -webkit-align-items: stretch;
-       -moz-align-items: stretch;
-        -ms-align-items: stretch;
             align-items: stretch;
 }
 .screen,
@@ -205,8 +188,6 @@ button, input, output, select, option {
 .col.cel.lefts, .col.cel:not(.centers),
 .row.cel.tops,  .row.cel:not(.middles) {
     -webkit-align-items: flex-start;
-       -moz-align-items: flex-start;
-        -ms-align-items: flex-start;
             align-items: flex-start;
 }
 .col.cel.centers,
@@ -220,44 +201,32 @@ button, input, output, select, option {
 .btn, .badge, .label,
 button, input, output, select, option {
     -webkit-align-items: center;
-       -moz-align-items: center;
-        -ms-align-items: center;
             align-items: center;
 }
 .col.cel.rights,
 .row.cel.bottoms {
     -webkit-align-items: flex-end;
-       -moz-align-items: flex-end;
-        -ms-align-items: flex-end;
             align-items: flex-end;
 }
 
 /*** Align self ***/
 .stretch {
     -webkit-align-self: stretch;
-       -moz-align-self: stretch;
-        -ms-align-self: stretch;
             align-self: stretch;
 }
 .col > .left,
 .row > .top {
     -webkit-align-self: flex-start;
-       -moz-align-self: flex-start;
-        -ms-align-self: flex-start;
             align-self: flex-start;
 }
 .col > .center,
 .row > .middle {
     -webkit-align-self: center;
-       -moz-align-self: center;
-        -ms-align-self: center;
             align-self: center;
 }
 .col > .right,
 .row > .bottom {
     -webkit-align-self: flex-end;
-       -moz-align-self: flex-end;
-        -ms-align-self: flex-end;
             align-self: flex-end;
 }
 
@@ -269,8 +238,6 @@ button, input, output, select, option {
 .fix.left, .fix.col.top,
 .abs.left, .abs.col.top {
     -webkit-justify-content: flex-start;
-       -moz-justify-content: flex-start;
-        -ms-justify-content: flex-start;
             justify-content: flex-start;
 }
 main, header, footer,
@@ -281,8 +248,6 @@ main, header, footer,
 .fix.centers, .fix.col.middles,
 .abs.centers, .abs.col.middles {
     -webkit-justify-content: center;
-       -moz-justify-content: center;
-        -ms-justify-content: center;
             justify-content: center;
 }
 .col.bottoms,
@@ -292,20 +257,14 @@ main, header, footer,
 .fix.right, .fix.col.bottom,
 .abs.right, .abs.col.bottom {
     -webkit-justify-content: flex-end;
-       -moz-justify-content: flex-end;
-        -ms-justify-content: flex-end;
             justify-content: flex-end;
 }
 .around {
     -webkit-justify-content: space-around;
-       -moz-justify-content: space-around;
-        -ms-justify-content: space-around;
             justify-content: space-around;
 }
 .between {
     -webkit-justify-content: space-between;
-       -moz-justify-content: space-between;
-        -ms-justify-content: space-between;
             justify-content: space-between;
     > :first-child {
         margin-left: 0;
