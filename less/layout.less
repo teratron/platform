@@ -41,8 +41,9 @@ header.fix + :not(footer) {
 }
 
 /*** Grid Layout ***/
-.gr {
+.grd- {
     display: grid;
+
 }
 
 /*** Flexible Layout ***/
@@ -500,9 +501,17 @@ body.fix,
 /***************************************
   Head / Body / Foot
  ***************************************/
-.row > .head,
-.row > .body,
-.row > .foot {
+.row {
+    > .head, > .body, > .foot {}
+    > .head {}
+    > .body {}
+    > .foot {}
+}
+.col {
+    > .head, > .body, > .foot {}
+    > .head {}
+    > .body {}
+    > .foot {}
 }
 
 /***************************************

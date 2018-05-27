@@ -2,6 +2,8 @@
   <dictionary name="teratron">
     <words>
       <w>dropdown</w>
+      <w>snackbar</w>
+      <w>unhide</w>
     </words>
   </dictionary>
 </component>

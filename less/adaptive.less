@@ -32,7 +32,7 @@
         .col-@{i} > * {
             /*margin-left:  0    !important;*/
             /*margin-right: 0    !important;*/
-            position: relative !important;
+            /*position: relative !important;*/
             top:    auto       !important;
             bottom: auto       !important;
             left:   auto       !important;
@@ -410,7 +410,7 @@
 
         /*** Gutter 1-8 ***/
         .gut-media-toggle-to(8);
-        .gut-media-toggle-to(@k, @j: 1) when (@j =< @n) {
+        .gut-media-toggle-to(@k, @j: 2) when (@j =< @k) {
             .guts-@{j}.col-@{i} > :last-child:not(:only-child),
             .guts-@{j}.col-@{i} > :not(:only-child):not(:first-child):not(:last-child) {
                 margin-top: @j*.5rem !important;
