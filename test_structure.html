@@ -40,7 +40,7 @@
             }
         </style>
     </head>
-    <body class="fix"><!-- flags: pus, ext -->
+    <body class="fix">
         <div class="screen col"><!-- Container -->
 
             <section class="row gap-1 gaps-2 divider">
@@ -135,8 +135,8 @@
                 var x = document.getElementsByClassName("box");
                 var y = document.getElementsByName("display");
 
-                for (i = 0; i < x.length; i++) x[i].classList.remove("block", "table");
-                if (s == "def") return;
+                for (i = 0; i < x.length; i++) x[i].classList.remove("blc", "tbl");
+                if (s === "def") return;
                 for (i = 0; i < y.length; i++) {
                     if (y[i].checked) {
                         for (j = 0; j < x.length; j++) x[j].classList.add(s);
@@ -149,7 +149,7 @@
                 var y = document.getElementsByName("direction");
 
                 for (i = 0; i < x.length; i++) x[i].classList.remove("col", "row");
-                if (s == "def") return;
+                if (s === "def") return;
                 for (i = 0; i < y.length; i++) {
                     if (y[i].checked) {
                         for (j = 0; j < x.length; j++) x[j].classList.add(s);
@@ -162,7 +162,7 @@
                 var y = document.getElementsByName("structure");
 
                 for (i = 0; i < x.length; i++) x[i].classList.remove("def", "list", "bar");
-                if (s == "def") return;
+                if (s === "def") return;
                 for (i = 0; i < y.length; i++) {
                     if (y[i].checked) {
                         for (j = 0; j < x.length; j++) x[j].classList.add(s);
@@ -175,7 +175,7 @@
                 var y = document.getElementsByName("position");
 
                 for (i = 0; i < x.length; i++) x[i].classList.remove("def", "between", "around");
-                if (s == "def") return;
+                if (s === "def") return;
                 for (i = 0; i < y.length; i++) {
                     if (y[i].checked) {
                         for (j = 0; j < x.length; j++) x[j].classList.add(s);
@@ -188,7 +188,7 @@
                 var y = document.getElementsByName("pos_hor");
 
                 for (i = 0; i < x.length; i++) x[i].classList.remove("rights", "centers", "lefts");
-                if (s == "def") return;
+                if (s === "def") return;
                 for (i = 0; i < y.length; i++) {
                     if (y[i].checked) {
                         for (j = 0; j < x.length; j++) x[j].classList.add(s);
@@ -201,7 +201,7 @@
                 var y = document.getElementsByName("pos_ver");
 
                 for (i = 0; i < x.length; i++) x[i].classList.remove("tops", "middles", "bottoms");
-                if (s == "def") return;
+                if (s === "def") return;
                 for (i = 0; i < y.length; i++) {
                     if (y[i].checked) {
                         for (j = 0; j < x.length; j++) x[j].classList.add(s);

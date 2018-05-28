@@ -160,7 +160,7 @@ hr {
 hr,
 .separator,
 .divider > *,
-.divider.table:not(.row) > * > * {
+.divider.tbl:not(.row) > * > * {
   border-color: rgba(0, 0, 0, 0.12);
 }
 /***************************************

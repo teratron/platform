@@ -16,8 +16,8 @@
 .gaps.col:not(.list):not(.divider):not([class*="guts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
 .gaps.col.list[class*="bg"] > * > *,
 .gaps.col.list.divider > * > *,
-.gaps.table[class*="bg"]:not(.row) > * > *,
-.gaps.table.divider:not(.row) > * > *,
+.gaps.tbl[class*="bg"]:not(.row) > * > *,
+.gaps.tbl.divider:not(.row) > * > *,
 .gaps-1:not(.col) > .head,
 .gaps-1:not(.col) > .body,
 .gaps-1:not(.col) > .foot,
@@ -25,8 +25,8 @@
 .gaps-1.col:not(.list):not(.divider):not([class*="guts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
 .gaps-1.col.list[class*="bg"] > * > *,
 .gaps-1.col.list.divider > * > *,
-.gaps-1.table[class*="bg"]:not(.row) > * > *,
-.gaps-1.table.divider:not(.row) > * > * {
+.gaps-1.tbl[class*="bg"]:not(.row) > * > *,
+.gaps-1.tbl.divider:not(.row) > * > * {
     padding-top: .5rem;
 }
 .gaps:not(.col) > .head,
@@ -36,8 +36,8 @@
 .gaps.col:not(.list):not(.divider):not([class*="guts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
 .gaps.col.list[class*="bg"]  > * > *,
 .gaps.col.list.divider > * > *,
-.gaps.table[class*="bg"]:not(.row) > * > *,
-.gaps.table.divider:not(.row) > * > *,
+.gaps.tbl[class*="bg"]:not(.row) > * > *,
+.gaps.tbl.divider:not(.row) > * > *,
 .gaps-1:not(.col) > .head,
 .gaps-1:not(.col) > .body,
 .gaps-1:not(.col) > .foot,
@@ -45,28 +45,28 @@
 .gaps-1.col:not(.list):not(.divider):not([class*="guts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
 .gaps-1.col.list[class*="bg"]  > * > *,
 .gaps-1.col.list.divider > * > *,
-.gaps-1.table[class*="bg"]:not(.row) > * > *,
-.gaps-1.table.divider:not(.row) > * > * {
+.gaps-1.tbl[class*="bg"]:not(.row) > * > *,
+.gaps-1.tbl.divider:not(.row) > * > * {
     padding-bottom: .5rem;
 }
 .gaps:not(.col):not(.list):not(.divider):not([class*="guts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
 .gaps.row.list > :not(:first-child) > *,
 .gaps.col.list > * > :not(:first-child),
-.gaps.table:not(.row) > * > :not(:first-child),
+.gaps.tbl:not(.row) > * > :not(:first-child),
 .gaps-1:not(.col):not(.list):not(.divider):not([class*="guts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
 .gaps-1.row.list > :not(:first-child) > *,
 .gaps-1.col.list > * > :not(:first-child),
-.gaps-1.table:not(.row) > * > :not(:first-child) {
+.gaps-1.tbl:not(.row) > * > :not(:first-child) {
     padding-left: .5rem;
 }
 .gaps:not(.col):not(.list):not(.divider):not([class*="guts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
 .gaps.row.list > :not(:last-child) > *,
 .gaps.col.list > * > :not(:last-child),
-.gaps.table:not(.row) > * > :not(:last-child),
+.gaps.tbl:not(.row) > * > :not(:last-child),
 .gaps-1:not(.col):not(.list):not(.divider):not([class*="guts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
 .gaps-1.row.list > :not(:last-child) > *,
 .gaps-1.col.list > * > :not(:last-child),
-.gaps-1.table:not(.row) > * > :not(:last-child) {
+.gaps-1.tbl:not(.row) > * > :not(:last-child) {
     padding-right: .5rem;
 }
 .gap,
@@ -139,7 +139,7 @@
 .gaps.divider:not(.col):not(.list) > :not(:first-child),
 .gaps.row.list[class*="bg"] > :first-child > *,
 .gaps.row.list.divider > :not(:first-child) > *,
-.gaps.table[class*="bg"]:not(.row) > * > :first-child,
+.gaps.tbl[class*="bg"]:not(.row) > * > :first-child,
 .gap-1,
 .gap-side-1, .gaps-side-1 > *,
 .gap-left-1, .gaps-left-1 > *,
@@ -156,7 +156,7 @@
 .gaps-1.divider:not(.col):not(.list) > :not(:first-child),
 .gaps-1.row.list[class*="bg"] > :first-child > *,
 .gaps-1.row.list.divider > :not(:first-child) > *,
-.gaps-1.table[class*="bg"]:not(.row) > * > :first-child {
+.gaps-1.tbl[class*="bg"]:not(.row) > * > :first-child {
     padding-left: 1rem;
 }
 .gap,
@@ -174,7 +174,7 @@
 .gaps.divider:not(.col):not(.list) > :not(:last-child),
 .gaps.row.list[class*="bg"] > :last-child > *,
 .gaps.row.list.divider > :not(:last-child) > *,
-.gaps.table[class*="bg"]:not(.row) > * > :last-child,
+.gaps.tbl[class*="bg"]:not(.row) > * > :last-child,
 .gap-1,
 .gap-side-1,  .gaps-side-1  > *,
 .gap-right-1, .gaps-right-1 > *,
@@ -190,7 +190,7 @@
 .gaps-1.divider:not(.col):not(.list) > :not(:last-child),
 .gaps-1.row.list[class*="bg"] > :last-child > *,
 .gaps-1.row.list.divider > :not(:last-child) > *,
-.gaps-1.table[class*="bg"]:not(.row) > * > :last-child {
+.gaps-1.tbl[class*="bg"]:not(.row) > * > :last-child {
     padding-right: 1rem;
 }
 
@@ -204,8 +204,8 @@
     .gaps-@{i}.col:not(.list):not(.divider):not([class*="guts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
     .gaps-@{i}.col.list[class*="bg"] > * > *,
     .gaps-@{i}.col.list.divider > * > *,
-    .gaps-@{i}.table[class*="bg"]:not(.row) > * > *,
-    .gaps-@{i}.table.divider:not(.row) > * > * {
+    .gaps-@{i}.tbl[class*="bg"]:not(.row) > * > *,
+    .gaps-@{i}.tbl.divider:not(.row) > * > * {
         padding-top: @i*.5rem;
     }
     .gaps-@{i}:not(.col) > .head,
@@ -215,20 +215,20 @@
     .gaps-@{i}.col:not(.list):not(.divider):not([class*="guts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
     .gaps-@{i}.col.list[class*="bg"]  > * > *,
     .gaps-@{i}.col.list.divider > * > *,
-    .gaps-@{i}.table[class*="bg"]:not(.row) > * > *,
-    .gaps-@{i}.table.divider:not(.row) > * > * {
+    .gaps-@{i}.tbl[class*="bg"]:not(.row) > * > *,
+    .gaps-@{i}.tbl.divider:not(.row) > * > * {
         padding-bottom: @i*.5rem;
     }
     .gaps-@{i}:not(.col):not(.list):not(.divider):not([class*="guts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
     .gaps-@{i}.row.list > :not(:first-child) > *,
     .gaps-@{i}.col.list > * > :not(:first-child),
-    .gaps-@{i}.table:not(.row) > * > :not(:first-child) {
+    .gaps-@{i}.tbl:not(.row) > * > :not(:first-child) {
         padding-left: @i*.5rem;
     }
     .gaps-@{i}:not(.col):not(.list):not(.divider):not([class*="guts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
     .gaps-@{i}.row.list > :not(:last-child) > *,
     .gaps-@{i}.col.list > * > :not(:last-child),
-    .gaps-@{i}.table:not(.row) > * > :not(:last-child) {
+    .gaps-@{i}.tbl:not(.row) > * > :not(:last-child) {
         padding-right: @i*.5rem;
     }
     .gap-@{i},
@@ -276,7 +276,7 @@
     .gaps-@{i}.divider:not(.col):not(.list) > :not(:first-child),
     .gaps-@{i}.row.list[class*="bg"] > :first-child > *,
     .gaps-@{i}.row.list.divider > :not(:first-child) > *,
-    .gaps-@{i}.table[class*="bg"]:not(.row) > * > :first-child {
+    .gaps-@{i}.tbl[class*="bg"]:not(.row) > * > :first-child {
         padding-left: @i*1rem;
     }
     .gap-@{i},
@@ -294,7 +294,7 @@
     .gaps-@{i}.divider:not(.col):not(.list) > :not(:last-child),
     .gaps-@{i}.row.list[class*="bg"] > :last-child > *,
     .gaps-@{i}.row.list.divider > :not(:last-child) > *,
-    .gaps-@{i}.table[class*="bg"]:not(.row) > * > :last-child {
+    .gaps-@{i}.tbl[class*="bg"]:not(.row) > * > :last-child {
         padding-right: @i*1rem;
     }
     .generate-gap(@n, (@i + 1));
