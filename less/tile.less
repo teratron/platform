@@ -2,33 +2,32 @@
   Tile
   -----------------------------------------------------------------------------
   tile / tile-[1...8]
-  fluids - элементы в данном контейнере имеют одну и туже ширину (до 100)
-  fluid / fluid-[1...100] - ширина в %, номер означает сколько элементов поместиться в родительсом контейнере
-  glob = glob-1
-  glob-[1...100] - ширина в vw, тоже что и fluid-[1...100]
+  flds - элементы в данном контейнере имеют одну и туже ширину (до 100)
+  fld = fld-1 / fld-[1...100] - ширина в %, номер означает сколько элементов поместиться в родительсом контейнере
+  glb = glb-1 / glb-[1...100] - ширина в vw, тоже что и fld-[1...100]
   -----------------------------------------------------------------------------
    1     2     3     4     5     6     7      8      9     10     11     12
   240   360   480   600   720   840   960   1080   1200   1320   1440   1560
  ******************************************************************************/
 body, main, header, footer,
 .inner,
-.fluid, .fluid-1,
-.fluids > :only-child,
-.fluids > :first-child:nth-last-child(1) {
+.fld, .fld-1,
+.flds > :only-child,
+.flds > :first-child:nth-last-child(1) {
     width: 100%;
 }
 [class*="tile"],
-.fluid, .fluid-1,
-.fluids > :only-child,
-.fluids > :first-child:nth-last-child(1) {
+.fld, .fld-1,
+.flds > :only-child,
+.flds > :first-child:nth-last-child(1) {
     min-width: 100%;
 }
-.fluid, .fluid-1,
-.fluids > :only-child,
-.fluids > :first-child:nth-last-child(1) {
+.fld, .fld-1,
+.flds > :only-child,
+.flds > :first-child:nth-last-child(1) {
     max-width: 100%;
 }
-.glob, .glob-1 {
+.glb, .glb-1 {
     width:     100vw;
     min-width: 100vw;
     max-width: 100vw;
@@ -73,40 +72,17 @@ body, main, header, footer,
  ***************************************/
 .generate-fluid(100);
 .generate-fluid(@n, @i: 2) when (@i =< @n) {
-    .fluid-@{i},
-    .fluids > :first-child:nth-last-child(@{i}),
-    .fluids > :first-child:nth-last-child(@{i}) ~ * {
+    .fld-@{i},
+    .flds > :first-child:nth-last-child(@{i}),
+    .flds > :first-child:nth-last-child(@{i}) ~ * {
         width:     round(100%/@i, 4);
         min-width: round(100%/@i, 4);
         max-width: round(100%/@i, 4);
     }
-    .glob-@{i} {
+    .glb-@{i} {
         width:     round(100vw/@i, 4);
         min-width: round(100vw/@i, 4);
         max-width: round(100vw/@i, 4);
     }
     .generate-fluid(@n, (@i + 1));
 }
-
-/******************************************************************************
-  Tile
-  -----------------------------------------------------------------------------
-  tile (0.5rem)
-  tile-[1...20] (0.1rem - 2rem)
- ******************************************************************************/
-/*.tile {
-    margin: -.5rem;
-    > * {
-        padding: .5rem;
-    }
-}
-.generate-tile(20);
-.generate-tile(@n, @i: 1) when (@i =< @n) {
-    .tile-@{i} {
-        margin: -@i*.1rem;
-        > * {
-            padding: @i*.1rem;
-        }
-    }
-    .generate-tile(@n, (@i + 1));
-}*/

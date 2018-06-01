@@ -3,12 +3,12 @@
   -----------------------------------------------------------------------------
   col row cel
   blc tbl inl
-  group
+  grp
   climb
   bar
-  list
-  grow  / grow-[1...8] - элемент развигает и заполняет пустое пространство
-  grows / grows-[1...8]
+  lst
+  grw  / grw-[1...8] - элемент развигает и заполняет пустое пространство
+  grws / grws-[1...8]
   reverse
   inverse
   stretch / stretches
@@ -50,9 +50,9 @@ main, header, footer,
 .on, .col, .row, [class*="tile"],
 .fix.middles, .fix.centers,
 .abs.middles, .abs.centers,
-.bar  > *,
-.list > *,
-.list > * > * {
+.bar > *,
+.lst > *,
+.lst > * > * {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -66,7 +66,7 @@ main, header, footer,
     display: -webkit-inline-flex;
     display: inline-flex;
 }
-.row, [class*="tile"], .list.col > *  {
+.row, [class*="tile"], .lst.col > *  {
     -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row;
@@ -76,7 +76,7 @@ main, header, footer,
                 flex-direction: row-reverse;
     }
 }
-.col, .list.row > * {
+.col, .lst.row > * {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
@@ -101,7 +101,7 @@ main, header, footer,
     -webkit-flex-wrap: wrap-reverse;
             flex-wrap: wrap-reverse;
 }
-.nowrap, .col:not(.cel):not([class*="tile"]), .bar, .list > * {
+.nowrap, .col:not(.cel):not([class*="tile"]), .bar, .lst > * {
     -webkit-flex-wrap: nowrap;
         -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
@@ -114,7 +114,7 @@ main, header, footer,
     -o-text-overflow: ellipsis;
        text-overflow: ellipsis;
 }
-.grow, .grows > *, .body, .screen {
+.grw, .grws > *, .body, .screen {
     -webkit-box-flex:  1;
     -moz-box-flex:     1;
     -ms-flex:          1;
@@ -123,7 +123,7 @@ main, header, footer,
 }
 .generate-grow(8);
 .generate-grow(@n, @i: 1) when (@i =< @n) {
-    .grow-@{i}, .grows-@{i} > * {
+    .grw-@{i}, .grws-@{i} > * {
         -webkit-box-flex:  @i;
         -moz-box-flex:     @i;
         -ms-flex:          @i;
@@ -138,7 +138,7 @@ main, header, footer,
 .row:not(.cel),
 .col:not(.cel),
 [class*="tile"]:not(.cel),
-.list > *,
+.lst > *,
 .fix.col.middles, .abs.col.middles,
 .fix.row.top,     .abs.row.top,
 .fix.row.bottom,  .abs.row.bottom {
@@ -156,7 +156,7 @@ main, header, footer,
 .row.cel.middles,
 .fix.middles, .fix.col.centers.middles,
 .abs.middles, .abs.col.centers.middles,
-.list.col > * > *,
+.lst.col > * > *,
 .bar > *,
 .col > .head,
 .col > .foot,
@@ -176,7 +176,7 @@ button, input, output, select, option {
 .row:not(.cel),
 .col:not(.cel),
 [class*="tile"]:not(.cel),
-.list > *,
+.lst > *,
 .fix.col.middles, .abs.col.middles,
 .fix.row.top,     .abs.row.top,
 .fix.row.bottom,  .abs.row.bottom {
@@ -194,7 +194,7 @@ button, input, output, select, option {
 .row.cel.middles,
 .fix.middles, .fix.col.centers.middles,
 .abs.middles, .abs.col.centers.middles,
-.list.col > * > *,
+.lst.col > * > *,
 .bar > *,
 .col > .head,
 .col > .foot,
@@ -280,7 +280,7 @@ main, header, footer,
 .blc.col > * {
     display: block;
 }
-.blc.list > * > *,
+.blc.lst > * > *,
 .blc.row:not(.cel) > *,
 .blc.row.rights:not(.cel) > .left,
 .blc.row.reverse:not(.cel) > .right,
@@ -289,7 +289,7 @@ main, header, footer,
 .blc[class*="tile"].rights.reverse > * {
     float: left;
 }
-.blc.list > * > .right,
+.blc.lst > * > .right,
 .blc.row:not(.cel) > .right,
 .blc.row.rights:not(.cel) > *,
 .blc.row.reverse:not(.cel) > *,
@@ -355,7 +355,7 @@ main, header, footer,
 .middle,
 .middles:not(.col):not(.row) > *,
 .tbl.bar > *,
-.tbl.list > *,
+.tbl.lst > *,
 .tbl.row > .middle,
 .tbl:not(.row) > * > :not([hidden]):not(script):not(style) {
     vertical-align: middle;
@@ -463,36 +463,36 @@ body.fix,
 /***************************************
   Group
  ***************************************/
-.group:not(.col)   > :not(:only-child):not(:first-child),
+.grp:not(.col)   > :not(:only-child):not(:first-child),
 .divider:not(.col) > :not(:only-child):not(:first-child) {
     margin-left: -1px !important;
 }
-.group > :not(:last-child) {
+.grp > :not(:last-child) {
     margin-right: 0;
 }
-.group > :not(:only-child):not(:first-child):not(:last-child) {
+.grp > :not(:only-child):not(:first-child):not(:last-child) {
     border-radius: 0;
 }
-.group:not(.col) > :first-child:not(:only-child) {
+.grp:not(.col) > :first-child:not(:only-child) {
     border-top-right-radius:    0;
     border-bottom-right-radius: 0;
 }
-.group:not(.col) > :last-child:not(:only-child) {
+.grp:not(.col) > :last-child:not(:only-child) {
     border-top-left-radius:    0;
     border-bottom-left-radius: 0;
 }
-.group.col   > :not(:only-child):not(:first-child),
+.grp.col   > :not(:only-child):not(:first-child),
 .divider.col > :not(:only-child):not(:first-child) {
     margin-top: -1px !important;
 }
-.group.col > :not(:last-child) {
+.grp.col > :not(:last-child) {
     margin-bottom: 0;
 }
-.group.col > :first-child:not(:only-child) {
+.grp.col > :first-child:not(:only-child) {
     border-bottom-left-radius:  0;
     border-bottom-right-radius: 0;
 }
-.group.col > :last-child:not(:only-child) {
+.grp.col > :last-child:not(:only-child) {
     border-top-left-radius:  0;
     border-top-right-radius: 0;
 }
@@ -500,7 +500,7 @@ body.fix,
 /***************************************
   Head / Body / Foot
  ***************************************/
-.row {
+/*.row {
     > .head, > .body, > .foot {}
     > .head {}
     > .body {}
@@ -511,7 +511,7 @@ body.fix,
     > .head {}
     > .body {}
     > .foot {}
-}
+}*/
 
 /***************************************
   Climb
@@ -596,13 +596,6 @@ body.fix,
 .z9, .modal {
     z-index: 9000;
 }
-
-/***************************************
-  Opacity
- ***************************************/
-.o1{opacity:.1}.o2{opacity:.2}.o3{opacity:.3}
-.o4{opacity:.4}.o5{opacity:.5}.o6{opacity:.6}
-.o7{opacity:.7}.o8{opacity:.8}.o9{opacity:.9}
 
 /*
   Relative lengths
