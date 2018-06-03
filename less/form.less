@@ -11,11 +11,6 @@ input, output, select {
 input, output, select, button {
     vertical-align: baseline;
 }
-select {
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-}
 button, input {
     &::-moz-focus-inner {
         border: 0 none;
@@ -321,13 +316,13 @@ form input[type="checkbox"]:disabled:checked + label:before {
 }
 
 /*** Optional / Required ***/
-input, select, textarea  {
+/*input, select, textarea  {
     &:required {}
     &:optional {}
-}
+}*/
 
 /*** Valid / Invalid ***/
-input[type="text"],
+/*input[type="text"],
 input[type="email"],
 input[type="search"],
 input[type="password"],
@@ -337,12 +332,12 @@ input[type="number"]  {
     &:invalid {}
     &:valid {}
 }
-
+*/
 /*** Read-write / Read-only ***/
-input, select, textarea  {
+/*input, select, textarea  {
     &:read-only {}
     &:read-write {}
-}
+}*/
 
 /*
   submit

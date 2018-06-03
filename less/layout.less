@@ -15,6 +15,7 @@
   inner
   head body foot
   fix abs pin
+  scr
  ******************************************************************************/
 header > .inner {
     height: @header_height;
@@ -114,7 +115,7 @@ main, header, footer,
     -o-text-overflow: ellipsis;
        text-overflow: ellipsis;
 }
-.grw, .grws > *, .body, .screen {
+.grw, .grws > *, .body, .scr {
     -webkit-box-flex:  1;
     -moz-box-flex:     1;
     -ms-flex:          1;
@@ -145,7 +146,7 @@ main, header, footer,
     -webkit-align-content: stretch;
             align-content: stretch;
 }
-.screen,
+.scr,
 [class*="tile"].cel,
 .col.cel.lefts, .col.cel:not(.centers),
 .row.cel.tops,  .row.cel:not(.middles) {
@@ -183,7 +184,7 @@ button, input, output, select, option {
     -webkit-align-items: stretch;
             align-items: stretch;
 }
-.screen,
+.scr,
 [class*="tile"].cel,
 .col.cel.lefts, .col.cel:not(.centers),
 .row.cel.tops,  .row.cel:not(.middles) {
@@ -396,13 +397,13 @@ main, header, footer,
 .fix, .drawer {
     position: fixed;
 }
-.abs, .fix .screen, .climb {
+.abs, .fix .scr, .climb {
     position: absolute;
 }
 .pin {
     position: static;
 }
-.fix .screen,
+.fix .scr,
 .fix:not(.top):not(.bottom):not(.right):not(.left),
 .abs:not(.top):not(.bottom):not(.right):not(.left),
 .fix.top,      .abs.top,
@@ -413,7 +414,7 @@ main, header, footer,
     top: 0;
 }
 body.fix,
-.fix .screen,
+.fix .scr,
 .fix:not(.top):not(.bottom):not(.right):not(.left),
 .abs:not(.top):not(.bottom):not(.right):not(.left),
 .fix.bottom,      .abs.bottom,
@@ -423,7 +424,7 @@ body.fix,
 .fix.bottom.left, .abs.bottom.left {
     bottom: 0;
 }
-.fix .screen,
+.fix .scr,
 .fix:not(.top):not(.bottom):not(.right):not(.left),
 .abs:not(.top):not(.bottom):not(.right):not(.left),
 .fix.left,         .abs.left,
@@ -433,7 +434,7 @@ body.fix,
 .fix.bottom.left,  .abs.bottom.left {
     left: 0;
 }
-.fix .screen,
+.fix .scr,
 .fix:not(.top):not(.bottom):not(.right):not(.left),
 .abs:not(.top):not(.bottom):not(.right):not(.left),
 .fix.right,        .abs.right,
@@ -572,7 +573,7 @@ body.fix,
 .z1, .drawer {
     z-index: 1000;
 }
-.z2, .screen {
+.z2, .scr {
     z-index: 2000;
 }
 .z3, .dropdown, option, optgroup {

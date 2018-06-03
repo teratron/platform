@@ -1,7 +1,7 @@
 /***************************************
   Root
  ***************************************/
-*, :before, :after {
+*, :before, :after, ::before, ::after {
     position: relative;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
@@ -105,7 +105,7 @@ body:not(.fix), .scroll {
 body.fix, .mask {
     overflow: hidden;
 }
-.fix .screen {
+.fix .scr {
     overflow: auto;
 }
 
