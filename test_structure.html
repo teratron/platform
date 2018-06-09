@@ -47,8 +47,9 @@
                 <div class="col gts-1">
                     <input type="radio" name="display" id="DF" onchange="Display('def')" hidden checked /><label class="radio" for="DF">Default</label>
                     <!--input type="radio" name="display" id="FLEX" onchange="Display('flex')" hidden /><label class="radio" for="FLEX">Flex</label-->
-                    <input type="radio" name="display" id="BLOCK" onchange="Display('block')" hidden /><label class="radio" for="BLOCK">Block</label>
-                    <input type="radio" name="display" id="TABLE" onchange="Display('table')" hidden /><label class="radio" for="TABLE">Table</label>
+                    <input type="radio" name="display" id="BLOCK" onchange="Display('blc')" hidden /><label class="radio" for="BLOCK">Block</label>
+                    <input type="radio" name="display" id="TABLE" onchange="Display('tbl')" hidden /><label class="radio" for="TABLE">Table</label>
+                    <input type="radio" name="display" id="GRID" onchange="Display('grd')" hidden /><label class="radio" for="GRID">Grid</label>
                 </div>
                 <div class="col gts-1">
                     <input type="radio" name="direction" id="DF1" onchange="Direction('def')" hidden checked /><label class="radio" for="DF1">None</label>
@@ -57,14 +58,14 @@
                 </div>
                 <div class="col gts-1">
                     <input type="radio" name="structure" id="DEF" onchange="Structure('def')" hidden checked /><label class="radio" for="DEF">None</label>
-                    <input type="radio" name="structure" id="LIST" onchange="Structure('list')" hidden /><label class="radio" for="LIST">List</label>
+                    <input type="radio" name="structure" id="LIST" onchange="Structure('lst')" hidden /><label class="radio" for="LIST">List</label>
                     <input type="radio" name="structure" id="BAR" onchange="Structure('bar')" hidden /><label class="radio" for="BAR">Bar</label>
                 </div>
-                <!--div class="col">
+                <div class="col">
                     <input type="radio" name="position" id="NOR" onchange="Position('def')" hidden checked /><label class="rad tip" for="NOR">None</label>
                     <input type="radio" name="position" id="BTW" onchange="Position('between')" hidden /><label class="radio" for="BTW">Between</label>
                     <input type="radio" name="position" id="ARD" onchange="Position('around')" hidden /><label class="radio" for="ARD">Around</label>
-                </div-->
+                </div>
                 <div class="col gts-1">
                     <input type="radio" name="pos_hor" id="DF2" onchange="horPosition('def')" hidden checked /><label class="radio" for="DF2">None</label>
                     <input type="radio" name="pos_hor" id="LEF" onchange="horPosition('lefts')" hidden /><label class="radio" for="LEF">Lefts</label>
@@ -81,7 +82,7 @@
                     <input type="checkbox" name="advanced" id="CEL" onchange="Advanced('cel')" hidden /><label class="check" for="CEL">Cell</label>
 					<input type="checkbox" name="advanced" id="RVS" onchange="Advanced('reverse')" hidden /><label class="check" for="RVS">Reverse</label>
                     <input type="checkbox" name="advanced" id="IVS" onchange="Advanced('inverse')" hidden /><label class="check" for="IVS">Inverse</label>
-                    <input type="checkbox" name="advanced" id="LIQ" onchange="Advanced('grows')" hidden /><label class="check" for="LIQ">Grows</label>
+                    <input type="checkbox" name="advanced" id="LIQ" onchange="Advanced('grws')" hidden /><label class="check" for="LIQ">Grows</label>
                 </div>
             </section>
 
@@ -111,7 +112,7 @@
                 <div class="box bg gps" style="width: 300px;">
                     <div>
                         <div>1</div>
-                        <div class="grow">2</div>
+                        <div class="grw">2</div>
                         <div>3</div>
                     </div>
                     <div>
@@ -135,7 +136,7 @@
                 var x = document.getElementsByClassName("box");
                 var y = document.getElementsByName("display");
 
-                for (i = 0; i < x.length; i++) x[i].classList.remove("blc", "tbl");
+                for (i = 0; i < x.length; i++) x[i].classList.remove("blc", "tbl", "grd");
                 if (s === "def") return;
                 for (i = 0; i < y.length; i++) {
                     if (y[i].checked) {
@@ -161,7 +162,7 @@
                 var x = document.getElementsByClassName("box");
                 var y = document.getElementsByName("structure");
 
-                for (i = 0; i < x.length; i++) x[i].classList.remove("def", "list", "bar");
+                for (i = 0; i < x.length; i++) x[i].classList.remove("def", "lst", "bar");
                 if (s === "def") return;
                 for (i = 0; i < y.length; i++) {
                     if (y[i].checked) {
