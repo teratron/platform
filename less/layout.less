@@ -2,7 +2,7 @@
   Layout
   -----------------------------------------------------------------------------
   col row cel
-  blc tbl inl
+  blc tbl inl grd
   grp
   climb
   bar
@@ -12,7 +12,7 @@
   reverse
   inverse
   stretch / stretches
-  inner
+  inr
   head body foot
   fix abs pin
   scr
@@ -63,7 +63,7 @@ main, header, footer,
     display: -webkit-flex;
     display: flex;
 }
-.inl, .ico, .btn, .badge, .label, .toggle, .check, .radio, .avatar,
+.inl, .ico, .button, .badge, .label, .toggle, .check, .radio, .avatar,
 .cel:not(.col):not(.tbl):not([class*="tile"]) > :not(.row):not(.tbl) {
     display: inline-block;
     display: -webkit-inline-flex;
@@ -163,7 +163,7 @@ main, header, footer,
 .bar > *,
 .col > .head,
 .col > .foot,
-.btn, .badge, .label,
+.button, .badge, .label,
 button, input, output, select, option {
     -webkit-align-content: center;
             align-content: center;
@@ -201,7 +201,7 @@ button, input, output, select, option {
 .bar > *,
 .col > .head,
 .col > .foot,
-.btn, .badge, .label,
+.button, .badge, .label,
 button, input, output, select, option {
     -webkit-align-items: center;
             align-items: center;
@@ -244,7 +244,7 @@ button, input, output, select, option {
             justify-content: flex-start;
 }
 main, header, footer,
-.btn, .badge,
+.button, .badge,
 .col.middles,
 .row.centers,
 .bar > :not(.head):not(.body):not(.foot),

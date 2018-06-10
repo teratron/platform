@@ -17,7 +17,7 @@
 .pill, .square, .circle, .avatar, input, output, select, option {
     height: 4rem;
 }
-.btn, .pill, .square, .circle, .avatar, input, output, select, textarea, button {
+.button, .pill, .square, .circle, .avatar, input, output, select, textarea, button {
     min-height: 4rem;
 }
 .pill, .square, .circle, .avatar {
@@ -45,7 +45,7 @@
 }
 
 /*** Button ***/
-.btn {
+.button {
   font-size:    1.2rem;
   line-height:  1.2rem;
   padding: 1.2rem 2rem;
@@ -61,7 +61,7 @@
 }
 
 /*** Bordered ***/
-.btn, .border,
+.button, .border,
 .radio:before,
 .check:before,
 .toggle:before,
@@ -86,7 +86,7 @@ input[type="datetime-local"] {
 .check:after {
     border-radius: .1rem;
 }
-.btn, .check:before,
+.button, .check:before,
 output, button,
 select, textarea,
 input[type="text"],
@@ -151,7 +151,7 @@ input[type="datetime-local"] {
         height: @i*1rem;
     }
     .x@{i}.ico,
-    .x@{i}.btn,
+    .x@{i}.button,
     .x@{i}.pill,
     .x@{i}.square,
     .x@{i}.circle,
@@ -170,7 +170,7 @@ input[type="datetime-local"] {
     }
 
     /*** Button ***/
-    .x@{i}.btn {
+    .x@{i}.button {
         font-size:   @i*.3rem;
         line-height: @i*.3rem;
         min-width:   @i*1.5rem;
@@ -240,7 +240,7 @@ input[type="datetime-local"] {
     .x@{i}.check:after {
         border-radius: round(@i*.05rem, 1);
     }
-    .x@{i}.btn,
+    .x@{i}.button,
     .x@{i}.check:before {
         border-radius: round(@i*.1rem, 1);
     }
