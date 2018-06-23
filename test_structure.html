@@ -20,65 +20,63 @@
                 line-height: 1;
                 overflow: hidden;
 				margin: 10px;
-                /*padding: 2px;*/
             }
             .box > * {
                 min-width: 50px;
                 min-height: 40px;
-                /*padding: 2px;
-                margin: 2px;*/
+                border: 1px solid;
             }
             .box > :nth-child(odd) {
                 background-color: #d0d0d0;
                 color: #fff;
-                border: 1px solid #ccc;
+                border-color: #ccc;
             }
             .box > :nth-child(even) {
                 background-color: #f5f5f5;
                 color: #888;
-                border: 1px solid #ececec;
+                border-color: #ececec;
             }
         </style>
     </head>
     <body class="fix">
         <div class="scr col"><!-- Container -->
 
-            <section class="row gp-1 gps-2 divider">
-                <div class="col gts-1">
+            <section class="row gp_1 gps_2 divider">
+                <div class="col gts_1">
                     <input type="radio" name="display" id="DF" onchange="Display('def')" hidden checked /><label class="radio" for="DF">Default</label>
                     <!--input type="radio" name="display" id="FLEX" onchange="Display('flex')" hidden /><label class="radio" for="FLEX">Flex</label-->
                     <input type="radio" name="display" id="BLOCK" onchange="Display('blc')" hidden /><label class="radio" for="BLOCK">Block</label>
                     <input type="radio" name="display" id="TABLE" onchange="Display('tbl')" hidden /><label class="radio" for="TABLE">Table</label>
                     <input type="radio" name="display" id="GRID" onchange="Display('grd')" hidden /><label class="radio" for="GRID">Grid</label>
                 </div>
-                <div class="col gts-1">
+                <div class="col gts_1">
                     <input type="radio" name="direction" id="DF1" onchange="Direction('def')" hidden checked /><label class="radio" for="DF1">None</label>
                     <input type="radio" name="direction" id="COL" onchange="Direction('col')" hidden /><label class="radio" for="COL">Column</label>
                     <input type="radio" name="direction" id="ROW" onchange="Direction('row')" hidden /><label class="radio" for="ROW">Row</label>
                 </div>
-                <div class="col gts-1">
+                <div class="col gts_1">
                     <input type="radio" name="structure" id="DEF" onchange="Structure('def')" hidden checked /><label class="radio" for="DEF">None</label>
                     <input type="radio" name="structure" id="LIST" onchange="Structure('lst')" hidden /><label class="radio" for="LIST">List</label>
                     <input type="radio" name="structure" id="BAR" onchange="Structure('bar')" hidden /><label class="radio" for="BAR">Bar</label>
                 </div>
-                <div class="col">
-                    <input type="radio" name="position" id="NOR" onchange="Position('def')" hidden checked /><label class="rad tip" for="NOR">None</label>
+                <div class="col gts_1">
+                    <input type="radio" name="position" id="NOR" onchange="Position('def')" hidden checked /><label class="radio" for="NOR">None</label>
                     <input type="radio" name="position" id="BTW" onchange="Position('between')" hidden /><label class="radio" for="BTW">Between</label>
                     <input type="radio" name="position" id="ARD" onchange="Position('around')" hidden /><label class="radio" for="ARD">Around</label>
                 </div>
-                <div class="col gts-1">
+                <div class="col gts_1">
                     <input type="radio" name="pos_hor" id="DF2" onchange="horPosition('def')" hidden checked /><label class="radio" for="DF2">None</label>
                     <input type="radio" name="pos_hor" id="LEF" onchange="horPosition('lefts')" hidden /><label class="radio" for="LEF">Lefts</label>
                     <input type="radio" name="pos_hor" id="CEN" onchange="horPosition('centers')" hidden /><label class="radio" for="CEN">Centers</label>
                     <input type="radio" name="pos_hor" id="RIT" onchange="horPosition('rights')" hidden /><label class="radio" for="RIT">Rights</label>
                 </div>
-                <div class="col gts-1">
+                <div class="col gts_1">
                     <input type="radio" name="pos_ver" id="DF3" onchange="verPosition('def')" hidden checked /><label class="radio" for="DF3">None</label>
                     <input type="radio" name="pos_ver" id="TOP" onchange="verPosition('tops')" hidden /><label class="radio" for="TOP">Tops</label>
                     <input type="radio" name="pos_ver" id="MID" onchange="verPosition('middles')" hidden /><label class="radio" for="MID">Middles</label>
                     <input type="radio" name="pos_ver" id="BOT" onchange="verPosition('bottoms')" hidden /><label class="radio" for="BOT">Bottoms</label>
                 </div>
-                <div class="col gts-1">
+                <div class="col gts_1">
                     <input type="checkbox" name="advanced" id="CEL" onchange="Advanced('cel')" hidden /><label class="check" for="CEL">Cell</label>
 					<input type="checkbox" name="advanced" id="RVS" onchange="Advanced('reverse')" hidden /><label class="check" for="RVS">Reverse</label>
                     <input type="checkbox" name="advanced" id="IVS" onchange="Advanced('inverse')" hidden /><label class="check" for="IVS">Inverse</label>

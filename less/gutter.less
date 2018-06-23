@@ -1,36 +1,36 @@
 /******************************************************************************
   Gutter
   -----------------------------------------------------------------------------
-  gt         gt-[1...8]        gts         gts-[1...8]
-  gt-side    gt-side-[1...8]   gts-side    gts-side-[1...8]
-  gt-rail    gt-rail-[1...8]   gts-rail    gts-rail-[1...8]
-  gt-top     gt-top-[1...8]    gts-top     gts-top-[1...8]
-  gt-bottom  gt-bottom-[1...8] gts-bottom  gts-bottom-[1...8]
-  gt-right   gt-right-[1...8]  gts-right   gts-right-[1...8]
-  gt-left    gt-left-[1...8]   gts-left    gts-left-[1...8]
+  gt         gt_[1...8]        gts         gts_[1...8]
+  gt-side    gt-side_[1...8]   gts-side    gts-side_[1...8]
+  gt-rail    gt-rail_[1...8]   gts-rail    gts-rail_[1...8]
+  gt-top     gt-top_[1...8]    gts-top     gts-top_[1...8]
+  gt-bottom  gt-bottom_[1...8] gts-bottom  gts-bottom_[1...8]
+  gt-right   gt-right_[1...8]  gts-right   gts-right_[1...8]
+  gt-left    gt-left_[1...8]   gts-left    gts-left_[1...8]
  ******************************************************************************/
 .gts.col > :last-child:not(:only-child),
 .gts.col > :not(:only-child):not(:first-child):not(:last-child),
-.gts-1.col > :last-child:not(:only-child),
-.gts-1.col > :not(:only-child):not(:first-child):not(:last-child) {
+.gts_1.col > :last-child:not(:only-child),
+.gts_1.col > :not(:only-child):not(:first-child):not(:last-child) {
     margin-top: .5rem;
 }
 .gts.col > :first-child:not(:only-child),
 .gts.col > :not(:only-child):not(:first-child):not(:last-child),
-.gts-1.col > :first-child:not(:only-child),
-.gts-1.col > :not(:only-child):not(:first-child):not(:last-child) {
+.gts_1.col > :first-child:not(:only-child),
+.gts_1.col > :not(:only-child):not(:first-child):not(:last-child) {
     margin-bottom: .5rem;
 }
 .gts:not(.col) > :last-child:not(:only-child),
 .gts:not(.col) > :not(:only-child):not(:first-child):not(:last-child),
-.gts-1:not(.col) > :last-child:not(:only-child),
-.gts-1:not(.col) > :not(:only-child):not(:first-child):not(:last-child) {
+.gts_1:not(.col) > :last-child:not(:only-child),
+.gts_1:not(.col) > :not(:only-child):not(:first-child):not(:last-child) {
     margin-left: .5rem;
 }
 .gts:not(.col) > :first-child:not(:only-child),
 .gts:not(.col) > :not(:only-child):not(:first-child):not(:last-child),
-.gts-1:not(.col) > :first-child:not(:only-child),
-.gts-1:not(.col) > :not(:only-child):not(:first-child):not(:last-child) {
+.gts_1:not(.col) > :first-child:not(:only-child),
+.gts_1:not(.col) > :not(:only-child):not(:first-child):not(:last-child) {
     margin-right: .5rem;
 }
 .gt,
@@ -39,12 +39,12 @@
 .gts:not(.col)[class*="bg"] > *,
 .gts.col[class*="bg"] > :only-child,
 .gts.col[class*="bg"] > :first-child:not(:only-child),
-.gt-1,
-.gt-top-1,  .gts-top-1  > *,
-.gt-rail-1, .gts-rail-1 > *,
-.gts-1:not(.col)[class*="bg"] > *,
-.gts-1.col[class*="bg"] > :only-child,
-.gts-1.col[class*="bg"] > :first-child:not(:only-child) {
+.gt_1,
+.gt-top_1,  .gts-top_1  > *,
+.gt-rail_1, .gts-rail_1 > *,
+.gts_1:not(.col)[class*="bg"] > *,
+.gts_1.col[class*="bg"] > :only-child,
+.gts_1.col[class*="bg"] > :first-child:not(:only-child) {
     margin-top: 1rem;
 }
 .gt,
@@ -53,12 +53,12 @@
 .gts:not(.col)[class*="bg"] > *,
 .gts.col[class*="bg"] > :only-child,
 .gts.col[class*="bg"] > :last-child:not(:only-child),
-.gt-1,
-.gt-rail-1,   .gts-rail-1   > *,
-.gt-bottom-1, .gts-bottom-1 > *,
-.gts-1:not(.col)[class*="bg"] > *,
-.gts-1.col[class*="bg"] > :only-child,
-.gts-1.col[class*="bg"] > :last-child:not(:only-child) {
+.gt_1,
+.gt-rail_1,   .gts-rail_1   > *,
+.gt-bottom_1, .gts-bottom_1 > *,
+.gts_1:not(.col)[class*="bg"] > *,
+.gts_1.col[class*="bg"] > :only-child,
+.gts_1.col[class*="bg"] > :last-child:not(:only-child) {
     margin-bottom: 1rem;
 }
 .gt,
@@ -67,12 +67,12 @@
 .gts.col[class*="bg"] > *,
 .gts:not(.col)[class*="bg"] > :only-child,
 .gts:not(.col)[class*="bg"] > :first-child:not(:only-child),
-.gt-1,
-.gt-side-1, .gts-side-1 > *,
-.gt-left-1, .gts-left-1 > *,
-.gts-1.col[class*="bg"] > *,
-.gts-1:not(.col)[class*="bg"] > :only-child,
-.gts-1:not(.col)[class*="bg"] > :first-child:not(:only-child) {
+.gt_1,
+.gt-side_1, .gts-side_1 > *,
+.gt-left_1, .gts-left_1 > *,
+.gts_1.col[class*="bg"] > *,
+.gts_1:not(.col)[class*="bg"] > :only-child,
+.gts_1:not(.col)[class*="bg"] > :first-child:not(:only-child) {
     margin-left: 1rem;
 }
 .gt,
@@ -81,64 +81,64 @@
 .gts.col[class*="bg"] > *,
 .gts:not(.col)[class*="bg"] > :only-child,
 .gts:not(.col)[class*="bg"] > :last-child:not(:only-child),
-.gt-1,
-.gt-side-1,  .gts-side-1  > *,
-.gt-right-1, .gts-right-1 > *,
-.gts-1.col[class*="bg"] > *,
-.gts-1:not(.col)[class*="bg"] > :only-child,
-.gts-1:not(.col)[class*="bg"] > :last-child:not(:only-child) {
+.gt_1,
+.gt-side_1,  .gts-side_1  > *,
+.gt-right_1, .gts-right_1 > *,
+.gts_1.col[class*="bg"] > *,
+.gts_1:not(.col)[class*="bg"] > :only-child,
+.gts_1:not(.col)[class*="bg"] > :last-child:not(:only-child) {
     margin-right: 1rem;
 }
 
 /*** Gutter 1-8 ***/
 .generate-gutter(8);
 .generate-gutter(@n, @i: 2) when (@i =< @n) {
-    .gts-@{i}.col > :last-child:not(:only-child),
-    .gts-@{i}.col > :not(:only-child):not(:first-child):not(:last-child) {
+    .gts_@{i}.col > :last-child:not(:only-child),
+    .gts_@{i}.col > :not(:only-child):not(:first-child):not(:last-child) {
         margin-top: @i*.5rem;
     }
-    .gts-@{i}.col > :first-child:not(:only-child),
-    .gts-@{i}.col > :not(:only-child):not(:first-child):not(:last-child) {
+    .gts_@{i}.col > :first-child:not(:only-child),
+    .gts_@{i}.col > :not(:only-child):not(:first-child):not(:last-child) {
         margin-bottom: @i*.5rem;
     }
-    .gts-@{i}:not(.col) > :last-child:not(:only-child),
-    .gts-@{i}:not(.col) > :not(:only-child):not(:first-child):not(:last-child) {
+    .gts_@{i}:not(.col) > :last-child:not(:only-child),
+    .gts_@{i}:not(.col) > :not(:only-child):not(:first-child):not(:last-child) {
         margin-left: @i*.5rem;
     }
-    .gts-@{i}:not(.col) > :first-child:not(:only-child),
-    .gts-@{i}:not(.col) > :not(:only-child):not(:first-child):not(:last-child) {
+    .gts_@{i}:not(.col) > :first-child:not(:only-child),
+    .gts_@{i}:not(.col) > :not(:only-child):not(:first-child):not(:last-child) {
         margin-right: @i*.5rem;
     }
-    .gt-@{i},
-    .gt-top-@{i},  .gts-top-@{i}  > *,
-    .gt-rail-@{i}, .gts-rail-@{i} > *,
-    .gts-@{i}:not(.col)[class*="bg"] > *,
-    .gts-@{i}.col[class*="bg"] > :only-child,
-    .gts-@{i}.col[class*="bg"] > :first-child:not(:only-child) {
+    .gt_@{i},
+    .gt-top_@{i},  .gts-top_@{i}  > *,
+    .gt-rail_@{i}, .gts-rail_@{i} > *,
+    .gts_@{i}:not(.col)[class*="bg"] > *,
+    .gts_@{i}.col[class*="bg"] > :only-child,
+    .gts_@{i}.col[class*="bg"] > :first-child:not(:only-child) {
         margin-top: @i*1rem;
     }
-    .gt-@{i},
-    .gt-rail-@{i},   .gts-rail-@{i}   > *,
-    .gt-bottom-@{i}, .gts-bottom-@{i} > *,
-    .gts-@{i}:not(.col)[class*="bg"] > *,
-    .gts-@{i}.col[class*="bg"] > :only-child,
-    .gts-@{i}.col[class*="bg"] > :last-child:not(:only-child) {
+    .gt_@{i},
+    .gt-rail_@{i},   .gts-rail_@{i}   > *,
+    .gt-bottom_@{i}, .gts-bottom_@{i} > *,
+    .gts_@{i}:not(.col)[class*="bg"] > *,
+    .gts_@{i}.col[class*="bg"] > :only-child,
+    .gts_@{i}.col[class*="bg"] > :last-child:not(:only-child) {
         margin-bottom: @i*1rem;
     }
-    .gt-@{i},
-    .gt-side-@{i}, .gts-side-@{i} > *,
-    .gt-left-@{i}, .gts-left-@{i} > *,
-    .gts-@{i}.col[class*="bg"] > *,
-    .gts-@{i}:not(.col)[class*="bg"] > :only-child,
-    .gts-@{i}:not(.col)[class*="bg"] > :first-child:not(:only-child) {
+    .gt_@{i},
+    .gt-side_@{i}, .gts-side_@{i} > *,
+    .gt-left_@{i}, .gts-left_@{i} > *,
+    .gts_@{i}.col[class*="bg"] > *,
+    .gts_@{i}:not(.col)[class*="bg"] > :only-child,
+    .gts_@{i}:not(.col)[class*="bg"] > :first-child:not(:only-child) {
         margin-left: @i*1rem;
     }
-    .gt-@{i},
-    .gt-side-@{i},  .gts-side-@{i}  > *,
-    .gt-right-@{i}, .gts-right-@{i} > *,
-    .gts-@{i}.col[class*="bg"] > *,
-    .gts-@{i}:not(.col)[class*="bg"] > :only-child,
-    .gts-@{i}:not(.col)[class*="bg"] > :last-child:not(:only-child) {
+    .gt_@{i},
+    .gt-side_@{i},  .gts-side_@{i}  > *,
+    .gt-right_@{i}, .gts-right_@{i} > *,
+    .gts_@{i}.col[class*="bg"] > *,
+    .gts_@{i}:not(.col)[class*="bg"] > :only-child,
+    .gts_@{i}:not(.col)[class*="bg"] > :last-child:not(:only-child) {
         margin-right: @i*1rem;
     }
     .generate-gutter(@n, (@i + 1));

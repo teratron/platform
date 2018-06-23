@@ -1,13 +1,13 @@
 /******************************************************************************
   Gap
   -----------------------------------------------------------------------------
-  gp         gp-[1...8]         gps         gps-[1...8]
-  gp-side    gp-side-[1...8]    gps-side    gps-side-[1...8]
-  gp-rail    gp-rail-[1...8]    gps-rail    gps-rail-[1...8]
-  gp-top     gp-top-[1...8]     gps-top     gps-top-[1...8]
-  gp-bottom  gp-bottom-[1...8]  gps-bottom  gps-bottom-[1...8]
-  gp-right   gp-right-[1...8]   gps-right   gps-right-[1...8]
-  gp-left    gp-left-[1...8]    gps-left    gps-left-[1...8]
+  gp         gp_[1...8]         gps         gps_[1...8]
+  gp-side    gp-side_[1...8]    gps-side    gps-side_[1...8]
+  gp-rail    gp-rail_[1...8]    gps-rail    gps-rail_[1...8]
+  gp-top     gp-top_[1...8]     gps-top     gps-top_[1...8]
+  gp-bottom  gp-bottom_[1...8]  gps-bottom  gps-bottom_[1...8]
+  gp-right   gp-right_[1...8]   gps-right   gps-right_[1...8]
+  gp-left    gp-left_[1...8]    gps-left    gps-left_[1...8]
  ******************************************************************************/
 .gps:not(.col) > .head,
 .gps:not(.col) > .body,
@@ -18,15 +18,15 @@
 .gps.col.lst.divider > * > *,
 .gps.tbl[class*="bg"]:not(.row) > * > *,
 .gps.tbl.divider:not(.row) > * > *,
-.gps-1:not(.col) > .head,
-.gps-1:not(.col) > .body,
-.gps-1:not(.col) > .foot,
-.gps-1.row.lst > * > :not(:first-child),
-.gps-1.col:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
-.gps-1.col.lst[class*="bg"] > * > *,
-.gps-1.col.lst.divider > * > *,
-.gps-1.tbl[class*="bg"]:not(.row) > * > *,
-.gps-1.tbl.divider:not(.row) > * > * {
+.gps_1:not(.col) > .head,
+.gps_1:not(.col) > .body,
+.gps_1:not(.col) > .foot,
+.gps_1.row.lst > * > :not(:first-child),
+.gps_1.col:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
+.gps_1.col.lst[class*="bg"] > * > *,
+.gps_1.col.lst.divider > * > *,
+.gps_1.tbl[class*="bg"]:not(.row) > * > *,
+.gps_1.tbl.divider:not(.row) > * > * {
     padding-top: .5rem;
 }
 .gps:not(.col) > .head,
@@ -38,35 +38,35 @@
 .gps.col.lst.divider > * > *,
 .gps.tbl[class*="bg"]:not(.row) > * > *,
 .gps.tbl.divider:not(.row) > * > *,
-.gps-1:not(.col) > .head,
-.gps-1:not(.col) > .body,
-.gps-1:not(.col) > .foot,
-.gps-1.row.lst > * > :not(:last-child),
-.gps-1.col:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
-.gps-1.col.lst[class*="bg"]  > * > *,
-.gps-1.col.lst.divider > * > *,
-.gps-1.tbl[class*="bg"]:not(.row) > * > *,
-.gps-1.tbl.divider:not(.row) > * > * {
+.gps_1:not(.col) > .head,
+.gps_1:not(.col) > .body,
+.gps_1:not(.col) > .foot,
+.gps_1.row.lst > * > :not(:last-child),
+.gps_1.col:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
+.gps_1.col.lst[class*="bg"]  > * > *,
+.gps_1.col.lst.divider > * > *,
+.gps_1.tbl[class*="bg"]:not(.row) > * > *,
+.gps_1.tbl.divider:not(.row) > * > * {
     padding-bottom: .5rem;
 }
 .gps:not(.col):not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
 .gps.row.lst > :not(:first-child) > *,
 .gps.col.lst > * > :not(:first-child),
 .gps.tbl:not(.row) > * > :not(:first-child),
-.gps-1:not(.col):not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
-.gps-1.row.lst > :not(:first-child) > *,
-.gps-1.col.lst > * > :not(:first-child),
-.gps-1.tbl:not(.row) > * > :not(:first-child) {
+.gps_1:not(.col):not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
+.gps_1.row.lst > :not(:first-child) > *,
+.gps_1.col.lst > * > :not(:first-child),
+.gps_1.tbl:not(.row) > * > :not(:first-child) {
     padding-left: .5rem;
 }
 .gps:not(.col):not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
 .gps.row.lst > :not(:last-child) > *,
 .gps.col.lst > * > :not(:last-child),
 .gps.tbl:not(.row) > * > :not(:last-child),
-.gps-1:not(.col):not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
-.gps-1.row.lst > :not(:last-child) > *,
-.gps-1.col.lst > * > :not(:last-child),
-.gps-1.tbl:not(.row) > * > :not(:last-child) {
+.gps_1:not(.col):not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
+.gps_1.row.lst > :not(:last-child) > *,
+.gps_1.col.lst > * > :not(:last-child),
+.gps_1.tbl:not(.row) > * > :not(:last-child) {
     padding-right: .5rem;
 }
 .gp,
@@ -82,19 +82,19 @@
 .gps.col.divider:not(.lst) > :not(:first-child),
 .gps[class*="bg"]:not(.col):not(.lst) > :not(.head):not(.body):not(.foot),
 .gps.row.lst[class*="bg"] > * > :first-child,
-.gp-1,
-.gp-top-1,  .gps-top-1  > *,
-.gp-rail-1, .gps-rail-1 > *,
-.gps-1.col > .head,
-.gps-1.col > .body,
-.gps-1.col[class*="bg"] > .foot,
-.gps-1.col > .foot[class*="bg"],
-.gps-1.col:not(.lst) > .foot[class*="bg"] + .foot,
-.gps-1.col[class*="gts"] > *,
-.gps-1.col[class*="bg"]:not(.lst) > :first-child,
-.gps-1.col.divider:not(.lst) > :not(:first-child),
-.gps-1[class*="bg"]:not(.col):not(.lst) > :not(.head):not(.body):not(.foot),
-.gps-1.row.lst[class*="bg"] > * > :first-child {
+.gp_1,
+.gp-top_1,  .gps-top_1  > *,
+.gp-rail_1, .gps-rail_1 > *,
+.gps_1.col > .head,
+.gps_1.col > .body,
+.gps_1.col[class*="bg"] > .foot,
+.gps_1.col > .foot[class*="bg"],
+.gps_1.col:not(.lst) > .foot[class*="bg"] + .foot,
+.gps_1.col[class*="gts"] > *,
+.gps_1.col[class*="bg"]:not(.lst) > :first-child,
+.gps_1.col.divider:not(.lst) > :not(:first-child),
+.gps_1[class*="bg"]:not(.col):not(.lst) > :not(.head):not(.body):not(.foot),
+.gps_1.row.lst[class*="bg"] > * > :first-child {
     padding-top: 1rem;
 }
 .gp,
@@ -109,18 +109,18 @@
 .gps.col.divider:not(.lst) > :not(:last-child),
 .gps[class*="bg"]:not(.col):not(.lst) > :not(.head):not(.body):not(.foot),
 .gps.row.lst[class*="bg"] > * > :last-child,
-.gp-1,
-.gp-rail-1,   .gps-rail-1   > *,
-.gp-bottom-1, .gps-bottom-1 > *,
-.gps-1.col > .body,
-.gps-1.col > .foot,
-.gps-1.col[class*="bg"] > .head,
-.gps-1.col > .head[class*="bg"],
-.gps-1.col[class*="gts"] > *,
-.gps-1.col[class*="bg"]:not(.lst) > :last-child,
-.gps-1.col.divider:not(.lst) > :not(:last-child),
-.gps-1[class*="bg"]:not(.col):not(.lst) > :not(.head):not(.body):not(.foot),
-.gps-1.row.lst[class*="bg"] > * > :last-child {
+.gp_1,
+.gp-rail_1,   .gps-rail_1   > *,
+.gp-bottom_1, .gps-bottom_1 > *,
+.gps_1.col > .body,
+.gps_1.col > .foot,
+.gps_1.col[class*="bg"] > .head,
+.gps_1.col > .head[class*="bg"],
+.gps_1.col[class*="gts"] > *,
+.gps_1.col[class*="bg"]:not(.lst) > :last-child,
+.gps_1.col.divider:not(.lst) > :not(:last-child),
+.gps_1[class*="bg"]:not(.col):not(.lst) > :not(.head):not(.body):not(.foot),
+.gps_1.row.lst[class*="bg"] > * > :last-child {
     padding-bottom: 1rem;
 }
 .gp,
@@ -140,23 +140,23 @@
 .gps.row.lst[class*="bg"] > :first-child > *,
 .gps.row.lst.divider > :not(:first-child) > *,
 .gps.tbl[class*="bg"]:not(.row) > * > :first-child,
-.gp-1,
-.gp-side-1, .gps-side-1 > *,
-.gp-left-1, .gps-left-1 > *,
-.gps-1 > .body,
-.gps-1 > .head,
-.gps-1.col > .foot,
-.gps-1[class*="bg"] > .foot,
-.gps-1 > .foot[class*="bg"],
-.gps-1.col[class*="bg"]:not(.lst) > *,
-.gps-1.col.lst[class*="bg"] > * > :first-child,
-.gps-1:not(.col):not(.lst) > .foot[class*="bg"] + .foot,
-.gps-1[class*="gts"]:not(.col):not(.lst) > *,
-.gps-1[class*="bg"]:not(.col):not(.lst) > :first-child,
-.gps-1.divider:not(.col):not(.lst) > :not(:first-child),
-.gps-1.row.lst[class*="bg"] > :first-child > *,
-.gps-1.row.lst.divider > :not(:first-child) > *,
-.gps-1.tbl[class*="bg"]:not(.row) > * > :first-child {
+.gp_1,
+.gp-side_1, .gps-side_1 > *,
+.gp-left_1, .gps-left_1 > *,
+.gps_1 > .body,
+.gps_1 > .head,
+.gps_1.col > .foot,
+.gps_1[class*="bg"] > .foot,
+.gps_1 > .foot[class*="bg"],
+.gps_1.col[class*="bg"]:not(.lst) > *,
+.gps_1.col.lst[class*="bg"] > * > :first-child,
+.gps_1:not(.col):not(.lst) > .foot[class*="bg"] + .foot,
+.gps_1[class*="gts"]:not(.col):not(.lst) > *,
+.gps_1[class*="bg"]:not(.col):not(.lst) > :first-child,
+.gps_1.divider:not(.col):not(.lst) > :not(:first-child),
+.gps_1.row.lst[class*="bg"] > :first-child > *,
+.gps_1.row.lst.divider > :not(:first-child) > *,
+.gps_1.tbl[class*="bg"]:not(.row) > * > :first-child {
     padding-left: 1rem;
 }
 .gp,
@@ -175,126 +175,126 @@
 .gps.row.lst[class*="bg"] > :last-child > *,
 .gps.row.lst.divider > :not(:last-child) > *,
 .gps.tbl[class*="bg"]:not(.row) > * > :last-child,
-.gp-1,
-.gp-side-1,  .gps-side-1  > *,
-.gp-right-1, .gps-right-1 > *,
-.gps-1 > .body,
-.gps-1 > .foot,
-.gps-1.col > .head,
-.gps-1[class*="bg"] > .head,
-.gps-1 > .head[class*="bg"],
-.gps-1.col[class*="bg"]:not(.lst) > *,
-.gps-1.col.lst[class*="bg"] > * > :last-child,
-.gps-1[class*="gts"]:not(.col):not(.lst) > *,
-.gps-1[class*="bg"]:not(.col):not(.lst) > :last-child,
-.gps-1.divider:not(.col):not(.lst) > :not(:last-child),
-.gps-1.row.lst[class*="bg"] > :last-child > *,
-.gps-1.row.lst.divider > :not(:last-child) > *,
-.gps-1.tbl[class*="bg"]:not(.row) > * > :last-child {
+.gp_1,
+.gp-side_1,  .gps-side_1  > *,
+.gp-right_1, .gps-right_1 > *,
+.gps_1 > .body,
+.gps_1 > .foot,
+.gps_1.col > .head,
+.gps_1[class*="bg"] > .head,
+.gps_1 > .head[class*="bg"],
+.gps_1.col[class*="bg"]:not(.lst) > *,
+.gps_1.col.lst[class*="bg"] > * > :last-child,
+.gps_1[class*="gts"]:not(.col):not(.lst) > *,
+.gps_1[class*="bg"]:not(.col):not(.lst) > :last-child,
+.gps_1.divider:not(.col):not(.lst) > :not(:last-child),
+.gps_1.row.lst[class*="bg"] > :last-child > *,
+.gps_1.row.lst.divider > :not(:last-child) > *,
+.gps_1.tbl[class*="bg"]:not(.row) > * > :last-child {
     padding-right: 1rem;
 }
 
 /*** Gap 1-8 ***/
 .generate-gap(8);
 .generate-gap(@n, @i: 2) when (@i =< @n) {
-    .gps-@{i}:not(.col) > .head,
-    .gps-@{i}:not(.col) > .body,
-    .gps-@{i}:not(.col) > .foot,
-    .gps-@{i}.row.lst > * > :not(:first-child),
-    .gps-@{i}.col:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
-    .gps-@{i}.col.lst[class*="bg"] > * > *,
-    .gps-@{i}.col.lst.divider > * > *,
-    .gps-@{i}.tbl[class*="bg"]:not(.row) > * > *,
-    .gps-@{i}.tbl.divider:not(.row) > * > * {
+    .gps_@{i}:not(.col) > .head,
+    .gps_@{i}:not(.col) > .body,
+    .gps_@{i}:not(.col) > .foot,
+    .gps_@{i}.row.lst > * > :not(:first-child),
+    .gps_@{i}.col:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
+    .gps_@{i}.col.lst[class*="bg"] > * > *,
+    .gps_@{i}.col.lst.divider > * > *,
+    .gps_@{i}.tbl[class*="bg"]:not(.row) > * > *,
+    .gps_@{i}.tbl.divider:not(.row) > * > * {
         padding-top: @i*.5rem;
     }
-    .gps-@{i}:not(.col) > .head,
-    .gps-@{i}:not(.col) > .body,
-    .gps-@{i}:not(.col) > .foot,
-    .gps-@{i}.row.lst > * > :not(:last-child),
-    .gps-@{i}.col:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
-    .gps-@{i}.col.lst[class*="bg"]  > * > *,
-    .gps-@{i}.col.lst.divider > * > *,
-    .gps-@{i}.tbl[class*="bg"]:not(.row) > * > *,
-    .gps-@{i}.tbl.divider:not(.row) > * > * {
+    .gps_@{i}:not(.col) > .head,
+    .gps_@{i}:not(.col) > .body,
+    .gps_@{i}:not(.col) > .foot,
+    .gps_@{i}.row.lst > * > :not(:last-child),
+    .gps_@{i}.col:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
+    .gps_@{i}.col.lst[class*="bg"]  > * > *,
+    .gps_@{i}.col.lst.divider > * > *,
+    .gps_@{i}.tbl[class*="bg"]:not(.row) > * > *,
+    .gps_@{i}.tbl.divider:not(.row) > * > * {
         padding-bottom: @i*.5rem;
     }
-    .gps-@{i}:not(.col):not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
-    .gps-@{i}.row.lst > :not(:first-child) > *,
-    .gps-@{i}.col.lst > * > :not(:first-child),
-    .gps-@{i}.tbl:not(.row) > * > :not(:first-child) {
+    .gps_@{i}:not(.col):not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
+    .gps_@{i}.row.lst > :not(:first-child) > *,
+    .gps_@{i}.col.lst > * > :not(:first-child),
+    .gps_@{i}.tbl:not(.row) > * > :not(:first-child) {
         padding-left: @i*.5rem;
     }
-    .gps-@{i}:not(.col):not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
-    .gps-@{i}.row.lst > :not(:last-child) > *,
-    .gps-@{i}.col.lst > * > :not(:last-child),
-    .gps-@{i}.tbl:not(.row) > * > :not(:last-child) {
+    .gps_@{i}:not(.col):not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
+    .gps_@{i}.row.lst > :not(:last-child) > *,
+    .gps_@{i}.col.lst > * > :not(:last-child),
+    .gps_@{i}.tbl:not(.row) > * > :not(:last-child) {
         padding-right: @i*.5rem;
     }
-    .gp-@{i},
-    .gp-top-@{i},  .gps-top-@{i}  > *,
-    .gp-rail-@{i}, .gps-rail-@{i} > *,
-    .gps-@{i}.col > .head,
-    .gps-@{i}.col > .body,
-    .gps-@{i}.col[class*="bg"] > .foot,
-    .gps-@{i}.col > .foot[class*="bg"],
-    .gps-@{i}.col:not(.lst) > .foot[class*="bg"] + .foot,
-    .gps-@{i}.col[class*="gts"] > *,
-    .gps-@{i}.col[class*="bg"]:not(.lst) > :first-child,
-    .gps-@{i}.col.divider:not(.lst) > :not(:first-child),
-    .gps-@{i}[class*="bg"]:not(.col):not(.lst) > :not(.head):not(.body):not(.foot),
-    .gps-@{i}.row.lst[class*="bg"] > * > :first-child {
+    .gp_@{i},
+    .gp-top_@{i},  .gps-top_@{i}  > *,
+    .gp-rail_@{i}, .gps-rail_@{i} > *,
+    .gps_@{i}.col > .head,
+    .gps_@{i}.col > .body,
+    .gps_@{i}.col[class*="bg"] > .foot,
+    .gps_@{i}.col > .foot[class*="bg"],
+    .gps_@{i}.col:not(.lst) > .foot[class*="bg"] + .foot,
+    .gps_@{i}.col[class*="gts"] > *,
+    .gps_@{i}.col[class*="bg"]:not(.lst) > :first-child,
+    .gps_@{i}.col.divider:not(.lst) > :not(:first-child),
+    .gps_@{i}[class*="bg"]:not(.col):not(.lst) > :not(.head):not(.body):not(.foot),
+    .gps_@{i}.row.lst[class*="bg"] > * > :first-child {
         padding-top: @i*1rem;
     }
-    .gp-@{i},
-    .gp-rail-@{i},   .gps-rail-@{i}   > *,
-    .gp-bottom-@{i}, .gps-bottom-@{i} > *,
-    .gps-@{i}.col > .body,
-    .gps-@{i}.col > .foot,
-    .gps-@{i}.col[class*="bg"] > .head,
-    .gps-@{i}.col > .head[class*="bg"],
-    .gps-@{i}.col[class*="gts"] > *,
-    .gps-@{i}.col[class*="bg"]:not(.lst) > :last-child,
-    .gps-@{i}.col.divider:not(.lst) > :not(:last-child),
-    .gps-@{i}[class*="bg"]:not(.col):not(.lst) > :not(.head):not(.body):not(.foot),
-    .gps-@{i}.row.lst[class*="bg"] > * > :last-child {
+    .gp_@{i},
+    .gp-rail_@{i},   .gps-rail_@{i}   > *,
+    .gp-bottom_@{i}, .gps-bottom_@{i} > *,
+    .gps_@{i}.col > .body,
+    .gps_@{i}.col > .foot,
+    .gps_@{i}.col[class*="bg"] > .head,
+    .gps_@{i}.col > .head[class*="bg"],
+    .gps_@{i}.col[class*="gts"] > *,
+    .gps_@{i}.col[class*="bg"]:not(.lst) > :last-child,
+    .gps_@{i}.col.divider:not(.lst) > :not(:last-child),
+    .gps_@{i}[class*="bg"]:not(.col):not(.lst) > :not(.head):not(.body):not(.foot),
+    .gps_@{i}.row.lst[class*="bg"] > * > :last-child {
         padding-bottom: @i*1rem;
     }
-    .gp-@{i},
-    .gp-side-@{i}, .gps-side-@{i} > *,
-    .gp-left-@{i}, .gps-left-@{i} > *,
-    .gps-@{i} > .body,
-    .gps-@{i} > .head,
-    .gps-@{i}.col > .foot,
-    .gps-@{i}[class*="bg"] > .foot,
-    .gps-@{i} > .foot[class*="bg"],
-    .gps-@{i}.col[class*="bg"]:not(.lst) > *,
-    .gps-@{i}.col.lst[class*="bg"] > * > :first-child,
-    .gps-@{i}:not(.col):not(.lst) > .foot[class*="bg"] + .foot,
-    .gps-@{i}[class*="gts"]:not(.col):not(.lst) > *,
-    .gps-@{i}[class*="bg"]:not(.col):not(.lst) > :first-child,
-    .gps-@{i}.divider:not(.col):not(.lst) > :not(:first-child),
-    .gps-@{i}.row.lst[class*="bg"] > :first-child > *,
-    .gps-@{i}.row.lst.divider > :not(:first-child) > *,
-    .gps-@{i}.tbl[class*="bg"]:not(.row) > * > :first-child {
+    .gp_@{i},
+    .gp-side_@{i}, .gps-side_@{i} > *,
+    .gp-left_@{i}, .gps-left_@{i} > *,
+    .gps_@{i} > .body,
+    .gps_@{i} > .head,
+    .gps_@{i}.col > .foot,
+    .gps_@{i}[class*="bg"] > .foot,
+    .gps_@{i} > .foot[class*="bg"],
+    .gps_@{i}.col[class*="bg"]:not(.lst) > *,
+    .gps_@{i}.col.lst[class*="bg"] > * > :first-child,
+    .gps_@{i}:not(.col):not(.lst) > .foot[class*="bg"] + .foot,
+    .gps_@{i}[class*="gts"]:not(.col):not(.lst) > *,
+    .gps_@{i}[class*="bg"]:not(.col):not(.lst) > :first-child,
+    .gps_@{i}.divider:not(.col):not(.lst) > :not(:first-child),
+    .gps_@{i}.row.lst[class*="bg"] > :first-child > *,
+    .gps_@{i}.row.lst.divider > :not(:first-child) > *,
+    .gps_@{i}.tbl[class*="bg"]:not(.row) > * > :first-child {
         padding-left: @i*1rem;
     }
-    .gp-@{i},
-    .gp-side-@{i},  .gps-side-@{i}  > *,
-    .gp-right-@{i}, .gps-right-@{i} > *,
-    .gps-@{i} > .body,
-    .gps-@{i} > .foot,
-    .gps-@{i}.col > .head,
-    .gps-@{i}[class*="bg"] > .head,
-    .gps-@{i} > .head[class*="bg"],
-    .gps-@{i}.col[class*="bg"]:not(.lst) > *,
-    .gps-@{i}.col.lst[class*="bg"] > * > :last-child,
-    .gps-@{i}[class*="gts"]:not(.col):not(.lst) > *,
-    .gps-@{i}[class*="bg"]:not(.col):not(.lst) > :last-child,
-    .gps-@{i}.divider:not(.col):not(.lst) > :not(:last-child),
-    .gps-@{i}.row.lst[class*="bg"] > :last-child > *,
-    .gps-@{i}.row.lst.divider > :not(:last-child) > *,
-    .gps-@{i}.tbl[class*="bg"]:not(.row) > * > :last-child {
+    .gp_@{i},
+    .gp-side_@{i},  .gps-side_@{i}  > *,
+    .gp-right_@{i}, .gps-right_@{i} > *,
+    .gps_@{i} > .body,
+    .gps_@{i} > .foot,
+    .gps_@{i}.col > .head,
+    .gps_@{i}[class*="bg"] > .head,
+    .gps_@{i} > .head[class*="bg"],
+    .gps_@{i}.col[class*="bg"]:not(.lst) > *,
+    .gps_@{i}.col.lst[class*="bg"] > * > :last-child,
+    .gps_@{i}[class*="gts"]:not(.col):not(.lst) > *,
+    .gps_@{i}[class*="bg"]:not(.col):not(.lst) > :last-child,
+    .gps_@{i}.divider:not(.col):not(.lst) > :not(:last-child),
+    .gps_@{i}.row.lst[class*="bg"] > :last-child > *,
+    .gps_@{i}.row.lst.divider > :not(:last-child) > *,
+    .gps_@{i}.tbl[class*="bg"]:not(.row) > * > :last-child {
         padding-right: @i*1rem;
     }
     .generate-gap(@n, (@i + 1));

@@ -1,38 +1,38 @@
 /******************************************************************************
   Tile
   -----------------------------------------------------------------------------
-  tile / tile-[1...8]
+  til / til_[1...8]
   flds - элементы в данном контейнере имеют одну и туже ширину (до 100)
-  fld = fld-1 / fld-[1...100] - ширина в %, номер означает сколько элементов поместиться в родительсом контейнере
+  fld = fld_1 / fld_[1...100] - ширина в %, номер означает сколько элементов поместиться в родительсом контейнере
   -----------------------------------------------------------------------------
    1     2     3     4     5     6     7      8      9     10     11     12
   240   360   480   600   720   840   960   1080   1200   1320   1440   1560
  ******************************************************************************/
 body, main, header, footer,
-.inner,
-.fld, .fld-1,
+.inr,
+.fld, .fld_1,
 .flds > :only-child,
 .flds > :first-child:nth-last-child(1) {
     width: 100%;
 }
-[class*="tile"],
-.fld, .fld-1,
+[class*="til"],
+.fld, .fld_1,
 .flds > :only-child,
 .flds > :first-child:nth-last-child(1) {
     min-width: 100%;
 }
-.fld, .fld-1,
+.fld, .fld_1,
 .flds > :only-child,
 .flds > :first-child:nth-last-child(1) {
     max-width: 100%;
 }
 @media only screen and (min-width: 0) {
-    .tile > * {
+    .til > * {
         width: 100%;
     }
     .tile-toggle-zero(8);
     .tile-toggle-zero(@n, @i: 1) when (@i =< @n) {
-        .tile-@{i} > * {
+        .til_@{i} > * {
             width: round(100%/@i, 3);
         }
         .tile-toggle-zero(@n, (@i + 1));
@@ -41,7 +41,7 @@ body, main, header, footer,
 .generate-tile(12);
 .generate-tile(@n, @i: 1) when (@i =< @n) {
     @media only screen and (min-width: (120px + @i*120px)) {
-        .tile > * {
+        .til > * {
             width: round(100%/(@i + 1), 3);
         }
     }
@@ -52,7 +52,7 @@ body, main, header, footer,
     .generate-tile-toggle(6*@i);
     .generate-tile-toggle(@k, @j: 1) when (@j =< @k) {
         @media only screen and (min-width: round((360px + @j*360px/@i))) {
-            .tile-@{i} > * {
+            .til_@{i} > * {
                 width: round(100%/(@i + @j), 3);
             }
         }
@@ -66,7 +66,7 @@ body, main, header, footer,
  ***************************************/
 .generate-fluid(100);
 .generate-fluid(@n, @i: 2) when (@i =< @n) {
-    .fld-@{i},
+    .fld_@{i},
     .flds > :first-child:nth-last-child(@{i}),
     .flds > :first-child:nth-last-child(@{i}) ~ * {
         width:     round(100%/@i, 3);

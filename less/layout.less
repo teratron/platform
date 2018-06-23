@@ -7,27 +7,26 @@
   climb
   bar
   lst
-  grw  / grw-[1...8] - элемент развигает и заполняет пустое пространство
-  grws / grws-[1...8]
+  grw  / grw_[1...8] - элемент развигает и заполняет пустое пространство
+  grws / grws_[1...8]
   reverse
   inverse
   stretch / stretches
   inr
   head body foot
-  fix abs pin
+  fix abs stt stc
   scr
  ******************************************************************************/
-header > .inner {
+header > .inr {
     height: @header_height;
 }
-main > .inner {
+main > .inr {
 }
-footer > .inner {
+footer > .inr {
     min-height: @footer_height;
 }
-.inner {
+.inr {
     max-width: @layout_width;
-    min-width: @layout_width_min;
     margin-left:  auto;
     margin-right: auto;
 }
@@ -41,16 +40,9 @@ header.fix + :not(footer) {
     }
 }
 
-/*** Grid Layout ***/
-.grd {
-    display: -moz-grid;
-    display: -ms-grid;
-    display: grid;
-}
-
 /*** Flexible Layout ***/
 main, header, footer,
-.on, .col, .row, [class*="tile"],
+.on, .col, .row, [class*="til"],
 .fix.middles, .fix.centers,
 .abs.middles, .abs.centers,
 .bar > *,
@@ -64,12 +56,12 @@ main, header, footer,
     display: flex;
 }
 .inl, .ico, .button, .badge, .label, .toggle, .check, .radio, .avatar,
-.cel:not(.col):not(.tbl):not([class*="tile"]) > :not(.row):not(.tbl) {
+.cel:not(.col):not(.tbl):not([class*="til"]) > :not(.row):not(.tbl) {
     display: inline-block;
     display: -webkit-inline-flex;
     display: inline-flex;
 }
-.row, [class*="tile"], .lst.col > *  {
+.row, [class*="til"], .lst.col > *  {
     -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row;
@@ -89,7 +81,7 @@ main, header, footer,
                 flex-direction: column-reverse;
     }
 }
-.wrap, .row, [class*="tile"] {
+.wrap, .row, [class*="til"] {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
@@ -104,14 +96,14 @@ main, header, footer,
     -webkit-flex-wrap: wrap-reverse;
             flex-wrap: wrap-reverse;
 }
-.nowrap, .col:not(.cel):not([class*="tile"]), .bar, .lst > * {
+.nowrap, .col:not(.cel):not([class*="til"]), .bar, .lst > * {
     -webkit-flex-wrap: nowrap;
         -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
 }
 .nowrap {
-  white-space: nowrap;
-  overflow:    hidden;
+    white-space: nowrap;
+    overflow:    hidden;
 }
 .nowrap, p {
     -o-text-overflow: ellipsis;
@@ -126,7 +118,7 @@ main, header, footer,
 }
 .generate-grow(8);
 .generate-grow(@n, @i: 1) when (@i =< @n) {
-    .grw-@{i}, .grws-@{i} > * {
+    .grw_@{i}, .grws_@{i} > * {
         -webkit-box-flex:  @i;
         -moz-box-flex:     @i;
         -ms-flex:          @i;
@@ -140,7 +132,7 @@ main, header, footer,
 .stretches,
 .row:not(.cel),
 .col:not(.cel),
-[class*="tile"]:not(.cel),
+[class*="til"]:not(.cel),
 .lst > *,
 .fix.col.middles, .abs.col.middles,
 .fix.row.top,     .abs.row.top,
@@ -149,7 +141,7 @@ main, header, footer,
             align-content: stretch;
 }
 .scr,
-[class*="tile"].cel,
+[class*="til"].cel,
 .col.cel.lefts, .col.cel:not(.centers),
 .row.cel.tops,  .row.cel:not(.middles) {
     -webkit-align-content: flex-start;
@@ -178,7 +170,7 @@ button, input, output, select, option {
 .stretches,
 .row:not(.cel),
 .col:not(.cel),
-[class*="tile"]:not(.cel),
+[class*="til"]:not(.cel),
 .lst > *,
 .fix.col.middles, .abs.col.middles,
 .fix.row.top,     .abs.row.top,
@@ -187,7 +179,7 @@ button, input, output, select, option {
             align-items: stretch;
 }
 .scr,
-[class*="tile"].cel,
+[class*="til"].cel,
 .col.cel.lefts, .col.cel:not(.centers),
 .row.cel.tops,  .row.cel:not(.middles) {
     -webkit-align-items: flex-start;
@@ -277,6 +269,13 @@ main, header, footer,
     }
 }
 
+/*** Grid Layout ***/
+.grd {
+    display: -moz-grid;
+    display: -ms-grid;
+    display: grid;
+}
+
 /*** Block Layout ***/
 .blc,
 .blc.on,
@@ -288,8 +287,8 @@ main, header, footer,
 .blc.row.rights:not(.cel) > .left,
 .blc.row.reverse:not(.cel) > .right,
 .blc.row.rights.reverse:not(.cel) > *,
-.blc[class*="tile"] > *,
-.blc[class*="tile"].rights.reverse > * {
+.blc[class*="til"] > *,
+.blc[class*="til"].rights.reverse > * {
     float: left;
 }
 .blc.lst > * > .right,
@@ -297,8 +296,8 @@ main, header, footer,
 .blc.row.rights:not(.cel) > *,
 .blc.row.reverse:not(.cel) > *,
 .blc.row.rights.reverse:not(.cel) > .left,
-.blc[class*="tile"].rights > *,
-.blc[class*="tile"].reverse > * {
+.blc[class*="til"].rights > *,
+.blc[class*="til"].reverse > * {
     float: right;
 }
 
@@ -318,7 +317,7 @@ main, header, footer,
 /*** Clearfix ***/
 .clear:after,
 .blc.row:after,
-.blc[class*="tile"]:after,
+.blc[class*="til"]:after,
 .tbl.row > :after,
 .tbl:not(.row) > * > :not([hidden]):not(script):not(style):after {
     clear:    both;
@@ -329,7 +328,7 @@ main, header, footer,
 }
 .clear:after,
 .blc.row:after,
-.blc[class*="tile"]:after {
+.blc[class*="til"]:after {
     display: block;
     content: "";
 }
@@ -394,7 +393,7 @@ main, header, footer,
 }
 
 /***************************************
-  Position: Fixed / Absolute / Static
+  Position
  ***************************************/
 .fix, .drawer {
     position: fixed;
@@ -402,8 +401,11 @@ main, header, footer,
 .abs, .fix .scr, .climb {
     position: absolute;
 }
-.pin {
+.stt {
     position: static;
+}
+.stc {
+    position: sticky;
 }
 .fix .scr,
 .fix:not(.top):not(.bottom):not(.right):not(.left),
@@ -466,7 +468,7 @@ body.fix,
 /***************************************
   Group
  ***************************************/
-.grp:not(.col)   > :not(:only-child):not(:first-child),
+.grp:not(.col)     > :not(:only-child):not(:first-child),
 .divider:not(.col) > :not(:only-child):not(:first-child) {
     margin-left: -1px !important;
 }
@@ -484,7 +486,7 @@ body.fix,
     border-top-left-radius:    0;
     border-bottom-left-radius: 0;
 }
-.grp.col   > :not(:only-child):not(:first-child),
+.grp.col     > :not(:only-child):not(:first-child),
 .divider.col > :not(:only-child):not(:first-child) {
     margin-top: -1px !important;
 }
@@ -532,15 +534,15 @@ body.fix,
   fade    fadein  fadeout
   empty
  ******************************************************************************/
-.off, [class*="on-"], .empty:empty {
+.off, [class*="on_"], .empty:empty {
     display: none !important;
 }
-.out, [class*="in-"] {
+.out, [class*="in_"] {
     top:  -100% !important;
     left: -100% !important;
     z-index: -1 !important;
 }
-.out, [class*="in-"], .in.fix {
+.out, [class*="in_"], .in.fix {
     position: fixed !important;
 }
 .in.abs {
@@ -554,7 +556,7 @@ body.fix,
     left:       auto !important;
     z-index: inherit !important;
 }
-.hide, [class*="unhide-"], .fadein, .fadeout:hover, .fade:hover .fadeout {
+.hide, [class*="unhide_"], .fadein, .fadeout:hover, .fade:hover .fadeout {
     visibility: hidden !important;
     opacity:         0 !important;
 }
