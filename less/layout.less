@@ -14,7 +14,7 @@
   stretch / stretches
   inr
   head body foot
-  fix abs stt stc
+  fix abs stc sty
   scr
  ******************************************************************************/
 header > .inr {
@@ -398,13 +398,13 @@ main, header, footer,
 .fix, .drawer {
     position: fixed;
 }
-.abs, .fix .scr, .climb {
+.abs, .fix .scr, .climb > * {
     position: absolute;
 }
-.stt {
+.stc {
     position: static;
 }
-.stc {
+.sty {
     position: sticky;
 }
 .fix .scr,
@@ -530,7 +530,7 @@ body.fix,
   -----------------------------------------------------------------------------
   on      off
   in      out
-  unhide  hide
+  show    hide
   fade    fadein  fadeout
   empty
  ******************************************************************************/
@@ -556,11 +556,11 @@ body.fix,
     left:       auto !important;
     z-index: inherit !important;
 }
-.hide, [class*="unhide_"], .fadein, .fadeout:hover, .fade:hover .fadeout {
+.hide, [class*="show_"], .fadein, .fadeout:hover, .fade:hover .fadeout {
     visibility: hidden !important;
     opacity:         0 !important;
 }
-.unhide, .fadeout, .fadein:hover, .fade:hover .fadein {
+.show, .fadeout, .fadein:hover, .fade:hover .fadein {
     visibility: visible !important;
     opacity:          1 !important;
 }

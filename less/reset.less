@@ -46,7 +46,7 @@ ul, ol {
     ul {list-style-type: toggle(circle, square, box);}
     ol {list-style-type: lower-latin;}
 }
-.col, .row, [class*="tile"] {
+.col, .row, [class*="til"] {
     > li {
         list-style-type: none;
     }
@@ -86,7 +86,7 @@ textarea:disabled,
 [type="checkbox"]:disabled:checked + label:before {
     cursor: not-allowed;
 }
-.help, acronym {
+acronym, .help {
     cursor: help;
 }
 .title {
@@ -166,13 +166,16 @@ h6 {
         margin-bottom: 12px;
     }
 }
-.caption, abbr, code, time {
+.caption {
+    text-transform: uppercase;
+}
+abbr, code, time {
     font-size: 1.2rem;
 }
-.secondary, small {
+small, .secondary {
     font-size: 87.5%;
 }
-.hint, sub, sup {
+sub, sup, .hint {
     font-size: 75%;
 }
 

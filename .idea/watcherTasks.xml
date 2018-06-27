@@ -20,8 +20,8 @@
         </array>
       </option>
       <option name="outputFromStdout" value="true" />
+      <option name="passParentEnvs" value="true" />
       <option name="program" value="$USER_HOME$/AppData/Roaming/npm/lessc.cmd" />
-      <option name="runOnExternalChanges" value="true" />
       <option name="scopeName" value="Project Files" />
       <option name="trackOnlyRoot" value="true" />
       <option name="workingDir" value="$FileDir$" />
