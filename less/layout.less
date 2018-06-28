@@ -468,7 +468,7 @@ body.fix,
 /***************************************
   Group
  ***************************************/
-.grp:not(.col)     > :not(:only-child):not(:first-child),
+.grp:not(.col)     > :not(:only-child):not(:first-child):not(.climb),
 .divider:not(.col) > :not(:only-child):not(:first-child) {
     margin-left: -1px !important;
 }
@@ -521,7 +521,7 @@ body.fix,
 /***************************************
   Climb
  ***************************************/
-.climb > * {
+.climb:not(:empty) > * {
     margin-left: -100% !important;
 }
 

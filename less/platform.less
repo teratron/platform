@@ -14,11 +14,15 @@
 @footer_height:         @cell*4;
 
 /*** Common Element ***/
+@elem_width:            4rem;
+@elem_height:           4rem;
 @elem_border_width:     @px;
-@elem_border_heght:     @px;
+@elem_border_height:    @px;
 @elem_border_radius:    @px*3;
 
 /*** Button ***/
+@btn_height:            @elem_height;
+@btn_width-min:         6rem;
 @btn_border_width:      @elem_border_width;
 @btn_border_radius:     @elem_border_radius;
 @btn_font_size:         @elem_border_width;
@@ -57,15 +61,11 @@
 /******************************************************************************
   Manual
   -----------------------------------------------------------------------------
-  col
-  row
-  cel
-  blc
-  tbl
-  inl
-  tile / tile-[1...9]
-  flds - элементы в данном контейнере имеют одну и туже ширину (до 100)
-  fld = fld-1 / fld-[1...100] - ширина в %, номер означает сколько элементов поместиться в родительсом контейнере
+  col row cel
+  blc tbl grd inl
+  til / til-[1...9]
+  flus - элементы в данном контейнере имеют одну и туже ширину (до 100)
+  flu = flu-1 / flu-[1...100] - ширина в %, номер означает сколько элементов поместиться в родительсом контейнере
   gr (.5rem)
   gr-[1...20] (0.1rem - 2rem)
   grp - группирует элементы (зависит от col и row)
@@ -74,16 +74,18 @@
   lst
   grw  / grw-[1...8]
   grws / grws-[1...8]
-  inner
+  inr
   scr
-  head
-  body
-  foot
+  head hd
+  body bd
+  foot ft
   fix
   abs
   stc
+  sty
   clear
   title
+  caption
   bg - фон, элемент структуры на который возможно воздействие модификаторов, например: gp, gt и т.д.
   divider
  ******************************************************************************/

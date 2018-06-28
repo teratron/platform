@@ -43,7 +43,6 @@ input[type="search"] {
         -webkit-appearance: none; /* Inner-padding issues in Chrome OSX, Safari 5 */
     }
 }
-
 textarea,
 input[type="text"],
 input[type="password"],
@@ -51,15 +50,16 @@ input[type="email"],
 input[type="tel"],
 input[type="url"],
 input[type="search"] {
-    + .climb > * {
+    + .climb {
         background: transparent none;
-        font-size: 150%;
+        font-size: 120%;
         font-weight: normal;
         width:     4rem;
         min-width: 4rem;
         padding: 0;
         border: 0 none;
         box-shadow: none;
+        margin-left: -4rem !important;
     }
 }
 input[type="file"] {
@@ -125,7 +125,7 @@ input[type="datetime-local"] {
         &:last-child {
             margin-bottom: 0;
         }
-        button, input, output, select, textarea, label, .fld {
+        button, input, output, select, textarea, label, .flu {
             float: left;
             margin-right: 0;
         }
@@ -157,7 +157,7 @@ input[type="datetime-local"] {
                 margin-top: (4rem - 2rem)*.5;
             }
         }
-        select, textarea, output, .fld,
+        select, textarea, output, .flu,
         input[type="text"],
         input[type="email"],
         input[type="search"],
@@ -275,7 +275,7 @@ display: flex;
 /*
 @media only screen and (max-width: 500px) {
     .form {
-        &[class*="fld-"] {
+        &[class*="flu-"] {
             width: 100%;
         }
         > *, &.column > .inl {
@@ -284,7 +284,7 @@ display: flex;
                 min-height: 2rem;
                 line-height: 1;
             }
-            select, textarea, output, .fld,
+            select, textarea, output, .flu,
             > label:first-child,
             input[type="text"],
             input[type="email"],
