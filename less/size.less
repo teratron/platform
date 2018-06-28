@@ -5,63 +5,41 @@
  ******************************************************************************/
 
 /*** x4 ***/
-.square, .circle, .avatar, .toggle:before, input[type="color"] {
+.square, .circle, .toggle:before, input[type="color"] {
     width: 4rem;
 }
-.pill, .square, .circle, .avatar {
+.pill, .square, .circle {
     min-width: 4rem;
 }
-.square, .circle, .avatar, .toggle:before, [type="color"] {
+.square, .circle, .toggle:before, [type="color"] {
     max-width: 4rem;
 }
-.pill, .square, .circle, .avatar, input, output, select, option {
+.pill, .square, .circle, input, output, select, option {
     height: 4rem;
 }
-.button, .pill, .square, .circle, .avatar, input, output, select, textarea, button {
+.pill, .square, .circle, input, output, select, textarea {
     min-height: 4rem;
 }
-.pill, .square, .circle, .avatar {
+.pill, .square, .circle {
     max-height: 4rem;
 }
 
 /*** x2 ***/
-.ico, .radio:before, .check:before {
+.radio:before, .check:before {
     width: 2rem;
 }
-.badge, .ico {
-    min-width: 2rem;
-}
-.ico, .radio:before, .check:before {
+.radio:before, .check:before {
     max-width: 2rem;
 }
-.badge, .ico, .radio:before, .check:before, .toggle:before {
+.radio:before, .check:before, .toggle:before {
     height: 2rem;
 }
-.badge, .ico, .label, .radio, .check, .toggle {
+.label, .radio, .check, .toggle {
     min-height: 2rem;
-}
-.badge, .ico {
-    max-height: 2rem;
-}
-
-/*** Button ***/
-.button {
-  font-size:    1.2rem;
-  line-height:  1.2rem;
-  padding: 1.2rem 2rem;
-  min-width:      6rem;
-}
-.badge {
-  font-size:    1em;
-  line-height: 2rem;
-  padding:  0 .5rem;
-}
-.snackbar {
-  padding: 1rem;
 }
 
 /*** Bordered ***/
-.button, .border,
+.border,
 .radio:before,
 .check:before,
 .toggle:before,
@@ -86,9 +64,8 @@ input[type="datetime-local"] {
 .check:after {
     border-radius: .1rem;
 }
-.button, .check:before,
-output, button,
-select, textarea,
+.check:before,
+output, select, textarea,
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -104,9 +81,7 @@ input[type="datetime"],
 input[type="datetime-local"] {
     border-radius: .4rem;
 }
-.badge {
-    border-radius: 1rem;
-}
+
 .pill, .toggle:before {
     border-radius: 2rem;
 }

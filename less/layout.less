@@ -556,19 +556,16 @@ body.fix,
     left:       auto !important;
     z-index: inherit !important;
 }
-.hide, [class*="show_"], .fadein, .fadeout:hover, .fade:hover .fadeout {
+.hide, [class*="show_"],
+.fadein, .fadeout:hover,
+.fade:hover .fadeout,
+.badge:empty {
     visibility: hidden !important;
     opacity:         0 !important;
 }
 .show, .fadeout, .fadein:hover, .fade:hover .fadein {
     visibility: visible !important;
     opacity:          1 !important;
-}
-[class*="hide"],
-[class*="fade"] {
-    -webkit-transition: all ease-out .18s;
-       -moz-transition: all ease-out .18s;
-            transition: all ease-out .18s;
 }
 
 /***************************************
