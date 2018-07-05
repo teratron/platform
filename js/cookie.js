@@ -1,32 +1,3 @@
-<?php
-	//if (isset($route_varso)) echo "<!-- $route_varso --!>";
-	$js_files=array("mainfooter","other","scriptsitebar");
-	if (!in_array($script_name, $js_files)) show_404();
-	if ($script_name=="mainfooter") {
-?>
-        jQuery(function() {
-            jQuery("#hyv-search").autocomplete({
-                source: function( request, response ) {
-                    var sqValue = [];
-                    jQuery.ajax({
-                        type: "POST",
-                        url: "https://suggestqueries.google.com/complete/search?hl=en&ds=yt&client=youtube&hjson=t&cp=1",
-                        dataType: 'jsonp',
-                        data: jQuery.extend({
-                            q: request.term
-                        }, {  }),
-                        success: function(data){
-                            //console.log(data[1]);
-                            obj = data[1];
-                            jQuery.each( obj, function( key, value ) {
-                                sqValue.push(value[0]);
-                            });
-                            response( sqValue);
-                        }
-                    });
-                }
-            });
-        });
 
         var $obj = $('#hyv-search');
         $obj.change(function() {
@@ -146,39 +117,3 @@
                 }
             }
         }
-
-    <?}
-	  if ($script_name=="other"){
-		  if (isset($_SERVER['HTTP_REFERER'])){
-		    if (strpos($_SERVER['HTTP_REFERER'], x2()->domain)){
-			    if (isset($main_v_yt_title) && isset($rel_v_yt_title)){
-				    if (strpos($main_v_yt_title, "'")!==false) $main_v_yt_title = str_replace("'", "\\'", $main_v_yt_title);
-				    if (strpos($rel_v_yt_title, "'")!==false) $rel_v_yt_title = str_replace("'", "\\'", $rel_v_yt_title);
-	  ?>
-	           document.getElementById("tit").innerHTML = '<?php echo $main_v_yt_title?>';
-	           document.getElementById("tit_r").innerHTML = '<?php echo $rel_v_yt_title?>';
-	<?
-		       } else {
-			       echo "";
-		       }
-		    } else {
-			    echo "";
-		      }
-		  } else {
-			  echo "";
-		  }
-	  }
-	  if ($script_name=="scriptsitebar"){
-		  if (isset($_SERVER['HTTP_REFERER'])){
-		    if (strpos($_SERVER['HTTP_REFERER'], x2()->domain)){//document.getElementById("ad").innerHTML = '<div><div>'
-	  ?>
-	           
-	<?
-		    } else {
-			    echo "";
-		      }
-		  } else {
-			  echo "";
-		  }
-	  }
-    ?>

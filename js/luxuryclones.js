@@ -64,3 +64,17 @@ function swipeView($obj) {
         $obj.addClass('active');
     }
 }
+
+//
+$('.quantity-switcher > .counter-minus').click(function() {
+    changeQuantity(-1);
+});
+$('.quantity-switcher > .counter-plus').click(function() {
+    changeQuantity(1);
+});
+//
+function changeQuantity(cnt) {
+    var tag = $('.quantity-switcher > .counter');
+    var qty = parseInt(tag.html(), 10) + cnt;
+    if(qty > 0 && qty < 100) tag.text(qty);
+}
