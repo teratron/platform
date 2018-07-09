@@ -13,21 +13,36 @@
 /***************************************
   Shape
  ***************************************/
+.circle,
+.radio:before, .radio:after, .toggle:after {
+    border-radius: 50%;
+}
 
 /***************************************
   Button
  ***************************************/
 @p: (@btn_height - 2*@btn_border_width - @btn_font_size)/2;
 [class*="button"] {
-    font-size:     @btn_font_size;
-    line-height:   @btn_font_size;
-    min-width:     @btn_width;
-    min-height:    @btn_height;
-    border:        @btn_border_width solid;
-    border-radius: @btn_border_radius;
-    padding:       @p @btn_height/2;
+    font-size:   @btn_font_size;
+    line-height: @btn_font_size;
+    border:      @btn_border_width solid;
+    padding:     @p @btn_height/2;
     text-align: center;
     overflow: hidden;
+}
+[class*="button"]:not(.square):not(.circle) {
+    min-width:  @btn_width;
+    min-height: @btn_height;
+}
+[class*="button"]:not(.pill):not(.circle) {
+  border-radius: @btn_border_radius;
+}
+[class*="button"].square,
+[class*="button"].circle {
+    min-width:  @btn_height;
+    max-width:  @btn_height;
+    min-height: @btn_height;
+    max-height: @btn_height;
 }
 a[class*="button"],
 a[class*="button"]:hover {
@@ -47,12 +62,17 @@ a[class*="button"]:hover {
 /*** Bordered ***/
 
 /*** Pill ***/
+[class*="button"].pill {
+    border-radius: @btn_height/2;
+}
 
 /*** Square ***/
 [class*="button"].square {
     padding-left:  0;
     padding-right: 0;
 }
+
+/*** Square ***/
 
 /***************************************
   Badge
