@@ -8,19 +8,18 @@
 @cell:                  10px;
 @px:                    @cell/10;
 
+@layout_column:         8;
+@layout_column_width:   @cell*12;
+@layout_gutter:         @cell*2;
 
-@layout_column:         16;
-@layout_gutter:         16px;
-@layout_margin:         16px;
-
-@layout_width:          @cell*96;
+@layout_width:          @layout_column*@layout_column_width + (@layout_column - 1)*@layout_gutter;
 @layout_width_min:      320px;
-@header_height:         @cell*6;
-@footer_height:         @cell*4;
+@header_height:         6rem;
+@footer_height:         4rem;
 
 /*** Common Element ***/
 @elem_font_size:        1.2rem;
-@elem_unit:             @cell*4;
+@elem_unit:             4rem;
 @elem_unit_half:        @elem_unit/2;
 @elem_width:            @elem_unit;
 @elem_height:           @elem_unit;
