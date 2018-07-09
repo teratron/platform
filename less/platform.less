@@ -6,17 +6,24 @@
 @pre:                   pl-;
 
 @cell:                  10px;
-@px:                    1rem/10;
+@px:                    @cell/10;
+
+
+@layout_column:         16;
+@layout_gutter:         16px;
+@layout_margin:         16px;
 
 @layout_width:          @cell*96;
 @layout_width_min:      320px;
 @header_height:         @cell*6;
 @footer_height:         @cell*4;
 
-/*** Commons Element ***/
+/*** Common Element ***/
 @elem_font_size:        1.2rem;
-@elem_width:            4rem;
-@elem_height:           4rem;
+@elem_unit:             @cell*4;
+@elem_unit_half:        @elem_unit/2;
+@elem_width:            @elem_unit;
+@elem_height:           @elem_unit;
 @elem_border_width:     @px;
 @elem_border_radius:    @px*3;
 
@@ -73,17 +80,17 @@
   -----------------------------------------------------------------------------
   col row cel
   blc tbl grd inl
-  til / til-[1...9]
+  til / til_[1...8]
   flus - элементы в данном контейнере имеют одну и туже ширину (до 100)
-  flu = flu-1 / flu-[1...100] - ширина в %, номер означает сколько элементов поместиться в родительсом контейнере
+  flu = flu_1 / flu_[1...100] - ширина в %, номер означает сколько элементов поместиться в родительсом контейнере
   gr (.5rem)
-  gr-[1...20] (0.1rem - 2rem)
+  gr_[1...20] (0.1rem - 2rem)
   grp - группирует элементы (зависит от col и row)
   climb - налезает на предыдущий элемент (налезает справа на лево)
   bar
   lst
-  grw  / grw-[1...8]
-  grws / grws-[1...8]
+  grw  / grw_[1...8]
+  grws / grws_[1...8]
   inr
   scr
   head hd

@@ -6,36 +6,36 @@
 
 /*** x4 ***/
 .square, .circle, .toggle:before, input[type="color"] {
-    width: 4rem;
+    width: @elem_unit;
 }
 .pill, .square, .circle {
-    min-width: 4rem;
+    min-width: @elem_unit;
 }
 .square, .circle, .toggle:before, [type="color"] {
-    max-width: 4rem;
+    max-width: @elem_unit;
 }
 .pill, .square, .circle, input, output, select, option {
-    height: 4rem;
+    height: @elem_unit;
 }
 .pill, .square, .circle, input, output, select, textarea {
-    min-height: 4rem;
+    min-height: @elem_unit;
 }
 .pill, .square, .circle {
-    max-height: 4rem;
+    max-height: @elem_unit;
 }
 
 /*** x2 ***/
 .radio:before, .check:before {
-    width: 2rem;
+    width: @elem_unit_half;
 }
 .radio:before, .check:before {
-    max-width: 2rem;
+    max-width: @elem_unit_half;
 }
 .radio:before, .check:before, .toggle:before {
-    height: 2rem;
+    height: @elem_unit_half;
 }
 .label, .radio, .check, .toggle {
-    min-height: 2rem;
+    min-height: @elem_unit_half;
 }
 
 /*** Bordered ***/
@@ -81,9 +81,8 @@ input[type="datetime"],
 input[type="datetime-local"] {
     border-radius: .4rem;
 }
-
 .toggle:before {
-    border-radius: 2rem;
+    border-radius: @elem_unit_half;
 }
 
 .generate-size(8);
