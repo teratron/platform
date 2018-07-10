@@ -18,8 +18,7 @@
 .media-trigger(1);
 .media-trigger(@n, @i: 6) when (@i >= @n) {
     @media only screen and (max-width: (@i*180px + 180px)) {
-        .sld_@{i}/*,
-        .col_@{i} > **/ {
+        .sld_@{i} {
             width:     100% !important;
             min-width: 100% !important;
             max-width: 100% !important;
@@ -33,9 +32,9 @@
             border-top: 0 none !important;
         }
         .col_@{i} > * {
-            /*margin-left:  0    !important;*/
-            /*margin-right: 0    !important;*/
-            /*position: relative !important;*/
+            margin-left:  0    !important;
+            margin-right: 0    !important;
+            position: relative !important;
             top:    auto       !important;
             bottom: auto       !important;
             left:   auto       !important;
@@ -44,6 +43,10 @@
         .blc.on_@{i},
         .blc.col_@{i} > * {
             display: block !important;
+        }
+        .row_@{i} > * {
+            margin-top:    0 !important;
+            margin-bottom: 0 !important;
         }
         .blc.row_@{i} > *,
         .blc.row_@{i}.rights > .left {
