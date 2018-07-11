@@ -1,3 +1,8 @@
+//
+$(document).ready(function () {
+
+});
+
 // this function includes all necessary js files for the application
 function include(file) {
     var script   = document.createElement('script');
@@ -15,3 +20,4 @@ include('js/less.min.js');
 include('js/prefixes.js');
 include('js/jquery.min.js');
 include('js/jquery.cookie.js');
+
