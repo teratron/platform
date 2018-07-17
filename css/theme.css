@@ -42,20 +42,20 @@ body {
 header {
   background-color: #27a4c4;
 }
-header > .inner {
+header > .inr {
   background-color: #27a4c4;
   color: #fff;
 }
 main {
   background-color: #fff;
 }
-main > .inner {
+main > .inr {
   background-color: #f7f7f7;
 }
 footer {
   background-color: #cbffac;
 }
-footer > .inner {
+footer > .inr {
   background-color: #ddd;
   color: #999;
 }
