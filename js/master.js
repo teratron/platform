@@ -21,3 +21,7 @@ include('js/prefixes.js');
 include('js/jquery.min.js');
 include('js/jquery.cookie.js');
 
+
+
+//onclick="window.location.href='https://'"
+
