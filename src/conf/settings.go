@@ -16,10 +16,10 @@ func init() {
 
 	switch mode {
 		case "production":
-			SiteUrl = "http://loctalk.net"
-			AbsolutePath = "d:/projects/platform/"
+			SiteUrl      = "http://loctalk.net"
+			AbsolutePath = "d:/projects/platform/src/"
 		default:
-			SiteUrl = "http://127.0.0.1"
-			AbsolutePath = "d:/projects/platform/"
+			SiteUrl      = "http://127.0.0.1"
+			AbsolutePath = "d:/projects/platform/src/"
 	}
 }

@@ -3,10 +3,10 @@ package main
 import (
 	"github.com/go-martini/martini"
 	"net/http"
-	"loctalk/conf"
-	"loctalk/controllers"
-	"loctalk/models"
-	"loctalk/utils"
+	"conf"
+	"controllers"
+	"models"
+	"utils"
 )
 
 func main() {
@@ -40,7 +40,7 @@ func main() {
 	m.Get("/api/v1/posts", controllers.GetRootPosts)
 	m.Get("/api/v1/posts/:id", controllers.GetPostById)
 	m.Post("/api/v1/posts", Auth, controllers.CreatePost)
-	// ...
+	// …
 
 	m.Run()
 }
