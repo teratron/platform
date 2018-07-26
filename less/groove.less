@@ -1,17 +1,24 @@
 /******************************************************************************
   Groove
   -----------------------------------------------------------------------------
-  gr (.5rem)
+  gr (1rem)
+  gr_half (.5rem)
   gr_[1...20] (0.1rem - 2rem)
  ******************************************************************************/
-.gr {
-    margin: -.5rem;
+.gr, .gr_1 {
+    margin: -@cell;
     > * {
-        padding: .5rem;
+        padding: @cell;
+    }
+}
+.gr_half {
+    margin: -@cell_half;
+    > * {
+        padding: @cell_half;
     }
 }
 .generate-groove(20);
-.generate-groove(@n, @i: 1) when (@i =< @n) {
+.generate-groove(@n, @i: 2) when (@i =< @n) {
     .gr_@{i} {
         margin: -@i*.1rem;
         > * {
