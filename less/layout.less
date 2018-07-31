@@ -109,7 +109,7 @@ main, header, footer,
     -o-text-overflow: ellipsis;
        text-overflow: ellipsis;
 }
-.grw, .grws > *, .body, .scr {
+.grw, .grw_1, .grws > *, .body, .scr {
     -webkit-box-flex:  1;
     -moz-box-flex:     1;
     -ms-flex:          1;
@@ -117,8 +117,8 @@ main, header, footer,
     flex-grow:         1;
 }
 .generate-grow(8);
-.generate-grow(@n, @i: 1) when (@i =< @n) {
-    .grw_@{i}, .grws_@{i} > * {
+.generate-grow(@n, @i: 2) when (@i =< @n) {
+    .grw_@{i} {
         -webkit-box-flex:  @i;
         -moz-box-flex:     @i;
         -ms-flex:          @i;
@@ -127,6 +127,7 @@ main, header, footer,
     }
     .generate-grow(@n, (@i + 1));
 }
+/*flex-shrink:;*/
 
 /*** Align content ***/
 .stretches,
@@ -269,6 +270,18 @@ button, input, output, select, option {
     }
 }
 
+/*** Flex Order ***/
+.generate-order(8);
+.generate-order(@n, @i: 1) when (@i =< @n) {
+    .ord_@{i} {
+        -webkit-order: @i;
+        -moz-order:    @i;
+        -ms-order:     @i;
+        order:         @i;
+    }
+    .generate-order(@n, (@i + 1));
+}
+
 /*** Grid Layout ***/
 .grd {
     display: -moz-grid;
@@ -405,7 +418,7 @@ button, input, output, select, option {
     position: static;
 }
 .sty {
-    position: sticky;
+    /*position: sticky;*/
 }
 .fix .scr,
 .fix:not(.top):not(.bottom):not(.right):not(.left),
