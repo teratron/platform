@@ -17,12 +17,12 @@
         padding: @cell_half;
     }
 }
-.generate-groove(20);
+.generate-groove(8);
 .generate-groove(@n, @i: 2) when (@i =< @n) {
     .gr_@{i} {
-        margin: -@i*.1rem;
+        margin: -@i*@cell;
         > * {
-            padding: @i*.1rem;
+            padding: @i*@cell;
         }
     }
     .generate-groove(@n, (@i + 1));
