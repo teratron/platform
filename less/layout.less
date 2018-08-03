@@ -274,10 +274,7 @@ button, input, output, select, option {
 .generate-order(8);
 .generate-order(@n, @i: 1) when (@i =< @n) {
     .ord_@{i} {
-        -webkit-order: @i;
-        -moz-order:    @i;
-        -ms-order:     @i;
-        order:         @i;
+        order: @i;
     }
     .generate-order(@n, (@i + 1));
 }
@@ -418,7 +415,7 @@ button, input, output, select, option {
     position: static;
 }
 .sty {
-    /*position: sticky;*/
+    position: sticky;
 }
 .fix .scr,
 .fix:not(.top):not(.bottom):not(.right):not(.left),
