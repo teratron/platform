@@ -43,8 +43,8 @@ header.@{fixed} + :not(footer) {
 /*** Flexible Layout ***/
 main, header, footer,
 .on, .@{col}, .@{row}, [class*="@{tile}"],
-.@{fixed}.middles, .@{fixed}.centers,
-.@{absolute}.middles, .@{absolute}.centers,
+.@{fixed}.@{middle}@{child}, .@{fixed}.@{center}@{child},
+.@{absolute}.@{middle}@{child}, .@{absolute}.@{center}@{child},
 .@{bar}  > *,
 .@{list} > *,
 .@{list} > * > * {
@@ -135,23 +135,23 @@ main, header, footer,
 .@{col}:not(.@{cell}),
 [class*="@{tile}"]:not(.@{cell}),
 .@{list} > *,
-.@{fixed}.@{col}.middles, .@{absolute}.@{col}.middles,
-.@{fixed}.@{row}.top,     .@{absolute}.@{row}.top,
-.@{fixed}.@{row}.bottom,  .@{absolute}.@{row}.bottom {
+.@{fixed}.@{col}.@{middle}@{child}, .@{absolute}.@{col}.@{middle}@{child},
+.@{fixed}.@{row}.@{top},     .@{absolute}.@{row}.@{top},
+.@{fixed}.@{row}.@{bottom},  .@{absolute}.@{row}.@{bottom} {
     -webkit-align-content: stretch;
             align-content: stretch;
 }
 .@{screen},
 [class*="@{tile}"].@{cell},
-.@{col}.@{cell}.lefts, .@{col}.@{cell}:not(.centers),
-.@{row}.@{cell}.tops,  .@{row}.@{cell}:not(.middles) {
+.@{col}.@{cell}.@{left}@{child}, .@{col}.@{cell}:not(.@{center}@{child}),
+.@{row}.@{cell}.@{top}@{child},  .@{row}.@{cell}:not(.@{middle}@{child}) {
     -webkit-align-content: flex-start;
             align-content: flex-start;
 }
-.@{col}.@{cell}.centers,
-.@{row}.@{cell}.middles,
-.@{fixed}.middles, .@{fixed}.@{col}.centers.middles,
-.@{absolute}.middles, .@{absolute}.@{col}.centers.middles,
+.@{col}.@{cell}.@{center}@{child},
+.@{row}.@{cell}.@{middle}@{child},
+.@{fixed}.@{middle}@{child}, .@{fixed}.@{col}.@{center}@{child}.@{middle}@{child},
+.@{absolute}.@{middle}@{child}, .@{absolute}.@{col}.@{center}@{child}.@{middle}@{child},
 .@{list}.@{col} > * > *,
 .@{bar} > *,
 .@{col} > .@{head},
@@ -161,8 +161,8 @@ button, input, output, select, option {
     -webkit-align-content: center;
             align-content: center;
 }
-.@{col}.@{cell}.rights,
-.@{row}.@{cell}.bottoms {
+.@{col}.@{cell}.@{right}@{child},
+.@{row}.@{cell}.@{bottom}@{child} {
     -webkit-align-content: flex-end;
             align-content: flex-end;
 }
@@ -173,23 +173,23 @@ button, input, output, select, option {
 .@{col}:not(.@{cell}),
 [class*="@{tile}"]:not(.@{cell}),
 .@{list} > *,
-.@{fixed}.@{col}.middles, .@{absolute}.@{col}.middles,
-.@{fixed}.@{row}.top,     .@{absolute}.@{row}.top,
-.@{fixed}.@{row}.bottom,  .@{absolute}.@{row}.bottom {
+.@{fixed}.@{col}.@{middle}@{child}, .@{absolute}.@{col}.@{middle}@{child},
+.@{fixed}.@{row}.@{top},     .@{absolute}.@{row}.@{top},
+.@{fixed}.@{row}.@{bottom},  .@{absolute}.@{row}.@{bottom} {
     -webkit-align-items: stretch;
             align-items: stretch;
 }
 .@{screen},
 [class*="@{tile}"].@{cell},
-.@{col}.@{cell}.lefts, .@{col}.@{cell}:not(.centers),
-.@{row}.@{cell}.tops,  .@{row}.@{cell}:not(.middles) {
+.@{col}.@{cell}.@{left}@{child}, .@{col}.@{cell}:not(.@{center}@{child}),
+.@{row}.@{cell}.@{top}@{child},  .@{row}.@{cell}:not(.@{middle}@{child}) {
     -webkit-align-items: flex-start;
             align-items: flex-start;
 }
-.@{col}.@{cell}.centers,
-.@{row}.@{cell}.middles,
-.@{fixed}.middles, .@{fixed}.@{col}.centers.middles,
-.@{absolute}.middles, .@{absolute}.@{col}.centers.middles,
+.@{col}.@{cell}.@{center}@{child},
+.@{row}.@{cell}.@{middle}@{child},
+.@{fixed}.@{middle}@{child}, .@{fixed}.@{col}.@{center}@{child}.@{middle}@{child},
+.@{absolute}.@{middle}@{child}, .@{absolute}.@{col}.@{center}@{child}.@{middle}@{child},
 .@{list}.@{col} > * > *,
 .@{bar} > *,
 .@{col} > .@{head},
@@ -199,8 +199,8 @@ button, input, output, select, option {
     -webkit-align-items: center;
             align-items: center;
 }
-.@{col}.@{cell}.rights,
-.@{row}.@{cell}.bottoms {
+.@{col}.@{cell}.@{right}@{child},
+.@{row}.@{cell}.@{bottom}@{child} {
     -webkit-align-items: flex-end;
             align-items: flex-end;
 }
@@ -210,48 +210,48 @@ button, input, output, select, option {
     -webkit-align-self: stretch;
             align-self: stretch;
 }
-.@{col} > .left,
-.@{row} > .top {
+.@{col} > .@{left},
+.@{row} > .@{top} {
     -webkit-align-self: flex-start;
             align-self: flex-start;
 }
-.@{col} > .center,
-.@{row} > .middle {
+.@{col} > .@{center},
+.@{row} > .@{middle} {
     -webkit-align-self: center;
             align-self: center;
 }
-.@{col} > .right,
-.@{row} > .bottom {
+.@{col} > .@{right},
+.@{row} > .@{bottom} {
     -webkit-align-self: flex-end;
             align-self: flex-end;
 }
 
 /*** Justify content ***/
-.@{col}.tops,
-.@{row}.lefts,
+.@{col}.@{top}@{child},
+.@{row}.@{left}@{child},
 .@{row} > .@{head},
 .@{bar} > .@{head},
-.@{fixed}.left, .@{fixed}.@{col}.top,
-.@{absolute}.left, .@{absolute}.@{col}.top {
+.@{fixed}.@{left}, .@{fixed}.@{col}.@{top},
+.@{absolute}.@{left}, .@{absolute}.@{col}.@{top} {
     -webkit-justify-content: flex-start;
             justify-content: flex-start;
 }
 /*main, header, footer,*/
 .button, .badge,
-.@{col}.middles,
-.@{row}.centers,
+.@{col}.@{middle}@{child},
+.@{row}.@{center}@{child},
 .@{bar} > :not(.@{head}):not(.@{body}):not(.@{foot}),
-.@{fixed}.centers, .@{fixed}.@{col}.middles,
-.@{absolute}.centers, .@{absolute}.@{col}.middles {
+.@{fixed}.@{center}@{child}, .@{fixed}.@{col}.@{middle}@{child},
+.@{absolute}.@{center}@{child}, .@{absolute}.@{col}.@{middle}@{child} {
     -webkit-justify-content: center;
             justify-content: center;
 }
-.@{col}.bottoms,
-.@{row}.rights,
+.@{col}.@{bottom}@{child},
+.@{row}.@{right}@{child},
 .@{row} > .@{foot},
 .@{bar} > .@{foot},
-.@{fixed}.right, .@{fixed}.@{col}.bottom,
-.@{absolute}.right, .@{absolute}.@{col}.bottom {
+.@{fixed}.@{right}, .@{fixed}.@{col}.@{bottom},
+.@{absolute}.@{right}, .@{absolute}.@{col}.@{bottom} {
     -webkit-justify-content: flex-end;
             justify-content: flex-end;
 }
@@ -294,19 +294,19 @@ button, input, output, select, option {
 }
 .blc.@{list} > * > *,
 .blc.@{row}:not(.@{cell}) > *,
-.blc.@{row}.rights:not(.@{cell}) > .left,
-.blc.@{row}.reverse:not(.@{cell}) > .right,
-.blc.@{row}.rights.reverse:not(.@{cell}) > *,
+.blc.@{row}.@{right}@{child}:not(.@{cell}) > .@{left},
+.blc.@{row}.reverse:not(.@{cell}) > .@{right},
+.blc.@{row}.@{right}@{child}.reverse:not(.@{cell}) > *,
 .blc[class*="@{tile}"] > *,
-.blc[class*="@{tile}"].rights.reverse > * {
+.blc[class*="@{tile}"].@{right}@{child}.reverse > * {
     float: left;
 }
-.blc.@{list} > * > .right,
-.blc.@{row}:not(.@{cell}) > .right,
-.blc.@{row}.rights:not(.@{cell}) > *,
+.blc.@{list} > * > .@{right},
+.blc.@{row}:not(.@{cell}) > .@{right},
+.blc.@{row}.@{right}@{child}:not(.@{cell}) > *,
 .blc.@{row}.reverse:not(.@{cell}) > *,
-.blc.@{row}.rights.reverse:not(.@{cell}) > .left,
-.blc[class*="@{tile}"].rights > *,
+.blc.@{row}.@{right}@{child}.reverse:not(.@{cell}) > .@{left},
+.blc[class*="@{tile}"].@{right}@{child} > *,
 .blc[class*="@{tile}"].reverse > * {
     float: right;
 }
@@ -353,51 +353,51 @@ button, input, output, select, option {
 }
 
 /*** Placement ***/
-.top,
-.tops:not(.@{col}):not(.@{row}) > *,
+.@{top},
+.@{top}@{child}:not(.@{col}):not(.@{row}) > *,
 .@{table}.@{cell},
 .@{table}.@{row} > * {
     vertical-align: top;
 }
-.bottom,
-.bottoms:not(.@{col}):not(.@{row}) > *,
-.@{table}.@{row} > .bottom {
+.@{bottom},
+.@{bottom}@{child}:not(.@{col}):not(.@{row}) > *,
+.@{table}.@{row} > .@{bottom} {
     vertical-align: bottom;
 }
-.middle,
-.middles:not(.@{col}):not(.@{row}) > *,
+.@{middle},
+.@{middle}@{child}:not(.@{col}):not(.@{row}) > *,
 .@{table}.@{bar} > *,
 .@{table}.@{list} > *,
-.@{table}.@{row} > .middle,
+.@{table}.@{row} > .@{middle},
 .@{table}:not(.@{row}) > * > :not([hidden]):not(script):not(style) {
     vertical-align: middle;
 }
-.lefts:not(.@{col}):not(.@{row}):not(.@{bar}),
+.@{left}@{child}:not(.@{col}):not(.@{row}):not(.@{bar}),
 .@{table}:not(.@{row}) > * > .@{head} {
     text-align: left;
     > * {
         text-align: inherit;
     }
 }
-.rights:not(.@{col}):not(.@{row}):not(.@{bar}),
+.@{right}@{child}:not(.@{col}):not(.@{row}):not(.@{bar}),
 .@{table}:not(.@{row}) > * > .@{foot} {
     text-align: right;
     > * {
         text-align: inherit;
     }
 }
-.centers:not(.@{col}),
+.@{center}@{child}:not(.@{col}),
 .blc.@{bar}.@{cell},
 .blc.@{bar} > * {
     text-align: center;
 }
-.centers:not(.@{col}):not(.@{bar}),
+.@{center}@{child}:not(.@{col}):not(.@{bar}),
 .blc.@{bar} > * {
     > * {
         text-align: inherit;
     }
 }
-.center:only-child {
+.@{center}:only-child {
     margin-left:  auto;
     margin-right: auto;
 }
@@ -418,60 +418,60 @@ button, input, output, select, option {
     position: sticky;
 }
 .@{fixed} .@{screen},
-.@{fixed}:not(.top):not(.bottom):not(.right):not(.left),
-.@{absolute}:not(.top):not(.bottom):not(.right):not(.left),
-.@{fixed}.top,      .@{absolute}.top,
-.@{fixed}.right,    .@{absolute}.right,
-.@{fixed}.left,     .@{absolute}.left,
-.@{fixed}.top.right,.@{absolute}.top.right,
-.@{fixed}.top.left, .@{absolute}.top.left {
+.@{fixed}:not(.@{top}):not(.@{bottom}):not(.@{right}):not(.@{left}),
+.@{absolute}:not(.@{top}):not(.@{bottom}):not(.@{right}):not(.@{left}),
+.@{fixed}.@{top},      .@{absolute}.@{top},
+.@{fixed}.@{right},    .@{absolute}.@{right},
+.@{fixed}.@{left},     .@{absolute}.@{left},
+.@{fixed}.@{top}.@{right},.@{absolute}.@{top}.@{right},
+.@{fixed}.@{top}.@{left}, .@{absolute}.@{top}.@{left} {
     top: 0;
 }
 body.@{fixed},
 .@{fixed} .@{screen},
-.@{fixed}:not(.top):not(.bottom):not(.right):not(.left),
-.@{absolute}:not(.top):not(.bottom):not(.right):not(.left),
-.@{fixed}.bottom,      .@{absolute}.bottom,
-.@{fixed}.right,       .@{absolute}.right,
-.@{fixed}.left,        .@{absolute}.left,
-.@{fixed}.bottom.right,.@{absolute}.bottom.right,
-.@{fixed}.bottom.left, .@{absolute}.bottom.left {
+.@{fixed}:not(.@{top}):not(.@{bottom}):not(.@{right}):not(.@{left}),
+.@{absolute}:not(.@{top}):not(.@{bottom}):not(.@{right}):not(.@{left}),
+.@{fixed}.@{bottom},      .@{absolute}.@{bottom},
+.@{fixed}.@{right},       .@{absolute}.@{right},
+.@{fixed}.@{left},        .@{absolute}.@{left},
+.@{fixed}.@{bottom}.@{right},.@{absolute}.@{bottom}.@{right},
+.@{fixed}.@{bottom}.@{left}, .@{absolute}.@{bottom}.@{left} {
     bottom: 0;
 }
 .@{fixed} .@{screen},
-.@{fixed}:not(.top):not(.bottom):not(.right):not(.left),
-.@{absolute}:not(.top):not(.bottom):not(.right):not(.left),
-.@{fixed}.left,         .@{absolute}.left,
-.@{fixed}.top,          .@{absolute}.top,
-.@{fixed}.bottom,       .@{absolute}.bottom,
-.@{fixed}.top.left,     .@{absolute}.top.left,
-.@{fixed}.bottom.left,  .@{absolute}.bottom.left {
+.@{fixed}:not(.@{top}):not(.@{bottom}):not(.@{right}):not(.@{left}),
+.@{absolute}:not(.@{top}):not(.@{bottom}):not(.@{right}):not(.@{left}),
+.@{fixed}.@{left},         .@{absolute}.@{left},
+.@{fixed}.@{top},          .@{absolute}.@{top},
+.@{fixed}.@{bottom},       .@{absolute}.@{bottom},
+.@{fixed}.@{top}.@{left},     .@{absolute}.@{top}.@{left},
+.@{fixed}.@{bottom}.@{left},  .@{absolute}.@{bottom}.@{left} {
     left: 0;
 }
 .@{fixed} .@{screen},
-.@{fixed}:not(.top):not(.bottom):not(.right):not(.left),
-.@{absolute}:not(.top):not(.bottom):not(.right):not(.left),
-.@{fixed}.right,        .@{absolute}.right,
-.@{fixed}.top,          .@{absolute}.top,
-.@{fixed}.bottom,       .@{absolute}.bottom,
-.@{fixed}.top.right,    .@{absolute}.top.right,
-.@{fixed}.bottom.right, .@{absolute}.bottom.right {
+.@{fixed}:not(.@{top}):not(.@{bottom}):not(.@{right}):not(.@{left}),
+.@{absolute}:not(.@{top}):not(.@{bottom}):not(.@{right}):not(.@{left}),
+.@{fixed}.@{right},        .@{absolute}.@{right},
+.@{fixed}.@{top},          .@{absolute}.@{top},
+.@{fixed}.@{bottom},       .@{absolute}.@{bottom},
+.@{fixed}.@{top}.@{right},    .@{absolute}.@{top}.@{right},
+.@{fixed}.@{bottom}.@{right}, .@{absolute}.@{bottom}.@{right} {
     right: 0;
 }
-.@{fixed}.bottom.right, .@{absolute}.bottom.right,
-.@{fixed}.bottom.left,  .@{absolute}.bottom.left {
+.@{fixed}.@{bottom}.@{right}, .@{absolute}.@{bottom}.@{right},
+.@{fixed}.@{bottom}.@{left},  .@{absolute}.@{bottom}.@{left} {
     top: auto;
 }
-.@{fixed}.top.right,    .@{absolute}.top.right,
-.@{fixed}.top.left,     .@{absolute}.top.left {
+.@{fixed}.@{top}.@{right},    .@{absolute}.@{top}.@{right},
+.@{fixed}.@{top}.@{left},     .@{absolute}.@{top}.@{left} {
     bottom: auto;
 }
-.@{fixed}.right.top,    .@{absolute}.right.top,
-.@{fixed}.right.bottom, .@{absolute}.right.bottom {
+.@{fixed}.@{right}.@{top},    .@{absolute}.@{right}.@{top},
+.@{fixed}.@{right}.@{bottom}, .@{absolute}.@{right}.@{bottom} {
     left: auto;
 }
-.@{fixed}.left.top,     .@{absolute}.left.top,
-.@{fixed}.left.bottom,  .@{absolute}.left.bottom {
+.@{fixed}.@{left}.@{top},     .@{absolute}.@{left}.@{top},
+.@{fixed}.@{left}.@{bottom},  .@{absolute}.@{left}.@{bottom} {
     right: auto;
 }
 

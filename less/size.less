@@ -163,7 +163,7 @@ input[type="datetime-local"] {
     .x@{i}.radio,
     .x@{i}.check {
         padding-left: @i*1rem + 1rem;
-        &.right {
+        &.@{right} {
             padding-left:  0;
             padding-right: @i*1rem + 1rem;
         }
@@ -173,14 +173,14 @@ input[type="datetime-local"] {
             top:    @i*.2rem;
             left:   @i*.2rem;
         }
-        &.right:after {
+        &.@{right}:after {
             left: auto;
             right: @i*.2rem;
         }
     }
     .x@{i}.toggle {
         padding-left: @i*2rem + 1rem;
-        &.right {
+        &.@{right} {
             padding-right: @i*2rem + 1rem;
         }
         &:before {
@@ -193,7 +193,7 @@ input[type="datetime-local"] {
             top:    @i*@px;
             left:   @i*@px;
         }
-        &.right:after {
+        &.@{right}:after {
             left:    auto;
             right: @i*@px;
         }
@@ -205,7 +205,7 @@ input[type="datetime-local"] {
                 &:after {
                     left: @i*1.1rem;
                 }
-                &.right:after {
+                &.@{right}:after {
                     left: auto;
                     right: @i*1.1rem;
                 }

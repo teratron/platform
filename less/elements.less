@@ -224,7 +224,7 @@ img.pic {
         top:  0;
         left: 0;
     }
-    &.right:before {
+    &.@{right}:before {
         left: auto;
         right:   0;
     }
@@ -237,7 +237,7 @@ img.pic {
 .radio,
 .check {
     padding-left: 3rem;
-    &.right {
+    &.@{right} {
         padding-left:  0;
         padding-right: 3rem;
     }
@@ -249,14 +249,14 @@ img.pic {
         visibility: hidden;
         opacity: 0;
     }
-    &.right:after {
+    &.@{right}:after {
         left:   auto;
         right: .4rem;
     }
 }
 .toggle {
     padding-left: 5rem;
-    &.right {
+    &.@{right} {
         padding-left:  0;
         padding-right: 5rem;
     }
@@ -266,7 +266,7 @@ img.pic {
         top:     .2rem;
         left:    .2rem;
     }
-    &.right:after {
+    &.@{right}:after {
         left:   auto;
         right: .2rem;
     }
@@ -297,7 +297,7 @@ img.pic {
             &:after {
                 left: 2.2rem;
             }
-            &.right:after {
+            &.@{right}:after {
                 left:    auto;
                 right: 2.2rem;
             }
@@ -336,7 +336,7 @@ img.pic {
 /***************************************
   Drawer
  ***************************************/
-/*.drawer:not(.top):not(.bottom) {
+/*.drawer:not(.@{top}):not(.@{bottom}) {
     width:      2rem*18;
     top:        0;
     bottom:     0;
@@ -344,8 +344,8 @@ img.pic {
     overflow-x: hidden;
 }
 
-.drawer.top,
-.drawer.bottom {
+.drawer.@{top},
+.drawer.@{bottom} {
     width:  100%;
     height: 2rem*18;
     left:   0;
@@ -354,8 +354,8 @@ img.pic {
     overflow-x: auto;
 }
 
-.drawer.left,
-.drawer:not(.top):not(.bottom) {
+.drawer.@{left},
+.drawer:not(.@{top}):not(.@{bottom}) {
     left:  0;
     right: auto;
 }
@@ -376,7 +376,7 @@ img.pic {
 }*/
 
 /*** Right ***/
-/*.drawer.right {
+/*.drawer.@{right} {
     left:  auto;
     right: 0;
 }*/
