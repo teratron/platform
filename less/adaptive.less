@@ -23,15 +23,15 @@
             min-width: 100% !important;
             max-width: 100% !important;
         }
-        .col_@{i}.divider:not(.lst) > :not(:only-child):not(:first-child):not([class*="bg"]),
-        .col_@{i}.divider.lst       > :not(:only-child):not(:first-child):not([class*="bg"]) > * {
+        .@{col}_@{i}.divider:not(.@{list}) > :not(:only-child):not(:first-child):not([class*="bg"]),
+        .@{col}_@{i}.divider.@{list}       > :not(:only-child):not(:first-child):not([class*="bg"]) > * {
             border-top-style: solid !important;
             border-left-style: none !important;
         }
-        .col_@{i}.divider:not(.lst) > [class*="bg"] + * {
+        .@{col}_@{i}.divider:not(.@{list}) > [class*="bg"] + * {
             border-top: 0 none !important;
         }
-        .col_@{i} > * {
+        .@{col}_@{i} > * {
             margin-left:  0    !important;
             margin-right: 0    !important;
             position: relative !important;
@@ -41,42 +41,42 @@
             right:  auto       !important;
         }
         .blc.on_@{i},
-        .blc.col_@{i} > * {
+        .blc.@{col}_@{i} > * {
             display: block !important;
         }
-        .row_@{i} > * {
+        .@{row}_@{i} > * {
             margin-top:    0 !important;
             margin-bottom: 0 !important;
         }
-        .blc.row_@{i} > *,
-        .blc.row_@{i}.rights > .left {
+        .blc.@{row}_@{i} > *,
+        .blc.@{row}_@{i}.rights > .left {
             float: left !important;
         }
-        .blc.row_@{i} > .right,
-        .blc.row_@{i}.rights > *  {
+        .blc.@{row}_@{i} > .right,
+        .blc.@{row}_@{i}.rights > *  {
             float: right !important;
         }
-        .row_@{i} > *,
-        .col_@{i} > *,
-        .tbl.col_@{i} > * > :not([hidden]):not(script):not(style) {
+        .@{row}_@{i} > *,
+        .@{col}_@{i} > *,
+        .@{table}.@{col}_@{i} > * > :not([hidden]):not(script):not(style) {
             float: none !important;
         }
-        .row_@{i} > *,
-        .tbl.col_@{i} > * > :not([hidden]):not(script):not(style) {
+        .@{row}_@{i} > *,
+        .@{table}.@{col}_@{i} > * > :not([hidden]):not(script):not(style) {
             width: auto !important;
         }
-        .tbl.on_@{i} {
+        .@{table}.on_@{i} {
             display: table !important;
         }
-        .tbl.col_@{i} > * {
+        .@{table}.@{col}_@{i} > * {
             display: table-row-group !important;
         }
-        .tbl.row_@{i} > *,
-        .tbl.col_@{i} > * > :not([hidden]):not(script):not(style) {
+        .@{table}.@{row}_@{i} > *,
+        .@{table}.@{col}_@{i} > * > :not([hidden]):not(script):not(style) {
             display: table-cell !important;
         }
-        .col_@{i},
-        .row_@{i}.lst > * {
+        .@{col}_@{i},
+        .@{row}_@{i}.@{list} > * {
             //-webkit-flex-flow: column nowrap !important;
             //-moz-flex-flow:    column nowrap !important;
             //-ms-flex-flow:     column nowrap !important;
@@ -85,8 +85,8 @@
             -ms-flex-direction:     column !important;
             flex-direction:         column !important;
         }
-        .row_@{i},
-        .col_@{i}.lst > * {
+        .@{row}_@{i},
+        .@{col}_@{i}.@{list} > * {
             //-webkit-flex-flow: row wrap !important;
             //-moz-flex-flow:    row wrap !important;
             //-ms-flex-flow:     row wrap !important;
@@ -119,13 +119,13 @@
             left:       auto !important;
             z-index: inherit !important;
         }
-        .in_@{i}:not(.fix):not(.abs):not(.sty) {
+        .in_@{i}:not(.@{fixed}):not(.@{absolute}):not(.@{sticky}) {
             position: relative !important;
         }
-        .in_@{i}.abs {
+        .in_@{i}.@{absolute} {
             position: absolute !important;
         }
-        .out_@{i}, .in_@{i}.fix {
+        .out_@{i}, .in_@{i}.@{fixed} {
             position: fixed !important;
         }
         .out_@{i} {
@@ -136,331 +136,331 @@
 
         /* Adaptive Gap
          ***************************************/
-        .gps.row_@{i} > .head,
-        .gps.row_@{i} > .body,
-        .gps.row_@{i} > .foot,
-        .gps.row_@{i}.lst > * > :not(:first-child),
-        .gps.col_@{i}:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
-        .gps.col_@{i}.lst[class*="bg"] > * > *,
-        .gps.col_@{i}.lst.divider > * > *,
-        .gps_1.row_@{i} > .head,
-        .gps_1.row_@{i} > .body,
-        .gps_1.row_@{i} > .foot,
-        .gps_1.row_@{i}.lst > * > :not(:first-child),
-        .gps_1.col_@{i}:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
-        .gps_1.col_@{i}.lst[class*="bg"] > * > *,
-        .gps_1.col_@{i}.lst.divider > * > * {
+        .gps.@{row}_@{i} > .@{head},
+        .gps.@{row}_@{i} > .@{body},
+        .gps.@{row}_@{i} > .@{foot},
+        .gps.@{row}_@{i}.@{list} > * > :not(:first-child),
+        .gps.@{col}_@{i}:not(.@{list}):not(.divider):not([class*="gts"]) > :not(:first-child):not(.@{head}):not(.@{body}):not(.@{foot}),
+        .gps.@{col}_@{i}.@{list}[class*="bg"] > * > *,
+        .gps.@{col}_@{i}.@{list}.divider > * > *,
+        .gps_1.@{row}_@{i} > .@{head},
+        .gps_1.@{row}_@{i} > .@{body},
+        .gps_1.@{row}_@{i} > .@{foot},
+        .gps_1.@{row}_@{i}.@{list} > * > :not(:first-child),
+        .gps_1.@{col}_@{i}:not(.@{list}):not(.divider):not([class*="gts"]) > :not(:first-child):not(.@{head}):not(.@{body}):not(.@{foot}),
+        .gps_1.@{col}_@{i}.@{list}[class*="bg"] > * > *,
+        .gps_1.@{col}_@{i}.@{list}.divider > * > * {
             padding-top: .5rem !important;
         }
-        .gps.row_@{i} > .head,
-        .gps.row_@{i} > .body,
-        .gps.row_@{i} > .foot,
-        .gps.row_@{i}.lst > * > :not(:last-child),
-        .gps.col_@{i}:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
-        .gps.col_@{i}.lst[class*="bg"]  > * > *,
-        .gps.col_@{i}.lst.divider > * > *,
-        .gps_1.row_@{i} > .head,
-        .gps_1.row_@{i} > .body,
-        .gps_1.row_@{i} > .foot,
-        .gps_1.row_@{i}.lst > * > :not(:last-child),
-        .gps_1.col_@{i}:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
-        .gps_1.col_@{i}.lst[class*="bg"]  > * > *,
-        .gps_1.col_@{i}.lst.divider > * > * {
+        .gps.@{row}_@{i} > .@{head},
+        .gps.@{row}_@{i} > .@{body},
+        .gps.@{row}_@{i} > .@{foot},
+        .gps.@{row}_@{i}.@{list} > * > :not(:last-child),
+        .gps.@{col}_@{i}:not(.@{list}):not(.divider):not([class*="gts"]) > :not(:last-child):not(.@{head}):not(.@{body}):not(.@{foot}),
+        .gps.@{col}_@{i}.@{list}[class*="bg"]  > * > *,
+        .gps.@{col}_@{i}.@{list}.divider > * > *,
+        .gps_1.@{row}_@{i} > .@{head},
+        .gps_1.@{row}_@{i} > .@{body},
+        .gps_1.@{row}_@{i} > .@{foot},
+        .gps_1.@{row}_@{i}.@{list} > * > :not(:last-child),
+        .gps_1.@{col}_@{i}:not(.@{list}):not(.divider):not([class*="gts"]) > :not(:last-child):not(.@{head}):not(.@{body}):not(.@{foot}),
+        .gps_1.@{col}_@{i}.@{list}[class*="bg"]  > * > *,
+        .gps_1.@{col}_@{i}.@{list}.divider > * > * {
             padding-bottom: .5rem !important;
         }
-        .gps.row_@{i}:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
-        .gps.row_@{i}.lst > :not(:first-child) > *,
-        .gps.col_@{i}.lst > * > :not(:first-child),
-        .gps_1.row_@{i}:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
-        .gps_1.row_@{i}.lst > :not(:first-child) > *,
-        .gps_1.col_@{i}.lst > * > :not(:first-child) {
+        .gps.@{row}_@{i}:not(.@{list}):not(.divider):not([class*="gts"]) > :not(:first-child):not(.@{head}):not(.@{body}):not(.@{foot}),
+        .gps.@{row}_@{i}.@{list} > :not(:first-child) > *,
+        .gps.@{col}_@{i}.@{list} > * > :not(:first-child),
+        .gps_1.@{row}_@{i}:not(.@{list}):not(.divider):not([class*="gts"]) > :not(:first-child):not(.@{head}):not(.@{body}):not(.@{foot}),
+        .gps_1.@{row}_@{i}.@{list} > :not(:first-child) > *,
+        .gps_1.@{col}_@{i}.@{list} > * > :not(:first-child) {
             padding-left: .5rem !important;
         }
-        .gps.row_@{i}:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
-        .gps.row_@{i}.lst > :not(:last-child) > *,
-        .gps.col_@{i}.lst > * > :not(:last-child),
-        .gps_1.row_@{i}:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
-        .gps_1.row_@{i}.lst > :not(:last-child) > *,
-        .gps_1.col_@{i}.lst > * > :not(:last-child) {
+        .gps.@{row}_@{i}:not(.@{list}):not(.divider):not([class*="gts"]) > :not(:last-child):not(.@{head}):not(.@{body}):not(.@{foot}),
+        .gps.@{row}_@{i}.@{list} > :not(:last-child) > *,
+        .gps.@{col}_@{i}.@{list} > * > :not(:last-child),
+        .gps_1.@{row}_@{i}:not(.@{list}):not(.divider):not([class*="gts"]) > :not(:last-child):not(.@{head}):not(.@{body}):not(.@{foot}),
+        .gps_1.@{row}_@{i}.@{list} > :not(:last-child) > *,
+        .gps_1.@{col}_@{i}.@{list} > * > :not(:last-child) {
             padding-right: .5rem !important;
         }
-        .gps.col_@{i} > .head,
-        .gps.col_@{i} > .body,
-        .gps.col_@{i}[class*="bg"] > .foot,
-        .gps.col_@{i} > .foot[class*="bg"],
-        .gps.col_@{i}:not(.lst) > .foot[class*="bg"] + .foot,
-        .gps.col_@{i}[class*="gts"] > *,
-        .gps.col_@{i}[class*="bg"]:not(.lst) > :first-child,
-        .gps.col_@{i}.divider:not(.lst) > :not(:first-child),
-        .gps.row_@{i}[class*="bg"]:not(.lst) > :not(.head):not(.body):not(.foot),
-        .gps.row_@{i}.lst[class*="bg"] > * > :first-child,
-        .gps_1.col_@{i} > .head,
-        .gps_1.col_@{i} > .body,
-        .gps_1.col_@{i}[class*="bg"] > .foot,
-        .gps_1.col_@{i} > .foot[class*="bg"],
-        .gps_1.col_@{i}:not(.lst) > .foot[class*="bg"] + .foot,
-        .gps_1.col_@{i}[class*="gts"] > *,
-        .gps_1.col_@{i}[class*="bg"]:not(.lst) > :first-child,
-        .gps_1.col_@{i}.divider:not(.lst) > :not(:first-child),
-        .gps_1.row_@{i}[class*="bg"]:not(.lst) > :not(.head):not(.body):not(.foot),
-        .gps_1.row_@{i}.lst[class*="bg"] > * > :first-child {
+        .gps.@{col}_@{i} > .@{head},
+        .gps.@{col}_@{i} > .body,
+        .gps.@{col}_@{i}[class*="bg"] > .@{foot},
+        .gps.@{col}_@{i} > .@{foot}[class*="bg"],
+        .gps.@{col}_@{i}:not(.@{list}) > .@{foot}[class*="bg"] + .@{foot},
+        .gps.@{col}_@{i}[class*="gts"] > *,
+        .gps.@{col}_@{i}[class*="bg"]:not(.@{list}) > :first-child,
+        .gps.@{col}_@{i}.divider:not(.@{list}) > :not(:first-child),
+        .gps.@{row}_@{i}[class*="bg"]:not(.@{list}) > :not(.@{head}):not(.body):not(.@{foot}),
+        .gps.@{row}_@{i}.@{list}[class*="bg"] > * > :first-child,
+        .gps_1.@{col}_@{i} > .@{head},
+        .gps_1.@{col}_@{i} > .body,
+        .gps_1.@{col}_@{i}[class*="bg"] > .@{foot},
+        .gps_1.@{col}_@{i} > .@{foot}[class*="bg"],
+        .gps_1.@{col}_@{i}:not(.@{list}) > .@{foot}[class*="bg"] + .@{foot},
+        .gps_1.@{col}_@{i}[class*="gts"] > *,
+        .gps_1.@{col}_@{i}[class*="bg"]:not(.@{list}) > :first-child,
+        .gps_1.@{col}_@{i}.divider:not(.@{list}) > :not(:first-child),
+        .gps_1.@{row}_@{i}[class*="bg"]:not(.@{list}) > :not(.@{head}):not(.body):not(.@{foot}),
+        .gps_1.@{row}_@{i}.@{list}[class*="bg"] > * > :first-child {
             padding-top: 1rem !important;
         }
-        .gps.col_@{i} > .body,
-        .gps.col_@{i} > .foot,
-        .gps.col_@{i}[class*="bg"] > .head,
-        .gps.col_@{i} > .head[class*="bg"],
-        .gps.col_@{i}[class*="gts"] > *,
-        .gps.col_@{i}[class*="bg"]:not(.lst) > :last-child,
-        .gps.col_@{i}.divider:not(.lst) > :not(:last-child),
-        .gps.row_@{i}[class*="bg"]:not(.lst) > :not(.head):not(.body):not(.foot),
-        .gps.row_@{i}.lst[class*="bg"] > * > :last-child,
-        .gps_1.col_@{i} > .body,
-        .gps_1.col_@{i} > .foot,
-        .gps_1.col_@{i}[class*="bg"] > .head,
-        .gps_1.col_@{i} > .head[class*="bg"],
-        .gps_1.col_@{i}[class*="gts"] > *,
-        .gps_1.col_@{i}[class*="bg"]:not(.lst) > :last-child,
-        .gps_1.col_@{i}.divider:not(.lst) > :not(:last-child),
-        .gps_1.row_@{i}[class*="bg"]:not(.lst) > :not(.head):not(.body):not(.foot),
-        .gps_1.row_@{i}.lst[class*="bg"] > * > :last-child {
+        .gps.@{col}_@{i} > .body,
+        .gps.@{col}_@{i} > .@{foot},
+        .gps.@{col}_@{i}[class*="bg"] > .@{head},
+        .gps.@{col}_@{i} > .@{head}[class*="bg"],
+        .gps.@{col}_@{i}[class*="gts"] > *,
+        .gps.@{col}_@{i}[class*="bg"]:not(.@{list}) > :last-child,
+        .gps.@{col}_@{i}.divider:not(.@{list}) > :not(:last-child),
+        .gps.@{row}_@{i}[class*="bg"]:not(.@{list}) > :not(.@{head}):not(.body):not(.@{foot}),
+        .gps.@{row}_@{i}.@{list}[class*="bg"] > * > :last-child,
+        .gps_1.@{col}_@{i} > .body,
+        .gps_1.@{col}_@{i} > .@{foot},
+        .gps_1.@{col}_@{i}[class*="bg"] > .@{head},
+        .gps_1.@{col}_@{i} > .@{head}[class*="bg"],
+        .gps_1.@{col}_@{i}[class*="gts"] > *,
+        .gps_1.@{col}_@{i}[class*="bg"]:not(.@{list}) > :last-child,
+        .gps_1.@{col}_@{i}.divider:not(.@{list}) > :not(:last-child),
+        .gps_1.@{row}_@{i}[class*="bg"]:not(.@{list}) > :not(.@{head}):not(.body):not(.@{foot}),
+        .gps_1.@{row}_@{i}.@{list}[class*="bg"] > * > :last-child {
             padding-bottom: 1rem !important;
         }
-        .gps.col_@{i} > .foot,
-        .gps.col_@{i}[class*="bg"]:not(.lst) > *,
-        .gps.col_@{i}.lst[class*="bg"] > * > :first-child,
-        .gps.row_@{i}:not(.lst) > .foot[class*="bg"] + .foot,
-        .gps.row_@{i}[class*="gts"]:not(.lst) > *,
-        .gps.row_@{i}[class*="bg"]:not(.lst) > :first-child,
-        .gps.row_@{i}.divider:not(.lst) > :not(:first-child),
-        .gps.row_@{i}.lst[class*="bg"] > :first-child > *,
-        .gps.row_@{i}.lst.divider > :not(:first-child) > *,
-        .gps_1.col_@{i} > .foot,
-        .gps_1.col_@{i}[class*="bg"]:not(.lst) > *,
-        .gps_1.col_@{i}.lst[class*="bg"] > * > :first-child,
-        .gps_1.row_@{i}:not(.lst) > .foot[class*="bg"] + .foot,
-        .gps_1.row_@{i}[class*="gts"]:not(.lst) > *,
-        .gps_1.row_@{i}[class*="bg"]:not(.lst) > :first-child,
-        .gps_1.row_@{i}.divider:not(.lst) > :not(:first-child),
-        .gps_1.row_@{i}.lst[class*="bg"] > :first-child > *,
-        .gps_1.row_@{i}.lst.divider > :not(:first-child) > * {
+        .gps.@{col}_@{i} > .@{foot},
+        .gps.@{col}_@{i}[class*="bg"]:not(.@{list}) > *,
+        .gps.@{col}_@{i}.@{list}[class*="bg"] > * > :first-child,
+        .gps.@{row}_@{i}:not(.@{list}) > .@{foot}[class*="bg"] + .@{foot},
+        .gps.@{row}_@{i}[class*="gts"]:not(.@{list}) > *,
+        .gps.@{row}_@{i}[class*="bg"]:not(.@{list}) > :first-child,
+        .gps.@{row}_@{i}.divider:not(.@{list}) > :not(:first-child),
+        .gps.@{row}_@{i}.@{list}[class*="bg"] > :first-child > *,
+        .gps.@{row}_@{i}.@{list}.divider > :not(:first-child) > *,
+        .gps_1.@{col}_@{i} > .@{foot},
+        .gps_1.@{col}_@{i}[class*="bg"]:not(.@{list}) > *,
+        .gps_1.@{col}_@{i}.@{list}[class*="bg"] > * > :first-child,
+        .gps_1.@{row}_@{i}:not(.@{list}) > .@{foot}[class*="bg"] + .@{foot},
+        .gps_1.@{row}_@{i}[class*="gts"]:not(.@{list}) > *,
+        .gps_1.@{row}_@{i}[class*="bg"]:not(.@{list}) > :first-child,
+        .gps_1.@{row}_@{i}.divider:not(.@{list}) > :not(:first-child),
+        .gps_1.@{row}_@{i}.@{list}[class*="bg"] > :first-child > *,
+        .gps_1.@{row}_@{i}.@{list}.divider > :not(:first-child) > * {
             padding-left: 1rem !important;
         }
-        .gps.col_@{i} > .head,
-        .gps.col_@{i}[class*="bg"]:not(.lst) > *,
-        .gps.col_@{i}.lst[class*="bg"] > * > :last-child,
-        .gps.row_@{i}[class*="gts"]:not(.lst) > *,
-        .gps.row_@{i}[class*="bg"]:not(.lst) > :last-child,
-        .gps.row_@{i}.divider:not(.lst) > :not(:last-child),
-        .gps.row_@{i}.lst[class*="bg"] > :last-child > *,
-        .gps.row_@{i}.lst.divider > :not(:last-child) > *,
-        .gps_1.col_@{i} > .head,
-        .gps_1.col_@{i}[class*="bg"]:not(.lst) > *,
-        .gps_1.col_@{i}.lst[class*="bg"] > * > :last-child,
-        .gps_1.row_@{i}[class*="gts"]:not(.lst) > *,
-        .gps_1.row_@{i}[class*="bg"]:not(.lst) > :last-child,
-        .gps_1.row_@{i}.divider:not(.lst) > :not(:last-child),
-        .gps_1.row_@{i}.lst[class*="bg"] > :last-child > *,
-        .gps_1.row_@{i}.lst.divider > :not(:last-child) > * {
+        .gps.@{col}_@{i} > .@{head},
+        .gps.@{col}_@{i}[class*="bg"]:not(.@{list}) > *,
+        .gps.@{col}_@{i}.@{list}[class*="bg"] > * > :last-child,
+        .gps.@{row}_@{i}[class*="gts"]:not(.@{list}) > *,
+        .gps.@{row}_@{i}[class*="bg"]:not(.@{list}) > :last-child,
+        .gps.@{row}_@{i}.divider:not(.@{list}) > :not(:last-child),
+        .gps.@{row}_@{i}.@{list}[class*="bg"] > :last-child > *,
+        .gps.@{row}_@{i}.@{list}.divider > :not(:last-child) > *,
+        .gps_1.@{col}_@{i} > .@{head},
+        .gps_1.@{col}_@{i}[class*="bg"]:not(.@{list}) > *,
+        .gps_1.@{col}_@{i}.@{list}[class*="bg"] > * > :last-child,
+        .gps_1.@{row}_@{i}[class*="gts"]:not(.@{list}) > *,
+        .gps_1.@{row}_@{i}[class*="bg"]:not(.@{list}) > :last-child,
+        .gps_1.@{row}_@{i}.divider:not(.@{list}) > :not(:last-child),
+        .gps_1.@{row}_@{i}.@{list}[class*="bg"] > :last-child > *,
+        .gps_1.@{row}_@{i}.@{list}.divider > :not(:last-child) > * {
             padding-right: 1rem !important;
         }
 
         /*** Gap 1-8 ***/
         .gap-media-toggle-to(8);
         .gap-media-toggle-to(@k, @j: 2) when (@j =< @k) {
-            .gps_@{j}.row_@{i} > .head,
-            .gps_@{j}.row_@{i} > .body,
-            .gps_@{j}.row_@{i} > .foot,
-            .gps_@{j}.row_@{i}.lst > * > :not(:first-child),
-            .gps_@{j}.col_@{i}:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
-            .gps_@{j}.col_@{i}.lst[class*="bg"] > * > *,
-            .gps_@{j}.col_@{i}.lst.divider > * > * {
+            .gps_@{j}.@{row}_@{i} > .@{head},
+            .gps_@{j}.@{row}_@{i} > .body,
+            .gps_@{j}.@{row}_@{i} > .@{foot},
+            .gps_@{j}.@{row}_@{i}.@{list} > * > :not(:first-child),
+            .gps_@{j}.@{col}_@{i}:not(.@{list}):not(.divider):not([class*="gts"]) > :not(:first-child):not(.@{head}):not(.body):not(.@{foot}),
+            .gps_@{j}.@{col}_@{i}.@{list}[class*="bg"] > * > *,
+            .gps_@{j}.@{col}_@{i}.@{list}.divider > * > * {
                 padding-top: @j*.5rem !important;
             }
-            .gps_@{j}.row_@{i} > .head,
-            .gps_@{j}.row_@{i} > .body,
-            .gps_@{j}.row_@{i} > .foot,
-            .gps_@{j}.row_@{i}.lst > * > :not(:last-child),
-            .gps_@{j}.col_@{i}:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
-            .gps_@{j}.col_@{i}.lst[class*="bg"]  > * > *,
-            .gps_@{j}.col_@{i}.lst.divider > * > * {
+            .gps_@{j}.@{row}_@{i} > .@{head},
+            .gps_@{j}.@{row}_@{i} > .body,
+            .gps_@{j}.@{row}_@{i} > .@{foot},
+            .gps_@{j}.@{row}_@{i}.@{list} > * > :not(:last-child),
+            .gps_@{j}.@{col}_@{i}:not(.@{list}):not(.divider):not([class*="gts"]) > :not(:last-child):not(.@{head}):not(.body):not(.@{foot}),
+            .gps_@{j}.@{col}_@{i}.@{list}[class*="bg"]  > * > *,
+            .gps_@{j}.@{col}_@{i}.@{list}.divider > * > * {
                 padding-bottom: @j*.5rem !important;
             }
-            .gps_@{j}.row_@{i}:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
-            .gps_@{j}.row_@{i}.lst > :not(:first-child) > *,
-            .gps_@{j}.col_@{i}.lst > * > :not(:first-child) {
+            .gps_@{j}.@{row}_@{i}:not(.@{list}):not(.divider):not([class*="gts"]) > :not(:first-child):not(.@{head}):not(.body):not(.@{foot}),
+            .gps_@{j}.@{row}_@{i}.@{list} > :not(:first-child) > *,
+            .gps_@{j}.@{col}_@{i}.@{list} > * > :not(:first-child) {
                 padding-left: @j*.5rem !important;
             }
-            .gps_@{j}.row_@{i}:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
-            .gps_@{j}.row_@{i}.lst > :not(:last-child) > *,
-            .gps_@{j}.col_@{i}.lst > * > :not(:last-child) {
+            .gps_@{j}.@{row}_@{i}:not(.@{list}):not(.divider):not([class*="gts"]) > :not(:last-child):not(.@{head}):not(.body):not(.@{foot}),
+            .gps_@{j}.@{row}_@{i}.@{list} > :not(:last-child) > *,
+            .gps_@{j}.@{col}_@{i}.@{list} > * > :not(:last-child) {
                 padding-right: @j*.5rem !important;
             }
-            .gps_@{j}.col_@{i} > .head,
-            .gps_@{j}.col_@{i} > .body,
-            .gps_@{j}.col_@{i}[class*="bg"] > .foot,
-            .gps_@{j}.col_@{i} > .foot[class*="bg"],
-            .gps_@{j}.col_@{i}:not(.lst) > .foot[class*="bg"] + .foot,
-            .gps_@{j}.col_@{i}[class*="gts"] > *,
-            .gps_@{j}.col_@{i}[class*="bg"]:not(.lst) > :first-child,
-            .gps_@{j}.col_@{i}.divider:not(.lst) > :not(:first-child),
-            .gps_@{j}.row_@{i}[class*="bg"]:not(.lst) > :not(.head):not(.body):not(.foot),
-            .gps_@{j}.row_@{i}.lst[class*="bg"] > * > :first-child {
+            .gps_@{j}.@{col}_@{i} > .@{head},
+            .gps_@{j}.@{col}_@{i} > .body,
+            .gps_@{j}.@{col}_@{i}[class*="bg"] > .@{foot},
+            .gps_@{j}.@{col}_@{i} > .@{foot}[class*="bg"],
+            .gps_@{j}.@{col}_@{i}:not(.@{list}) > .@{foot}[class*="bg"] + .@{foot},
+            .gps_@{j}.@{col}_@{i}[class*="gts"] > *,
+            .gps_@{j}.@{col}_@{i}[class*="bg"]:not(.@{list}) > :first-child,
+            .gps_@{j}.@{col}_@{i}.divider:not(.@{list}) > :not(:first-child),
+            .gps_@{j}.@{row}_@{i}[class*="bg"]:not(.@{list}) > :not(.@{head}):not(.body):not(.@{foot}),
+            .gps_@{j}.@{row}_@{i}.@{list}[class*="bg"] > * > :first-child {
                 padding-top: @j*1rem !important;
             }
-            .gps_@{j}.col_@{i} > .body,
-            .gps_@{j}.col_@{i} > .foot,
-            .gps_@{j}.col_@{i}[class*="bg"] > .head,
-            .gps_@{j}.col_@{i} > .head[class*="bg"],
-            .gps_@{j}.col_@{i}[class*="gts"] > *,
-            .gps_@{j}.col_@{i}[class*="bg"]:not(.lst) > :last-child,
-            .gps_@{j}.col_@{i}.divider:not(.lst) > :not(:last-child),
-            .gps_@{j}.row_@{i}[class*="bg"]:not(.lst) > :not(.head):not(.body):not(.foot),
-            .gps_@{j}.row_@{i}.lst[class*="bg"] > * > :last-child {
+            .gps_@{j}.@{col}_@{i} > .body,
+            .gps_@{j}.@{col}_@{i} > .@{foot},
+            .gps_@{j}.@{col}_@{i}[class*="bg"] > .@{head},
+            .gps_@{j}.@{col}_@{i} > .@{head}[class*="bg"],
+            .gps_@{j}.@{col}_@{i}[class*="gts"] > *,
+            .gps_@{j}.@{col}_@{i}[class*="bg"]:not(.@{list}) > :last-child,
+            .gps_@{j}.@{col}_@{i}.divider:not(.@{list}) > :not(:last-child),
+            .gps_@{j}.@{row}_@{i}[class*="bg"]:not(.@{list}) > :not(.@{head}):not(.body):not(.@{foot}),
+            .gps_@{j}.@{row}_@{i}.@{list}[class*="bg"] > * > :last-child {
                 padding-bottom: @j*1rem !important;
             }
-            .gps_@{j}.col_@{i} > .foot,
-            .gps_@{j}.col_@{i}[class*="bg"]:not(.lst) > *,
-            .gps_@{j}.col_@{i}.lst[class*="bg"] > * > :first-child,
-            .gps_@{j}.row_@{i}:not(.lst) > .foot[class*="bg"] + .foot,
-            .gps_@{j}.row_@{i}[class*="gts"]:not(.lst) > *,
-            .gps_@{j}.row_@{i}[class*="bg"]:not(.lst) > :first-child,
-            .gps_@{j}.row_@{i}.divider:not(.lst) > :not(:first-child),
-            .gps_@{j}.row_@{i}.lst[class*="bg"] > :first-child > *,
-            .gps_@{j}.row_@{i}.lst.divider > :not(:first-child) > * {
+            .gps_@{j}.@{col}_@{i} > .@{foot},
+            .gps_@{j}.@{col}_@{i}[class*="bg"]:not(.@{list}) > *,
+            .gps_@{j}.@{col}_@{i}.@{list}[class*="bg"] > * > :first-child,
+            .gps_@{j}.@{row}_@{i}:not(.@{list}) > .@{foot}[class*="bg"] + .@{foot},
+            .gps_@{j}.@{row}_@{i}[class*="gts"]:not(.@{list}) > *,
+            .gps_@{j}.@{row}_@{i}[class*="bg"]:not(.@{list}) > :first-child,
+            .gps_@{j}.@{row}_@{i}.divider:not(.@{list}) > :not(:first-child),
+            .gps_@{j}.@{row}_@{i}.@{list}[class*="bg"] > :first-child > *,
+            .gps_@{j}.@{row}_@{i}.@{list}.divider > :not(:first-child) > * {
                 padding-left: @j*1rem !important;
             }
-            .gps_@{j}.col_@{i} > .head,
-            .gps_@{j}.col_@{i}[class*="bg"]:not(.lst) > *,
-            .gps_@{j}.col_@{i}.lst[class*="bg"] > * > :last-child,
-            .gps_@{j}.row_@{i}[class*="gts"]:not(.lst) > *,
-            .gps_@{j}.row_@{i}[class*="bg"]:not(.lst) > :last-child,
-            .gps_@{j}.row_@{i}.divider:not(.lst) > :not(:last-child),
-            .gps_@{j}.row_@{i}.lst[class*="bg"] > :last-child > *,
-            .gps_@{j}.row_@{i}.lst.divider > :not(:last-child) > * {
+            .gps_@{j}.@{col}_@{i} > .@{head},
+            .gps_@{j}.@{col}_@{i}[class*="bg"]:not(.@{list}) > *,
+            .gps_@{j}.@{col}_@{i}.@{list}[class*="bg"] > * > :last-child,
+            .gps_@{j}.@{row}_@{i}[class*="gts"]:not(.@{list}) > *,
+            .gps_@{j}.@{row}_@{i}[class*="bg"]:not(.@{list}) > :last-child,
+            .gps_@{j}.@{row}_@{i}.divider:not(.@{list}) > :not(:last-child),
+            .gps_@{j}.@{row}_@{i}.@{list}[class*="bg"] > :last-child > *,
+            .gps_@{j}.@{row}_@{i}.@{list}.divider > :not(:last-child) > * {
                 padding-right: @j*1rem !important;
             }
             .gap-media-toggle-to(@k, (@j + 1));
         }
-        [class*="gps"].col_@{i} > .foot {
+        [class*="gps"].@{col}_@{i} > .@{foot} {
             padding-top: 0 !important;
         }
-        [class*="gps"].col_@{i} > .head {
+        [class*="gps"].@{col}_@{i} > .@{head} {
             padding-bottom: 0 !important;
         }
-        [class*="gps"].row_@{i} > .foot {
+        [class*="gps"].@{row}_@{i} > .@{foot} {
             padding-left: 0 !important;
         }
-        [class*="gps"].row_@{i} > .head {
+        [class*="gps"].@{row}_@{i} > .@{head} {
             padding-right: 0 !important;
         }
 
         /* Adaptive Gutter
          ***************************************/
-        .gts.col_@{i} > :last-child:not(:only-child),
-        .gts.col_@{i} > :not(:only-child):not(:first-child):not(:last-child),
-        .gts_1.col_@{i} > :last-child:not(:only-child),
-        .gts_1.col_@{i} > :not(:only-child):not(:first-child):not(:last-child) {
+        .gts.@{col}_@{i} > :last-child:not(:only-child),
+        .gts.@{col}_@{i} > :not(:only-child):not(:first-child):not(:last-child),
+        .gts_1.@{col}_@{i} > :last-child:not(:only-child),
+        .gts_1.@{col}_@{i} > :not(:only-child):not(:first-child):not(:last-child) {
             margin-top: .5rem !important;
         }
-        .gts.col_@{i} > :first-child:not(:only-child),
-        .gts.col_@{i} > :not(:only-child):not(:first-child):not(:last-child),
-        .gts_1.col_@{i} > :first-child:not(:only-child),
-        .gts_1.col_@{i} > :not(:only-child):not(:first-child):not(:last-child) {
+        .gts.@{col}_@{i} > :first-child:not(:only-child),
+        .gts.@{col}_@{i} > :not(:only-child):not(:first-child):not(:last-child),
+        .gts_1.@{col}_@{i} > :first-child:not(:only-child),
+        .gts_1.@{col}_@{i} > :not(:only-child):not(:first-child):not(:last-child) {
             margin-bottom: .5rem !important;
         }
-        .gts.row_@{i} > :last-child:not(:only-child),
-        .gts.row_@{i} > :not(:only-child):not(:first-child):not(:last-child),
-        .gts_1.row_@{i} > :last-child:not(:only-child),
-        .gts_1.row_@{i} > :not(:only-child):not(:first-child):not(:last-child) {
+        .gts.@{row}_@{i} > :last-child:not(:only-child),
+        .gts.@{row}_@{i} > :not(:only-child):not(:first-child):not(:last-child),
+        .gts_1.@{row}_@{i} > :last-child:not(:only-child),
+        .gts_1.@{row}_@{i} > :not(:only-child):not(:first-child):not(:last-child) {
             margin-left: .5rem !important;
         }
-        .gts.row_@{i} > :first-child:not(:only-child),
-        .gts.row_@{i} > :not(:only-child):not(:first-child):not(:last-child),
-        .gts_1.row_@{i} > :first-child:not(:only-child),
-        .gts_1.row_@{i} > :not(:only-child):not(:first-child):not(:last-child) {
+        .gts.@{row}_@{i} > :first-child:not(:only-child),
+        .gts.@{row}_@{i} > :not(:only-child):not(:first-child):not(:last-child),
+        .gts_1.@{row}_@{i} > :first-child:not(:only-child),
+        .gts_1.@{row}_@{i} > :not(:only-child):not(:first-child):not(:last-child) {
             margin-right: .5rem !important;
         }
-        .gts.row_@{i}[class*="bg"] > *,
-        .gts.col_@{i}[class*="bg"] > :only-child,
-        .gts.col_@{i}[class*="bg"] > :first-child:not(:only-child),
-        .gts_1.row_@{i}[class*="bg"] > *,
-        .gts_1.col_@{i}[class*="bg"] > :only-child,
-        .gts_1.col_@{i}[class*="bg"] > :first-child:not(:only-child) {
+        .gts.@{row}_@{i}[class*="bg"] > *,
+        .gts.@{col}_@{i}[class*="bg"] > :only-child,
+        .gts.@{col}_@{i}[class*="bg"] > :first-child:not(:only-child),
+        .gts_1.@{row}_@{i}[class*="bg"] > *,
+        .gts_1.@{col}_@{i}[class*="bg"] > :only-child,
+        .gts_1.@{col}_@{i}[class*="bg"] > :first-child:not(:only-child) {
             margin-top: 1rem !important;
         }
-        .gts.row_@{i}[class*="bg"] > *,
-        .gts.col_@{i}[class*="bg"] > :only-child,
-        .gts.col_@{i}[class*="bg"] > :last-child:not(:only-child),
-        .gts_1.row_@{i}[class*="bg"] > *,
-        .gts_1.col_@{i}[class*="bg"] > :only-child,
-        .gts_1.col_@{i}[class*="bg"] > :last-child:not(:only-child) {
+        .gts.@{row}_@{i}[class*="bg"] > *,
+        .gts.@{col}_@{i}[class*="bg"] > :only-child,
+        .gts.@{col}_@{i}[class*="bg"] > :last-child:not(:only-child),
+        .gts_1.@{row}_@{i}[class*="bg"] > *,
+        .gts_1.@{col}_@{i}[class*="bg"] > :only-child,
+        .gts_1.@{col}_@{i}[class*="bg"] > :last-child:not(:only-child) {
             margin-bottom: 1rem !important;
         }
-        .gts.col_@{i}[class*="bg"] > *,
-        .gts.row_@{i}[class*="bg"] > :only-child,
-        .gts.row_@{i}[class*="bg"] > :first-child:not(:only-child),
-        .gts_1.col_@{i}[class*="bg"] > *,
-        .gts_1.row_@{i}[class*="bg"] > :only-child,
-        .gts_1.row_@{i}[class*="bg"] > :first-child:not(:only-child) {
+        .gts.@{col}_@{i}[class*="bg"] > *,
+        .gts.@{row}_@{i}[class*="bg"] > :only-child,
+        .gts.@{row}_@{i}[class*="bg"] > :first-child:not(:only-child),
+        .gts_1.@{col}_@{i}[class*="bg"] > *,
+        .gts_1.@{row}_@{i}[class*="bg"] > :only-child,
+        .gts_1.@{row}_@{i}[class*="bg"] > :first-child:not(:only-child) {
             margin-left: 1rem !important;
         }
-        .gts.col_@{i}[class*="bg"] > *,
-        .gts.row_@{i}[class*="bg"] > :only-child,
-        .gts.row_@{i}[class*="bg"] > :last-child:not(:only-child),
-        .gts_1.col_@{i}[class*="bg"] > *,
-        .gts_1.row_@{i}[class*="bg"] > :only-child,
-        .gts_1.row_@{i}[class*="bg"] > :last-child:not(:only-child) {
+        .gts.@{col}_@{i}[class*="bg"] > *,
+        .gts.@{row}_@{i}[class*="bg"] > :only-child,
+        .gts.@{row}_@{i}[class*="bg"] > :last-child:not(:only-child),
+        .gts_1.@{col}_@{i}[class*="bg"] > *,
+        .gts_1.@{row}_@{i}[class*="bg"] > :only-child,
+        .gts_1.@{row}_@{i}[class*="bg"] > :last-child:not(:only-child) {
             margin-right: 1rem !important;
         }
 
         /*** Gutter 1-8 ***/
         .gutter-media-toggle-to(8);
         .gutter-media-toggle-to(@k, @j: 2) when (@j =< @k) {
-            .gts_@{j}.col_@{i} > :last-child:not(:only-child),
-            .gts_@{j}.col_@{i} > :not(:only-child):not(:first-child):not(:last-child) {
+            .gts_@{j}.@{col}_@{i} > :last-child:not(:only-child),
+            .gts_@{j}.@{col}_@{i} > :not(:only-child):not(:first-child):not(:last-child) {
                 margin-top: @j*.5rem !important;
             }
-            .gts_@{j}.col_@{i} > :first-child:not(:only-child),
-            .gts_@{j}.col_@{i} > :not(:only-child):not(:first-child):not(:last-child) {
+            .gts_@{j}.@{col}_@{i} > :first-child:not(:only-child),
+            .gts_@{j}.@{col}_@{i} > :not(:only-child):not(:first-child):not(:last-child) {
                 margin-bottom: @j*.5rem !important;
             }
-            .gts_@{j}.row_@{i} > :last-child:not(:only-child),
-            .gts_@{j}.row_@{i} > :not(:only-child):not(:first-child):not(:last-child) {
+            .gts_@{j}.@{row}_@{i} > :last-child:not(:only-child),
+            .gts_@{j}.@{row}_@{i} > :not(:only-child):not(:first-child):not(:last-child) {
                 margin-left: @j*.5rem !important;
             }
-            .gts_@{j}.row_@{i} > :first-child:not(:only-child),
-            .gts_@{j}.row_@{i} > :not(:only-child):not(:first-child):not(:last-child) {
+            .gts_@{j}.@{row}_@{i} > :first-child:not(:only-child),
+            .gts_@{j}.@{row}_@{i} > :not(:only-child):not(:first-child):not(:last-child) {
                 margin-right: @j*.5rem !important;
             }
-            .gts_@{j}.row_@{i}[class*="bg"] > *,
-            .gts_@{j}.col_@{i}[class*="bg"] > :only-child,
-            .gts_@{j}.col_@{i}[class*="bg"] > :first-child:not(:only-child) {
+            .gts_@{j}.@{row}_@{i}[class*="bg"] > *,
+            .gts_@{j}.@{col}_@{i}[class*="bg"] > :only-child,
+            .gts_@{j}.@{col}_@{i}[class*="bg"] > :first-child:not(:only-child) {
                 margin-top: @j*1rem !important;
             }
-            .gts_@{j}.row_@{i}[class*="bg"] > *,
-            .gts_@{j}.col_@{i}[class*="bg"] > :only-child,
-            .gts_@{j}.col_@{i}[class*="bg"] > :last-child:not(:only-child) {
+            .gts_@{j}.@{row}_@{i}[class*="bg"] > *,
+            .gts_@{j}.@{col}_@{i}[class*="bg"] > :only-child,
+            .gts_@{j}.@{col}_@{i}[class*="bg"] > :last-child:not(:only-child) {
                 margin-bottom: @j*1rem !important;
             }
-            .gts_@{j}.col_@{i}[class*="bg"] > *,
-            .gts_@{j}.row_@{i}[class*="bg"] > :only-child,
-            .gts_@{j}.row_@{i}[class*="bg"] > :first-child:not(:only-child) {
+            .gts_@{j}.@{col}_@{i}[class*="bg"] > *,
+            .gts_@{j}.@{row}_@{i}[class*="bg"] > :only-child,
+            .gts_@{j}.@{row}_@{i}[class*="bg"] > :first-child:not(:only-child) {
                 margin-left: @j*1rem !important;
             }
-            .gts_@{j}.col_@{i}[class*="bg"] > *,
-            .gts_@{j}.row_@{i}[class*="bg"] > :only-child,
-            .gts_@{j}.row_@{i}[class*="bg"] > :last-child:not(:only-child) {
+            .gts_@{j}.@{col}_@{i}[class*="bg"] > *,
+            .gts_@{j}.@{row}_@{i}[class*="bg"] > :only-child,
+            .gts_@{j}.@{row}_@{i}[class*="bg"] > :last-child:not(:only-child) {
                 margin-right: @j*1rem !important;
             }
             .gutter-media-toggle-to(@k, (@j + 1));
         }
 
         /*** Null ***/
-        [class*="gts"].col_@{i}:not([class*="bg"]):not(.divider) > [hidden]:first-child + :not(:only-child):not(:first-child):not(:last-child) {
+        [class*="gts"].@{col}_@{i}:not([class*="bg"]):not(.divider) > [hidden]:first-child + :not(:only-child):not(:first-child):not(:last-child) {
             margin-top: 0 !important;
         }
-        [class*="gts"].row_@{i}:not([class*="bg"]):not(.divider) > [hidden]:first-child + :not(:only-child):not(:first-child):not(:last-child) {
+        [class*="gts"].@{row}_@{i}:not([class*="bg"]):not(.divider) > [hidden]:first-child + :not(:only-child):not(:first-child):not(:last-child) {
             margin-left: 0 !important;
         }
     }

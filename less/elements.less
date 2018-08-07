@@ -130,14 +130,14 @@ hr {
 }
 hr, .separator,
 .divider > *,
-.divider.tbl:not(.row) > * > * {
+.divider.@{table}:not(.@{row}) > * > * {
     border-width: @elem_border_width;
 }
-.divider.col > :not(:only-child):not(:first-child),
-.divider.tbl:not(.row) > :not(:only-child):not(:first-child) > * {
+.divider.@{col} > :not(:only-child):not(:first-child),
+.divider.@{table}:not(.@{row}) > :not(:only-child):not(:first-child) > * {
     border-top-style: solid;
 }
-.divider:not(.col) > :not(:only-child):not(:first-child) {
+.divider:not(.@{col}) > :not(:only-child):not(:first-child) {
     border-left-style: solid;
 }
 hr, .separator:not(.vertical) {
@@ -360,9 +360,9 @@ img.pic {
     right: auto;
 }
 
-:checked + .drawer:not(.flo) ~ .scr,
-:checked + .drawer:not(.flo) ~ .scr > header.fix,
-:checked + .drawer:not(.flo) ~ .scr > footer.fix {
+:checked + .drawer:not(.flo) ~ .@{screen},
+:checked + .drawer:not(.flo) ~ .@{screen} > header.@{fixed},
+:checked + .drawer:not(.flo) ~ .@{screen} > footer.@{fixed} {
     left:   2rem*18;
     right: -2rem*18;
 }

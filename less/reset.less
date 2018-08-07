@@ -22,7 +22,7 @@ body {
     margin: 0;
     z-index: 1;
 }
-body:not(.fix) {
+body:not(.@{fixed}) {
     padding-top: .0001rem;
 }
 
@@ -46,7 +46,7 @@ ul, ol {
     ul {list-style-type: toggle(circle, square, box);}
     ol {list-style-type: lower-latin;}
 }
-.col, .row, [class*="til"] {
+.@{col}, .@{row}, [class*="@{tile}"] {
     > li {
         list-style-type: none;
     }
@@ -94,7 +94,7 @@ acronym, .help {
 }
 
 /*** Overflow ***/
-body:not(.fix), .scroll {
+body:not(.@{fixed}), .scroll {
     overflow-x:  hidden;
     overflow-y:  auto;
 }
@@ -102,10 +102,10 @@ body:not(.fix), .scroll {
     overflow-x: auto;
     overflow-y: hidden;
 }
-body.fix, .mask {
+body.@{fixed}, .mask {
     overflow: hidden;
 }
-.fix .scr {
+.@{fixed} .@{screen} {
     overflow: auto;
 }
 

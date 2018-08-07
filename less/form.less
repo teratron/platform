@@ -50,7 +50,7 @@ input[type="email"],
 input[type="tel"],
 input[type="url"],
 input[type="search"] {
-    + .climb {
+    + .@{climb} {
         background: transparent none;
         font-size: 120%;
         font-weight: normal;
@@ -118,7 +118,7 @@ input[type="datetime-local"] {
         display: inline-block;
         padding-right: 2rem*.5;
     }
-    > *, &.column > .inl {
+    > *, &.@{col} > .@{inline} {
         margin-bottom: 2rem;
         display: block;
         .clear;
@@ -179,7 +179,7 @@ input[type="datetime-local"] {
             .hidden;
         }
     }
-    &.column, .column {
+    &.@{col}, .@{col} {
         &, > * {
             > label:first-child {
                 min-height: 2rem;
@@ -278,7 +278,7 @@ display: flex;
         &[class*="flu-"] {
             width: 100%;
         }
-        > *, &.column > .inl {
+        > *, &.@{col} > .@{inline} {
             > label:first-child {
                 width: 100%;
                 min-height: 2rem;

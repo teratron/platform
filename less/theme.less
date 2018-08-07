@@ -69,20 +69,20 @@ body {
 }
 header {
     background-color: @color_brand;
-    > .inr {
+    > .@{inner} {
         background-color: @color_brand;
         color: #fff;
     }
 }
 main {
     background-color: #fff;
-    > .inr {
+    > .@{inner} {
         background-color: #f7f7f7;
     }
 }
 footer {
     background-color: #cbffac;
-    > .inr {
+    > .@{inner} {
         background-color: #ddd;
         color: #999;
     }
@@ -196,7 +196,7 @@ hr {
 }
 hr, .separator,
 .divider > *,
-.divider.tbl:not(.row) > * > * {
+.divider.@{table}:not(.@{row}) > * > * {
     border-color: rgba(0,0,0,.12);
 }
 
