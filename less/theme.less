@@ -1,5 +1,7 @@
-
-@pre:                   pl-;
+/***************************************
+ Variables
+ ***************************************/
+@import "variables.less";
 
 @color_brand:           #27a4c4;
 @color_brand_dark:      #246d8d;
@@ -366,25 +368,25 @@ input[type="datetime-local"] {
  ***************************************/
 @font-face {
     font-family: 'Roboto';
-    src: url(../fonts/Roboto/Roboto-Regular.ttf) format('truetype');
+    src: url("@{fonts}/Roboto/Roboto-Regular.ttf") format('truetype');
     font-weight: normal;
     font-style:  normal;
 }
 @font-face {
     font-family: 'RobotoLight';
-    src: url(../fonts/Roboto/Roboto-Light.ttf) format('truetype');
+    src: url("@{fonts}/Roboto/Roboto-Light.ttf") format('truetype');
     font-weight: normal;
     font-style:  normal;
 }
 @font-face {
     font-family: 'RobotoThin';
-    src: url(../fonts/Roboto/Roboto-Thin.ttf) format('truetype');
+    src: url("@{fonts}/Roboto/Roboto-Thin.ttf") format('truetype');
     font-weight: normal;
     font-style:  normal;
 }
 @font-face {
     font-family: 'RobotoMedium';
-    src: url(../fonts/Roboto/Roboto-Medium.ttf) format('truetype');
+    src: url("@{fonts}/Roboto/Roboto-Medium.ttf") format('truetype');
     font-weight: normal;
     font-style:  normal;
 }
