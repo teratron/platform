@@ -10,21 +10,21 @@
  ******************************************************************************/
 body, main, header, footer,
 .@{inner},
-.flu, .flu_1,
-.flus > :only-child,
-.flus > :first-child:nth-last-child(1) {
+.@{fluid}, .@{fluid}_1,
+.@{fluid}@{child} > :only-child,
+.@{fluid}@{child} > :first-child:nth-last-child(1) {
     width:      100%;
     flex-basis: 100%;
 }
 [class*="@{tile}"],
-.flu, .flu_1,
-.flus > :only-child,
-.flus > :first-child:nth-last-child(1) {
+.@{fluid}, .@{fluid}_1,
+.@{fluid}@{child} > :only-child,
+.@{fluid}@{child} > :first-child:nth-last-child(1) {
     min-width: 100%;
 }
-.flu, .flu_1,
-.flus > :only-child,
-.flus > :first-child:nth-last-child(1) {
+.@{fluid}, .@{fluid}_1,
+.@{fluid}@{child} > :only-child,
+.@{fluid}@{child} > :first-child:nth-last-child(1) {
     max-width: 100%;
 }
 @media only screen and (min-width: 0) {
@@ -71,9 +71,9 @@ body, main, header, footer,
  ***************************************/
 .generate-fluid(100);
 .generate-fluid(@n, @i: 2) when (@i =< @n) {
-    .flu_@{i},
-    .flus > :first-child:nth-last-child(@{i}),
-    .flus > :first-child:nth-last-child(@{i}) ~ * {
+    .@{fluid}_@{i},
+    .@{fluid}@{child} > :first-child:nth-last-child(@{i}),
+    .@{fluid}@{child} > :first-child:nth-last-child(@{i}) ~ * {
         width:      round(100%/@i, 3);
         flex-basis: round(100%/@i, 3);
     }

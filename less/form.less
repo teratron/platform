@@ -121,11 +121,11 @@ input[type="datetime-local"] {
     > *, &.@{col} > .@{inline} {
         margin-bottom: 2rem;
         display: block;
-        .clear;
+        .@{clear};
         &:last-child {
             margin-bottom: 0;
         }
-        button, input, output, select, textarea, label, .flu {
+        button, input, output, select, textarea, label, .@{fluid} {
             float: left;
             margin-right: 0;
         }
@@ -157,7 +157,7 @@ input[type="datetime-local"] {
                 margin-top: (4rem - 2rem)*.5;
             }
         }
-        select, textarea, output, .flu,
+        select, textarea, output, .@{fluid},
         input[type="text"],
         input[type="email"],
         input[type="search"],
@@ -284,7 +284,7 @@ display: flex;
                 min-height: 2rem;
                 line-height: 1;
             }
-            select, textarea, output, .flu,
+            select, textarea, output, .@{fluid},
             > label:first-child,
             input[type="text"],
             input[type="email"],

@@ -255,11 +255,14 @@ button, input, output, select, option {
     -webkit-justify-content: flex-end;
             justify-content: flex-end;
 }
-.around {
+.@{evenly} {
+    justify-content: space-evenly;
+}
+.@{around} {
     -webkit-justify-content: space-around;
             justify-content: space-around;
 }
-.between {
+.@{between} {
     -webkit-justify-content: space-between;
             justify-content: space-between;
     > :first-child {
@@ -280,34 +283,34 @@ button, input, output, select, option {
 }
 
 /*** Grid Layout ***/
-.grd {
+.@{grid} {
     display: -moz-grid;
     display: -ms-grid;
     display: grid;
 }
 
 /*** Block Layout ***/
-.blc,
-.blc.on,
-.blc.@{col} > * {
+.@{block},
+.@{block}.on,
+.@{block}.@{col} > * {
     display: block;
 }
-.blc.@{list} > * > *,
-.blc.@{row}:not(.@{cell}) > *,
-.blc.@{row}.@{right}@{child}:not(.@{cell}) > .@{left},
-.blc.@{row}.reverse:not(.@{cell}) > .@{right},
-.blc.@{row}.@{right}@{child}.reverse:not(.@{cell}) > *,
-.blc[class*="@{tile}"] > *,
-.blc[class*="@{tile}"].@{right}@{child}.reverse > * {
+.@{block}.@{list} > * > *,
+.@{block}.@{row}:not(.@{cell}) > *,
+.@{block}.@{row}.@{right}@{child}:not(.@{cell}) > .@{left},
+.@{block}.@{row}.reverse:not(.@{cell}) > .@{right},
+.@{block}.@{row}.@{right}@{child}.reverse:not(.@{cell}) > *,
+.@{block}[class*="@{tile}"] > *,
+.@{block}[class*="@{tile}"].@{right}@{child}.reverse > * {
     float: left;
 }
-.blc.@{list} > * > .@{right},
-.blc.@{row}:not(.@{cell}) > .@{right},
-.blc.@{row}.@{right}@{child}:not(.@{cell}) > *,
-.blc.@{row}.reverse:not(.@{cell}) > *,
-.blc.@{row}.@{right}@{child}.reverse:not(.@{cell}) > .@{left},
-.blc[class*="@{tile}"].@{right}@{child} > *,
-.blc[class*="@{tile}"].reverse > * {
+.@{block}.@{list} > * > .@{right},
+.@{block}.@{row}:not(.@{cell}) > .@{right},
+.@{block}.@{row}.@{right}@{child}:not(.@{cell}) > *,
+.@{block}.@{row}.reverse:not(.@{cell}) > *,
+.@{block}.@{row}.@{right}@{child}.reverse:not(.@{cell}) > .@{left},
+.@{block}[class*="@{tile}"].@{right}@{child} > *,
+.@{block}[class*="@{tile}"].reverse > * {
     float: right;
 }
 
@@ -325,9 +328,9 @@ button, input, output, select, option {
 }
 
 /*** Clearfix ***/
-.clear:after,
-.blc.@{row}:after,
-.blc[class*="@{tile}"]:after,
+.@{clear}:after,
+.@{block}.@{row}:after,
+.@{block}[class*="@{tile}"]:after,
 .@{table}.@{row} > :after,
 .@{table}:not(.@{row}) > * > :not([hidden]):not(script):not(style):after {
     clear:    both;
@@ -336,9 +339,9 @@ button, input, output, select, option {
     line-height: 0;
     visibility: hidden;
 }
-.clear:after,
-.blc.@{row}:after,
-.blc[class*="@{tile}"]:after {
+.@{clear}:after,
+.@{block}.@{row}:after,
+.@{block}[class*="@{tile}"]:after {
     display: block;
     content: "";
 }
@@ -387,12 +390,12 @@ button, input, output, select, option {
     }
 }
 .@{center}@{child}:not(.@{col}),
-.blc.@{bar}.@{cell},
-.blc.@{bar} > * {
+.@{block}.@{bar}.@{cell},
+.@{block}.@{bar} > * {
     text-align: center;
 }
 .@{center}@{child}:not(.@{col}):not(.@{bar}),
-.blc.@{bar} > * {
+.@{block}.@{bar} > * {
     > * {
         text-align: inherit;
     }
@@ -451,9 +454,9 @@ body.@{fixed},
 .@{fixed} .@{screen},
 .@{fixed}:not(.@{top}):not(.@{bottom}):not(.@{right}):not(.@{left}),
 .@{absolute}:not(.@{top}):not(.@{bottom}):not(.@{right}):not(.@{left}),
-.@{fixed}.@{right},        .@{absolute}.@{right},
-.@{fixed}.@{top},          .@{absolute}.@{top},
-.@{fixed}.@{bottom},       .@{absolute}.@{bottom},
+.@{fixed}.@{right},           .@{absolute}.@{right},
+.@{fixed}.@{top},             .@{absolute}.@{top},
+.@{fixed}.@{bottom},          .@{absolute}.@{bottom},
 .@{fixed}.@{top}.@{right},    .@{absolute}.@{top}.@{right},
 .@{fixed}.@{bottom}.@{right}, .@{absolute}.@{bottom}.@{right} {
     right: 0;
@@ -544,7 +547,7 @@ body.@{fixed},
   fade    fadein  fadeout
   empty
  ******************************************************************************/
-.off, [class*="on_"], .empty:empty {
+.@{off}, [class*="on_"], .@{empty}:empty {
     display: none !important;
 }
 .out, [class*="in_"] {

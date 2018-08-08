@@ -40,20 +40,20 @@
             left:   auto       !important;
             right:  auto       !important;
         }
-        .blc.on_@{i},
-        .blc.@{col}_@{i} > * {
+        .@{block}.on_@{i},
+        .@{block}.@{col}_@{i} > * {
             display: block !important;
         }
         .@{row}_@{i} > * {
             margin-top:    0 !important;
             margin-bottom: 0 !important;
         }
-        .blc.@{row}_@{i} > *,
-        .blc.@{row}_@{i}.@{right}@{child} > .@{left} {
+        .@{block}.@{row}_@{i} > *,
+        .@{block}.@{row}_@{i}.@{right}@{child} > .@{left} {
             float: left !important;
         }
-        .blc.@{row}_@{i} > .@{right},
-        .blc.@{row}_@{i}.@{right}@{child} > *  {
+        .@{block}.@{row}_@{i} > .@{right},
+        .@{block}.@{row}_@{i}.@{right}@{child} > *  {
             float: right !important;
         }
         .@{row}_@{i} > *,
@@ -103,7 +103,7 @@
             display: -webkit-flex !important;
             display: flex         !important;
         }
-        .off_@{i} {
+        .@{off}_@{i} {
             display: none !important;
         }
         .show_@{i} {
