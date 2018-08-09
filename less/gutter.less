@@ -145,9 +145,9 @@
 }
 
 /*** Null ***/
-[class*="@{gutter}@{child}"].@{col}:not([class*="@{back}"]):not(.divider) > [hidden]:first-child + :not(:only-child):not(:first-child):not(:last-child) {
+[class*="@{gutter}@{child}"].@{col}:not([class*="@{back}"]):not(.@{divider}) > [hidden]:first-child + :not(:only-child):not(:first-child):not(:last-child) {
     margin-top: 0;
 }
-[class*="@{gutter}@{child}"]:not(.@{col}):not([class*="@{back}"]):not(.divider) > [hidden]:first-child + :not(:only-child):not(:first-child):not(:last-child) {
+[class*="@{gutter}@{child}"]:not(.@{col}):not([class*="@{back}"]):not(.@{divider}) > [hidden]:first-child + :not(:only-child):not(:first-child):not(:last-child) {
     margin-left: 0;
 }

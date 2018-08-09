@@ -129,15 +129,15 @@ hr {
     min-height: @elem_border_width;
 }
 hr, .separator,
-.divider > *,
-.divider.@{table}:not(.@{row}) > * > * {
+.@{divider} > *,
+.@{divider}.@{table}:not(.@{row}) > * > * {
     border-width: @elem_border_width;
 }
-.divider.@{col} > :not(:only-child):not(:first-child),
-.divider.@{table}:not(.@{row}) > :not(:only-child):not(:first-child) > * {
+.@{divider}.@{col} > :not(:only-child):not(:first-child),
+.@{divider}.@{table}:not(.@{row}) > :not(:only-child):not(:first-child) > * {
     border-top-style: solid;
 }
-.divider:not(.@{col}) > :not(:only-child):not(:first-child) {
+.@{divider}:not(.@{col}) > :not(:only-child):not(:first-child) {
     border-left-style: solid;
 }
 hr, .separator:not(.vertical) {
@@ -146,7 +146,7 @@ hr, .separator:not(.vertical) {
 .separator.vertical {
     border-right-style: solid;
 }
-.divider.inset {}
+.@{divider}.@{in}set {}
 
 /***************************************
   Imagery

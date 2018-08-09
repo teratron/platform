@@ -42,7 +42,7 @@ header.@{fixed} + :not(footer) {
 
 /*** Flexible Layout ***/
 main, header, footer,
-.on, .@{col}, .@{row}, [class*="@{tile}"],
+.@{on}, .@{col}, .@{row}, [class*="@{tile}"],
 .@{fixed}.@{middle}@{child}, .@{fixed}.@{center}@{child},
 .@{absolute}.@{middle}@{child}, .@{absolute}.@{center}@{child},
 .@{bar}  > *,
@@ -65,7 +65,7 @@ main, header, footer,
     -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row;
-    &.reverse {
+    &.@{reverse} {
         -webkit-flex-direction: row-reverse;
             -ms-flex-direction: row-reverse;
                 flex-direction: row-reverse;
@@ -75,41 +75,41 @@ main, header, footer,
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    &.reverse {
+    &.@{reverse} {
         -webkit-flex-direction: column-reverse;
             -ms-flex-direction: column-reverse;
                 flex-direction: column-reverse;
     }
 }
-.wrap, .@{row}, [class*="@{tile}"] {
+.@{wrap}, .@{row}, [class*="@{tile}"] {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
 }
-.wrap {
+.@{wrap} {
     white-space: -moz-pre-wrap;
     white-space: pre-wrap;
     word-wrap:   break-word;
     text-wrap:   avoid;
 }
-.inverse {
+.@{inverse} {
     -webkit-flex-wrap: wrap-reverse;
             flex-wrap: wrap-reverse;
 }
-.nowrap, .@{col}:not(.@{cell}):not([class*="@{tile}"]), .@{bar}, .@{list} > * {
+.@{nowrap}, .@{col}:not(.@{cell}):not([class*="@{tile}"]), .@{bar}, .@{list} > * {
     -webkit-flex-wrap: nowrap;
         -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
 }
-.nowrap {
+.@{nowrap} {
     white-space: nowrap;
     overflow:    hidden;
 }
-.nowrap, p {
+.@{nowrap}, p {
     -o-text-overflow: ellipsis;
        text-overflow: ellipsis;
 }
-.grw, .grw_1, .grws > *, .@{body}, .@{screen} {
+.@{grow}, .@{grow}_1, .@{grow}@{child} > *, .@{body}, .@{screen} {
     -webkit-box-flex:  1;
     -moz-box-flex:     1;
     -ms-flex:          1;
@@ -118,7 +118,7 @@ main, header, footer,
 }
 .generate-grow(8);
 .generate-grow(@n, @i: 2) when (@i =< @n) {
-    .grw_@{i} {
+    .@{grow}_@{i} {
         -webkit-box-flex:  @i;
         -moz-box-flex:     @i;
         -ms-flex:          @i;
@@ -127,10 +127,12 @@ main, header, footer,
     }
     .generate-grow(@n, (@i + 1));
 }
-/*flex-shrink:;*/
+.@{shrink} {
+    flex-shrink: 1;
+}
 
 /*** Align content ***/
-.stretches,
+.@{stretch}@{child},
 .@{row}:not(.@{cell}),
 .@{col}:not(.@{cell}),
 [class*="@{tile}"]:not(.@{cell}),
@@ -168,7 +170,7 @@ button, input, output, select, option {
 }
 
 /*** Align items ***/
-.stretches,
+.@{stretch}@{child},
 .@{row}:not(.@{cell}),
 .@{col}:not(.@{cell}),
 [class*="@{tile}"]:not(.@{cell}),
@@ -206,7 +208,7 @@ button, input, output, select, option {
 }
 
 /*** Align self ***/
-.stretch {
+.@{stretch} {
     -webkit-align-self: stretch;
             align-self: stretch;
 }
@@ -291,32 +293,32 @@ button, input, output, select, option {
 
 /*** Block Layout ***/
 .@{block},
-.@{block}.on,
+.@{block}.@{on},
 .@{block}.@{col} > * {
     display: block;
 }
 .@{block}.@{list} > * > *,
 .@{block}.@{row}:not(.@{cell}) > *,
 .@{block}.@{row}.@{right}@{child}:not(.@{cell}) > .@{left},
-.@{block}.@{row}.reverse:not(.@{cell}) > .@{right},
-.@{block}.@{row}.@{right}@{child}.reverse:not(.@{cell}) > *,
+.@{block}.@{row}.@{reverse}:not(.@{cell}) > .@{right},
+.@{block}.@{row}.@{right}@{child}.@{reverse}:not(.@{cell}) > *,
 .@{block}[class*="@{tile}"] > *,
-.@{block}[class*="@{tile}"].@{right}@{child}.reverse > * {
+.@{block}[class*="@{tile}"].@{right}@{child}.@{reverse} > * {
     float: left;
 }
 .@{block}.@{list} > * > .@{right},
 .@{block}.@{row}:not(.@{cell}) > .@{right},
 .@{block}.@{row}.@{right}@{child}:not(.@{cell}) > *,
-.@{block}.@{row}.reverse:not(.@{cell}) > *,
-.@{block}.@{row}.@{right}@{child}.reverse:not(.@{cell}) > .@{left},
+.@{block}.@{row}.@{reverse}:not(.@{cell}) > *,
+.@{block}.@{row}.@{right}@{child}.@{reverse}:not(.@{cell}) > .@{left},
 .@{block}[class*="@{tile}"].@{right}@{child} > *,
-.@{block}[class*="@{tile}"].reverse > * {
+.@{block}[class*="@{tile}"].@{reverse} > * {
     float: right;
 }
 
 /*** Table Layout ***/
 .@{table},
-.@{table}.on {
+.@{table}.@{on} {
     display: table;
 }
 .@{table}:not(.@{row}) > :not([hidden]):not(script):not(style) {
@@ -482,7 +484,7 @@ body.@{fixed},
   Group
  ***************************************/
 .@{group}:not(.@{col}) > :not(:only-child):not(:first-child):not(.@{climb}),
-.divider:not(.@{col}) > :not(:only-child):not(:first-child) {
+.@{divider}:not(.@{col}) > :not(:only-child):not(:first-child) {
     margin-left: -1px;
 }
 .@{group} > :not(:last-child) {
@@ -500,7 +502,7 @@ body.@{fixed},
     border-bottom-left-radius: 0;
 }
 .@{group}.@{col}     > :not(:only-child):not(:first-child),
-.divider.@{col} > :not(:only-child):not(:first-child) {
+.@{divider}.@{col} > :not(:only-child):not(:first-child) {
     margin-top: -1px;
 }
 .@{group}.@{col} > :not(:last-child) {
@@ -547,36 +549,36 @@ body.@{fixed},
   fade    fadein  fadeout
   empty
  ******************************************************************************/
-.@{off}, [class*="on_"], .@{empty}:empty {
+.@{off}, [class*="@{on}_"], .@{empty}:empty {
     display: none !important;
 }
-.out, [class*="in_"] {
+.@{out}, [class*="@{in}_"] {
     top:  -100% !important;
     left: -100% !important;
     z-index: -1 !important;
 }
-.out, [class*="in_"], .in.@{fixed} {
+.@{out}, [class*="@{in}_"], .@{in}.@{fixed} {
     position: fixed !important;
 }
-.in.@{absolute} {
+.@{in}.@{absolute} {
     position: absolute !important;
 }
-.in:not(.@{fixed}):not(.@{absolute}):not(.@{sticky}) {
+.@{in}:not(.@{fixed}):not(.@{absolute}):not(.@{sticky}) {
     position: relative !important;
 }
-.in {
-    top:        auto !important;
-    left:       auto !important;
+.@{in} {
+    top:     inherit !important;
+    left:    inherit !important;
     z-index: inherit !important;
 }
-.hide, [class*="show_"],
-.fadein, .fadeout:hover,
-.fade:hover .fadeout,
+.@{hide}, [class*="@{show}_"],
+.@{fadein}, .@{fadeout}:hover,
+.@{fade}:hover .@{fadeout},
 .badge:empty {
     visibility: hidden !important;
     opacity:         0 !important;
 }
-.show, .fadeout, .fadein:hover, .fade:hover .fadein {
+.@{show}, .@{fadeout}, .@{fadein}:hover, .@{fade}:hover .@{fadein} {
     visibility: visible !important;
     opacity:          1 !important;
 }

@@ -1,5 +1,5 @@
 //***************************************
-// Namesapsces & Variables
+// Variables
 //***************************************
 @import "namespace.less";
 
@@ -240,8 +240,8 @@ hr {
     color: rgba(0,0,0,.12);
 }
 hr, .separator,
-.divider > *,
-.divider.@{table}:not(.@{row}) > * > * {
+.@{divider} > *,
+.@{divider}.@{table}:not(.@{row}) > * > * {
     border-color: rgba(0,0,0,.12);
 }
 
@@ -343,7 +343,7 @@ input[type="datetime-local"] {
             color: #2a3644;
         }
     }
-    .divider {
+    .@{divider} {
         background-color: #ddd !important;
         border-color:     #ddd !important;
     }
@@ -357,7 +357,7 @@ input[type="datetime-local"] {
             color: #582b5b;
         }
     }
-    .divider {
+    .@{divider} {
         background-color: #d4d9dd !important;
         border-color:     #d4d9dd !important;
     }
@@ -371,7 +371,7 @@ input[type="datetime-local"] {
             color: #fff;
         }
     }
-    .divider {
+    .@{divider} {
         background-color: #d4d9dd !important;
         border-color:     #d4d9dd !important;
     }
