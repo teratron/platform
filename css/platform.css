@@ -1,3 +1,34 @@
+/******************************************************************************
+  Manual
+  -----------------------------------------------------------------------------
+  col row cel
+  blc tbl grd inl
+  til / til_[1...8]
+  flus - элементы в данном контейнере имеют одну и туже ширину (до 100)
+  flu = flu_1 / flu_[1...100] - ширина в %, номер означает сколько элементов поместиться в родительсом контейнере
+  gr (.5rem)
+  gr_[1...20] (0.1rem - 2rem)
+  grp - группирует элементы (зависит от col и row)
+  climb - налезает на предыдущий элемент (налезает справа на лево)
+  bar
+  lst
+  grw  / grw_[1...8]
+  grws / grws_[1...8]
+  inr
+  scr
+  head hd
+  body bd
+  foot ft
+  fix
+  abs
+  stc
+  sty
+  clear
+  title
+  caption
+  bg - фон, элемент структуры на который возможно воздействие модификаторов, например: gp, gt и т.д.
+  divider
+ ******************************************************************************/
 /***************************************
   Root
  ***************************************/
@@ -27,7 +58,7 @@ body {
   z-index: 1;
 }
 body:not(.fix) {
-  padding-top: .0001rem;
+  padding-top: 0.0001rem;
 }
 /***************************************
   Commons
@@ -214,7 +245,7 @@ q:lang(de) {
 abbr {
   font-variant: small-caps;
   text-transform: uppercase;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
 }
 abbr[title] {
   border-bottom: 1px dotted;
@@ -308,8 +339,7 @@ footer,
 .check,
 .radio,
 .avatar,
-.10px:not(.col):not(.tbl):not([class*="til"]) > :not(.row):not(.tbl) {
-  display: inline-block;
+.cel:not(.col):not(.tbl):not([class*="til"]) > :not(.row):not(.tbl) {
   display: -webkit-inline-flex;
   display: inline-flex;
 }
@@ -339,14 +369,14 @@ footer,
   -ms-flex-direction: column-reverse;
   flex-direction: column-reverse;
 }
-.wrap,
+.wrp,
 .row,
 [class*="til"] {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-.wrap {
+.wrp {
   white-space: -moz-pre-wrap;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -356,19 +386,19 @@ footer,
   -webkit-flex-wrap: wrap-reverse;
   flex-wrap: wrap-reverse;
 }
-.nowrap,
-.col:not(.10px):not([class*="til"]),
+.nwrp,
+.col:not(.cel):not([class*="til"]),
 .bar,
 .lst > * {
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
 }
-.nowrap {
+.nwrp {
   white-space: nowrap;
   overflow: hidden;
 }
-.nowrap,
+.nwrp,
 p {
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
@@ -433,12 +463,14 @@ p {
   -webkit-flex-grow: 8;
   flex-grow: 8;
 }
-/*flex-shrink:;*/
+.snk {
+  flex-shrink: 1;
+}
 /*** Align content ***/
-.stretches,
-.row:not(.10px),
-.col:not(.10px),
-[class*="til"]:not(.10px),
+.stcs,
+.row:not(.cel),
+.col:not(.cel),
+[class*="til"]:not(.cel),
 .lst > *,
 .fix.col.middles,
 .abs.col.middles,
@@ -450,16 +482,16 @@ p {
   align-content: stretch;
 }
 .scr,
-[class*="til"].10px,
-.col.10px.lefts,
-.col.10px:not(.centers),
-.row.10px.tops,
-.row.10px:not(.middles) {
+[class*="til"].cel,
+.col.cel.lefts,
+.col.cel:not(.centers),
+.row.cel.tops,
+.row.cel:not(.middles) {
   -webkit-align-content: flex-start;
   align-content: flex-start;
 }
-.col.10px.centers,
-.row.10px.middles,
+.col.cel.centers,
+.row.cel.middles,
 .fix.middles,
 .fix.col.centers.middles,
 .abs.middles,
@@ -479,16 +511,16 @@ option {
   -webkit-align-content: center;
   align-content: center;
 }
-.col.10px.rights,
-.row.10px.bottoms {
+.col.cel.rights,
+.row.cel.bottoms {
   -webkit-align-content: flex-end;
   align-content: flex-end;
 }
 /*** Align items ***/
-.stretches,
-.row:not(.10px),
-.col:not(.10px),
-[class*="til"]:not(.10px),
+.stcs,
+.row:not(.cel),
+.col:not(.cel),
+[class*="til"]:not(.cel),
 .lst > *,
 .fix.col.middles,
 .abs.col.middles,
@@ -500,16 +532,16 @@ option {
   align-items: stretch;
 }
 .scr,
-[class*="til"].10px,
-.col.10px.lefts,
-.col.10px:not(.centers),
-.row.10px.tops,
-.row.10px:not(.middles) {
+[class*="til"].cel,
+.col.cel.lefts,
+.col.cel:not(.centers),
+.row.cel.tops,
+.row.cel:not(.middles) {
   -webkit-align-items: flex-start;
   align-items: flex-start;
 }
-.col.10px.centers,
-.row.10px.middles,
+.col.cel.centers,
+.row.cel.middles,
 .fix.middles,
 .fix.col.centers.middles,
 .abs.middles,
@@ -529,13 +561,13 @@ option {
   -webkit-align-items: center;
   align-items: center;
 }
-.col.10px.rights,
-.row.10px.bottoms {
+.col.cel.rights,
+.row.cel.bottoms {
   -webkit-align-items: flex-end;
   align-items: flex-end;
 }
 /*** Align self ***/
-.stretch {
+.stc {
   -webkit-align-self: stretch;
   align-self: stretch;
 }
@@ -644,20 +676,23 @@ option {
 .blc.col > * {
   display: block;
 }
+.blc.inl {
+  display: inline-block;
+}
 .blc.lst > * > *,
-.blc.row:not(.10px) > *,
-.blc.row.rights:not(.10px) > .left,
-.blc.row.reverse:not(.10px) > .right,
-.blc.row.rights.reverse:not(.10px) > *,
+.blc.row:not(.cel) > *,
+.blc.row.rights:not(.cel) > .left,
+.blc.row.reverse:not(.cel) > .right,
+.blc.row.rights.reverse:not(.cel) > *,
 .blc[class*="til"] > *,
 .blc[class*="til"].rights.reverse > * {
   float: left;
 }
 .blc.lst > * > .right,
-.blc.row:not(.10px) > .right,
-.blc.row.rights:not(.10px) > *,
-.blc.row.reverse:not(.10px) > *,
-.blc.row.rights.reverse:not(.10px) > .left,
+.blc.row:not(.cel) > .right,
+.blc.row.rights:not(.cel) > *,
+.blc.row.reverse:not(.cel) > *,
+.blc.row.rights.reverse:not(.cel) > .left,
 .blc[class*="til"].rights > *,
 .blc[class*="til"].reverse > * {
   float: right;
@@ -704,7 +739,7 @@ option {
 /*** Placement ***/
 .top,
 .tops:not(.col):not(.row) > *,
-.tbl.10px,
+.tbl.cel,
 .tbl.row > * {
   vertical-align: top;
 }
@@ -738,7 +773,7 @@ option {
   text-align: inherit;
 }
 .centers:not(.col),
-.blc.bar.10px,
+.blc.bar.cel,
 .blc.bar > * {
   text-align: center;
 }
@@ -942,8 +977,8 @@ body.fix,
   position: relative !important;
 }
 .in {
-  top: auto !important;
-  left: auto !important;
+  top: inherit !important;
+  left: inherit !important;
   z-index: inherit !important;
 }
 .hide,
@@ -1005,6 +1040,38 @@ footer.sty {
 .modal {
   z-index: 9000;
 }
+/*
+  Relative lengths
+  ---------------------------------------
+  unit  relative to
+  ---------------------------------------
+  ‘em’   - font size of the element
+  ‘ex’   - x-height of the element's font
+  ‘ch’   - width of the "0" (ZERO, U+0030) glyph in the element's font
+  ‘rem’  - font size of the root element
+  ‘vw’   - 1% of viewport's width
+  ‘vh’   - 1% viewport's height
+  ‘vmin’ - 1% of viewport's smaller dimension
+  ‘vmax’ - 1% of viewport's larger dimension
+
+  Absolute lengths
+  ---------------------------------------
+  unit  definition
+  ---------------------------------------
+  ‘cm’ - centimeters; 1cm = 96px/2.54
+  ‘mm’ - millimeters; 1mm = 1/10th of 1cm
+  ‘q‘  - quarter-millimeters; 1q = 1/40th of 1cm
+  ‘in’ - inches; 1in is equal to 2.54cm = 96px
+  ‘px’ - pixels; 1px is equal to 1/96th of 1in
+  ‘pt’ - points; 1pt is equal to 1/72nd of 1in
+  ‘pc’ - picas; 1pc is equal to 12pt, = 1/6th of 1in
+
+  Resolutions
+  ---------------------------------------
+  dpi  - dots per inch
+  dpcm - dots per centimeter
+  dppx - dots per ‘px’ unit
+*/
 /******************************************************************************
   Tile
   -----------------------------------------------------------------------------
@@ -3085,7 +3152,7 @@ td {
 .gps_1.col.lst.divider > * > *,
 .gps_1.tbl[class*="bg"]:not(.row) > * > *,
 .gps_1.tbl.divider:not(.row) > * > * {
-  padding-top: .5rem;
+  padding-top: 0.5rem;
 }
 .gps:not(.col) > .head,
 .gps:not(.col) > .body,
@@ -3105,7 +3172,7 @@ td {
 .gps_1.col.lst.divider > * > *,
 .gps_1.tbl[class*="bg"]:not(.row) > * > *,
 .gps_1.tbl.divider:not(.row) > * > * {
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
 }
 .gps:not(.col):not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
 .gps.row.lst > :not(:first-child) > *,
@@ -3115,7 +3182,7 @@ td {
 .gps_1.row.lst > :not(:first-child) > *,
 .gps_1.col.lst > * > :not(:first-child),
 .gps_1.tbl:not(.row) > * > :not(:first-child) {
-  padding-left: .5rem;
+  padding-left: 0.5rem;
 }
 .gps:not(.col):not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
 .gps.row.lst > :not(:last-child) > *,
@@ -3125,7 +3192,7 @@ td {
 .gps_1.row.lst > :not(:last-child) > *,
 .gps_1.col.lst > * > :not(:last-child),
 .gps_1.tbl:not(.row) > * > :not(:last-child) {
-  padding-right: .5rem;
+  padding-right: 0.5rem;
 }
 .gp,
 .gp-top,
@@ -4039,25 +4106,25 @@ td {
 .gts.col > :not(:only-child):not(:first-child):not(:last-child),
 .gts_1.col > :last-child:not(:only-child),
 .gts_1.col > :not(:only-child):not(:first-child):not(:last-child) {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 .gts.col > :first-child:not(:only-child),
 .gts.col > :not(:only-child):not(:first-child):not(:last-child),
 .gts_1.col > :first-child:not(:only-child),
 .gts_1.col > :not(:only-child):not(:first-child):not(:last-child) {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 .gts:not(.col) > :last-child:not(:only-child),
 .gts:not(.col) > :not(:only-child):not(:first-child):not(:last-child),
 .gts_1:not(.col) > :last-child:not(:only-child),
 .gts_1:not(.col) > :not(:only-child):not(:first-child):not(:last-child) {
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 .gts:not(.col) > :first-child:not(:only-child),
 .gts:not(.col) > :not(:only-child):not(:first-child):not(:last-child),
 .gts_1:not(.col) > :first-child:not(:only-child),
 .gts_1:not(.col) > :not(:only-child):not(:first-child):not(:last-child) {
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 .gt,
 .gt-top,
@@ -4904,6 +4971,54 @@ form input[type="checkbox"]:disabled + label:focus:before,
 form input[type="checkbox"]:disabled:checked + label:before {
   box-shadow: none;
 }
+/*** Optional / Required ***/
+/*input, select, textarea  {
+    &:required {}
+    &:optional {}
+}*/
+/*** Valid / Invalid ***/
+/*input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="number"]  {
+    &:invalid {}
+    &:valid {}
+}
+*/
+/*** Read-write / Read-only ***/
+/*input, select, textarea  {
+    &:read-only {}
+    &:read-write {}
+}*/
+/*
+  submit
+  button
+  reset
+  file
+  image
+  checkbox
+  radio
+  hidden
+  password
+  text
+
+  range    - Ползунок для выбора чисел в указанном диапазоне.
+  color    - Виджет для выбора цвета.
+  email    - Для адресов электронной почты.
+  search   - Поле для поиска.
+  url      - Для веб-адресов.
+  tel      - Для телефонных номеров.
+  number   - Ввод чисел.
+  date     - Поле для выбора календарной даты.
+  datetime - Указание даты и времени.
+  datetime - local  - Указание местной даты и времени.
+  time     - Для времени.
+  month    - Выбор месяца.
+  week     - Выбор недели.
+*/
 /***************************************
   Transition
  ***************************************/
@@ -5141,15 +5256,15 @@ img.pic {
 .check:after {
   width: 1.2rem;
   height: 1.2rem;
-  top: .4rem;
-  left: .4rem;
+  top: 0.4rem;
+  left: 0.4rem;
   visibility: hidden;
   opacity: 0;
 }
 .radio.right:after,
 .check.right:after {
   left: auto;
-  right: .4rem;
+  right: 0.4rem;
 }
 .toggle {
   padding-left: 5rem;
@@ -5161,12 +5276,12 @@ img.pic {
 .toggle:after {
   width: 1.6rem;
   height: 1.6rem;
-  top: .2rem;
-  left: .2rem;
+  top: 0.2rem;
+  left: 0.2rem;
 }
 .toggle.right:after {
   left: auto;
-  right: .2rem;
+  right: 0.2rem;
 }
 [type="radio"] + .radio:after,
 [type="checkbox"] + .radio:after,
@@ -5197,6 +5312,82 @@ img.pic {
   left: auto;
   right: 2.2rem;
 }
+/*
+.toggle > label.toggle:first-of-type {
+  padding-left: 0;
+  padding-right: 2rem*2.5;
+}
+
+.toggle > label.toggle:last-of-type {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.toggle > label.toggle:first-of-type:after,
+.toggle > label.toggle:first-of-type:before {
+  display: none;
+}
+
+
+
+.toggle > label.toggle:first-of-type:after {
+  top:    2rem*.1;
+  right:   2rem*.1;
+}*/
+/*
+[type="radio"]:checked + label.toggle:after,
+[type="radio"]:checked + label.toggle:before{
+  visibility: hidden;
+}*/
+/***************************************
+  Drawer
+ ***************************************/
+/*.drawer:not(.@{top}):not(.@{bottom}) {
+    width:      2rem*18;
+    top:        0;
+    bottom:     0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.drawer.@{top},
+.drawer.@{bottom} {
+    width:  100%;
+    height: 2rem*18;
+    left:   0;
+    right:  0;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.drawer.@{left},
+.drawer:not(.@{top}):not(.@{bottom}) {
+    left:  0;
+    right: auto;
+}
+
+:checked + .drawer:not(.flo) ~ .@{screen},
+:checked + .drawer:not(.flo) ~ .@{screen} > header.@{fixed},
+:checked + .drawer:not(.flo) ~ .@{screen} > footer.@{fixed} {
+    left:   2rem*18;
+    right: -2rem*18;
+}
+
+.drawer.float {
+    left: -2rem*18;
+}
+
+:checked + .drawer.float {
+    left: 0;
+}*/
+/*** Right ***/
+/*.drawer.@{right} {
+    left:  auto;
+    right: 0;
+}*/
+/***************************************
+  Modal
+ ***************************************/
 /******************************************************************************
   Size, Scale
   -----------------------------------------------------------------------------
@@ -5287,7 +5478,7 @@ input[type="datetime-local"] {
 }
 /*** Rounded ***/
 .check:after {
-  border-radius: .1rem;
+  border-radius: 0.1rem;
 }
 .check:before,
 output,
@@ -5306,7 +5497,7 @@ input[type="week"],
 input[type="date"],
 input[type="datetime"],
 input[type="datetime-local"] {
-  border-radius: .4rem;
+  border-radius: 0.4rem;
 }
 .toggle:before {
   border-radius: 2rem;
@@ -6484,7 +6675,7 @@ input[type="datetime-local"] {
   .gps_1.col_6:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
   .gps_1.col_6.lst[class*="bg"] > * > *,
   .gps_1.col_6.lst.divider > * > * {
-    padding-top: .5rem !important;
+    padding-top: 0.5rem !important;
   }
   .gps.row_6 > .head,
   .gps.row_6 > .body,
@@ -6500,7 +6691,7 @@ input[type="datetime-local"] {
   .gps_1.col_6:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
   .gps_1.col_6.lst[class*="bg"] > * > *,
   .gps_1.col_6.lst.divider > * > * {
-    padding-bottom: .5rem !important;
+    padding-bottom: 0.5rem !important;
   }
   .gps.row_6:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
   .gps.row_6.lst > :not(:first-child) > *,
@@ -6508,7 +6699,7 @@ input[type="datetime-local"] {
   .gps_1.row_6:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
   .gps_1.row_6.lst > :not(:first-child) > *,
   .gps_1.col_6.lst > * > :not(:first-child) {
-    padding-left: .5rem !important;
+    padding-left: 0.5rem !important;
   }
   .gps.row_6:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
   .gps.row_6.lst > :not(:last-child) > *,
@@ -6516,7 +6707,7 @@ input[type="datetime-local"] {
   .gps_1.row_6:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
   .gps_1.row_6.lst > :not(:last-child) > *,
   .gps_1.col_6.lst > * > :not(:last-child) {
-    padding-right: .5rem !important;
+    padding-right: 0.5rem !important;
   }
   .gps.col_6 > .head,
   .gps.col_6 > .body,
@@ -7121,25 +7312,25 @@ input[type="datetime-local"] {
   .gts.col_6 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.col_6 > :last-child:not(:only-child),
   .gts_1.col_6 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-top: .5rem !important;
+    margin-top: 0.5rem !important;
   }
   .gts.col_6 > :first-child:not(:only-child),
   .gts.col_6 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.col_6 > :first-child:not(:only-child),
   .gts_1.col_6 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-bottom: .5rem !important;
+    margin-bottom: 0.5rem !important;
   }
   .gts.row_6 > :last-child:not(:only-child),
   .gts.row_6 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.row_6 > :last-child:not(:only-child),
   .gts_1.row_6 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-left: .5rem !important;
+    margin-left: 0.5rem !important;
   }
   .gts.row_6 > :first-child:not(:only-child),
   .gts.row_6 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.row_6 > :first-child:not(:only-child),
   .gts_1.row_6 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-right: .5rem !important;
+    margin-right: 0.5rem !important;
   }
   .gts.row_6[class*="bg"] > *,
   .gts.col_6[class*="bg"] > :only-child,
@@ -7558,7 +7749,7 @@ input[type="datetime-local"] {
   .gps_1.col_5:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
   .gps_1.col_5.lst[class*="bg"] > * > *,
   .gps_1.col_5.lst.divider > * > * {
-    padding-top: .5rem !important;
+    padding-top: 0.5rem !important;
   }
   .gps.row_5 > .head,
   .gps.row_5 > .body,
@@ -7574,7 +7765,7 @@ input[type="datetime-local"] {
   .gps_1.col_5:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
   .gps_1.col_5.lst[class*="bg"] > * > *,
   .gps_1.col_5.lst.divider > * > * {
-    padding-bottom: .5rem !important;
+    padding-bottom: 0.5rem !important;
   }
   .gps.row_5:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
   .gps.row_5.lst > :not(:first-child) > *,
@@ -7582,7 +7773,7 @@ input[type="datetime-local"] {
   .gps_1.row_5:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
   .gps_1.row_5.lst > :not(:first-child) > *,
   .gps_1.col_5.lst > * > :not(:first-child) {
-    padding-left: .5rem !important;
+    padding-left: 0.5rem !important;
   }
   .gps.row_5:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
   .gps.row_5.lst > :not(:last-child) > *,
@@ -7590,7 +7781,7 @@ input[type="datetime-local"] {
   .gps_1.row_5:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
   .gps_1.row_5.lst > :not(:last-child) > *,
   .gps_1.col_5.lst > * > :not(:last-child) {
-    padding-right: .5rem !important;
+    padding-right: 0.5rem !important;
   }
   .gps.col_5 > .head,
   .gps.col_5 > .body,
@@ -8195,25 +8386,25 @@ input[type="datetime-local"] {
   .gts.col_5 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.col_5 > :last-child:not(:only-child),
   .gts_1.col_5 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-top: .5rem !important;
+    margin-top: 0.5rem !important;
   }
   .gts.col_5 > :first-child:not(:only-child),
   .gts.col_5 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.col_5 > :first-child:not(:only-child),
   .gts_1.col_5 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-bottom: .5rem !important;
+    margin-bottom: 0.5rem !important;
   }
   .gts.row_5 > :last-child:not(:only-child),
   .gts.row_5 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.row_5 > :last-child:not(:only-child),
   .gts_1.row_5 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-left: .5rem !important;
+    margin-left: 0.5rem !important;
   }
   .gts.row_5 > :first-child:not(:only-child),
   .gts.row_5 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.row_5 > :first-child:not(:only-child),
   .gts_1.row_5 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-right: .5rem !important;
+    margin-right: 0.5rem !important;
   }
   .gts.row_5[class*="bg"] > *,
   .gts.col_5[class*="bg"] > :only-child,
@@ -8632,7 +8823,7 @@ input[type="datetime-local"] {
   .gps_1.col_4:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
   .gps_1.col_4.lst[class*="bg"] > * > *,
   .gps_1.col_4.lst.divider > * > * {
-    padding-top: .5rem !important;
+    padding-top: 0.5rem !important;
   }
   .gps.row_4 > .head,
   .gps.row_4 > .body,
@@ -8648,7 +8839,7 @@ input[type="datetime-local"] {
   .gps_1.col_4:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
   .gps_1.col_4.lst[class*="bg"] > * > *,
   .gps_1.col_4.lst.divider > * > * {
-    padding-bottom: .5rem !important;
+    padding-bottom: 0.5rem !important;
   }
   .gps.row_4:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
   .gps.row_4.lst > :not(:first-child) > *,
@@ -8656,7 +8847,7 @@ input[type="datetime-local"] {
   .gps_1.row_4:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
   .gps_1.row_4.lst > :not(:first-child) > *,
   .gps_1.col_4.lst > * > :not(:first-child) {
-    padding-left: .5rem !important;
+    padding-left: 0.5rem !important;
   }
   .gps.row_4:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
   .gps.row_4.lst > :not(:last-child) > *,
@@ -8664,7 +8855,7 @@ input[type="datetime-local"] {
   .gps_1.row_4:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
   .gps_1.row_4.lst > :not(:last-child) > *,
   .gps_1.col_4.lst > * > :not(:last-child) {
-    padding-right: .5rem !important;
+    padding-right: 0.5rem !important;
   }
   .gps.col_4 > .head,
   .gps.col_4 > .body,
@@ -9269,25 +9460,25 @@ input[type="datetime-local"] {
   .gts.col_4 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.col_4 > :last-child:not(:only-child),
   .gts_1.col_4 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-top: .5rem !important;
+    margin-top: 0.5rem !important;
   }
   .gts.col_4 > :first-child:not(:only-child),
   .gts.col_4 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.col_4 > :first-child:not(:only-child),
   .gts_1.col_4 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-bottom: .5rem !important;
+    margin-bottom: 0.5rem !important;
   }
   .gts.row_4 > :last-child:not(:only-child),
   .gts.row_4 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.row_4 > :last-child:not(:only-child),
   .gts_1.row_4 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-left: .5rem !important;
+    margin-left: 0.5rem !important;
   }
   .gts.row_4 > :first-child:not(:only-child),
   .gts.row_4 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.row_4 > :first-child:not(:only-child),
   .gts_1.row_4 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-right: .5rem !important;
+    margin-right: 0.5rem !important;
   }
   .gts.row_4[class*="bg"] > *,
   .gts.col_4[class*="bg"] > :only-child,
@@ -9706,7 +9897,7 @@ input[type="datetime-local"] {
   .gps_1.col_3:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
   .gps_1.col_3.lst[class*="bg"] > * > *,
   .gps_1.col_3.lst.divider > * > * {
-    padding-top: .5rem !important;
+    padding-top: 0.5rem !important;
   }
   .gps.row_3 > .head,
   .gps.row_3 > .body,
@@ -9722,7 +9913,7 @@ input[type="datetime-local"] {
   .gps_1.col_3:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
   .gps_1.col_3.lst[class*="bg"] > * > *,
   .gps_1.col_3.lst.divider > * > * {
-    padding-bottom: .5rem !important;
+    padding-bottom: 0.5rem !important;
   }
   .gps.row_3:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
   .gps.row_3.lst > :not(:first-child) > *,
@@ -9730,7 +9921,7 @@ input[type="datetime-local"] {
   .gps_1.row_3:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
   .gps_1.row_3.lst > :not(:first-child) > *,
   .gps_1.col_3.lst > * > :not(:first-child) {
-    padding-left: .5rem !important;
+    padding-left: 0.5rem !important;
   }
   .gps.row_3:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
   .gps.row_3.lst > :not(:last-child) > *,
@@ -9738,7 +9929,7 @@ input[type="datetime-local"] {
   .gps_1.row_3:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
   .gps_1.row_3.lst > :not(:last-child) > *,
   .gps_1.col_3.lst > * > :not(:last-child) {
-    padding-right: .5rem !important;
+    padding-right: 0.5rem !important;
   }
   .gps.col_3 > .head,
   .gps.col_3 > .body,
@@ -10343,25 +10534,25 @@ input[type="datetime-local"] {
   .gts.col_3 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.col_3 > :last-child:not(:only-child),
   .gts_1.col_3 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-top: .5rem !important;
+    margin-top: 0.5rem !important;
   }
   .gts.col_3 > :first-child:not(:only-child),
   .gts.col_3 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.col_3 > :first-child:not(:only-child),
   .gts_1.col_3 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-bottom: .5rem !important;
+    margin-bottom: 0.5rem !important;
   }
   .gts.row_3 > :last-child:not(:only-child),
   .gts.row_3 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.row_3 > :last-child:not(:only-child),
   .gts_1.row_3 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-left: .5rem !important;
+    margin-left: 0.5rem !important;
   }
   .gts.row_3 > :first-child:not(:only-child),
   .gts.row_3 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.row_3 > :first-child:not(:only-child),
   .gts_1.row_3 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-right: .5rem !important;
+    margin-right: 0.5rem !important;
   }
   .gts.row_3[class*="bg"] > *,
   .gts.col_3[class*="bg"] > :only-child,
@@ -10780,7 +10971,7 @@ input[type="datetime-local"] {
   .gps_1.col_2:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
   .gps_1.col_2.lst[class*="bg"] > * > *,
   .gps_1.col_2.lst.divider > * > * {
-    padding-top: .5rem !important;
+    padding-top: 0.5rem !important;
   }
   .gps.row_2 > .head,
   .gps.row_2 > .body,
@@ -10796,7 +10987,7 @@ input[type="datetime-local"] {
   .gps_1.col_2:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
   .gps_1.col_2.lst[class*="bg"] > * > *,
   .gps_1.col_2.lst.divider > * > * {
-    padding-bottom: .5rem !important;
+    padding-bottom: 0.5rem !important;
   }
   .gps.row_2:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
   .gps.row_2.lst > :not(:first-child) > *,
@@ -10804,7 +10995,7 @@ input[type="datetime-local"] {
   .gps_1.row_2:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
   .gps_1.row_2.lst > :not(:first-child) > *,
   .gps_1.col_2.lst > * > :not(:first-child) {
-    padding-left: .5rem !important;
+    padding-left: 0.5rem !important;
   }
   .gps.row_2:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
   .gps.row_2.lst > :not(:last-child) > *,
@@ -10812,7 +11003,7 @@ input[type="datetime-local"] {
   .gps_1.row_2:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
   .gps_1.row_2.lst > :not(:last-child) > *,
   .gps_1.col_2.lst > * > :not(:last-child) {
-    padding-right: .5rem !important;
+    padding-right: 0.5rem !important;
   }
   .gps.col_2 > .head,
   .gps.col_2 > .body,
@@ -11417,25 +11608,25 @@ input[type="datetime-local"] {
   .gts.col_2 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.col_2 > :last-child:not(:only-child),
   .gts_1.col_2 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-top: .5rem !important;
+    margin-top: 0.5rem !important;
   }
   .gts.col_2 > :first-child:not(:only-child),
   .gts.col_2 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.col_2 > :first-child:not(:only-child),
   .gts_1.col_2 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-bottom: .5rem !important;
+    margin-bottom: 0.5rem !important;
   }
   .gts.row_2 > :last-child:not(:only-child),
   .gts.row_2 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.row_2 > :last-child:not(:only-child),
   .gts_1.row_2 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-left: .5rem !important;
+    margin-left: 0.5rem !important;
   }
   .gts.row_2 > :first-child:not(:only-child),
   .gts.row_2 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.row_2 > :first-child:not(:only-child),
   .gts_1.row_2 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-right: .5rem !important;
+    margin-right: 0.5rem !important;
   }
   .gts.row_2[class*="bg"] > *,
   .gts.col_2[class*="bg"] > :only-child,
@@ -11854,7 +12045,7 @@ input[type="datetime-local"] {
   .gps_1.col_1:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
   .gps_1.col_1.lst[class*="bg"] > * > *,
   .gps_1.col_1.lst.divider > * > * {
-    padding-top: .5rem !important;
+    padding-top: 0.5rem !important;
   }
   .gps.row_1 > .head,
   .gps.row_1 > .body,
@@ -11870,7 +12061,7 @@ input[type="datetime-local"] {
   .gps_1.col_1:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
   .gps_1.col_1.lst[class*="bg"] > * > *,
   .gps_1.col_1.lst.divider > * > * {
-    padding-bottom: .5rem !important;
+    padding-bottom: 0.5rem !important;
   }
   .gps.row_1:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
   .gps.row_1.lst > :not(:first-child) > *,
@@ -11878,7 +12069,7 @@ input[type="datetime-local"] {
   .gps_1.row_1:not(.lst):not(.divider):not([class*="gts"]) > :not(:first-child):not(.head):not(.body):not(.foot),
   .gps_1.row_1.lst > :not(:first-child) > *,
   .gps_1.col_1.lst > * > :not(:first-child) {
-    padding-left: .5rem !important;
+    padding-left: 0.5rem !important;
   }
   .gps.row_1:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
   .gps.row_1.lst > :not(:last-child) > *,
@@ -11886,7 +12077,7 @@ input[type="datetime-local"] {
   .gps_1.row_1:not(.lst):not(.divider):not([class*="gts"]) > :not(:last-child):not(.head):not(.body):not(.foot),
   .gps_1.row_1.lst > :not(:last-child) > *,
   .gps_1.col_1.lst > * > :not(:last-child) {
-    padding-right: .5rem !important;
+    padding-right: 0.5rem !important;
   }
   .gps.col_1 > .head,
   .gps.col_1 > .body,
@@ -12491,25 +12682,25 @@ input[type="datetime-local"] {
   .gts.col_1 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.col_1 > :last-child:not(:only-child),
   .gts_1.col_1 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-top: .5rem !important;
+    margin-top: 0.5rem !important;
   }
   .gts.col_1 > :first-child:not(:only-child),
   .gts.col_1 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.col_1 > :first-child:not(:only-child),
   .gts_1.col_1 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-bottom: .5rem !important;
+    margin-bottom: 0.5rem !important;
   }
   .gts.row_1 > :last-child:not(:only-child),
   .gts.row_1 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.row_1 > :last-child:not(:only-child),
   .gts_1.row_1 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-left: .5rem !important;
+    margin-left: 0.5rem !important;
   }
   .gts.row_1 > :first-child:not(:only-child),
   .gts.row_1 > :not(:only-child):not(:first-child):not(:last-child),
   .gts_1.row_1 > :first-child:not(:only-child),
   .gts_1.row_1 > :not(:only-child):not(:first-child):not(:last-child) {
-    margin-right: .5rem !important;
+    margin-right: 0.5rem !important;
   }
   .gts.row_1[class*="bg"] > *,
   .gts.col_1[class*="bg"] > :only-child,

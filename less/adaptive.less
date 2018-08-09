@@ -58,11 +58,11 @@
         }
         .@{row}_@{i} > *,
         .@{col}_@{i} > *,
-        .@{table}.@{col}_@{i} > * > :not([hidden]):not(script):not(style) {
+        .@{table}.@{col}_@{i} > * > @{tagless} {
             float: none !important;
         }
         .@{row}_@{i} > *,
-        .@{table}.@{col}_@{i} > * > :not([hidden]):not(script):not(style) {
+        .@{table}.@{col}_@{i} > * > @{tagless} {
             width: auto !important;
         }
         .@{table}.@{on}_@{i} {
@@ -72,7 +72,7 @@
             display: table-row-group !important;
         }
         .@{table}.@{row}_@{i} > *,
-        .@{table}.@{col}_@{i} > * > :not([hidden]):not(script):not(style) {
+        .@{table}.@{col}_@{i} > * > @{tagless} {
             display: table-cell !important;
         }
         .@{col}_@{i},

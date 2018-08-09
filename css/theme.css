@@ -1,3 +1,74 @@
+/******************************************************************************
+  Manual
+  -----------------------------------------------------------------------------
+  col row cel
+  blc tbl grd inl
+  til / til_[1...8]
+  flus - элементы в данном контейнере имеют одну и туже ширину (до 100)
+  flu = flu_1 / flu_[1...100] - ширина в %, номер означает сколько элементов поместиться в родительсом контейнере
+  gr (.5rem)
+  gr_[1...20] (0.1rem - 2rem)
+  grp - группирует элементы (зависит от col и row)
+  climb - налезает на предыдущий элемент (налезает справа на лево)
+  bar
+  lst
+  grw  / grw_[1...8]
+  grws / grws_[1...8]
+  inr
+  scr
+  head hd
+  body bd
+  foot ft
+  fix
+  abs
+  stc
+  sty
+  clear
+  title
+  caption
+  bg - фон, элемент структуры на который возможно воздействие модификаторов, например: gp, gt и т.д.
+  divider
+ ******************************************************************************/
+/*
+#color() {
+    brand:           #27a4c4;
+    brand_dark:      #246d8d;
+    brand_light:     #2bbfe0;
+
+    primary:         #27a4c4;
+    primary_dark:    #246d8d;
+    primary_light:   #2bbfe0;
+
+    secondary:       #9cb0af;
+    secondary_dark:  #9cb0af;
+    secondary_light: #9cb0af;
+
+    accent:          #fe8325;
+    accent_dark:     #fe4a00;
+    accent_light:    #fe9f61;
+
+    bright:          orange;
+    bright_dark:     orange;
+    bright_light:    orange;
+
+    dark:            #485a68;
+    light:           #acc0bf;
+
+    gray:            #999;
+    gray_dark:       #333;
+    gray_light:      #ccc;
+
+    error:           red;
+    success:         green;
+    warning:         #f1c101;
+    notice:          blue;
+    tips:            rgba(0,0,0,.8);
+    lucid:           rgba(0,0,0,.3);
+}
+.button {
+    color: #color[primary];
+    border: 1px solid #color[secondary];
+}*/
 /***************************************
   Commons
  ***************************************/
@@ -62,7 +133,7 @@ footer > .inr {
 /***************************************
   Drawer
  ***************************************/
-.pl-drawer {
+.drawer {
   background-color: #485a68;
   color: #fff;
 }
@@ -73,7 +144,7 @@ footer > .inr {
   background-color: #fff;
   color: #333;
   overflow: hidden;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   box-shadow: 0 0.8rem 2.4rem -0.4rem rgba(0, 0, 0, 0.33);
 }
 /***************************************
@@ -83,7 +154,7 @@ footer > .inr {
   background-color: #fff;
   color: #333;
   overflow: hidden;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
   box-shadow: 0 0.2rem 0.4rem -0.1rem rgba(0, 0, 0, 0.33);
 }
 /***************************************
@@ -246,7 +317,7 @@ input[type="datetime-local"] {
 }
 /*** Gray ***/
 .bg-gray {
-  background-color: #999999 !important;
+  background-color: #999 !important;
   color: #fff;
 }
 .bg-gray a:not(.button) {
@@ -260,7 +331,7 @@ input[type="datetime-local"] {
   border-color: #ddd !important;
 }
 .bg-gray-light {
-  background-color: #cccccc !important;
+  background-color: #ccc !important;
   color: #213140;
 }
 .bg-gray-light a:not(.button) {
@@ -274,7 +345,7 @@ input[type="datetime-local"] {
   border-color: #d4d9dd !important;
 }
 .bg-gray-dark {
-  background-color: #333333 !important;
+  background-color: #333 !important;
   color: #fff;
 }
 .bg-gray-dark a:not(.button) {
