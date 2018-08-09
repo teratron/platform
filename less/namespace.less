@@ -4,88 +4,88 @@
 //
 //******************************************************************************
 
-@pre:                   pl-;   // Prefix
+@pre:                   ~"";   // Prefix (empty: ~"")
 @child:                 s;     //
 @half:                  _half; //
 
 // Layout
-@inner:                 inr;
-@screen:                scr;
-@col:                   col;
-@row:                   row;
-@cell:                  cel;
-@grow:                  grw;
-@shrink:                snk;
-@stretch:               stc;
-@wrap:                  wrp;
-@nowrap:                nwrp;
-@reverse:               reverse;
-@inverse:               inverse;
+@inner:                 @{pre}inr;
+@screen:                @{pre}scr;
+@col:                   @{pre}col;
+@row:                   @{pre}row;
+@cell:                  @{pre}cel;
+@grow:                  @{pre}grw;
+@shrink:                @{pre}snk;
+@stretch:               @{pre}stc;
+@wrap:                  @{pre}wrp;
+@nowrap:                @{pre}nwrp;
+@reverse:               @{pre}reverse;
+@inverse:               @{pre}inverse;
 
-@item:                  itm;  //?
-@head:                  head;
-@body:                  body;
-@foot:                  foot;
+@item:                  @{pre}itm;  //?
+@head:                  @{pre}head;
+@body:                  @{pre}body;
+@foot:                  @{pre}foot;
 
-@gap:                   gp;
-@gutter:                gt;
-@groove:                gr;
+@gap:                   @{pre}gp;
+@gutter:                @{pre}gt;
+@groove:                @{pre}gr;
 
-@inline:                inl;
-@grid:                  grd;
-@block:                 blc;
-@table:                 tbl;
-@list:                  lst;
-@bar:                   bar;
-@tile:                  til;
-@fluid:                 flu;
-@solid:                 sld;
-@group:                 grp;
-@climb:                 climb;
-@clear:                 clear; //clearfix
-@empty:                 empty;
+@inline:                @{pre}inl;
+@grid:                  @{pre}grd;
+@block:                 @{pre}blc;
+@table:                 @{pre}tbl;
+@list:                  @{pre}lst;
+@bar:                   @{pre}bar;
+@tile:                  @{pre}til;
+@fluid:                 @{pre}flu;
+@solid:                 @{pre}sld;
+@group:                 @{pre}grp;
+@climb:                 @{pre}climb;
+@clear:                 @{pre}clear; //clearfix
+@empty:                 @{pre}empty;
 
 // Position
-@fixed:                 fix;
-@absolute:              abs;
-@static:                stc;
-@sticky:                sty;
+@fixed:                 @{pre}fix;
+@absolute:              @{pre}abs;
+@static:                @{pre}stc;
+@sticky:                @{pre}sty;
 
 // Directions
-@top:                   top;
+@top:                   @{pre}top;
 @bottom:                bottom;
-@right:                 right;
-@left:                  left;
-@middle:                middle;
-@center:                center;
-@evenly:                evenly;
-@around:                around;
-@between:               between;
+@right:                 @{pre}right;
+@left:                  @{pre}left;
+@middle:                @{pre}middle;
+@center:                @{pre}center;
+@evenly:                @{pre}evenly;
+@around:                @{pre}around;
+@between:               @{pre}between;
 
 // Triggers and Switches
-@on:                    on;
-@off:                   off;
-@in:                    in;
-@out:                   out;
-@show:                  show;
-@hide:                  hide;
-@fade:                  fade;
-@fadein:                fadein;
-@fadeout:               fadeout;
+@on:                    @{pre}on;
+@off:                   @{pre}off;
+@in:                    @{pre}in;
+@out:                   @{pre}out;
+@show:                  @{pre}show;
+@hide:                  @{pre}hide;
+@fade:                  @{pre}fade;
+@fadein:                @{pre}fadein;
+@fadeout:               @{pre}fadeout;
 
 // Z-index
-@zindex0:               z0;
-@zindex1:               z1;
-@zindex2:               z2;
-@zindex3:               z3;
-@zindex4:               z4;
-@zindex5:               z5;
-@zindex6:               z6;
-@zindex7:               z7;
-@zindex8:               z8;
-@zindex9:               z9;
+@zindex0:               @{pre}z0;
+@zindex1:               @{pre}z1;
+@zindex2:               @{pre}z2;
+@zindex3:               @{pre}z3;
+@zindex4:               @{pre}z4;
+@zindex5:               @{pre}z5;
+@zindex6:               @{pre}z6;
+@zindex7:               @{pre}z7;
+@zindex8:               @{pre}z8;
+@zindex9:               @{pre}z9;
 
 //
-@divider:               divider;
-@back:                  bg;
-@ink:                   ink;
+@divider:               @{pre}divider;
+@back:                  @{pre}bg;
+@ink:                   @{pre}ink;

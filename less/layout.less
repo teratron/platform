@@ -57,7 +57,6 @@ main, header, footer,
 }
 .@{inline}, .ico, .button, .badge, .label, .toggle, .check, .radio, .avatar,
 .@{cell}:not(.@{col}):not(.@{table}):not([class*="@{tile}"]) > :not(.@{row}):not(.@{table}) {
-    display: inline-block;
     display: -webkit-inline-flex;
     display: inline-flex;
 }
@@ -138,8 +137,8 @@ main, header, footer,
 [class*="@{tile}"]:not(.@{cell}),
 .@{list} > *,
 .@{fixed}.@{col}.@{middle}@{child}, .@{absolute}.@{col}.@{middle}@{child},
-.@{fixed}.@{row}.@{top},     .@{absolute}.@{row}.@{top},
-.@{fixed}.@{row}.@{bottom},  .@{absolute}.@{row}.@{bottom} {
+.@{fixed}.@{row}.@{top},    .@{absolute}.@{row}.@{top},
+.@{fixed}.@{row}.@{bottom}, .@{absolute}.@{row}.@{bottom} {
     -webkit-align-content: stretch;
             align-content: stretch;
 }
@@ -176,8 +175,8 @@ button, input, output, select, option {
 [class*="@{tile}"]:not(.@{cell}),
 .@{list} > *,
 .@{fixed}.@{col}.@{middle}@{child}, .@{absolute}.@{col}.@{middle}@{child},
-.@{fixed}.@{row}.@{top},     .@{absolute}.@{row}.@{top},
-.@{fixed}.@{row}.@{bottom},  .@{absolute}.@{row}.@{bottom} {
+.@{fixed}.@{row}.@{top},    .@{absolute}.@{row}.@{top},
+.@{fixed}.@{row}.@{bottom}, .@{absolute}.@{row}.@{bottom} {
     -webkit-align-items: stretch;
             align-items: stretch;
 }
@@ -296,6 +295,9 @@ button, input, output, select, option {
 .@{block}.@{on},
 .@{block}.@{col} > * {
     display: block;
+}
+.@{block}.@{inline}  {
+    display: inline-block;
 }
 .@{block}.@{list} > * > *,
 .@{block}.@{row}:not(.@{cell}) > *,
@@ -483,7 +485,7 @@ body.@{fixed},
 /***************************************
   Group
  ***************************************/
-.@{group}:not(.@{col}) > :not(:only-child):not(:first-child):not(.@{climb}),
+.@{group}:not(.@{col})   > :not(:only-child):not(:first-child):not(.@{climb}),
 .@{divider}:not(.@{col}) > :not(:only-child):not(:first-child) {
     margin-left: -1px;
 }
@@ -501,7 +503,7 @@ body.@{fixed},
     border-top-left-radius:    0;
     border-bottom-left-radius: 0;
 }
-.@{group}.@{col}     > :not(:only-child):not(:first-child),
+.@{group}.@{col}   > :not(:only-child):not(:first-child),
 .@{divider}.@{col} > :not(:only-child):not(:first-child) {
     margin-top: -1px;
 }
