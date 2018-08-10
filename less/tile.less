@@ -16,7 +16,7 @@ body, main, header, footer,
     width:      100%;
     flex-basis: 100%;
 }
-[class*="@{tile}"],
+[class*="@{brick}"],
 .@{fluid}, .@{fluid}_1,
 .@{fluid}@{child} > :only-child,
 .@{fluid}@{child} > :first-child:nth-last-child(1) {
@@ -28,42 +28,42 @@ body, main, header, footer,
     max-width: 100%;
 }
 @media only screen and (min-width: 0) {
-    .@{tile} > * {
+    .@{brick} > * {
         width:      100%;
         flex-basis: 100%;
     }
-    .tile-toggle-zero(8);
-    .tile-toggle-zero(@n, @i: 1) when (@i =< @n) {
-        .@{tile}_@{i} > * {
+    .brick-toggle-zero(8);
+    .brick-toggle-zero(@n, @i: 1) when (@i =< @n) {
+        .@{brick}_@{i} > * {
             width:      round(100%/@i, 3);
             flex-basis: round(100%/@i, 3);
         }
-        .tile-toggle-zero(@n, (@i + 1));
+        .brick-toggle-zero(@n, (@i + 1));
     }
 }
-.generate-tile(12);
-.generate-tile(@n, @i: 1) when (@i =< @n) {
+.generate-brick(12);
+.generate-brick(@n, @i: 1) when (@i =< @n) {
     @media only screen and (min-width: (120px + @i*120px)) {
-        .@{tile} > * {
+        .@{brick} > * {
             width:      round(100%/(@i + 1), 3);
             flex-basis: round(100%/(@i + 1), 3);
         }
     }
-    .generate-tile(@n, (@i + 1));
+    .generate-brick(@n, (@i + 1));
 }
-.tile-toggle(8);
-.tile-toggle(@n, @i: 1) when (@i =< @n) {
-    .generate-tile-toggle(6*@i);
-    .generate-tile-toggle(@k, @j: 1) when (@j =< @k) {
+.brick-toggle(8);
+.brick-toggle(@n, @i: 1) when (@i =< @n) {
+    .generate-brick-toggle(6*@i);
+    .generate-brick-toggle(@k, @j: 1) when (@j =< @k) {
         @media only screen and (min-width: round((360px + @j*360px/@i))) {
-            .@{tile}_@{i} > * {
+            .@{brick}_@{i} > * {
                 width:      round(100%/(@i + @j), 3);
                 flex-basis: round(100%/(@i + @j), 3);
             }
         }
-        .generate-tile-toggle(@k, (@j + 1));
+        .generate-brick-toggle(@k, (@j + 1));
     }
-    .tile-toggle(@n, (@i + 1));
+    .brick-toggle(@n, (@i + 1));
 }
 
 /***************************************

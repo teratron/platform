@@ -6,23 +6,23 @@
   gr_[1...20] (0.1rem - 2rem)
  ******************************************************************************/
 .@{groove}, .@{groove}_1 {
-    margin: -@brick;
+    margin: -@tile;
     > * {
-        padding: @brick;
+        padding: @tile;
     }
 }
 .@{groove}@{half} {
-    margin: -@brick_half;
+    margin: -@tile_half;
     > * {
-        padding: @brick_half;
+        padding: @tile_half;
     }
 }
 .generate-groove(8);
 .generate-groove(@n, @i: 2) when (@i =< @n) {
     .@{groove}_@{i} {
-        margin: -@i*@brick;
+        margin: -@i*@tile;
         > * {
-            padding: @i*@brick;
+            padding: @i*@tile;
         }
     }
     .generate-groove(@n, (@i + 1));

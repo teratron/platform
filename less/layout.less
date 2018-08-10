@@ -42,7 +42,7 @@ header.@{fixed} + :not(footer) {
 
 /*** Flexible Layout ***/
 main, header, footer,
-.@{on}, .@{col}, .@{row}, [class*="@{tile}"],
+.@{on}, .@{col}, .@{row}, [class*="@{brick}"],
 .@{fixed}.@{middle}@{child}, .@{fixed}.@{center}@{child},
 .@{absolute}.@{middle}@{child}, .@{absolute}.@{center}@{child},
 .@{bar}  > *,
@@ -56,11 +56,11 @@ main, header, footer,
     display: flex;
 }
 .@{inline}, .ico, .button, .badge, .label, .toggle, .check, .radio, .avatar,
-.@{cell}:not(.@{col}):not(.@{table}):not([class*="@{tile}"]) > :not(.@{row}):not(.@{table}) {
+.@{cell}:not(.@{col}):not(.@{table}):not([class*="@{brick}"]) > :not(.@{row}):not(.@{table}) {
     display: -webkit-inline-flex;
     display: inline-flex;
 }
-.@{row}, [class*="@{tile}"], .@{list}.@{col} > *  {
+.@{row}, [class*="@{brick}"], .@{list}.@{col} > *  {
     -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row;
@@ -80,7 +80,7 @@ main, header, footer,
                 flex-direction: column-reverse;
     }
 }
-.@{wrap}, .@{row}, [class*="@{tile}"] {
+.@{wrap}, .@{row}, [class*="@{brick}"] {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
@@ -95,7 +95,7 @@ main, header, footer,
     -webkit-flex-wrap: wrap-reverse;
             flex-wrap: wrap-reverse;
 }
-.@{nowrap}, .@{col}:not(.@{cell}):not([class*="@{tile}"]), .@{bar}, .@{list} > * {
+.@{nowrap}, .@{col}:not(.@{cell}):not([class*="@{brick}"]), .@{bar}, .@{list} > * {
     -webkit-flex-wrap: nowrap;
         -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
@@ -134,7 +134,7 @@ main, header, footer,
 .@{stretch}@{child},
 .@{row}:not(.@{cell}),
 .@{col}:not(.@{cell}),
-[class*="@{tile}"]:not(.@{cell}),
+[class*="@{brick}"]:not(.@{cell}),
 .@{list} > *,
 .@{fixed}.@{col}.@{middle}@{child}, .@{absolute}.@{col}.@{middle}@{child},
 .@{fixed}.@{row}.@{top},    .@{absolute}.@{row}.@{top},
@@ -143,7 +143,7 @@ main, header, footer,
             align-content: stretch;
 }
 .@{screen},
-[class*="@{tile}"].@{cell},
+[class*="@{brick}"].@{cell},
 .@{col}.@{cell}.@{left}@{child}, .@{col}.@{cell}:not(.@{center}@{child}),
 .@{row}.@{cell}.@{top}@{child},  .@{row}.@{cell}:not(.@{middle}@{child}) {
     -webkit-align-content: flex-start;
@@ -172,7 +172,7 @@ button, input, output, select, option {
 .@{stretch}@{child},
 .@{row}:not(.@{cell}),
 .@{col}:not(.@{cell}),
-[class*="@{tile}"]:not(.@{cell}),
+[class*="@{brick}"]:not(.@{cell}),
 .@{list} > *,
 .@{fixed}.@{col}.@{middle}@{child}, .@{absolute}.@{col}.@{middle}@{child},
 .@{fixed}.@{row}.@{top},    .@{absolute}.@{row}.@{top},
@@ -181,7 +181,7 @@ button, input, output, select, option {
             align-items: stretch;
 }
 .@{screen},
-[class*="@{tile}"].@{cell},
+[class*="@{brick}"].@{cell},
 .@{col}.@{cell}.@{left}@{child}, .@{col}.@{cell}:not(.@{center}@{child}),
 .@{row}.@{cell}.@{top}@{child},  .@{row}.@{cell}:not(.@{middle}@{child}) {
     -webkit-align-items: flex-start;
@@ -304,8 +304,8 @@ button, input, output, select, option {
 .@{block}.@{row}.@{right}@{child}:not(.@{cell}) > .@{left},
 .@{block}.@{row}.@{reverse}:not(.@{cell}) > .@{right},
 .@{block}.@{row}.@{right}@{child}.@{reverse}:not(.@{cell}) > *,
-.@{block}[class*="@{tile}"] > *,
-.@{block}[class*="@{tile}"].@{right}@{child}.@{reverse} > * {
+.@{block}[class*="@{brick}"] > *,
+.@{block}[class*="@{brick}"].@{right}@{child}.@{reverse} > * {
     float: left;
 }
 .@{block}.@{list} > * > .@{right},
@@ -313,8 +313,8 @@ button, input, output, select, option {
 .@{block}.@{row}.@{right}@{child}:not(.@{cell}) > *,
 .@{block}.@{row}.@{reverse}:not(.@{cell}) > *,
 .@{block}.@{row}.@{right}@{child}.@{reverse}:not(.@{cell}) > .@{left},
-.@{block}[class*="@{tile}"].@{right}@{child} > *,
-.@{block}[class*="@{tile}"].@{reverse} > * {
+.@{block}[class*="@{brick}"].@{right}@{child} > *,
+.@{block}[class*="@{brick}"].@{reverse} > * {
     float: right;
 }
 
@@ -334,7 +334,7 @@ button, input, output, select, option {
 /*** Clearfix ***/
 .@{clear}:after,
 .@{block}.@{row}:after,
-.@{block}[class*="@{tile}"]:after,
+.@{block}[class*="@{brick}"]:after,
 .@{table}.@{row} > :after,
 .@{table}:not(.@{row}) > * > @{tagless}:after {
     clear:    both;
@@ -345,7 +345,7 @@ button, input, output, select, option {
 }
 .@{clear}:after,
 .@{block}.@{row}:after,
-.@{block}[class*="@{tile}"]:after {
+.@{block}[class*="@{brick}"]:after {
     display: block;
     content: "";
 }
