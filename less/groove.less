@@ -1,28 +1,22 @@
 /******************************************************************************
   Groove
   -----------------------------------------------------------------------------
-  gr (1rem)
-  gr_half (.5rem)
-  gr_[1...20] (0.1rem - 2rem)
+  gr
+  gr_[1...20]
  ******************************************************************************/
 .@{groove}, .@{groove}_1 {
-    margin: -@tile;
+    margin: -@layout_gutter_half;
     > * {
-        padding: @tile;
-    }
-}
-.@{groove}@{half} {
-    margin: -@tile_half;
-    > * {
-        padding: @tile_half;
+        padding: @layout_gutter_half;
     }
 }
 .generate-groove(8);
 .generate-groove(@n, @i: 2) when (@i =< @n) {
+    @y: @i*@layout_gutter_half;
     .@{groove}_@{i} {
-        margin: -@i*@tile;
+        margin: -@y;
         > * {
-            padding: @i*@tile;
+            padding: @y;
         }
     }
     .generate-groove(@n, (@i + 1));

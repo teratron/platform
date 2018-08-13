@@ -7,13 +7,14 @@
 @images:                "../images";
 @fonts:                 "../fonts";
 
-@tile:                  10px;
-@tile_half:             round(@tile/2);
-@px:                    round(@tile/10);
+@unit:                  10px;
+@unit_half:             round(@unit/2);
+@px:                    1px;
 
+@layout_gutter:         @unit*2;
+@layout_gutter_half:    round(@layout_gutter/2);
+@layout_column_width:   @layout_gutter*6;
 @layout_column:         8;
-@layout_column_width:   @tile*12;
-@layout_gutter:         @tile*2;
 
 @layout_width:          @layout_column*@layout_column_width + (@layout_column - 1)*@layout_gutter;
 @layout_width_min:      320px;
