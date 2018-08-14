@@ -58,7 +58,7 @@ body, main, header, footer,
     .generate-tile-toggle(6*@i);
     .generate-tile-toggle(@m, @j: 1) when (@j =< @m) {
         @k: round(100%/(@i + @j), 3);
-        @media only screen and (min-width: round((360px + @j*360px/@i))) {
+        @media only screen and (min-width: round((@layout_width_min + @j*@layout_width_min/@i))) {
             .@{tile}_@{i} > * {
                 width:      @k;
                 flex-basis: @k;
@@ -74,11 +74,12 @@ body, main, header, footer,
  ***************************************/
 .generate-fluid(100);
 .generate-fluid(@n, @i: 2) when (@i =< @n) {
+    @y: round(100%/@i, 3);
     .@{fluid}_@{i},
     .@{fluid}@{child} > :first-child:nth-last-child(@{i}),
     .@{fluid}@{child} > :first-child:nth-last-child(@{i}) ~ * {
-        width:      round(100%/@i, 3);
-        flex-basis: round(100%/@i, 3);
+        width:      @y;
+        flex-basis: @y;
     }
     .generate-fluid(@n, (@i + 1));
 }
