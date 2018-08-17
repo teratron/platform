@@ -1,4 +1,4 @@
-
+$(document).ready(function() {
         var $obj = $('#hyv-search');
         $obj.change(function() {
             $('#hyv-yt-search').attr('action', '<? $link = x2(array("route" => "search/index"))->route->link; echo $link->href; ?>/' + $obj.prop('value').replace(/ /ig,'+'));
@@ -27,7 +27,7 @@
                 var i   = $.inArray(id, map);
 
                 if($obj.prop('checked')) {
-                    if(i == -1) map.push(id);
+                    if(i === -1) map.push(id);
                     cnt = 1;
                 }
                 else {
@@ -43,7 +43,7 @@
                     res = id;
                     cnt = 1;
                 }
-            if(cnt != 0) changeCounter(id, cnt);//console.log("1  "+cnt);
+            if(cnt !== 0) changeCounter(id, cnt);//console.log("1  "+cnt);
             if(res != null) {
                 $.cookie(name, res, {
                     expires: exp,
@@ -117,3 +117,4 @@
                 }
             }
         }
+});
