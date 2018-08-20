@@ -56,11 +56,11 @@ main, header, footer,
     display: flex;
 }
 .@{inline}, .ico, .button, .badge, .label, .toggle, .check, .radio, .avatar,
-.@{cell}:not(.@{col}):not(.@{table}):not([class*="@{tile}"]) > :not(.@{row}):not(.@{table}) {
+.@{inline}@{child}:not(.@{col}):not(.@{table}):not([class*="@{tile}"]) > :not(.@{row}):not(.@{table}) {
     display: -webkit-inline-flex;
     display: inline-flex;
 }
-.@{row}, [class*="@{tile}"], .@{list}.@{col} > *  {
+.@{row}, [class*="@{tile}"], .@{list}.@{col} > * {
     -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row;
@@ -80,6 +80,10 @@ main, header, footer,
                 flex-direction: column-reverse;
     }
 }
+
+
+
+
 .@{wrap}, .@{row}, [class*="@{tile}"] {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
@@ -95,7 +99,7 @@ main, header, footer,
     -webkit-flex-wrap: wrap-reverse;
             flex-wrap: wrap-reverse;
 }
-.@{nowrap}, .@{col}:not(.@{cell}):not([class*="@{tile}"]), .@{bar}, .@{list} > * {
+.@{nowrap}, .@{col}:not(.@{inline}@{child}):not([class*="@{tile}"]), .@{bar}, .@{list} > * {
     -webkit-flex-wrap: nowrap;
         -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
@@ -132,9 +136,9 @@ main, header, footer,
 
 /*** Align content ***/
 .@{stretch}@{child},
-.@{row}:not(.@{cell}),
-.@{col}:not(.@{cell}),
-[class*="@{tile}"]:not(.@{cell}),
+.@{row}:not(.@{inline}@{child}),
+.@{col}:not(.@{inline}@{child}),
+[class*="@{tile}"]:not(.@{inline}@{child}),
 .@{list} > *,
 .@{fixed}.@{col}.@{middle}@{child}, .@{absolute}.@{col}.@{middle}@{child},
 .@{fixed}.@{row}.@{top},    .@{absolute}.@{row}.@{top},
@@ -143,14 +147,14 @@ main, header, footer,
             align-content: stretch;
 }
 .@{screen},
-[class*="@{tile}"].@{cell},
-.@{col}.@{cell}.@{left}@{child}, .@{col}.@{cell}:not(.@{center}@{child}),
-.@{row}.@{cell}.@{top}@{child},  .@{row}.@{cell}:not(.@{middle}@{child}) {
+[class*="@{tile}"].@{inline}@{child},
+.@{col}.@{inline}@{child}.@{left}@{child}, .@{col}.@{inline}@{child}:not(.@{center}@{child}),
+.@{row}.@{inline}@{child}.@{top}@{child},  .@{row}.@{inline}@{child}:not(.@{middle}@{child}) {
     -webkit-align-content: flex-start;
             align-content: flex-start;
 }
-.@{col}.@{cell}.@{center}@{child},
-.@{row}.@{cell}.@{middle}@{child},
+.@{col}.@{inline}@{child}.@{center}@{child},
+.@{row}.@{inline}@{child}.@{middle}@{child},
 .@{fixed}.@{middle}@{child}, .@{fixed}.@{col}.@{center}@{child}.@{middle}@{child},
 .@{absolute}.@{middle}@{child}, .@{absolute}.@{col}.@{center}@{child}.@{middle}@{child},
 .@{list}.@{col} > * > *,
@@ -162,17 +166,17 @@ button, input, output, select, option {
     -webkit-align-content: center;
             align-content: center;
 }
-.@{col}.@{cell}.@{right}@{child},
-.@{row}.@{cell}.@{bottom}@{child} {
+.@{col}.@{inline}@{child}.@{right}@{child},
+.@{row}.@{inline}@{child}.@{bottom}@{child} {
     -webkit-align-content: flex-end;
             align-content: flex-end;
 }
 
 /*** Align items ***/
 .@{stretch}@{child},
-.@{row}:not(.@{cell}),
-.@{col}:not(.@{cell}),
-[class*="@{tile}"]:not(.@{cell}),
+.@{row}:not(.@{inline}@{child}),
+.@{col}:not(.@{inline}@{child}),
+[class*="@{tile}"]:not(.@{inline}@{child}),
 .@{list} > *,
 .@{fixed}.@{col}.@{middle}@{child}, .@{absolute}.@{col}.@{middle}@{child},
 .@{fixed}.@{row}.@{top},    .@{absolute}.@{row}.@{top},
@@ -181,14 +185,14 @@ button, input, output, select, option {
             align-items: stretch;
 }
 .@{screen},
-[class*="@{tile}"].@{cell},
-.@{col}.@{cell}.@{left}@{child}, .@{col}.@{cell}:not(.@{center}@{child}),
-.@{row}.@{cell}.@{top}@{child},  .@{row}.@{cell}:not(.@{middle}@{child}) {
+[class*="@{tile}"].@{inline}@{child},
+.@{col}.@{inline}@{child}.@{left}@{child}, .@{col}.@{inline}@{child}:not(.@{center}@{child}),
+.@{row}.@{inline}@{child}.@{top}@{child},  .@{row}.@{inline}@{child}:not(.@{middle}@{child}) {
     -webkit-align-items: flex-start;
             align-items: flex-start;
 }
-.@{col}.@{cell}.@{center}@{child},
-.@{row}.@{cell}.@{middle}@{child},
+.@{col}.@{inline}@{child}.@{center}@{child},
+.@{row}.@{inline}@{child}.@{middle}@{child},
 .@{fixed}.@{middle}@{child}, .@{fixed}.@{col}.@{center}@{child}.@{middle}@{child},
 .@{absolute}.@{middle}@{child}, .@{absolute}.@{col}.@{center}@{child}.@{middle}@{child},
 .@{list}.@{col} > * > *,
@@ -200,8 +204,8 @@ button, input, output, select, option {
     -webkit-align-items: center;
             align-items: center;
 }
-.@{col}.@{cell}.@{right}@{child},
-.@{row}.@{cell}.@{bottom}@{child} {
+.@{col}.@{inline}@{child}.@{right}@{child},
+.@{row}.@{inline}@{child}.@{bottom}@{child} {
     -webkit-align-items: flex-end;
             align-items: flex-end;
 }
@@ -303,19 +307,19 @@ button, input, output, select, option {
     display: inline-block;
 }
 .@{block}.@{list} > * > *,
-.@{block}.@{row}:not(.@{cell}) > *,
-.@{block}.@{row}.@{right}@{child}:not(.@{cell}) > .@{left},
-.@{block}.@{row}.@{reverse}:not(.@{cell}) > .@{right},
-.@{block}.@{row}.@{right}@{child}.@{reverse}:not(.@{cell}) > *,
+.@{block}.@{row}:not(.@{inline}@{child}) > *,
+.@{block}.@{row}.@{right}@{child}:not(.@{inline}@{child}) > .@{left},
+.@{block}.@{row}.@{reverse}:not(.@{inline}@{child}) > .@{right},
+.@{block}.@{row}.@{right}@{child}.@{reverse}:not(.@{inline}@{child}) > *,
 .@{block}[class*="@{tile}"] > *,
 .@{block}[class*="@{tile}"].@{right}@{child}.@{reverse} > * {
     float: left;
 }
 .@{block}.@{list} > * > .@{right},
-.@{block}.@{row}:not(.@{cell}) > .@{right},
-.@{block}.@{row}.@{right}@{child}:not(.@{cell}) > *,
-.@{block}.@{row}.@{reverse}:not(.@{cell}) > *,
-.@{block}.@{row}.@{right}@{child}.@{reverse}:not(.@{cell}) > .@{left},
+.@{block}.@{row}:not(.@{inline}@{child}) > .@{right},
+.@{block}.@{row}.@{right}@{child}:not(.@{inline}@{child}) > *,
+.@{block}.@{row}.@{reverse}:not(.@{inline}@{child}) > *,
+.@{block}.@{row}.@{right}@{child}.@{reverse}:not(.@{inline}@{child}) > .@{left},
 .@{block}[class*="@{tile}"].@{right}@{child} > *,
 .@{block}[class*="@{tile}"].@{reverse} > * {
     float: right;
@@ -365,7 +369,7 @@ button, input, output, select, option {
 /*** Placement ***/
 .@{top},
 .@{top}@{child}:not(.@{col}):not(.@{row}) > *,
-.@{table}.@{cell},
+.@{table}.@{inline}@{child},
 .@{table}.@{row} > * {
     vertical-align: top;
 }
@@ -397,7 +401,7 @@ button, input, output, select, option {
     }
 }
 .@{center}@{child}:not(.@{col}),
-.@{block}.@{bar}.@{cell},
+.@{block}.@{bar}.@{inline}@{child},
 .@{block}.@{bar} > * {
     text-align: center;
 }

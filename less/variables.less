@@ -13,13 +13,13 @@
 
 @layout_gutter:         @unit*2;
 @layout_gutter_half:    round(@layout_gutter/2);
-@layout_column_width:   @layout_gutter*6;
+@layout_column_width:   @layout_gutter*6; //without gutter
 @layout_column:         8;
 
-@layout_width:          @layout_column*@layout_column_width + (@layout_column - 1)*@layout_gutter;
+@layout_width:          @layout_column*@layout_column_width/* + (@layout_column - 1)*@layout_gutter*/;
 @layout_width_min:      320px;
-@header_height:         6rem;
-@footer_height:         4rem;
+@header_height:         @unit*6;
+@footer_height:         @unit*4;
 
 // Common Element
 @elem_font_size:        1.2rem;
