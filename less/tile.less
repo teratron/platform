@@ -34,10 +34,10 @@ body, main, header, footer,
     }
     .tile-toggle-zero(8);
     .tile-toggle-zero(@n, @i: 1) when (@i =< @n) {
-        @y: round(100%/@i, 3);
         .@{tile}_@{i} > * {
-            width:      @y;
-            flex-basis: @y;
+            @j: round(100%/@i, 3);
+            width:      @j;
+            flex-basis: @j;
         }
         .tile-toggle-zero(@n, (@i + 1));
     }
@@ -45,10 +45,10 @@ body, main, header, footer,
 .generate-tile(12);
 .generate-tile(@n, @i: 1) when (@i =< @n) {
     @media only screen and (min-width: (120px + @i*120px)) {
-        @y: round(100%/(@i + 1), 3);
         .@{tile} > * {
-            width:      @y;
-            flex-basis: @y;
+            @j: round(100%/(@i + 1), 3);
+            width:      @j;
+            flex-basis: @j;
         }
     }
     .generate-tile(@n, (@i + 1));
@@ -57,8 +57,8 @@ body, main, header, footer,
 .tile-toggle(@n, @i: 1) when (@i =< @n) {
     .generate-tile-toggle(6*@i);
     .generate-tile-toggle(@m, @j: 1) when (@j =< @m) {
-        @k: round(100%/(@i + @j), 3);
         @media only screen and (min-width: round((@layout_width_min + @j*@layout_width_min/@i))) {
+            @k: round(100%/(@i + @j), 3);
             .@{tile}_@{i} > * {
                 width:      @k;
                 flex-basis: @k;
@@ -74,12 +74,12 @@ body, main, header, footer,
  ***************************************/
 .generate-fluid(100);
 .generate-fluid(@n, @i: 2) when (@i =< @n) {
-    @y: round(100%/@i, 3);
     .@{fluid}_@{i},
     .@{fluid}@{child} > :first-child:nth-last-child(@{i}),
     .@{fluid}@{child} > :first-child:nth-last-child(@{i}) ~ * {
-        width:      @y;
-        flex-basis: @y;
+        @j: round(100%/@i, 3);
+        width:      @j;
+        flex-basis: @j;
     }
     .generate-fluid(@n, (@i + 1));
 }

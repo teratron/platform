@@ -43,8 +43,10 @@ header.@{fixed} + :not(footer) {
 /*** Flexible Layout ***/
 main, header, footer,
 .@{on}, .@{col}, .@{row}, [class*="@{tile}"],
-.@{fixed}.@{middle}@{child}, .@{fixed}.@{center}@{child},
-.@{absolute}.@{middle}@{child}, .@{absolute}.@{center}@{child},
+.@{fixed}.@{middle}@{child},
+.@{fixed}.@{center}@{child},
+.@{absolute}.@{middle}@{child},
+.@{absolute}.@{center}@{child},
 .@{bar}  > *,
 .@{list} > *,
 .@{list} > * > * {
@@ -81,15 +83,37 @@ main, header, footer,
     }
 }
 
-.@{cell}_@{layout_column} {
-    width: @layout_width;
+/*** Cell ***/
+.@{cell} {
+    /*width: @layout_width;*/
 }
-@media only screen and (min-width: (@layout_width)) {
+.generate-cell(@layout_column);
+.generate-cell(@n, @i: 1) when (@i =< @n) {
+    .@{cell}_@{i} {
+        @j: @layout_column_width*@i;
+        width:     @j;
+        max-width: @j;
+    }
+    .generate-cell(@n, (@i + 1));
+}
+@media only screen and (max-width: @layout_width) {
+    @j: round(100vw/@layout_column, 3);
+    .media-cell(@layout_column);
+    .media-cell(@n, @i: 1) when (@i =< @n) {
+        .@{cell}_@{i} {
+            @k: @j*@i;
+            width:     @k;
+            max-width: @k;
+        }
+        .media-cell(@n, (@i + 1));
+    }
+}
+/*@media only screen and (max-width: (@layout_width)) {
     .@{cell}_@{layout_column} {
         width:     100vw;
         max-width: 100vw;
     }
-}
+}*/
 
 .@{wrap}, .@{row}, [class*="@{tile}"] {
     -webkit-flex-wrap: wrap;
@@ -286,9 +310,13 @@ button, input, output, select, option {
 }
 
 /*** Flex Order ***/
+.@{order},
+.@{order}_1 {
+    order: 1;
+}
 .generate-order(8);
-.generate-order(@n, @i: 1) when (@i =< @n) {
-    .ord_@{i} {
+.generate-order(@n, @i: 2) when (@i =< @n) {
+    .@{order}_@{i} {
         order: @i;
     }
     .generate-order(@n, (@i + 1));
