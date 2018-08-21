@@ -78,3 +78,9 @@ function changeQuantity(cnt) {
     var qty = parseInt(tag.html(), 10) + cnt;
     if(qty > 0 && qty < 100) tag.text(qty);
 }
+
+$('.btn-menu').on('click', function (e) {
+    e.preventDefault();
+    $(this).toggleClass('active');
+    $(this).next().slideToggle();
+});
