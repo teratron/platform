@@ -44,7 +44,7 @@ ul, ol {
     ul {list-style-type: toggle(circle, square, box);}
     ol {list-style-type: lower-latin;}
 }
-.@{col}, .@{row}, [class*="@{tile}"] {
+.@{col}, .@{row}, .@{list}, [class*="@{tile}"] {
     > li {
         list-style-type: none;
     }
@@ -158,7 +158,6 @@ h6 {
     }
 }
 .title {
-  margin-bottom: @layout_gutter;
 }
 .caption {
     text-transform: uppercase;
@@ -176,8 +175,8 @@ sub, sup, .hint {
 /***************************************
   Text Semantics
  ***************************************/
-p {
-    margin-bottom: 2rem;
+p, .title {
+    margin-bottom: @layout_gutter;
 }
 a, a:link, a:visited, a:hover, a:active {
     text-decoration: none;
