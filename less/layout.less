@@ -21,6 +21,7 @@ header > .@{inner} {
     height: @header_height;
 }
 main > .@{inner} {
+    min-height: @header_height*6;
 }
 footer > .@{inner} {
     min-height: @footer_height;
@@ -93,13 +94,6 @@ main, header, footer,
         .media-cell(@n, (@i + 1));
     }
 }
-/*@media only screen and (max-width: (@layout_width)) {
-    .@{cell}_@{layout_column} {
-        width:     100vw;
-        max-width: 100vw;
-    }
-}*/
-
 .@{wrap}, .@{row}, [class*="@{tile}"] {
     flex-wrap: wrap;
 }
@@ -144,8 +138,7 @@ main, header, footer,
 .@{fixed}.@{col}.@{middle}@{child}, .@{absolute}.@{col}.@{middle}@{child},
 .@{fixed}.@{row}.@{top},    .@{absolute}.@{row}.@{top},
 .@{fixed}.@{row}.@{bottom}, .@{absolute}.@{row}.@{bottom} {
-    -webkit-align-content: stretch;
-            align-content: stretch;
+    align-content: stretch;
 }
 .@{screen},
 [class*="@{tile}"].@{inline}@{child},
@@ -153,8 +146,7 @@ main, header, footer,
 .@{col}.@{inline}@{child}:not(.@{center}@{child}),
 .@{row}.@{inline}@{child}.@{top}@{child},
 .@{row}.@{inline}@{child}:not(.@{middle}@{child}) {
-    -webkit-align-content: flex-start;
-            align-content: flex-start;
+    align-content: flex-start;
 }
 .@{col}.@{inline}@{child}.@{center}@{child},
 .@{row}.@{inline}@{child}.@{middle}@{child},
