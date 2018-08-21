@@ -35,8 +35,7 @@ header.@{fixed} + :not(footer) {
 }
 @media only screen and (max-width: (@layout_width)) {
     main, header, footer {
-        -webkit-justify-content: flex-start;
-                justify-content: flex-start;
+        justify-content: flex-start;
     }
 }
 
@@ -50,36 +49,22 @@ main, header, footer,
 .@{bar}  > *,
 .@{list} > *,
 .@{list} > * > * {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
 }
 .@{inline}, .ico, .button, .badge, .label, .toggle, .check, .radio, .avatar,
 .@{inline}@{child}:not(.@{col}):not(.@{table}):not([class*="@{tile}"]) > :not(.@{row}):not(.@{table}) {
-    display: -webkit-inline-flex;
     display: inline-flex;
 }
 .@{row}, [class*="@{tile}"], .@{list}.@{col} > * {
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     &.@{reverse} {
-        -webkit-flex-direction: row-reverse;
-            -ms-flex-direction: row-reverse;
-                flex-direction: row-reverse;
+        flex-direction: row-reverse;
     }
 }
 .@{col}, .@{list}.@{row} > * {
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     &.@{reverse} {
-        -webkit-flex-direction: column-reverse;
-            -ms-flex-direction: column-reverse;
-                flex-direction: column-reverse;
+        flex-direction: column-reverse;
     }
 }
 
@@ -116,48 +101,33 @@ main, header, footer,
 }*/
 
 .@{wrap}, .@{row}, [class*="@{tile}"] {
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 .@{wrap} {
-    white-space: -moz-pre-wrap;
     white-space: pre-wrap;
     word-wrap:   break-word;
     text-wrap:   avoid;
 }
 .@{inverse} {
-    -webkit-flex-wrap: wrap-reverse;
-            flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
 }
 .@{nowrap}, .@{col}:not(.@{inline}@{child}):not([class*="@{tile}"]), .@{bar}, .@{list} > * {
-    -webkit-flex-wrap: nowrap;
-        -ms-flex-wrap: nowrap;
-            flex-wrap: nowrap;
+    flex-wrap: nowrap;
 }
 .@{nowrap} {
     white-space: nowrap;
     overflow:    hidden;
 }
 .@{nowrap}, p {
-    -o-text-overflow: ellipsis;
-       text-overflow: ellipsis;
+    text-overflow: ellipsis;
 }
 .@{grow}, .@{grow}_1, .@{grow}@{child} > *, .@{body}, .@{screen} {
-    -webkit-box-flex:  1;
-    -moz-box-flex:     1;
-    -ms-flex:          1;
-    -webkit-flex-grow: 1;
-    flex-grow:         1;
+    flex-grow: 1;
 }
 .generate-grow(8);
 .generate-grow(@n, @i: 2) when (@i =< @n) {
     .@{grow}_@{i} {
-        -webkit-box-flex:  @i;
-        -moz-box-flex:     @i;
-        -ms-flex:          @i;
-        -webkit-flex-grow: @i;
-        flex-grow:         @i;
+        flex-grow: @i;
     }
     .generate-grow(@n, (@i + 1));
 }
@@ -179,28 +149,30 @@ main, header, footer,
 }
 .@{screen},
 [class*="@{tile}"].@{inline}@{child},
-.@{col}.@{inline}@{child}.@{left}@{child}, .@{col}.@{inline}@{child}:not(.@{center}@{child}),
-.@{row}.@{inline}@{child}.@{top}@{child},  .@{row}.@{inline}@{child}:not(.@{middle}@{child}) {
+.@{col}.@{inline}@{child}.@{left}@{child},
+.@{col}.@{inline}@{child}:not(.@{center}@{child}),
+.@{row}.@{inline}@{child}.@{top}@{child},
+.@{row}.@{inline}@{child}:not(.@{middle}@{child}) {
     -webkit-align-content: flex-start;
             align-content: flex-start;
 }
 .@{col}.@{inline}@{child}.@{center}@{child},
 .@{row}.@{inline}@{child}.@{middle}@{child},
-.@{fixed}.@{middle}@{child}, .@{fixed}.@{col}.@{center}@{child}.@{middle}@{child},
-.@{absolute}.@{middle}@{child}, .@{absolute}.@{col}.@{center}@{child}.@{middle}@{child},
+.@{fixed}.@{middle}@{child},
+.@{fixed}.@{col}.@{center}@{child}.@{middle}@{child},
+.@{absolute}.@{middle}@{child},
+.@{absolute}.@{col}.@{center}@{child}.@{middle}@{child},
 .@{list}.@{col} > * > *,
 .@{bar} > *,
 .@{col} > .@{head},
 .@{col} > .@{foot},
 .button, .badge, .label,
 button, input, output, select, option {
-    -webkit-align-content: center;
-            align-content: center;
+    align-content: center;
 }
 .@{col}.@{inline}@{child}.@{right}@{child},
 .@{row}.@{inline}@{child}.@{bottom}@{child} {
-    -webkit-align-content: flex-end;
-            align-content: flex-end;
+    align-content: flex-end;
 }
 
 /*** Align items ***/
@@ -212,15 +184,13 @@ button, input, output, select, option {
 .@{fixed}.@{col}.@{middle}@{child}, .@{absolute}.@{col}.@{middle}@{child},
 .@{fixed}.@{row}.@{top},    .@{absolute}.@{row}.@{top},
 .@{fixed}.@{row}.@{bottom}, .@{absolute}.@{row}.@{bottom} {
-    -webkit-align-items: stretch;
-            align-items: stretch;
+    align-items: stretch;
 }
 .@{screen},
 [class*="@{tile}"].@{inline}@{child},
 .@{col}.@{inline}@{child}.@{left}@{child}, .@{col}.@{inline}@{child}:not(.@{center}@{child}),
 .@{row}.@{inline}@{child}.@{top}@{child},  .@{row}.@{inline}@{child}:not(.@{middle}@{child}) {
-    -webkit-align-items: flex-start;
-            align-items: flex-start;
+    align-items: flex-start;
 }
 .@{col}.@{inline}@{child}.@{center}@{child},
 .@{row}.@{inline}@{child}.@{middle}@{child},
@@ -232,34 +202,28 @@ button, input, output, select, option {
 .@{col} > .@{foot},
 .button, .badge, .label,
 button, input, output, select, option {
-    -webkit-align-items: center;
-            align-items: center;
+    align-items: center;
 }
 .@{col}.@{inline}@{child}.@{right}@{child},
 .@{row}.@{inline}@{child}.@{bottom}@{child} {
-    -webkit-align-items: flex-end;
-            align-items: flex-end;
+    align-items: flex-end;
 }
 
 /*** Align self ***/
 .@{stretch} {
-    -webkit-align-self: stretch;
-            align-self: stretch;
+    align-self: stretch;
 }
 .@{col} > .@{left},
 .@{row} > .@{top} {
-    -webkit-align-self: flex-start;
-            align-self: flex-start;
+    align-self: flex-start;
 }
 .@{col} > .@{center},
 .@{row} > .@{middle} {
-    -webkit-align-self: center;
-            align-self: center;
+    align-self: center;
 }
 .@{col} > .@{right},
 .@{row} > .@{bottom} {
-    -webkit-align-self: flex-end;
-            align-self: flex-end;
+    align-self: flex-end;
 }
 
 /*** Justify content ***/
@@ -269,8 +233,7 @@ button, input, output, select, option {
 .@{bar} > .@{head},
 .@{fixed}.@{left}, .@{fixed}.@{col}.@{top},
 .@{absolute}.@{left}, .@{absolute}.@{col}.@{top} {
-    -webkit-justify-content: flex-start;
-            justify-content: flex-start;
+    justify-content: flex-start;
 }
 /*main, header, footer,*/
 .button, .badge,
@@ -279,8 +242,7 @@ button, input, output, select, option {
 .@{bar} > :not(.@{head}):not(.@{body}):not(.@{foot}),
 .@{fixed}.@{center}@{child}, .@{fixed}.@{col}.@{middle}@{child},
 .@{absolute}.@{center}@{child}, .@{absolute}.@{col}.@{middle}@{child} {
-    -webkit-justify-content: center;
-            justify-content: center;
+    justify-content: center;
 }
 .@{col}.@{bottom}@{child},
 .@{row}.@{right}@{child},
@@ -288,19 +250,16 @@ button, input, output, select, option {
 .@{bar} > .@{foot},
 .@{fixed}.@{right}, .@{fixed}.@{col}.@{bottom},
 .@{absolute}.@{right}, .@{absolute}.@{col}.@{bottom} {
-    -webkit-justify-content: flex-end;
-            justify-content: flex-end;
+    justify-content: flex-end;
 }
 .@{evenly} {
     justify-content: space-evenly;
 }
 .@{around} {
-    -webkit-justify-content: space-around;
-            justify-content: space-around;
+    justify-content: space-around;
 }
 .@{between} {
-    -webkit-justify-content: space-between;
-            justify-content: space-between;
+    justify-content: space-between;
     > :first-child {
         margin-left: 0;
     }
@@ -324,8 +283,6 @@ button, input, output, select, option {
 
 /*** Grid Layout ***/
 .@{grid} {
-    display: -moz-grid;
-    display: -ms-grid;
     display: grid;
 }
 .@{grid}.@{inline} {
@@ -415,9 +372,9 @@ button, input, output, select, option {
 }
 .@{middle},
 .@{middle}@{child}:not(.@{col}):not(.@{row}) > *,
-.@{table}.@{bar} > *,
+.@{table}.@{bar}  > *,
 .@{table}.@{list} > *,
-.@{table}.@{row} > .@{middle},
+.@{table}.@{row}  > .@{middle},
 .@{table}:not(.@{row}) > * > @{tagless} {
     vertical-align: middle;
 }
