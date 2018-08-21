@@ -61,7 +61,7 @@
         .@{table}.@{col}_@{i} > * > @{tagless} {
             float: none !important;
         }
-        .@{row}_@{i} > *,
+        .@{row}_@{i} > :not([class*="@{cell}"]),
         .@{table}.@{col}_@{i} > * > @{tagless} {
             width: auto !important;
         }
