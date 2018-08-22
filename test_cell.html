@@ -17,12 +17,13 @@
                 margin: 0 auto;
                 padding: 20px 0;
             }
-            [class*="cel"] {
+            [class*="cel"] > * {
                 background-color: #b8d3da;
                 border: 1px solid #f4f4f4;
                 text-align: center;
+                display: block;
             }
-            [class*="cel"]:nth-child(odd) {
+            [class*="cel"]:nth-child(odd) > * {
                 background-color: #f4f4f4;
                 border: 1px solid #efefef;
             } 
@@ -32,7 +33,7 @@
         <main class="scr">
             <div class="inr">
                 <h5>Grid class="cel"</h5>
-                <div class="row gp-bottom">
+                <div class="row gr gp-bottom">
                     <div class="cel_8"><span>1</span></div>
                     <div class="cel_6"><span>2</span></div>
                     <div class="cel_2"><span>3</span></div>
@@ -44,7 +45,7 @@
                 </div>
 
                 <h5>Grid class="cel"</h5>
-                <div class="col row_4 gp-bottom">
+                <div class="col gps row_4 gp-bottom">
                     <div class="cel_8"><span>1</span></div>
                     <div class="cel_6"><span>2</span></div>
                     <div class="cel_2"><span>3</span></div>
