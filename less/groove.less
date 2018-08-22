@@ -8,14 +8,14 @@
     box-sizing: content-box;
 }
 .@{groove}, .@{groove}_1 {
-    margin: -@layout_gutter_half;
+    margin: -@layout_gap_half;
     > * {
-        padding: @layout_gutter_half;
+        padding: @layout_gap_half;
     }
 }
 .generate-groove(8);
 .generate-groove(@n, @i: 2) when (@i =< @n) {
-    @y: @i*@layout_gutter_half;
+    @y: @i*@layout_gap_half;
     .@{groove}_@{i} {
         margin: -@y;
         > * {
