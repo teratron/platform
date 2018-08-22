@@ -178,6 +178,10 @@ sub, sup, .hint {
 p, .title {
     margin-bottom: @layout_gutter;
 }
+p {
+    text-align: justify;
+    text-indent: @layout_gutter;
+}
 a, a:link, a:visited, a:hover, a:active {
     text-decoration: none;
 }
@@ -192,9 +196,9 @@ q:lang(en) {quotes: "\201c" "\201d";}
 q q,
 q:lang(de) {quotes: "\201e" "\201c";}
 abbr {
-    font-variant:  small-caps;
+    font-variant: small-caps;
     text-transform: uppercase;
-    letter-spacing:     .05em;
+    letter-spacing: .05em;
 }
 abbr[title] {
     border-bottom: 1px dotted;
