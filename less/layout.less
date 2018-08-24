@@ -40,6 +40,44 @@ header.@{fixed} + :not(footer) {
     }
 }
 
+/*** Grid Layout ***/
+.@{grid} {
+    display: grid;
+
+    grid-gap: @layout_gap;
+    grid-row-gap: @layout_gap;
+    grid-column-gap: @layout_gap;
+
+    grid-area: header;
+    grid-template-areas:
+            'header header header header header header'
+            'menu main main main right right'
+            'menu footer footer footer footer footer';
+
+    /*
+        grid: ;
+        grid-area: ;
+        grid-auto-flow: ;
+        grid-auto-rows: ;
+        grid-auto-columns: ;
+
+        grid-column: ;
+        grid-column-end: ;
+        grid-column-start: ;
+
+        grid-row: ;
+        grid-row-end: ;
+        grid-row-start: ;
+
+        grid-template: ;
+        grid-template-rows: ;
+        grid-template-columns: ;
+        grid-template-areas: ;*/
+}
+.@{grid}.@{inline} {
+    display: inline-grid;
+}
+
 /*** Flexible Layout ***/
 main, header, footer,
 .@{on}, .@{col}, .@{row}, [class*="@{tile}"],
@@ -201,7 +239,6 @@ button, input, output, select, option {
 .@{absolute}.@{left}, .@{absolute}.@{col}.@{top} {
     justify-content: flex-start;
 }
-/*main, header, footer,*/
 .button, .badge,
 .@{col}.@{middle}@{child},
 .@{row}.@{center}@{child},
@@ -236,45 +273,15 @@ button, input, output, select, option {
 
 /*** Order ***/
 .@{order},
-.@{order}_1 {
+.@{order}1 {
     order: 1;
 }
 .generate-order(8);
 .generate-order(@n, @i: 2) when (@i =< @n) {
-    .@{order}_@{i} {
+    .@{order}@{i} {
         order: @i;
     }
     .generate-order(@n, (@i + 1));
-}
-
-/*** Grid Layout ***/
-.@{grid} {
-    display: grid;
-    //grid: ;
-    grid-gap: @layout_gap;
-    grid-row-gap: @layout_gap;
-    grid-column-gap: @layout_gap;
-/*
-    grid-area: ;
-    grid-auto-flow: ;
-    grid-auto-rows: ;
-    grid-auto-columns: ;
-
-    grid-column: ;
-    grid-column-end: ;
-    grid-column-start: ;
-
-    grid-row: ;
-    grid-row-end: ;
-    grid-row-start: ;
-
-    grid-template: ;
-    grid-template-rows: ;
-    grid-template-columns: ;
-    grid-template-areas: ;*/
-}
-.@{grid}.@{inline} {
-    display: inline-grid;
 }
 
 /*** Block Layout ***/
