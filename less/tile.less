@@ -77,3 +77,30 @@ body, main, header, footer,
     }
     .generate-fluid(@n, (@i + 1));
 }
+
+/***************************************
+  Cell
+ ***************************************/
+.@{cell} {
+}
+.generate-cell(@layout_column);
+.generate-cell(@n, @i: 1) when (@i =< @n) {
+    .@{cell}_@{i} {
+        @j: @layout_column_width*@i;
+        width:     @j;
+        max-width: @j;
+    }
+    .generate-cell(@n, (@i + 1));
+}
+@media only screen and (max-width: @layout_width) {
+    @j: round(100vw/@layout_column, 3);
+    .media-cell(@layout_column);
+    .media-cell(@n, @i: 1) when (@i =< @n) {
+        .@{cell}_@{i} {
+            @k: @j*@i;
+            width:     @k;
+            max-width: @k;
+        }
+        .media-cell(@n, (@i + 1));
+    }
+}
