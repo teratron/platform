@@ -275,8 +275,28 @@ button, input, output, select, option {
 /*** Grid Layout ***/
 .@{grid} {
     display: grid;
+    //grid: ;
+    grid-gap: @layout_gap;
     grid-row-gap: @layout_gap;
     grid-column-gap: @layout_gap;
+/*
+    grid-area: ;
+    grid-auto-flow: ;
+    grid-auto-rows: ;
+    grid-auto-columns: ;
+
+    grid-column: ;
+    grid-column-end: ;
+    grid-column-start: ;
+
+    grid-row: ;
+    grid-row-end: ;
+    grid-row-start: ;
+
+    grid-template: ;
+    grid-template-rows: ;
+    grid-template-columns: ;
+    grid-template-areas: ;*/
 }
 .@{grid}.@{inline} {
     display: inline-grid;
