@@ -1,3 +1,21 @@
+﻿// npm install --global gulp
+// npm i gulp -g
+// npm install -g gulp-cli
+//
+// npm init создает файл package.json, который содержит информацию о проекте (описание проекта и зависимости).
+// ---> package.json
+// npm install gulp --save-dev
+// ---> gulpfile.js
+// npm install gulp-sass --save-dev
+// 
+// 
+// var gulp = require('gulp');
+// var sass = require('gulp-sass');
+// 
+// 
+
+
+
 var gulp         = require('gulp'), // Подключаем Gulp
     less         = require('gulp-less'), //Подключаем Less пакет,
     sass         = require('gulp-sass'), //Подключаем Sass пакет,
