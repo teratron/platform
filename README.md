@@ -39,3 +39,7 @@ bower install --save jquery  # Или bower i -S jquery
 Для удаления пакетов используется команда bower uninstall:
 
 bower uninstall --save jquery-icheck  # Или bower un -S jquery-icheck
+
+Команда bower install (без дополнительных параметров) вернёт всё как было:
+
+bower install
