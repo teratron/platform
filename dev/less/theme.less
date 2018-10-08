@@ -40,7 +40,7 @@
     tips:            rgba(0,0,0,.8);
     lucid:           rgba(0,0,0,.3);
 }
-.button {
+.@{button} {
     color: #color[primary];
     border: 1px solid #color[secondary];
 }*/
@@ -175,7 +175,7 @@ footer {
 /***************************************
   Button
  ***************************************/
-.button {
+.@{button} {
     background-color: @color_brand;
     color: #fff;
     &:hover {
@@ -195,14 +195,14 @@ footer {
         box-shadow: none;
     }
 }
-.button, .border {
+.@{button}, .border {
     border-color: @color_brand;
 }
 
 /***************************************
   Badge
  ***************************************/
-.badge {
+.@{badge} {
     background-color: @color_accent;
     color: #fff;
     box-shadow: 0 .1rem .2rem 0 rgba(0,0,0,.2);
@@ -211,7 +211,7 @@ footer {
 /***************************************
   Label
  ***************************************/
-.label {
+.@{label} {
     background-color: @color_success;
     color: #fff;
     box-shadow: .1rem .1rem 0 rgba(0,0,0,.08);
@@ -220,7 +220,7 @@ footer {
 /***************************************
   Tooltip
  ***************************************/
-.tooltip {
+.@{tooltip} {
     background-color: @color_tips;
     color: #fff;
 }
@@ -228,7 +228,7 @@ footer {
 /***************************************
   Snackbar
  ***************************************/
-.snackbar {
+.@{snackbar} {
     background-color: @color_tips;
     color: #fff;
 }
@@ -239,7 +239,7 @@ footer {
 hr {
     color: rgba(0,0,0,.12);
 }
-hr, .separator,
+hr, .@{separator},
 .@{divider} > *,
 .@{divider}.@{table}:not(.@{row}) > * > * {
     border-color: rgba(0,0,0,.12);
@@ -248,14 +248,14 @@ hr, .separator,
 /***************************************
   Form
  ***************************************/
-.radio, .check, .toggle {
+.@{radio}, .@{check}, .@{toggle} {
     &:after {
         background-color: @color_brand;
     }
 }
-.radio:before,
-.check:before,
-.toggle:before,
+.@{radio}:before,
+.@{check}:before,
+.@{toggle}:before,
 select, textarea,
 input[type="text"],
 input[type="password"],
@@ -337,7 +337,7 @@ input[type="datetime-local"] {
 .@{back}-gray {
     background-color: @color_gray !important;
     color: #fff;
-    a:not(.button) {
+    a:not(.@{button}) {
         color: #8b9298;
         &:hover {
             color: #2a3644;
@@ -351,7 +351,7 @@ input[type="datetime-local"] {
 .@{back}-gray-light {
     background-color: @color_gray_light !important;
     color: #213140;
-    a:not(.button) {
+    a:not(.@{button}) {
         color: #37455b;
         &:hover {
             color: #582b5b;
@@ -365,7 +365,7 @@ input[type="datetime-local"] {
 .@{back}-gray-dark {
     background-color: @color_gray_dark !important;
     color: #fff;
-    a:not(.button) {
+    a:not(.@{button}) {
         color: #fff;
         &:hover {
             color: #fff;

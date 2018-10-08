@@ -5,50 +5,50 @@
  ******************************************************************************/
 
 /*** x4 ***/
-.square, .circle,
-.toggle:before,
+.@{square}, .@{circle},
+.@{toggle}:before,
 input[type="color"] {
     width: @elem_unit;
 }
-.pill, .square, .circle {
+.pill, .@{square}, .@{circle} {
     min-width: @elem_unit;
 }
-.square, .circle,
-.toggle:before,
+.@{square}, .@{circle},
+.@{toggle}:before,
 input[type="color"] {
     max-width: @elem_unit;
 }
-.pill, .square, .circle,
+.pill, .@{square}, .@{circle},
 input, output, select, option {
     height: @elem_unit;
 }
-.pill, .square, .circle,
+.pill, .@{square}, .@{circle},
 input, output, select, textarea {
     min-height: @elem_unit;
 }
-.pill, .square, .circle {
+.pill, .@{square}, .@{circle} {
     max-height: @elem_unit;
 }
 
 /*** x2 ***/
-.radio:before, .check:before {
+.@{radio}:before, .@{check}:before {
     width: @elem_unit_half;
 }
-.radio:before, .check:before {
+.@{radio}:before, .@{check}:before {
     max-width: @elem_unit_half;
 }
-.radio:before, .check:before, .toggle:before {
+.@{radio}:before, .@{check}:before, .@{toggle}:before {
     height: @elem_unit_half;
 }
-.label, .radio, .check, .toggle {
+.@{label}, .@{radio}, .@{check}, .@{toggle} {
     min-height: @elem_unit_half;
 }
 
 /*** Bordered ***/
 .border,
-.radio:before,
-.check:before,
-.toggle:before,
+.@{radio}:before,
+.@{check}:before,
+.@{toggle}:before,
 select, textarea,
 input[type="text"],
 input[type="password"],
@@ -67,10 +67,10 @@ input[type="datetime-local"] {
 }
 
 /*** Rounded ***/
-.check:after {
+.@{check}:after {
     border-radius: .1rem;
 }
-.check:before,
+.@{check}:before,
 output, select, textarea,
 input[type="text"],
 input[type="password"],
@@ -87,67 +87,67 @@ input[type="datetime"],
 input[type="datetime-local"] {
     border-radius: .4rem;
 }
-.toggle:before {
+.@{toggle}:before {
     border-radius: @elem_unit_half;
 }
 
 .generate-size(8);
 .generate-size(@n, @i: 1) when (@i =< @n) {
-    .x@{i}.ico,
-    .x@{i}.square,
-    .x@{i}.circle,
-    .x@{i}.avatar,
-    .x@{i}.radio:before,
-    .x@{i}.check:before {
+    .x@{i}.@{ico},
+    .x@{i}.@{square},
+    .x@{i}.@{circle},
+    .x@{i}.@{avatar},
+    .x@{i}.@{radio}:before,
+    .x@{i}.@{check}:before {
         width: @i*1rem;
     }
-    .x@{i}.ico,
+    .x@{i}.@{ico},
     .x@{i}.pill,
-    .x@{i}.square,
-    .x@{i}.circle,
-    .x@{i}.avatar {
+    .x@{i}.@{square},
+    .x@{i}.@{circle},
+    .x@{i}.@{avatar} {
         min-width: @i*1rem;
     }
-    .x@{i}.ico,
-    .x@{i}.square,
-    .x@{i}.circle,
-    .x@{i}.avatar,
-    .x@{i}.radio:before,
-    .x@{i}.check:before,
+    .x@{i}.@{ico},
+    .x@{i}.@{square},
+    .x@{i}.@{circle},
+    .x@{i}.@{avatar},
+    .x@{i}.@{radio}:before,
+    .x@{i}.@{check}:before,
     .x@{i}[type="color"] {
         max-width: @i*1rem;
     }
-    .x@{i}.ico,
+    .x@{i}.@{ico},
     .x@{i}.pill,
-    .x@{i}.square,
-    .x@{i}.circle,
-    .x@{i}.avatar,
-    .x@{i}.radio:before,
-    .x@{i}.check:before,
-    .x@{i}.toggle:before {
+    .x@{i}.@{square},
+    .x@{i}.@{circle},
+    .x@{i}.@{avatar},
+    .x@{i}.@{radio}:before,
+    .x@{i}.@{check}:before,
+    .x@{i}.@{toggle}:before {
         height: @i*1rem;
     }
-    .x@{i}.ico,
-    .x@{i}.button,
+    .x@{i}.@{ico},
+    .x@{i}.@{button},
     .x@{i}.pill,
-    .x@{i}.square,
-    .x@{i}.circle,
-    .x@{i}.avatar,
-    .x@{i}.radio,
-    .x@{i}.check,
-    .x@{i}.toggle {
+    .x@{i}.@{square},
+    .x@{i}.@{circle},
+    .x@{i}.@{avatar},
+    .x@{i}.@{radio},
+    .x@{i}.@{check},
+    .x@{i}.@{toggle} {
         min-height: @i*1rem;
     }
-    .x@{i}.ico,
+    .x@{i}.@{ico},
     .x@{i}.pill,
-    .x@{i}.square,
-    .x@{i}.circle,
-    .x@{i}.avatar {
+    .x@{i}.@{square},
+    .x@{i}.@{circle},
+    .x@{i}.@{avatar} {
         max-height: @i*1rem;
     }
 
     /*** Button ***/
-    .x@{i}.button {
+    .x@{i}.@{button} {
         font-size:   @i*.3rem;
         line-height: @i*.3rem;
         min-width:   @i*1.5rem;
@@ -155,13 +155,13 @@ input[type="datetime-local"] {
     }
 
     /*** Badge ***/
-    .x@{i}.badge {
+    .x@{i}.@{badge} {
         padding: 0 @i*.25rem;
     }
 
     /*** Radio, Checkbox, Toggle ***/
-    .x@{i}.radio,
-    .x@{i}.check {
+    .x@{i}.@{radio},
+    .x@{i}.@{check} {
         padding-left: @i*1rem + 1rem;
         &.@{right} {
             padding-left:  0;
@@ -178,7 +178,7 @@ input[type="datetime-local"] {
             right: @i*.2rem;
         }
     }
-    .x@{i}.toggle {
+    .x@{i}.@{toggle} {
         padding-left: @i*2rem + 1rem;
         &.@{right} {
             padding-right: @i*2rem + 1rem;
@@ -201,7 +201,7 @@ input[type="datetime-local"] {
     [type="radio"],
     [type="checkbox"] {
         &:checked {
-            + .x@{i}.toggle {
+            + .x@{i}.@{toggle} {
                 &:after {
                     left: @i*1.1rem;
                 }
@@ -214,18 +214,18 @@ input[type="datetime-local"] {
     }
 
     /*** Rounded ***/
-    .x@{i}.check:after {
+    .x@{i}.@{check}:after {
         border-radius: round(@i*.05rem, 1);
     }
-    .x@{i}.button,
-    .x@{i}.check:before {
+    .x@{i}.@{button},
+    .x@{i}.@{check}:before {
         border-radius: round(@i*.1rem, 1);
     }
-    .x@{i}.badge {
+    .x@{i}.@{badge} {
         border-radius: round(@i*.25rem, 1);
     }
     .x@{i}.pill,
-    .x@{i}.toggle:before {
+    .x@{i}.@{toggle}:before {
         border-radius: round(@i*.5rem, 1);
     }
 

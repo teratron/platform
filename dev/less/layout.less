@@ -1,21 +1,7 @@
 /******************************************************************************
   Layout
   -----------------------------------------------------------------------------
-  col row cel
-  blc tbl inl grd
-  grp
-  climb
-  bar
-  lst
-  grw  / grw_[1...8] - элемент развигает и заполняет пустое пространство
-  grws / grws_[1...8]
-  reverse
-  inverse
-  stretch / stretches
-  inr
-  head body foot
-  fix abs stc sty
-  scr
+
  ******************************************************************************/
 header > .@{inner} {
     height: @header_height;
@@ -90,7 +76,7 @@ main, header, footer,
 .@{list} > * > * {
     display: flex;
 }
-.@{inline}, .ico, .button, .badge, .label, .toggle, .check, .radio, .avatar,
+.@{inline}, .@{ico}, .@{button}, .@{badge}, .@{label}, .@{toggle}, .@{check}, .@{radio}, .@{avatar},
 .@{inline}@{child}:not(.@{col}):not(.@{table}):not([class*="@{tile}"]) > :not(.@{row}):not(.@{table}) {
     display: inline-flex;
 }
@@ -170,7 +156,7 @@ main, header, footer,
 .@{bar} > *,
 .@{col} > .@{head},
 .@{col} > .@{foot},
-.button, .badge, .label,
+.@{button}, .@{badge}, .@{label},
 button, input, output, select, option {
     align-content: center;
 }
@@ -204,7 +190,7 @@ button, input, output, select, option {
 .@{bar} > *,
 .@{col} > .@{head},
 .@{col} > .@{foot},
-.button, .badge, .label,
+.@{button}, .@{badge}, .@{label},
 button, input, output, select, option {
     align-items: center;
 }
@@ -239,7 +225,7 @@ button, input, output, select, option {
 .@{absolute}.@{left}, .@{absolute}.@{col}.@{top} {
     justify-content: flex-start;
 }
-.button, .badge,
+.@{button}, .@{badge},
 .@{col}.@{middle}@{child},
 .@{row}.@{center}@{child},
 .@{bar} > :not(.@{head}):not(.@{body}):not(.@{foot}),
@@ -406,7 +392,7 @@ button, input, output, select, option {
 /***************************************
   Position
  ***************************************/
-.@{fixed}, .drawer {
+.@{fixed}, .@{drawer} {
     position: fixed;
 }
 .@{absolute}, .@{fixed} .@{screen}, .@{climb} > * {
@@ -536,15 +522,42 @@ body.@{fixed},
     margin-left: -100% !important;
 }
 
-/******************************************************************************
+/***************************************
+  Z-index
+ ***************************************/
+.@{zindex1}, .@{drawer} {
+    z-index: 1000;
+}
+.@{zindex2}, .@{screen} {
+    z-index: 2000;
+}
+.@{zindex3}, .@{dropdown}, option, optgroup {
+    z-index: 3000;
+}
+.@{zindex4}, .@{popup} {
+    z-index: 4000;
+}
+.@{zindex5}, .@{tooltip} {
+    z-index: 5000;
+}
+.@{zindex6} {
+    z-index: 6000;
+}
+.@{zindex7},
+header.@{fixed},  footer.@{fixed},
+header.@{sticky}, footer.@{sticky} {
+    z-index: 7000;
+}
+.@{zindex8}, .@{snackbar} {
+    z-index: 8000;
+}
+.@{zindex9}, .@{modal} {
+    z-index: 9000;
+}
+
+/***************************************
   Triggers and Switches
-  -----------------------------------------------------------------------------
-  on      off
-  in      out
-  show    hide
-  fade    fadein  fadeout
-  empty
- ******************************************************************************/
+ ***************************************/
 .@{off}, [class*="@{on}_"], .@{empty}:empty {
     display: none !important;
 }
@@ -570,7 +583,7 @@ body.@{fixed},
 .@{hide}, [class*="@{show}_"],
 .@{fadein}, .@{fadeout}:hover,
 .@{fade}:hover .@{fadeout},
-.badge:empty {
+.@{badge}:empty {
     visibility: hidden !important;
     opacity:         0 !important;
 }
@@ -578,38 +591,6 @@ body.@{fixed},
     visibility: visible !important;
     opacity:          1 !important;
 }
-
-/***************************************
-  Z-index
- ***************************************/
-.@{zindex1}, .drawer {
-    z-index: 1000;
-}
-.@{zindex2}, .@{screen} {
-    z-index: 2000;
-}
-.@{zindex3}, .dropdown, option, optgroup {
-    z-index: 3000;
-}
-.@{zindex4}, .popup {
-    z-index: 4000;
-}
-.@{zindex5}, .tooltip {
-    z-index: 5000;
-}
-.@{zindex6} {
-    z-index: 6000;
-}
-.@{zindex7}, header.@{fixed}, footer.@{fixed}, header.@{sticky}, footer.@{sticky} {
-    z-index: 7000;
-}
-.@{zindex8}, .snackbar {
-    z-index: 8000;
-}
-.@{zindex9}, .modal {
-    z-index: 9000;
-}
-
 /*
   Relative lengths
   ---------------------------------------

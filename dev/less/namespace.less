@@ -4,16 +4,21 @@
 //
 //******************************************************************************
 
-@pre:                   ~"";   // Prefix (empty: ~"")
-@child:                 s;     //
-@half:                  _half; //
+@pre:                   ~"";            // Prefix (empty: ~"")
+@child:                 s;              //
+@half:                  _half;          //
 
 //Layout
-@inner:                 @{pre}inr; //
-@screen:                @{pre}scr; //
-@col:                   @{pre}col; //Column
-@row:                   @{pre}row; //Row
-@cell:                  @{pre}cel; //Cell
+@inner:                 @{pre}inr;      //
+@screen:                @{pre}scr;      //
+@inline:                @{pre}inl;
+@grid:                  @{pre}grd;
+@flex:                  @{pre}flx;
+@block:                 @{pre}blc;
+@table:                 @{pre}tbl;
+@col:                   @{pre}col;      //Column
+@row:                   @{pre}row;      //Row
+@cell:                  @{pre}cel;      //Cell
 @grow:                  @{pre}grw;
 @shrink:                @{pre}snk;
 @stretch:               @{pre}stc;
@@ -22,8 +27,17 @@
 @reverse:               @{pre}reverse;
 @inverse:               @{pre}inverse;
 @order:                 @{pre}ord;
+@list:                  @{pre}lst;
+@bar:                   @{pre}bar;
+@tile:                  @{pre}til;
+@fluid:                 @{pre}flu;
+@solid:                 @{pre}sld;      //
+@group:                 @{pre}grp;
+@climb:                 @{pre}climb;
+@clear:                 @{pre}clear;    //clearfix
+@empty:                 @{pre}empty;
 
-@item:                  @{pre}itm;  //?
+@item:                  @{pre}itm;      //?
 @head:                  @{pre}head;
 @body:                  @{pre}body;
 @foot:                  @{pre}foot;
@@ -31,21 +45,6 @@
 @gap:                   @{pre}gp;
 @gutter:                @{pre}gt;
 @groove:                @{pre}gr;
-
-@inline:                @{pre}inl;
-@grid:                  @{pre}grd;
-@flex:                  @{pre}flx;
-@block:                 @{pre}blc;
-@table:                 @{pre}tbl;
-@list:                  @{pre}lst;
-@bar:                   @{pre}bar;
-@tile:                  @{pre}til;
-@fluid:                 @{pre}flu;
-@solid:                 @{pre}sld;   //
-@group:                 @{pre}grp;
-@climb:                 @{pre}climb;
-@clear:                 @{pre}clear; //clearfix
-@empty:                 @{pre}empty;
 
 //Position
 @fixed:                 @{pre}fix;
@@ -63,6 +62,7 @@
 @evenly:                @{pre}evenly;
 @around:                @{pre}around;
 @between:               @{pre}between;
+@vertical:              @{pre}vertical;
 
 //Triggers and Switches
 @on:                    @{pre}on;
@@ -92,7 +92,31 @@
 @back:                  @{pre}bg;
 @ink:                   @{pre}ink;
 
+//Shape
+@circle:                @{pre}circle;
+@square:                @{pre}square;
+
 //Pallete
+@drawer:                @{pre}drawer;
+@dropdown:              @{pre}dropdown;
+@popup:                 @{pre}popup;
+@tooltip:               @{pre}tooltip;
+@snackbar:              @{pre}snackbar;
+@toast:                 @{pre}toast;
+@modal:                 @{pre}modal;
+
+@separator:             @{pre}separator;
+@button:                @{pre}button;
+@label:                 @{pre}label;
+@badge:                 @{pre}badge;
+
+@check:                 @{pre}check;
+@radio:                 @{pre}radio;
+@toggle:                @{pre}toggle;
+
+@pic:                   @{pre}pic;
+@ico:                   @{pre}ico;
+@avatar:                @{pre}avatar;
 
 //
 @tagless:               ~":not([hidden]):not(script):not(style)";
