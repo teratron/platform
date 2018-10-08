@@ -1,13 +1,11 @@
 /***************************************
   Transition
  ***************************************/
-[class*="show"],
-[class*="hide"],
-[class*="fade"],
-[class*="button"] {
-    -webkit-transition: all ease-out .18s;
-       -moz-transition: all ease-out .18s;
-            transition: all ease-out .18s;
+[class*="@{show}"],
+[class*="@{hide}"],
+[class*="@{fade}"],
+[class*="@{button}"] {
+    transition: all ease-out .18s;
 }
 
 /***************************************
@@ -24,7 +22,7 @@
   Button
  ***************************************/
 @p: (@btn_height - 2*@btn_border_width - @btn_font_size)/2;
-[class*="button"] {
+[class*="@{button}"] {
     font-size:   @btn_font_size;
     line-height: @btn_font_size;
     border:      @btn_border_width solid;
@@ -32,44 +30,44 @@
     text-align: center;
     overflow: hidden;
 }
-[class*="button"]:not(.@{square}):not(.@{circle}) {
+[class*="@{button}"]:not(.@{square}):not(.@{circle}) {
     min-width:  @btn_width;
     min-height: @btn_height;
 }
-[class*="button"]:not(.pill):not(.@{circle}) {
+[class*="@{button}"]:not(.@{pill}):not(.@{circle}) {
   border-radius: @btn_border_radius;
 }
-[class*="button"].@{square},
-[class*="button"].@{circle} {
+[class*="@{button}"].@{square},
+[class*="@{button}"].@{circle} {
     min-width:  @btn_height;
     max-width:  @btn_height;
     min-height: @btn_height;
     max-height: @btn_height;
 }
-a[class*="button"],
-a[class*="button"]:hover {
+a[class*="@{button}"],
+a[class*="@{button}"]:hover {
     text-decoration: none;
 }
-[class*="button"] > :only-child {
+[class*="@{button}"] > :only-child {
     margin-left:  auto;
     margin-right: auto;
 }
 
 /*** Flat ***/
-[class*="button"].flat,
-[class*="button"].border {
+[class*="@{button}"].flat,
+[class*="@{button}"].border {
     background-color: transparent;
 }
 
 /*** Bordered ***/
 
 /*** Pill ***/
-[class*="button"].pill {
+[class*="@{button}"].@{pill} {
     border-radius: @btn_height/2;
 }
 
 /*** Square ***/
-[class*="button"].@{square} {
+[class*="@{button}"].@{square} {
     padding-left:  0;
     padding-right: 0;
 }
