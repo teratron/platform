@@ -8,7 +8,7 @@
 (function (factory) {
 	if (typeof define === 'function' && define.amd) {
 		// AMD (Register as an anonymous module)
-		define(['jquery'], factory);
+		define(['jquery.cookie'], factory);
 	} else if (typeof exports === 'object') {
 		// Node/CommonJS
 		module.exports = factory(require('jquery'));
