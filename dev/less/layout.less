@@ -284,12 +284,12 @@ button, input, output, select, option {
 
 /*** Order ***/
 .@{order},
-.@{order}1 {
+.@{order}_1 {
     order: 1;
 }
 .generate-order(8);
 .generate-order(@n, @i: 2) when (@i =< @n) {
-    .@{order}@{i} {
+    .@{order}_@{i} {
         order: @i;
     }
     .generate-order(@n, (@i + 1));

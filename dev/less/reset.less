@@ -53,7 +53,6 @@ ul, ol {
 /*** Cursor ***/
 a, button, select,
 label[for],
-[onclick],
 [type="file"],
 [type="radio"],
 [type="reset"],
@@ -96,7 +95,7 @@ body:not(.@{fixed}), .scroll {
     overflow-x:  hidden;
     overflow-y:  auto;
 }
-.scroll.horizontal {
+.scroll.@{horizontal} {
     overflow-x: auto;
     overflow-y: hidden;
 }
