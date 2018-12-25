@@ -18,7 +18,7 @@ gulp.task('less', function() {
     //return gulp.src('source-files')
         .pipe(less()) // Using gulp-less
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // Создаем префиксы
-        .pipe(gulp.dest('dev/css'))
+        .pipe(gulp.dest('dev/css')); // Выгружаем результата в папку dev/css
 });
 
 gulp.task('sass', function(){ // Создаем таск Sass
@@ -26,7 +26,7 @@ gulp.task('sass', function(){ // Создаем таск Sass
         .pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // Создаем префиксы
         .pipe(gulp.dest('dev/css')) // Выгружаем результата в папку dev/css
-        .pipe(browsersync.reload({stream: true})) // Обновляем CSS на странице при изменении
+        .pipe(browsersync.reload({stream: true})); // Обновляем CSS на странице при изменении
 });
 
 gulp.task('browser-sync', function() { // Создаем таск browser-sync
