@@ -32,7 +32,7 @@ gulp.task('sass', function(){ // Создаем таск Sass
 gulp.task('browser-sync', function() { // Создаем таск browser-sync
     browsersync({ // Выполняем browsersync
         server: { // Определяем параметры сервера
-            baseDir: 'app' // Директория для сервера - dev
+            baseDir: 'build' // Директория для сервера - dev
         },
         notify: false // Отключаем уведомления
     });
@@ -95,9 +95,11 @@ gulp.task('build', ['clean', 'img', 'less', 'sass', 'scripts'], function() {
     var buildJs = gulp.src('dev/js/**/*') // Переносим скрипты в продакшен
         .pipe(gulp.dest('build/js'));
 
-    var buildHtml = gulp.src('dev/*.html') // Переносим HTML в продакшен
+    var buildHtml = gulp.src('dev/**/*.html') // Переносим HTML в продакшен
         .pipe(gulp.dest('build'));
 
+    var buildPhp = gulp.src('dev/**/*.php') // Переносим PHP в продакшен
+        .pipe(gulp.dest('build'));
 });
 
 gulp.task('clear', function (callback) {
