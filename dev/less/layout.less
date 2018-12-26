@@ -31,13 +31,14 @@ header.@{fixed} + :not(footer) {
   --------------------------------------
     display: grid / inline-grid / subgrid
 
-    grid-area
-        grid-column
-            grid-column-start
-            rid-column-end
-        grid-row
-            grid-row-start
-            grid-row-end
+    grid
+        grid-area
+            grid-column
+                grid-column-start
+                rid-column-end
+            grid-row
+                grid-row-start
+                grid-row-end
 
  ***************************************/
 .@{grid} {
@@ -47,7 +48,6 @@ header.@{fixed} + :not(footer) {
     grid-row-gap: @layout_gap;
     grid-column-gap: @layout_gap;
 
-    grid-area: header;
     grid-template-areas:
             'header header header header header header'
             'menu main main main right right'
