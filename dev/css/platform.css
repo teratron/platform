@@ -1,34 +1,3 @@
-/******************************************************************************
-  Manual
-  -----------------------------------------------------------------------------
-  col row cel
-  blc tbl grd inl
-  til / til_[1...8]
-  flus - элементы в данном контейнере имеют одну и туже ширину (до 100)
-  flu = flu_1 / flu_[1...100] - ширина в %, номер означает сколько элементов поместиться в родительсом контейнере
-  gr (.5rem)
-  gr_[1...20] (0.1rem - 2rem)
-  grp - группирует элементы (зависит от col и row)
-  climb - налезает на предыдущий элемент (налезает справа на лево)
-  bar
-  lst
-  grw  / grw_[1...8]
-  grws / grws_[1...8]
-  inr
-  scr
-  head hd
-  body bd
-  foot ft
-  fix
-  abs
-  stc
-  sty
-  clear
-  title
-  caption
-  bg - фон, элемент структуры на который возможно воздействие модификаторов, например: gp, gt и т.д.
-  divider
- ******************************************************************************/
 /***************************************
   Root
  ***************************************/
@@ -97,7 +66,6 @@ a,
 button,
 select,
 label[for],
-[onclick],
 [type="file"],
 [type="radio"],
 [type="reset"],
@@ -273,21 +241,7 @@ time {
 /******************************************************************************
   Layout
   -----------------------------------------------------------------------------
-  col row cel
-  blc tbl inl grd
-  grp
-  climb
-  bar
-  lst
-  grw  / grw_[1...8] - элемент развигает и заполняет пустое пространство
-  grws / grws_[1...8]
-  reverse
-  inverse
-  stretch / stretches
-  inr
-  head body foot
-  fix abs stc sty
-  scr
+
  ******************************************************************************/
 header > .inr {
   height: 60px;
@@ -316,13 +270,26 @@ header.fix + :not(footer) {
             justify-content: flex-start;
   }
 }
-/*** Grid Layout ***/
+/***************************************
+  Grid Layout
+  --------------------------------------
+    display: grid / inline-grid / subgrid
+
+    grid
+        grid-area
+            grid-column
+                grid-column-start
+                rid-column-end
+            grid-row
+                grid-row-start
+                grid-row-end
+
+ ***************************************/
 .grd {
   display: grid;
   grid-gap: 20px;
   grid-row-gap: 20px;
   grid-column-gap: 20px;
-  grid-area: header;
   grid-template-areas: 'header header header header header header' 'menu main main main right right' 'menu footer footer footer footer footer';
   /*
         grid: ;
@@ -343,6 +310,28 @@ header.fix + :not(footer) {
         grid-template-rows: ;
         grid-template-columns: ;
         grid-template-areas: ;*/
+}
+header {
+  grid-area: header;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+}
+.sidebar {
+  grid-area: left;
+}
+.item4 {
+  grid-area: right;
+}
+.grid-container {
+  display: grid;
+  grid-template-areas: 'header header header header header header' 'menu main main main right right' 'menu footer footer footer footer footer';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
 }
 .grd.inl {
   display: inline-grid;
@@ -502,7 +491,7 @@ p {
       -ms-flex-positive: 8;
           flex-grow: 8;
 }
-.snk {
+.shk {
   -webkit-flex-shrink: 1;
       -ms-flex-negative: 1;
           flex-shrink: 1;
@@ -709,49 +698,49 @@ option {
 }
 /*** Order ***/
 .ord,
-.ord1 {
+.ord_1 {
   -webkit-box-ordinal-group: 2;
   -webkit-order: 1;
       -ms-flex-order: 1;
           order: 1;
 }
-.ord2 {
+.ord_2 {
   -webkit-box-ordinal-group: 3;
   -webkit-order: 2;
       -ms-flex-order: 2;
           order: 2;
 }
-.ord3 {
+.ord_3 {
   -webkit-box-ordinal-group: 4;
   -webkit-order: 3;
       -ms-flex-order: 3;
           order: 3;
 }
-.ord4 {
+.ord_4 {
   -webkit-box-ordinal-group: 5;
   -webkit-order: 4;
       -ms-flex-order: 4;
           order: 4;
 }
-.ord5 {
+.ord_5 {
   -webkit-box-ordinal-group: 6;
   -webkit-order: 5;
       -ms-flex-order: 5;
           order: 5;
 }
-.ord6 {
+.ord_6 {
   -webkit-box-ordinal-group: 7;
   -webkit-order: 6;
       -ms-flex-order: 6;
           order: 6;
 }
-.ord7 {
+.ord_7 {
   -webkit-box-ordinal-group: 8;
   -webkit-order: 7;
       -ms-flex-order: 7;
           order: 7;
 }
-.ord8 {
+.ord_8 {
   -webkit-box-ordinal-group: 9;
   -webkit-order: 8;
       -ms-flex-order: 8;
@@ -1042,58 +1031,6 @@ body.fix,
 .climb:not(:empty) > * {
   margin-left: -100% !important;
 }
-/******************************************************************************
-  Triggers and Switches
-  -----------------------------------------------------------------------------
-  on      off
-  in      out
-  show    hide
-  fade    fadein  fadeout
-  empty
- ******************************************************************************/
-.off,
-[class*="on_"],
-.empty:empty {
-  display: none !important;
-}
-.out,
-[class*="in_"] {
-  top: -100% !important;
-  left: -100% !important;
-  z-index: -1 !important;
-}
-.out,
-[class*="in_"],
-.in.fix {
-  position: fixed !important;
-}
-.in.abs {
-  position: absolute !important;
-}
-.in:not(.fix):not(.abs):not(.sty) {
-  position: relative !important;
-}
-.in {
-  top: inherit !important;
-  left: inherit !important;
-  z-index: inherit !important;
-}
-.hide,
-[class*="show_"],
-.fadein,
-.fadeout:hover,
-.fade:hover .fadeout,
-.badge:empty {
-  visibility: hidden !important;
-  opacity: 0 !important;
-}
-.show,
-.fadeout,
-.fadein:hover,
-.fade:hover .fadein {
-  visibility: visible !important;
-  opacity: 1 !important;
-}
 /***************************************
   Z-index
  ***************************************/
@@ -1136,6 +1073,52 @@ footer.sty {
 .z9,
 .modal {
   z-index: 9000;
+}
+/***************************************
+  Triggers and Switches
+ ***************************************/
+.off,
+[class*="on_"],
+.empty:empty {
+  display: none !important;
+}
+.out,
+[class*="in_"] {
+  top: -100% !important;
+  left: -100% !important;
+  z-index: -1 !important;
+}
+.out,
+[class*="in_"],
+.in.fix {
+  position: fixed !important;
+}
+.in.abs {
+  position: absolute !important;
+}
+.in:not(.fix):not(.abs):not(.sty) {
+  position: relative !important;
+}
+.in {
+  top: inherit !important;
+  left: inherit !important;
+  z-index: inherit !important;
+}
+.hide,
+[class*="show_"],
+.fadein,
+.fadeout:hover,
+.fade:hover .fadeout,
+.badge:empty {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+.show,
+.fadeout,
+.fadein:hover,
+.fade:hover .fadein {
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 /*
   Relative lengths
@@ -1190,19 +1173,17 @@ footer,
 .flus > :first-child:nth-last-child(1) {
   width: 100%;
 }
-[class*="til"],
-.flu,
-.flu_1,
-.flus > :only-child,
-.flus > :first-child:nth-last-child(1) {
-  min-width: 100%;
+/*[class*="@{tile}"],
+.@{fluid}, .@{fluid}_1,
+.@{fluid}@{child} > :only-child,
+.@{fluid}@{child} > :first-child:nth-last-child(1) {
+    min-width: 100%;
 }
-.flu,
-.flu_1,
-.flus > :only-child,
-.flus > :first-child:nth-last-child(1) {
-  max-width: 100%;
-}
+.@{fluid}, .@{fluid}_1,
+.@{fluid}@{child} > :only-child,
+.@{fluid}@{child} > :first-child:nth-last-child(1) {
+    max-width: 100%;
+}*/
 @media only screen and (min-width: 0) {
   .til > * {
     width: 100%;
@@ -1214,7 +1195,7 @@ footer,
     width: 50%;
   }
   .til_3 > * {
-    width: 33.333%;
+    width: 33.3333%;
   }
   .til_4 > * {
     width: 25%;
@@ -1223,10 +1204,10 @@ footer,
     width: 20%;
   }
   .til_6 > * {
-    width: 16.667%;
+    width: 16.6667%;
   }
   .til_7 > * {
-    width: 14.286%;
+    width: 14.2857%;
   }
   .til_8 > * {
     width: 12.5%;
@@ -1239,7 +1220,7 @@ footer,
 }
 @media only screen and (min-width: 360px) {
   .til > * {
-    width: 33.333%;
+    width: 33.3333%;
   }
 }
 @media only screen and (min-width: 480px) {
@@ -1254,12 +1235,12 @@ footer,
 }
 @media only screen and (min-width: 720px) {
   .til > * {
-    width: 16.667%;
+    width: 16.6667%;
   }
 }
 @media only screen and (min-width: 840px) {
   .til > * {
-    width: 14.286%;
+    width: 14.2857%;
   }
 }
 @media only screen and (min-width: 960px) {
@@ -1269,7 +1250,7 @@ footer,
 }
 @media only screen and (min-width: 1080px) {
   .til > * {
-    width: 11.111%;
+    width: 11.1111%;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -1279,17 +1260,17 @@ footer,
 }
 @media only screen and (min-width: 1320px) {
   .til > * {
-    width: 9.091%;
+    width: 9.0909%;
   }
 }
 @media only screen and (min-width: 1440px) {
   .til > * {
-    width: 8.333%;
+    width: 8.3333%;
   }
 }
 @media only screen and (min-width: 1560px) {
   .til > * {
-    width: 7.692%;
+    width: 7.6923%;
   }
 }
 @media only screen and (min-width: 640px) {
@@ -1299,7 +1280,7 @@ footer,
 }
 @media only screen and (min-width: 960px) {
   .til_1 > * {
-    width: 33.333%;
+    width: 33.3333%;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -1314,17 +1295,17 @@ footer,
 }
 @media only screen and (min-width: 1920px) {
   .til_1 > * {
-    width: 16.667%;
+    width: 16.6667%;
   }
 }
 @media only screen and (min-width: 2240px) {
   .til_1 > * {
-    width: 14.286%;
+    width: 14.2857%;
   }
 }
 @media only screen and (min-width: 480px) {
   .til_2 > * {
-    width: 33.333%;
+    width: 33.3333%;
   }
 }
 @media only screen and (min-width: 640px) {
@@ -1339,12 +1320,12 @@ footer,
 }
 @media only screen and (min-width: 960px) {
   .til_2 > * {
-    width: 16.667%;
+    width: 16.6667%;
   }
 }
 @media only screen and (min-width: 1120px) {
   .til_2 > * {
-    width: 14.286%;
+    width: 14.2857%;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -1354,7 +1335,7 @@ footer,
 }
 @media only screen and (min-width: 1440px) {
   .til_2 > * {
-    width: 11.111%;
+    width: 11.1111%;
   }
 }
 @media only screen and (min-width: 1600px) {
@@ -1364,22 +1345,22 @@ footer,
 }
 @media only screen and (min-width: 1760px) {
   .til_2 > * {
-    width: 9.091%;
+    width: 9.0909%;
   }
 }
 @media only screen and (min-width: 1920px) {
   .til_2 > * {
-    width: 8.333%;
+    width: 8.3333%;
   }
 }
 @media only screen and (min-width: 2080px) {
   .til_2 > * {
-    width: 7.692%;
+    width: 7.6923%;
   }
 }
 @media only screen and (min-width: 2240px) {
   .til_2 > * {
-    width: 7.143%;
+    width: 7.1429%;
   }
 }
 @media only screen and (min-width: 427px) {
@@ -1394,12 +1375,12 @@ footer,
 }
 @media only screen and (min-width: 640px) {
   .til_3 > * {
-    width: 16.667%;
+    width: 16.6667%;
   }
 }
 @media only screen and (min-width: 747px) {
   .til_3 > * {
-    width: 14.286%;
+    width: 14.2857%;
   }
 }
 @media only screen and (min-width: 853px) {
@@ -1409,7 +1390,7 @@ footer,
 }
 @media only screen and (min-width: 960px) {
   .til_3 > * {
-    width: 11.111%;
+    width: 11.1111%;
   }
 }
 @media only screen and (min-width: 1067px) {
@@ -1419,27 +1400,27 @@ footer,
 }
 @media only screen and (min-width: 1173px) {
   .til_3 > * {
-    width: 9.091%;
+    width: 9.0909%;
   }
 }
 @media only screen and (min-width: 1280px) {
   .til_3 > * {
-    width: 8.333%;
+    width: 8.3333%;
   }
 }
 @media only screen and (min-width: 1387px) {
   .til_3 > * {
-    width: 7.692%;
+    width: 7.6923%;
   }
 }
 @media only screen and (min-width: 1493px) {
   .til_3 > * {
-    width: 7.143%;
+    width: 7.1429%;
   }
 }
 @media only screen and (min-width: 1600px) {
   .til_3 > * {
-    width: 6.667%;
+    width: 6.6667%;
   }
 }
 @media only screen and (min-width: 1707px) {
@@ -1449,17 +1430,17 @@ footer,
 }
 @media only screen and (min-width: 1813px) {
   .til_3 > * {
-    width: 5.882%;
+    width: 5.8824%;
   }
 }
 @media only screen and (min-width: 1920px) {
   .til_3 > * {
-    width: 5.556%;
+    width: 5.5556%;
   }
 }
 @media only screen and (min-width: 2027px) {
   .til_3 > * {
-    width: 5.263%;
+    width: 5.2632%;
   }
 }
 @media only screen and (min-width: 2133px) {
@@ -1469,7 +1450,7 @@ footer,
 }
 @media only screen and (min-width: 2240px) {
   .til_3 > * {
-    width: 4.762%;
+    width: 4.7619%;
   }
 }
 @media only screen and (min-width: 400px) {
@@ -1479,12 +1460,12 @@ footer,
 }
 @media only screen and (min-width: 480px) {
   .til_4 > * {
-    width: 16.667%;
+    width: 16.6667%;
   }
 }
 @media only screen and (min-width: 560px) {
   .til_4 > * {
-    width: 14.286%;
+    width: 14.2857%;
   }
 }
 @media only screen and (min-width: 640px) {
@@ -1494,7 +1475,7 @@ footer,
 }
 @media only screen and (min-width: 720px) {
   .til_4 > * {
-    width: 11.111%;
+    width: 11.1111%;
   }
 }
 @media only screen and (min-width: 800px) {
@@ -1504,27 +1485,27 @@ footer,
 }
 @media only screen and (min-width: 880px) {
   .til_4 > * {
-    width: 9.091%;
+    width: 9.0909%;
   }
 }
 @media only screen and (min-width: 960px) {
   .til_4 > * {
-    width: 8.333%;
+    width: 8.3333%;
   }
 }
 @media only screen and (min-width: 1040px) {
   .til_4 > * {
-    width: 7.692%;
+    width: 7.6923%;
   }
 }
 @media only screen and (min-width: 1120px) {
   .til_4 > * {
-    width: 7.143%;
+    width: 7.1429%;
   }
 }
 @media only screen and (min-width: 1200px) {
   .til_4 > * {
-    width: 6.667%;
+    width: 6.6667%;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -1534,17 +1515,17 @@ footer,
 }
 @media only screen and (min-width: 1360px) {
   .til_4 > * {
-    width: 5.882%;
+    width: 5.8824%;
   }
 }
 @media only screen and (min-width: 1440px) {
   .til_4 > * {
-    width: 5.556%;
+    width: 5.5556%;
   }
 }
 @media only screen and (min-width: 1520px) {
   .til_4 > * {
-    width: 5.263%;
+    width: 5.2632%;
   }
 }
 @media only screen and (min-width: 1600px) {
@@ -1554,22 +1535,22 @@ footer,
 }
 @media only screen and (min-width: 1680px) {
   .til_4 > * {
-    width: 4.762%;
+    width: 4.7619%;
   }
 }
 @media only screen and (min-width: 1760px) {
   .til_4 > * {
-    width: 4.545%;
+    width: 4.5455%;
   }
 }
 @media only screen and (min-width: 1840px) {
   .til_4 > * {
-    width: 4.348%;
+    width: 4.3478%;
   }
 }
 @media only screen and (min-width: 1920px) {
   .til_4 > * {
-    width: 4.167%;
+    width: 4.1667%;
   }
 }
 @media only screen and (min-width: 2000px) {
@@ -1579,27 +1560,27 @@ footer,
 }
 @media only screen and (min-width: 2080px) {
   .til_4 > * {
-    width: 3.846%;
+    width: 3.8462%;
   }
 }
 @media only screen and (min-width: 2160px) {
   .til_4 > * {
-    width: 3.704%;
+    width: 3.7037%;
   }
 }
 @media only screen and (min-width: 2240px) {
   .til_4 > * {
-    width: 3.571%;
+    width: 3.5714%;
   }
 }
 @media only screen and (min-width: 384px) {
   .til_5 > * {
-    width: 16.667%;
+    width: 16.6667%;
   }
 }
 @media only screen and (min-width: 448px) {
   .til_5 > * {
-    width: 14.286%;
+    width: 14.2857%;
   }
 }
 @media only screen and (min-width: 512px) {
@@ -1609,7 +1590,7 @@ footer,
 }
 @media only screen and (min-width: 576px) {
   .til_5 > * {
-    width: 11.111%;
+    width: 11.1111%;
   }
 }
 @media only screen and (min-width: 640px) {
@@ -1619,27 +1600,27 @@ footer,
 }
 @media only screen and (min-width: 704px) {
   .til_5 > * {
-    width: 9.091%;
+    width: 9.0909%;
   }
 }
 @media only screen and (min-width: 768px) {
   .til_5 > * {
-    width: 8.333%;
+    width: 8.3333%;
   }
 }
 @media only screen and (min-width: 832px) {
   .til_5 > * {
-    width: 7.692%;
+    width: 7.6923%;
   }
 }
 @media only screen and (min-width: 896px) {
   .til_5 > * {
-    width: 7.143%;
+    width: 7.1429%;
   }
 }
 @media only screen and (min-width: 960px) {
   .til_5 > * {
-    width: 6.667%;
+    width: 6.6667%;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -1649,17 +1630,17 @@ footer,
 }
 @media only screen and (min-width: 1088px) {
   .til_5 > * {
-    width: 5.882%;
+    width: 5.8824%;
   }
 }
 @media only screen and (min-width: 1152px) {
   .til_5 > * {
-    width: 5.556%;
+    width: 5.5556%;
   }
 }
 @media only screen and (min-width: 1216px) {
   .til_5 > * {
-    width: 5.263%;
+    width: 5.2632%;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -1669,22 +1650,22 @@ footer,
 }
 @media only screen and (min-width: 1344px) {
   .til_5 > * {
-    width: 4.762%;
+    width: 4.7619%;
   }
 }
 @media only screen and (min-width: 1408px) {
   .til_5 > * {
-    width: 4.545%;
+    width: 4.5455%;
   }
 }
 @media only screen and (min-width: 1472px) {
   .til_5 > * {
-    width: 4.348%;
+    width: 4.3478%;
   }
 }
 @media only screen and (min-width: 1536px) {
   .til_5 > * {
-    width: 4.167%;
+    width: 4.1667%;
   }
 }
 @media only screen and (min-width: 1600px) {
@@ -1694,32 +1675,32 @@ footer,
 }
 @media only screen and (min-width: 1664px) {
   .til_5 > * {
-    width: 3.846%;
+    width: 3.8462%;
   }
 }
 @media only screen and (min-width: 1728px) {
   .til_5 > * {
-    width: 3.704%;
+    width: 3.7037%;
   }
 }
 @media only screen and (min-width: 1792px) {
   .til_5 > * {
-    width: 3.571%;
+    width: 3.5714%;
   }
 }
 @media only screen and (min-width: 1856px) {
   .til_5 > * {
-    width: 3.448%;
+    width: 3.4483%;
   }
 }
 @media only screen and (min-width: 1920px) {
   .til_5 > * {
-    width: 3.333%;
+    width: 3.3333%;
   }
 }
 @media only screen and (min-width: 1984px) {
   .til_5 > * {
-    width: 3.226%;
+    width: 3.2258%;
   }
 }
 @media only screen and (min-width: 2048px) {
@@ -1729,22 +1710,22 @@ footer,
 }
 @media only screen and (min-width: 2112px) {
   .til_5 > * {
-    width: 3.03%;
+    width: 3.0303%;
   }
 }
 @media only screen and (min-width: 2176px) {
   .til_5 > * {
-    width: 2.941%;
+    width: 2.9412%;
   }
 }
 @media only screen and (min-width: 2240px) {
   .til_5 > * {
-    width: 2.857%;
+    width: 2.8571%;
   }
 }
 @media only screen and (min-width: 373px) {
   .til_6 > * {
-    width: 14.286%;
+    width: 14.2857%;
   }
 }
 @media only screen and (min-width: 427px) {
@@ -1754,7 +1735,7 @@ footer,
 }
 @media only screen and (min-width: 480px) {
   .til_6 > * {
-    width: 11.111%;
+    width: 11.1111%;
   }
 }
 @media only screen and (min-width: 533px) {
@@ -1764,27 +1745,27 @@ footer,
 }
 @media only screen and (min-width: 587px) {
   .til_6 > * {
-    width: 9.091%;
+    width: 9.0909%;
   }
 }
 @media only screen and (min-width: 640px) {
   .til_6 > * {
-    width: 8.333%;
+    width: 8.3333%;
   }
 }
 @media only screen and (min-width: 693px) {
   .til_6 > * {
-    width: 7.692%;
+    width: 7.6923%;
   }
 }
 @media only screen and (min-width: 747px) {
   .til_6 > * {
-    width: 7.143%;
+    width: 7.1429%;
   }
 }
 @media only screen and (min-width: 800px) {
   .til_6 > * {
-    width: 6.667%;
+    width: 6.6667%;
   }
 }
 @media only screen and (min-width: 853px) {
@@ -1794,17 +1775,17 @@ footer,
 }
 @media only screen and (min-width: 907px) {
   .til_6 > * {
-    width: 5.882%;
+    width: 5.8824%;
   }
 }
 @media only screen and (min-width: 960px) {
   .til_6 > * {
-    width: 5.556%;
+    width: 5.5556%;
   }
 }
 @media only screen and (min-width: 1013px) {
   .til_6 > * {
-    width: 5.263%;
+    width: 5.2632%;
   }
 }
 @media only screen and (min-width: 1067px) {
@@ -1814,22 +1795,22 @@ footer,
 }
 @media only screen and (min-width: 1120px) {
   .til_6 > * {
-    width: 4.762%;
+    width: 4.7619%;
   }
 }
 @media only screen and (min-width: 1173px) {
   .til_6 > * {
-    width: 4.545%;
+    width: 4.5455%;
   }
 }
 @media only screen and (min-width: 1227px) {
   .til_6 > * {
-    width: 4.348%;
+    width: 4.3478%;
   }
 }
 @media only screen and (min-width: 1280px) {
   .til_6 > * {
-    width: 4.167%;
+    width: 4.1667%;
   }
 }
 @media only screen and (min-width: 1333px) {
@@ -1839,32 +1820,32 @@ footer,
 }
 @media only screen and (min-width: 1387px) {
   .til_6 > * {
-    width: 3.846%;
+    width: 3.8462%;
   }
 }
 @media only screen and (min-width: 1440px) {
   .til_6 > * {
-    width: 3.704%;
+    width: 3.7037%;
   }
 }
 @media only screen and (min-width: 1493px) {
   .til_6 > * {
-    width: 3.571%;
+    width: 3.5714%;
   }
 }
 @media only screen and (min-width: 1547px) {
   .til_6 > * {
-    width: 3.448%;
+    width: 3.4483%;
   }
 }
 @media only screen and (min-width: 1600px) {
   .til_6 > * {
-    width: 3.333%;
+    width: 3.3333%;
   }
 }
 @media only screen and (min-width: 1653px) {
   .til_6 > * {
-    width: 3.226%;
+    width: 3.2258%;
   }
 }
 @media only screen and (min-width: 1707px) {
@@ -1874,37 +1855,37 @@ footer,
 }
 @media only screen and (min-width: 1760px) {
   .til_6 > * {
-    width: 3.03%;
+    width: 3.0303%;
   }
 }
 @media only screen and (min-width: 1813px) {
   .til_6 > * {
-    width: 2.941%;
+    width: 2.9412%;
   }
 }
 @media only screen and (min-width: 1867px) {
   .til_6 > * {
-    width: 2.857%;
+    width: 2.8571%;
   }
 }
 @media only screen and (min-width: 1920px) {
   .til_6 > * {
-    width: 2.778%;
+    width: 2.7778%;
   }
 }
 @media only screen and (min-width: 1973px) {
   .til_6 > * {
-    width: 2.703%;
+    width: 2.7027%;
   }
 }
 @media only screen and (min-width: 2027px) {
   .til_6 > * {
-    width: 2.632%;
+    width: 2.6316%;
   }
 }
 @media only screen and (min-width: 2080px) {
   .til_6 > * {
-    width: 2.564%;
+    width: 2.5641%;
   }
 }
 @media only screen and (min-width: 2133px) {
@@ -1929,7 +1910,7 @@ footer,
 }
 @media only screen and (min-width: 411px) {
   .til_7 > * {
-    width: 11.111%;
+    width: 11.1111%;
   }
 }
 @media only screen and (min-width: 457px) {
@@ -1939,27 +1920,27 @@ footer,
 }
 @media only screen and (min-width: 503px) {
   .til_7 > * {
-    width: 9.091%;
+    width: 9.0909%;
   }
 }
 @media only screen and (min-width: 549px) {
   .til_7 > * {
-    width: 8.333%;
+    width: 8.3333%;
   }
 }
 @media only screen and (min-width: 594px) {
   .til_7 > * {
-    width: 7.692%;
+    width: 7.6923%;
   }
 }
 @media only screen and (min-width: 640px) {
   .til_7 > * {
-    width: 7.143%;
+    width: 7.1429%;
   }
 }
 @media only screen and (min-width: 686px) {
   .til_7 > * {
-    width: 6.667%;
+    width: 6.6667%;
   }
 }
 @media only screen and (min-width: 731px) {
@@ -1969,17 +1950,17 @@ footer,
 }
 @media only screen and (min-width: 777px) {
   .til_7 > * {
-    width: 5.882%;
+    width: 5.8824%;
   }
 }
 @media only screen and (min-width: 823px) {
   .til_7 > * {
-    width: 5.556%;
+    width: 5.5556%;
   }
 }
 @media only screen and (min-width: 869px) {
   .til_7 > * {
-    width: 5.263%;
+    width: 5.2632%;
   }
 }
 @media only screen and (min-width: 914px) {
@@ -1989,22 +1970,22 @@ footer,
 }
 @media only screen and (min-width: 960px) {
   .til_7 > * {
-    width: 4.762%;
+    width: 4.7619%;
   }
 }
 @media only screen and (min-width: 1006px) {
   .til_7 > * {
-    width: 4.545%;
+    width: 4.5455%;
   }
 }
 @media only screen and (min-width: 1051px) {
   .til_7 > * {
-    width: 4.348%;
+    width: 4.3478%;
   }
 }
 @media only screen and (min-width: 1097px) {
   .til_7 > * {
-    width: 4.167%;
+    width: 4.1667%;
   }
 }
 @media only screen and (min-width: 1143px) {
@@ -2014,32 +1995,32 @@ footer,
 }
 @media only screen and (min-width: 1189px) {
   .til_7 > * {
-    width: 3.846%;
+    width: 3.8462%;
   }
 }
 @media only screen and (min-width: 1234px) {
   .til_7 > * {
-    width: 3.704%;
+    width: 3.7037%;
   }
 }
 @media only screen and (min-width: 1280px) {
   .til_7 > * {
-    width: 3.571%;
+    width: 3.5714%;
   }
 }
 @media only screen and (min-width: 1326px) {
   .til_7 > * {
-    width: 3.448%;
+    width: 3.4483%;
   }
 }
 @media only screen and (min-width: 1371px) {
   .til_7 > * {
-    width: 3.333%;
+    width: 3.3333%;
   }
 }
 @media only screen and (min-width: 1417px) {
   .til_7 > * {
-    width: 3.226%;
+    width: 3.2258%;
   }
 }
 @media only screen and (min-width: 1463px) {
@@ -2049,37 +2030,37 @@ footer,
 }
 @media only screen and (min-width: 1509px) {
   .til_7 > * {
-    width: 3.03%;
+    width: 3.0303%;
   }
 }
 @media only screen and (min-width: 1554px) {
   .til_7 > * {
-    width: 2.941%;
+    width: 2.9412%;
   }
 }
 @media only screen and (min-width: 1600px) {
   .til_7 > * {
-    width: 2.857%;
+    width: 2.8571%;
   }
 }
 @media only screen and (min-width: 1646px) {
   .til_7 > * {
-    width: 2.778%;
+    width: 2.7778%;
   }
 }
 @media only screen and (min-width: 1691px) {
   .til_7 > * {
-    width: 2.703%;
+    width: 2.7027%;
   }
 }
 @media only screen and (min-width: 1737px) {
   .til_7 > * {
-    width: 2.632%;
+    width: 2.6316%;
   }
 }
 @media only screen and (min-width: 1783px) {
   .til_7 > * {
-    width: 2.564%;
+    width: 2.5641%;
   }
 }
 @media only screen and (min-width: 1829px) {
@@ -2099,42 +2080,42 @@ footer,
 }
 @media only screen and (min-width: 1966px) {
   .til_7 > * {
-    width: 2.326%;
+    width: 2.3256%;
   }
 }
 @media only screen and (min-width: 2011px) {
   .til_7 > * {
-    width: 2.273%;
+    width: 2.2727%;
   }
 }
 @media only screen and (min-width: 2057px) {
   .til_7 > * {
-    width: 2.222%;
+    width: 2.2222%;
   }
 }
 @media only screen and (min-width: 2103px) {
   .til_7 > * {
-    width: 2.174%;
+    width: 2.1739%;
   }
 }
 @media only screen and (min-width: 2149px) {
   .til_7 > * {
-    width: 2.128%;
+    width: 2.1277%;
   }
 }
 @media only screen and (min-width: 2194px) {
   .til_7 > * {
-    width: 2.083%;
+    width: 2.0833%;
   }
 }
 @media only screen and (min-width: 2240px) {
   .til_7 > * {
-    width: 2.041%;
+    width: 2.0408%;
   }
 }
 @media only screen and (min-width: 360px) {
   .til_8 > * {
-    width: 11.111%;
+    width: 11.1111%;
   }
 }
 @media only screen and (min-width: 400px) {
@@ -2144,27 +2125,27 @@ footer,
 }
 @media only screen and (min-width: 440px) {
   .til_8 > * {
-    width: 9.091%;
+    width: 9.0909%;
   }
 }
 @media only screen and (min-width: 480px) {
   .til_8 > * {
-    width: 8.333%;
+    width: 8.3333%;
   }
 }
 @media only screen and (min-width: 520px) {
   .til_8 > * {
-    width: 7.692%;
+    width: 7.6923%;
   }
 }
 @media only screen and (min-width: 560px) {
   .til_8 > * {
-    width: 7.143%;
+    width: 7.1429%;
   }
 }
 @media only screen and (min-width: 600px) {
   .til_8 > * {
-    width: 6.667%;
+    width: 6.6667%;
   }
 }
 @media only screen and (min-width: 640px) {
@@ -2174,17 +2155,17 @@ footer,
 }
 @media only screen and (min-width: 680px) {
   .til_8 > * {
-    width: 5.882%;
+    width: 5.8824%;
   }
 }
 @media only screen and (min-width: 720px) {
   .til_8 > * {
-    width: 5.556%;
+    width: 5.5556%;
   }
 }
 @media only screen and (min-width: 760px) {
   .til_8 > * {
-    width: 5.263%;
+    width: 5.2632%;
   }
 }
 @media only screen and (min-width: 800px) {
@@ -2194,22 +2175,22 @@ footer,
 }
 @media only screen and (min-width: 840px) {
   .til_8 > * {
-    width: 4.762%;
+    width: 4.7619%;
   }
 }
 @media only screen and (min-width: 880px) {
   .til_8 > * {
-    width: 4.545%;
+    width: 4.5455%;
   }
 }
 @media only screen and (min-width: 920px) {
   .til_8 > * {
-    width: 4.348%;
+    width: 4.3478%;
   }
 }
 @media only screen and (min-width: 960px) {
   .til_8 > * {
-    width: 4.167%;
+    width: 4.1667%;
   }
 }
 @media only screen and (min-width: 1000px) {
@@ -2219,32 +2200,32 @@ footer,
 }
 @media only screen and (min-width: 1040px) {
   .til_8 > * {
-    width: 3.846%;
+    width: 3.8462%;
   }
 }
 @media only screen and (min-width: 1080px) {
   .til_8 > * {
-    width: 3.704%;
+    width: 3.7037%;
   }
 }
 @media only screen and (min-width: 1120px) {
   .til_8 > * {
-    width: 3.571%;
+    width: 3.5714%;
   }
 }
 @media only screen and (min-width: 1160px) {
   .til_8 > * {
-    width: 3.448%;
+    width: 3.4483%;
   }
 }
 @media only screen and (min-width: 1200px) {
   .til_8 > * {
-    width: 3.333%;
+    width: 3.3333%;
   }
 }
 @media only screen and (min-width: 1240px) {
   .til_8 > * {
-    width: 3.226%;
+    width: 3.2258%;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -2254,37 +2235,37 @@ footer,
 }
 @media only screen and (min-width: 1320px) {
   .til_8 > * {
-    width: 3.03%;
+    width: 3.0303%;
   }
 }
 @media only screen and (min-width: 1360px) {
   .til_8 > * {
-    width: 2.941%;
+    width: 2.9412%;
   }
 }
 @media only screen and (min-width: 1400px) {
   .til_8 > * {
-    width: 2.857%;
+    width: 2.8571%;
   }
 }
 @media only screen and (min-width: 1440px) {
   .til_8 > * {
-    width: 2.778%;
+    width: 2.7778%;
   }
 }
 @media only screen and (min-width: 1480px) {
   .til_8 > * {
-    width: 2.703%;
+    width: 2.7027%;
   }
 }
 @media only screen and (min-width: 1520px) {
   .til_8 > * {
-    width: 2.632%;
+    width: 2.6316%;
   }
 }
 @media only screen and (min-width: 1560px) {
   .til_8 > * {
-    width: 2.564%;
+    width: 2.5641%;
   }
 }
 @media only screen and (min-width: 1600px) {
@@ -2304,37 +2285,37 @@ footer,
 }
 @media only screen and (min-width: 1720px) {
   .til_8 > * {
-    width: 2.326%;
+    width: 2.3256%;
   }
 }
 @media only screen and (min-width: 1760px) {
   .til_8 > * {
-    width: 2.273%;
+    width: 2.2727%;
   }
 }
 @media only screen and (min-width: 1800px) {
   .til_8 > * {
-    width: 2.222%;
+    width: 2.2222%;
   }
 }
 @media only screen and (min-width: 1840px) {
   .til_8 > * {
-    width: 2.174%;
+    width: 2.1739%;
   }
 }
 @media only screen and (min-width: 1880px) {
   .til_8 > * {
-    width: 2.128%;
+    width: 2.1277%;
   }
 }
 @media only screen and (min-width: 1920px) {
   .til_8 > * {
-    width: 2.083%;
+    width: 2.0833%;
   }
 }
 @media only screen and (min-width: 1960px) {
   .til_8 > * {
-    width: 2.041%;
+    width: 2.0408%;
   }
 }
 @media only screen and (min-width: 2000px) {
@@ -2344,32 +2325,32 @@ footer,
 }
 @media only screen and (min-width: 2040px) {
   .til_8 > * {
-    width: 1.961%;
+    width: 1.9608%;
   }
 }
 @media only screen and (min-width: 2080px) {
   .til_8 > * {
-    width: 1.923%;
+    width: 1.9231%;
   }
 }
 @media only screen and (min-width: 2120px) {
   .til_8 > * {
-    width: 1.887%;
+    width: 1.8868%;
   }
 }
 @media only screen and (min-width: 2160px) {
   .til_8 > * {
-    width: 1.852%;
+    width: 1.8519%;
   }
 }
 @media only screen and (min-width: 2200px) {
   .til_8 > * {
-    width: 1.818%;
+    width: 1.8182%;
   }
 }
 @media only screen and (min-width: 2240px) {
   .til_8 > * {
-    width: 1.786%;
+    width: 1.7857%;
   }
 }
 /***************************************
@@ -2383,7 +2364,7 @@ footer,
 .flu_3,
 .flus > :first-child:nth-last-child(3),
 .flus > :first-child:nth-last-child(3) ~ * {
-  width: 33.333%;
+  width: 33.3333%;
 }
 .flu_4,
 .flus > :first-child:nth-last-child(4),
@@ -2398,12 +2379,12 @@ footer,
 .flu_6,
 .flus > :first-child:nth-last-child(6),
 .flus > :first-child:nth-last-child(6) ~ * {
-  width: 16.667%;
+  width: 16.6667%;
 }
 .flu_7,
 .flus > :first-child:nth-last-child(7),
 .flus > :first-child:nth-last-child(7) ~ * {
-  width: 14.286%;
+  width: 14.2857%;
 }
 .flu_8,
 .flus > :first-child:nth-last-child(8),
@@ -2413,7 +2394,7 @@ footer,
 .flu_9,
 .flus > :first-child:nth-last-child(9),
 .flus > :first-child:nth-last-child(9) ~ * {
-  width: 11.111%;
+  width: 11.1111%;
 }
 .flu_10,
 .flus > :first-child:nth-last-child(10),
@@ -2423,452 +2404,32 @@ footer,
 .flu_11,
 .flus > :first-child:nth-last-child(11),
 .flus > :first-child:nth-last-child(11) ~ * {
-  width: 9.091%;
+  width: 9.0909%;
 }
 .flu_12,
 .flus > :first-child:nth-last-child(12),
 .flus > :first-child:nth-last-child(12) ~ * {
-  width: 8.333%;
+  width: 8.3333%;
 }
 .flu_13,
 .flus > :first-child:nth-last-child(13),
 .flus > :first-child:nth-last-child(13) ~ * {
-  width: 7.692%;
+  width: 7.6923%;
 }
 .flu_14,
 .flus > :first-child:nth-last-child(14),
 .flus > :first-child:nth-last-child(14) ~ * {
-  width: 7.143%;
+  width: 7.1429%;
 }
 .flu_15,
 .flus > :first-child:nth-last-child(15),
 .flus > :first-child:nth-last-child(15) ~ * {
-  width: 6.667%;
+  width: 6.6667%;
 }
 .flu_16,
 .flus > :first-child:nth-last-child(16),
 .flus > :first-child:nth-last-child(16) ~ * {
   width: 6.25%;
-}
-.flu_17,
-.flus > :first-child:nth-last-child(17),
-.flus > :first-child:nth-last-child(17) ~ * {
-  width: 5.882%;
-}
-.flu_18,
-.flus > :first-child:nth-last-child(18),
-.flus > :first-child:nth-last-child(18) ~ * {
-  width: 5.556%;
-}
-.flu_19,
-.flus > :first-child:nth-last-child(19),
-.flus > :first-child:nth-last-child(19) ~ * {
-  width: 5.263%;
-}
-.flu_20,
-.flus > :first-child:nth-last-child(20),
-.flus > :first-child:nth-last-child(20) ~ * {
-  width: 5%;
-}
-.flu_21,
-.flus > :first-child:nth-last-child(21),
-.flus > :first-child:nth-last-child(21) ~ * {
-  width: 4.762%;
-}
-.flu_22,
-.flus > :first-child:nth-last-child(22),
-.flus > :first-child:nth-last-child(22) ~ * {
-  width: 4.545%;
-}
-.flu_23,
-.flus > :first-child:nth-last-child(23),
-.flus > :first-child:nth-last-child(23) ~ * {
-  width: 4.348%;
-}
-.flu_24,
-.flus > :first-child:nth-last-child(24),
-.flus > :first-child:nth-last-child(24) ~ * {
-  width: 4.167%;
-}
-.flu_25,
-.flus > :first-child:nth-last-child(25),
-.flus > :first-child:nth-last-child(25) ~ * {
-  width: 4%;
-}
-.flu_26,
-.flus > :first-child:nth-last-child(26),
-.flus > :first-child:nth-last-child(26) ~ * {
-  width: 3.846%;
-}
-.flu_27,
-.flus > :first-child:nth-last-child(27),
-.flus > :first-child:nth-last-child(27) ~ * {
-  width: 3.704%;
-}
-.flu_28,
-.flus > :first-child:nth-last-child(28),
-.flus > :first-child:nth-last-child(28) ~ * {
-  width: 3.571%;
-}
-.flu_29,
-.flus > :first-child:nth-last-child(29),
-.flus > :first-child:nth-last-child(29) ~ * {
-  width: 3.448%;
-}
-.flu_30,
-.flus > :first-child:nth-last-child(30),
-.flus > :first-child:nth-last-child(30) ~ * {
-  width: 3.333%;
-}
-.flu_31,
-.flus > :first-child:nth-last-child(31),
-.flus > :first-child:nth-last-child(31) ~ * {
-  width: 3.226%;
-}
-.flu_32,
-.flus > :first-child:nth-last-child(32),
-.flus > :first-child:nth-last-child(32) ~ * {
-  width: 3.125%;
-}
-.flu_33,
-.flus > :first-child:nth-last-child(33),
-.flus > :first-child:nth-last-child(33) ~ * {
-  width: 3.03%;
-}
-.flu_34,
-.flus > :first-child:nth-last-child(34),
-.flus > :first-child:nth-last-child(34) ~ * {
-  width: 2.941%;
-}
-.flu_35,
-.flus > :first-child:nth-last-child(35),
-.flus > :first-child:nth-last-child(35) ~ * {
-  width: 2.857%;
-}
-.flu_36,
-.flus > :first-child:nth-last-child(36),
-.flus > :first-child:nth-last-child(36) ~ * {
-  width: 2.778%;
-}
-.flu_37,
-.flus > :first-child:nth-last-child(37),
-.flus > :first-child:nth-last-child(37) ~ * {
-  width: 2.703%;
-}
-.flu_38,
-.flus > :first-child:nth-last-child(38),
-.flus > :first-child:nth-last-child(38) ~ * {
-  width: 2.632%;
-}
-.flu_39,
-.flus > :first-child:nth-last-child(39),
-.flus > :first-child:nth-last-child(39) ~ * {
-  width: 2.564%;
-}
-.flu_40,
-.flus > :first-child:nth-last-child(40),
-.flus > :first-child:nth-last-child(40) ~ * {
-  width: 2.5%;
-}
-.flu_41,
-.flus > :first-child:nth-last-child(41),
-.flus > :first-child:nth-last-child(41) ~ * {
-  width: 2.439%;
-}
-.flu_42,
-.flus > :first-child:nth-last-child(42),
-.flus > :first-child:nth-last-child(42) ~ * {
-  width: 2.381%;
-}
-.flu_43,
-.flus > :first-child:nth-last-child(43),
-.flus > :first-child:nth-last-child(43) ~ * {
-  width: 2.326%;
-}
-.flu_44,
-.flus > :first-child:nth-last-child(44),
-.flus > :first-child:nth-last-child(44) ~ * {
-  width: 2.273%;
-}
-.flu_45,
-.flus > :first-child:nth-last-child(45),
-.flus > :first-child:nth-last-child(45) ~ * {
-  width: 2.222%;
-}
-.flu_46,
-.flus > :first-child:nth-last-child(46),
-.flus > :first-child:nth-last-child(46) ~ * {
-  width: 2.174%;
-}
-.flu_47,
-.flus > :first-child:nth-last-child(47),
-.flus > :first-child:nth-last-child(47) ~ * {
-  width: 2.128%;
-}
-.flu_48,
-.flus > :first-child:nth-last-child(48),
-.flus > :first-child:nth-last-child(48) ~ * {
-  width: 2.083%;
-}
-.flu_49,
-.flus > :first-child:nth-last-child(49),
-.flus > :first-child:nth-last-child(49) ~ * {
-  width: 2.041%;
-}
-.flu_50,
-.flus > :first-child:nth-last-child(50),
-.flus > :first-child:nth-last-child(50) ~ * {
-  width: 2%;
-}
-.flu_51,
-.flus > :first-child:nth-last-child(51),
-.flus > :first-child:nth-last-child(51) ~ * {
-  width: 1.961%;
-}
-.flu_52,
-.flus > :first-child:nth-last-child(52),
-.flus > :first-child:nth-last-child(52) ~ * {
-  width: 1.923%;
-}
-.flu_53,
-.flus > :first-child:nth-last-child(53),
-.flus > :first-child:nth-last-child(53) ~ * {
-  width: 1.887%;
-}
-.flu_54,
-.flus > :first-child:nth-last-child(54),
-.flus > :first-child:nth-last-child(54) ~ * {
-  width: 1.852%;
-}
-.flu_55,
-.flus > :first-child:nth-last-child(55),
-.flus > :first-child:nth-last-child(55) ~ * {
-  width: 1.818%;
-}
-.flu_56,
-.flus > :first-child:nth-last-child(56),
-.flus > :first-child:nth-last-child(56) ~ * {
-  width: 1.786%;
-}
-.flu_57,
-.flus > :first-child:nth-last-child(57),
-.flus > :first-child:nth-last-child(57) ~ * {
-  width: 1.754%;
-}
-.flu_58,
-.flus > :first-child:nth-last-child(58),
-.flus > :first-child:nth-last-child(58) ~ * {
-  width: 1.724%;
-}
-.flu_59,
-.flus > :first-child:nth-last-child(59),
-.flus > :first-child:nth-last-child(59) ~ * {
-  width: 1.695%;
-}
-.flu_60,
-.flus > :first-child:nth-last-child(60),
-.flus > :first-child:nth-last-child(60) ~ * {
-  width: 1.667%;
-}
-.flu_61,
-.flus > :first-child:nth-last-child(61),
-.flus > :first-child:nth-last-child(61) ~ * {
-  width: 1.639%;
-}
-.flu_62,
-.flus > :first-child:nth-last-child(62),
-.flus > :first-child:nth-last-child(62) ~ * {
-  width: 1.613%;
-}
-.flu_63,
-.flus > :first-child:nth-last-child(63),
-.flus > :first-child:nth-last-child(63) ~ * {
-  width: 1.587%;
-}
-.flu_64,
-.flus > :first-child:nth-last-child(64),
-.flus > :first-child:nth-last-child(64) ~ * {
-  width: 1.563%;
-}
-.flu_65,
-.flus > :first-child:nth-last-child(65),
-.flus > :first-child:nth-last-child(65) ~ * {
-  width: 1.538%;
-}
-.flu_66,
-.flus > :first-child:nth-last-child(66),
-.flus > :first-child:nth-last-child(66) ~ * {
-  width: 1.515%;
-}
-.flu_67,
-.flus > :first-child:nth-last-child(67),
-.flus > :first-child:nth-last-child(67) ~ * {
-  width: 1.493%;
-}
-.flu_68,
-.flus > :first-child:nth-last-child(68),
-.flus > :first-child:nth-last-child(68) ~ * {
-  width: 1.471%;
-}
-.flu_69,
-.flus > :first-child:nth-last-child(69),
-.flus > :first-child:nth-last-child(69) ~ * {
-  width: 1.449%;
-}
-.flu_70,
-.flus > :first-child:nth-last-child(70),
-.flus > :first-child:nth-last-child(70) ~ * {
-  width: 1.429%;
-}
-.flu_71,
-.flus > :first-child:nth-last-child(71),
-.flus > :first-child:nth-last-child(71) ~ * {
-  width: 1.408%;
-}
-.flu_72,
-.flus > :first-child:nth-last-child(72),
-.flus > :first-child:nth-last-child(72) ~ * {
-  width: 1.389%;
-}
-.flu_73,
-.flus > :first-child:nth-last-child(73),
-.flus > :first-child:nth-last-child(73) ~ * {
-  width: 1.37%;
-}
-.flu_74,
-.flus > :first-child:nth-last-child(74),
-.flus > :first-child:nth-last-child(74) ~ * {
-  width: 1.351%;
-}
-.flu_75,
-.flus > :first-child:nth-last-child(75),
-.flus > :first-child:nth-last-child(75) ~ * {
-  width: 1.333%;
-}
-.flu_76,
-.flus > :first-child:nth-last-child(76),
-.flus > :first-child:nth-last-child(76) ~ * {
-  width: 1.316%;
-}
-.flu_77,
-.flus > :first-child:nth-last-child(77),
-.flus > :first-child:nth-last-child(77) ~ * {
-  width: 1.299%;
-}
-.flu_78,
-.flus > :first-child:nth-last-child(78),
-.flus > :first-child:nth-last-child(78) ~ * {
-  width: 1.282%;
-}
-.flu_79,
-.flus > :first-child:nth-last-child(79),
-.flus > :first-child:nth-last-child(79) ~ * {
-  width: 1.266%;
-}
-.flu_80,
-.flus > :first-child:nth-last-child(80),
-.flus > :first-child:nth-last-child(80) ~ * {
-  width: 1.25%;
-}
-.flu_81,
-.flus > :first-child:nth-last-child(81),
-.flus > :first-child:nth-last-child(81) ~ * {
-  width: 1.235%;
-}
-.flu_82,
-.flus > :first-child:nth-last-child(82),
-.flus > :first-child:nth-last-child(82) ~ * {
-  width: 1.22%;
-}
-.flu_83,
-.flus > :first-child:nth-last-child(83),
-.flus > :first-child:nth-last-child(83) ~ * {
-  width: 1.205%;
-}
-.flu_84,
-.flus > :first-child:nth-last-child(84),
-.flus > :first-child:nth-last-child(84) ~ * {
-  width: 1.19%;
-}
-.flu_85,
-.flus > :first-child:nth-last-child(85),
-.flus > :first-child:nth-last-child(85) ~ * {
-  width: 1.176%;
-}
-.flu_86,
-.flus > :first-child:nth-last-child(86),
-.flus > :first-child:nth-last-child(86) ~ * {
-  width: 1.163%;
-}
-.flu_87,
-.flus > :first-child:nth-last-child(87),
-.flus > :first-child:nth-last-child(87) ~ * {
-  width: 1.149%;
-}
-.flu_88,
-.flus > :first-child:nth-last-child(88),
-.flus > :first-child:nth-last-child(88) ~ * {
-  width: 1.136%;
-}
-.flu_89,
-.flus > :first-child:nth-last-child(89),
-.flus > :first-child:nth-last-child(89) ~ * {
-  width: 1.124%;
-}
-.flu_90,
-.flus > :first-child:nth-last-child(90),
-.flus > :first-child:nth-last-child(90) ~ * {
-  width: 1.111%;
-}
-.flu_91,
-.flus > :first-child:nth-last-child(91),
-.flus > :first-child:nth-last-child(91) ~ * {
-  width: 1.099%;
-}
-.flu_92,
-.flus > :first-child:nth-last-child(92),
-.flus > :first-child:nth-last-child(92) ~ * {
-  width: 1.087%;
-}
-.flu_93,
-.flus > :first-child:nth-last-child(93),
-.flus > :first-child:nth-last-child(93) ~ * {
-  width: 1.075%;
-}
-.flu_94,
-.flus > :first-child:nth-last-child(94),
-.flus > :first-child:nth-last-child(94) ~ * {
-  width: 1.064%;
-}
-.flu_95,
-.flus > :first-child:nth-last-child(95),
-.flus > :first-child:nth-last-child(95) ~ * {
-  width: 1.053%;
-}
-.flu_96,
-.flus > :first-child:nth-last-child(96),
-.flus > :first-child:nth-last-child(96) ~ * {
-  width: 1.042%;
-}
-.flu_97,
-.flus > :first-child:nth-last-child(97),
-.flus > :first-child:nth-last-child(97) ~ * {
-  width: 1.031%;
-}
-.flu_98,
-.flus > :first-child:nth-last-child(98),
-.flus > :first-child:nth-last-child(98) ~ * {
-  width: 1.02%;
-}
-.flu_99,
-.flus > :first-child:nth-last-child(99),
-.flus > :first-child:nth-last-child(99) ~ * {
-  width: 1.01%;
-}
-.flu_100,
-.flus > :first-child:nth-last-child(100),
-.flus > :first-child:nth-last-child(100) ~ * {
-  width: 1%;
 }
 /***************************************
   Cell
@@ -5050,9 +4611,9 @@ img.pic {
 .radio,
 .check,
 .toggle {
-  /*~ .radio,
-    ~ .check,
-    ~ .toggle {
+  /*~ .@{radio},
+    ~ .@{check},
+    ~ .@{toggle} {
         margin-left: 2rem*.5;
     }*/
 }
@@ -5148,36 +4709,36 @@ img.pic {
   right: 2.2rem;
 }
 /*
-.toggle > label.toggle:first-of-type {
+.@{toggle} > label.@{toggle}:first-of-type {
   padding-left: 0;
   padding-right: 2rem*2.5;
 }
 
-.toggle > label.toggle:last-of-type {
+.@{toggle} > label.@{toggle}:last-of-type {
   padding-left: 0;
   padding-right: 0;
 }
 
-.toggle > label.toggle:first-of-type:after,
-.toggle > label.toggle:first-of-type:before {
+.@{toggle} > label.@{toggle}:first-of-type:after,
+.@{toggle} > label.@{toggle}:first-of-type:before {
   display: none;
 }
 
 
 
-.toggle > label.toggle:first-of-type:after {
+.@{toggle} > label.@{toggle}:first-of-type:after {
   top:    2rem*.1;
   right:   2rem*.1;
 }*/
 /*
-[type="radio"]:checked + label.toggle:after,
-[type="radio"]:checked + label.toggle:before{
+[type="radio"]:checked + label.@{toggle}:after,
+[type="radio"]:checked + label.@{toggle}:before{
   visibility: hidden;
 }*/
 /***************************************
   Drawer
  ***************************************/
-/*.drawer:not(.@{top}):not(.@{bottom}) {
+/*.@{drawer}:not(.@{top}):not(.@{bottom}) {
     width:      2rem*18;
     top:        0;
     bottom:     0;
@@ -5185,8 +4746,8 @@ img.pic {
     overflow-x: hidden;
 }
 
-.drawer.@{top},
-.drawer.@{bottom} {
+.@{drawer}.@{top},
+.@{drawer}.@{bottom} {
     width:  100%;
     height: 2rem*18;
     left:   0;
@@ -5195,28 +4756,28 @@ img.pic {
     overflow-x: auto;
 }
 
-.drawer.@{left},
-.drawer:not(.@{top}):not(.@{bottom}) {
+.@{drawer}.@{left},
+.@{drawer}:not(.@{top}):not(.@{bottom}) {
     left:  0;
     right: auto;
 }
 
-:checked + .drawer:not(.flo) ~ .@{screen},
-:checked + .drawer:not(.flo) ~ .@{screen} > header.@{fixed},
-:checked + .drawer:not(.flo) ~ .@{screen} > footer.@{fixed} {
+:checked + .@{drawer}:not(.flo) ~ .@{screen},
+:checked + .@{drawer}:not(.flo) ~ .@{screen} > header.@{fixed},
+:checked + .@{drawer}:not(.flo) ~ .@{screen} > footer.@{fixed} {
     left:   2rem*18;
     right: -2rem*18;
 }
 
-.drawer.float {
+.@{drawer}.float {
     left: -2rem*18;
 }
 
-:checked + .drawer.float {
+:checked + .@{drawer}.float {
     left: 0;
 }*/
 /*** Right ***/
-/*.drawer.@{right} {
+/*.@{drawer}.@{right} {
     left:  auto;
     right: 0;
 }*/
@@ -12883,3 +12444,300 @@ input[type="datetime-local"] {
     margin-left: 0 !important;
   }
 }
+/***************************************
+  Debug
+ ***************************************/
+/*** Verify ***/
+acronym,
+applet,
+basefont,
+big,
+bgsound,
+blink,
+center,
+dir,
+font,
+frame,
+frameset,
+noframes,
+isindex,
+listing,
+marquee,
+multicol,
+s,
+strike,
+tt,
+u {
+  /* Old Tag */
+  outline: 5px solid orange;
+}
+address nav,
+a a,
+a label,
+a button,
+label a,
+label label,
+button a,
+button label,
+button button {
+  /* No Semantic */
+  outline: 5px solid red;
+}
+/*** Marker ***/
+.marker {
+  background-color: rgba(0, 0, 255, 0.6);
+  color: white;
+  font-size: 12px;
+  min-width: 80px;
+  height: 40px;
+  position: fixed;
+  top: 50%;
+  bottom: 50%;
+  left: auto;
+  right: 0;
+  text-align: center;
+  vertical-align: middle;
+  z-index: 10000;
+}
+.marker:after {
+  content: "";
+  display: block;
+  line-height: 40px;
+}
+@media only screen and (max-width: 1in) {
+  .marker:after {
+    content: "<= 1'";
+  }
+}
+@media only screen and (min-width: 1in) and (max-width: 1.5in) {
+  .marker:after {
+    content: "1 - 1.5'";
+  }
+}
+@media only screen and (min-width: 1.5in) and (max-width: 2in) {
+  .marker:after {
+    content: "1.5 - 2'";
+  }
+}
+@media only screen and (min-width: 2in) and (max-width: 2.5in) {
+  .marker:after {
+    content: "2 - 2.5'";
+  }
+}
+@media only screen and (min-width: 2.5in) and (max-width: 3in) {
+  .marker:after {
+    content: "2.5 - 3'";
+  }
+}
+@media only screen and (min-width: 3in) and (max-width: 3.5in) {
+  .marker:after {
+    content: "3 - 3.5' iPhone 4/5";
+  }
+}
+@media only screen and (min-width: 3.5in) and (max-width: 4in) {
+  .marker:after {
+    content: "3.5 - 4' iPhone 6";
+  }
+}
+@media only screen and (min-width: 4in) and (max-width: 4.5in) {
+  .marker:after {
+    content: "4 - 4.5' iPhone 6+";
+  }
+}
+@media only screen and (min-width: 4.5in) and (max-width: 5in) {
+  .marker:after {
+    content: "4.5 - 5'";
+  }
+}
+@media only screen and (min-width: 5in) and (max-width: 5.5in) {
+  .marker:after {
+    content: "5 - 5.5' iPhone 4 land";
+  }
+}
+@media only screen and (min-width: 5.5in) and (max-width: 6in) {
+  .marker:after {
+    content: "5.5 - 6' iPhone 5 land";
+  }
+}
+@media only screen and (min-width: 6in) and (max-width: 6.5in) {
+  .marker:after {
+    content: "6 - 6.5'";
+  }
+}
+@media only screen and (min-width: 6.5in) and (max-width: 7in) {
+  .marker:after {
+    content: "6.5 - 7' iPhone 6 land";
+  }
+}
+@media only screen and (min-width: 7in) and (max-width: 7.5in) {
+  .marker:after {
+    content: "7 - 7.5' iPhone 6+ land";
+  }
+}
+@media only screen and (min-width: 7.5in) and (max-width: 8in) {
+  .marker:after {
+    content: "7.5 - 8'";
+  }
+}
+@media only screen and (min-width: 8in) and (max-width: 8.5in) {
+  .marker:after {
+    content: "8 - 8.5' iPad port";
+  }
+}
+@media only screen and (min-width: 8.5in) and (max-width: 9in) {
+  .marker:after {
+    content: "8.5 - 9'";
+  }
+}
+@media only screen and (min-width: 9in) and (max-width: 9.5in) {
+  .marker:after {
+    content: "9 - 9.5'";
+  }
+}
+@media only screen and (min-width: 9.5in) and (max-width: 10in) {
+  .marker:after {
+    content: "9.5 - 10'";
+  }
+}
+@media only screen and (min-width: 10in) and (max-width: 10.5in) {
+  .marker:after {
+    content: "10 - 10.5' iPad land";
+  }
+}
+@media only screen and (min-width: 10.5in) and (max-width: 11in) {
+  .marker:after {
+    content: "10.5 - 11'";
+  }
+}
+@media only screen and (min-width: 11in) and (max-width: 11.5in) {
+  .marker:after {
+    content: "11 - 11.5'";
+  }
+}
+@media only screen and (min-width: 11.5in) and (max-width: 12in) {
+  .marker:after {
+    content: "11.5 - 12'";
+  }
+}
+@media only screen and (min-width: 12in) and (max-width: 12.5in) {
+  .marker:after {
+    content: "12 - 12.5'";
+  }
+}
+@media only screen and (min-width: 12.5in) and (max-width: 13in) {
+  .marker:after {
+    content: "12.5 - 13'";
+  }
+}
+@media only screen and (min-width: 13in) and (max-width: 13.5in) {
+  .marker:after {
+    content: "13 - 13.5' Nexus 10 land";
+  }
+}
+@media only screen and (min-width: 13.5in) and (max-width: 14in) {
+  .marker:after {
+    content: "13.5 - 14'";
+  }
+}
+@media only screen and (min-width: 14in) and (max-width: 14.5in) {
+  .marker:after {
+    content: "14 - 14.5'";
+  }
+}
+@media only screen and (min-width: 14.5in) and (max-width: 15in) {
+  .marker:after {
+    content: "14.5 - 15'";
+  }
+}
+@media only screen and (min-width: 15in) and (max-width: 15.5in) {
+  .marker:after {
+    content: "15 - 15.5'";
+  }
+}
+@media only screen and (min-width: 15.5in) and (max-width: 16in) {
+  .marker:after {
+    content: "15.5 - 16'";
+  }
+}
+@media only screen and (min-width: 16in) and (max-width: 16.5in) {
+  .marker:after {
+    content: "16 - 16.5'";
+  }
+}
+@media only screen and (min-width: 16.5in) and (max-width: 17in) {
+  .marker:after {
+    content: "16.5 - 17'";
+  }
+}
+@media only screen and (min-width: 17in) and (max-width: 17.5in) {
+  .marker:after {
+    content: "17 - 17.5'";
+  }
+}
+@media only screen and (min-width: 17.5in) and (max-width: 18in) {
+  .marker:after {
+    content: "17.5 - 18'";
+  }
+}
+@media only screen and (min-width: 18in) and (max-width: 18.5in) {
+  .marker:after {
+    content: "18 - 18.5'";
+  }
+}
+@media only screen and (min-width: 18.5in) and (max-width: 19in) {
+  .marker:after {
+    content: "18.5 - 19'";
+  }
+}
+@media only screen and (min-width: 19in) and (max-width: 19.5in) {
+  .marker:after {
+    content: "19 - 19.5'";
+  }
+}
+@media only screen and (min-width: 19.5in) and (max-width: 20in) {
+  .marker:after {
+    content: "19.5 - 20'";
+  }
+}
+@media only screen and (min-width: 20in) and (max-width: 20.5in) {
+  .marker:after {
+    content: "20 - 20.5'";
+  }
+}
+@media only screen and (min-width: 20.5in) and (max-width: 21in) {
+  .marker:after {
+    content: "20.5 - 21'";
+  }
+}
+@media only screen and (min-width: 21in) and (max-width: 21.5in) {
+  .marker:after {
+    content: "21 - 21.5'";
+  }
+}
+@media only screen and (min-width: 21.5in) and (max-width: 22in) {
+  .marker:after {
+    content: "21.5 - 22'";
+  }
+}
+@media only screen and (min-width: 22in) and (max-width: 22.5in) {
+  .marker:after {
+    content: "22 - 22.5'";
+  }
+}
+@media only screen and (min-width: 22.5in) and (max-width: 23in) {
+  .marker:after {
+    content: "22.5 - 23'";
+  }
+}
+/***************************************
+ Desktop
+***************************************/
+@media only screen and (min-device-width: 8.2in) and (min-device-height: 5in), only screen and (min-width: 8.2in) and (min-height: 5in) {
+  /* 8.2 - 788px, 5 - 480px */
+}
+/***************************************
+ Tablet
+***************************************/
+/***************************************
+ Mobile
+***************************************/
