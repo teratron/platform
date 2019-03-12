@@ -15,8 +15,8 @@
   360   560   760   960   1160  1360
   360   600   840   1080  1320
  ******************************************************************************/
-.media-trigger(1);
-.media-trigger(@n, @i: 6) when (@i >= @n) {
+.for-media-trigger(1);
+.for-media-trigger(@n, @i: 6) when (@i >= @n) {
     @media only screen and (max-width: (@i*180px + 180px)) {
         .@{solid}_@{i} {
             width:     100% !important;
@@ -249,8 +249,8 @@
         }
 
         /*** Gap 1-8 ***/
-        .gap-media-toggle-to(8);
-        .gap-media-toggle-to(@k, @j: 2) when (@j =< @k) {
+        .for-gap-media-toggle-to(8);
+        .for-gap-media-toggle-to(@k, @j: 2) when (@j =< @k) {
             .@{gap}@{child}_@{j}.@{row}_@{i} > .@{head},
             .@{gap}@{child}_@{j}.@{row}_@{i} > .@{body},
             .@{gap}@{child}_@{j}.@{row}_@{i} > .@{foot},
@@ -323,7 +323,7 @@
             .@{gap}@{child}_@{j}.@{row}_@{i}.@{list}.@{divider} > :not(:last-child) > * {
                 padding-right: @j*1rem !important;
             }
-            .gap-media-toggle-to(@k, (@j + 1));
+            .for-gap-media-toggle-to(@k, (@j + 1));
         }
         [class*="@{gap}@{child}"].@{col}_@{i} > .@{foot} {
             padding-top: 0 !important;
@@ -447,5 +447,5 @@
             margin-left: 0 !important;
         }
     }
-    .media-trigger(@n, (@i - 1));
+    .for-media-trigger(@n, (@i - 1));
 }
